@@ -217,22 +217,58 @@ footer {
 }
 .kachel {
   display: flex; flex-direction: column; gap: .15rem;
-  padding: 1.1rem 1.2rem;
-  border: 1px solid var(--surface-3);
-  border-top: 3px solid var(--accent);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
+  padding: 1.2rem 1.3rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--tint);
   text-decoration: none; color: inherit;
 }
 .kachel:hover { border-color: var(--accent); }
-.kachel img { display: block; margin-bottom: .5rem; }
+.kachel img { display: block; margin-bottom: .6rem; }
 .kachel strong { font-size: 1.05rem; color: var(--accent-strong); }
 .kachel span { font-size: .9rem; color: var(--text-dim); }
-.kachel.vorlaut  { --accent: #9B7BFF; --accent-strong: #7652d3; }
-.kachel.mitreden { --accent: #ff8bc7; --accent-strong: #ac407c; }
-.kachel.bildhaft { --accent: #ff6b35; --accent-strong: #be3e00; }
+/* --tint is each product's --accent-soft, from its own token file. */
+.kachel.vorlaut  { --accent: #9B7BFF; --accent-strong: #7652d3; --tint: #f3f1ff; }
+.kachel.mitreden { --accent: #ff8bc7; --accent-strong: #ac407c; --tint: #ffedf5; }
+.kachel.bildhaft { --accent: #ff6b35; --accent-strong: #be3e00; --tint: #ffefea; }
 
 /* The three marks side by side are the organisation's mark: there is no fourth
    drawing, and inventing one would be a logo for a thing nobody uses. */
 .trio { display: inline-flex; gap: .3rem; }
 .trio img { display: block; }
+
+/* ----------------------------------------------------------- three at once */
+
+/* The title runs through all three accents in order, which is the one place
+   the family can be seen rather than listed. The plain colour is declared
+   first and the gradient only inside @supports: a browser that cannot clip a
+   background to text would otherwise render transparent letters on white. */
+.dreifarbig { color: var(--accent-strong); }
+
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .dreifarbig {
+    background-image: linear-gradient(100deg, #7652d3 0%, #ac407c 52%, #be3e00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* The editor and the tablet side by side: vorlaut is two halves, and one
+   screenshot was showing one of them. */
+.paar {
+  display: grid; gap: 1.25rem; margin-top: 2rem;
+  grid-template-columns: 1.6fr 1fr;
+  align-items: start;
+}
+.paar figure { margin: 0; }
+
+@media (max-width: 48rem) {
+  .paar { grid-template-columns: 1fr; }
+}
+
+/* One line, and it wraps to two only on a narrow screen. */
+.footzeile {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 1.25rem;
+  margin: 0;
+}
