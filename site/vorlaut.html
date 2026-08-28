@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="de" data-theme="light">
+<!-- data-theme above pins the light scheme. The design package follows the
+     operating system unless a product says otherwise; this one says otherwise,
+     because it is read once, often on a device that belongs to somebody else. -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>vorlaut · Vokabular bauen und auf dem Tablet benutzen</title>
+<meta name="description" content="Ein Board-Editor im Browser und eine Android-App: Vokabular selbst anlegen, sichern und auf dem Tablet benutzen. Kostenlos, ohne Konto, ohne Server.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<header class="top col">
+  <a class="wordmark" href="index.html">
+    <span class="trio" aria-hidden="true">
+      <img src="mark-vorlaut.svg" alt="" width="26" height="26">
+      <img src="mark-mitreden.svg" alt="" width="26" height="26">
+      <img src="mark-bildhaft.svg" alt="" width="26" height="26">
+    </span>
+    <span>Lautstark</span>
+  </a>
+  <nav>
+    <a href="vorlaut.html" aria-current="page">vorlaut</a>
+    <a href="talker.html">Talker</a>
+    <a href="index.html#mitreden">mitreden</a>
+    <a href="index.html#bildhaft">bildhaft</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="band">
+  <div class="col">
+    <p class="label"><img src="mark-vorlaut.svg" alt="" width="18" height="18"> vorlaut</p>
+    <h1>Vorlaut: <span class="accent">Vokabular bauen, auf dem Tablet benutzen.</span></h1>
+    <p class="lead">
+      Am Rechner legen Sie an, welche Wörter auf welchen Tasten liegen, welches
+      Bild dazugehört und was gesprochen wird. Auf dem Tablet wird daraus etwas,
+      das den ganzen Tag benutzt werden kann. Wem ein Tablet nicht passt, kann
+      dasselbe Vokabular auf ein kleines Gerät mit fünf Tasten legen.
+    </p>
+    <p class="note">
+      vorlaut ist eines von drei Programmen bei
+      <a href="index.html">Lautstark</a>, alle kostenlos, ohne Konto und ohne
+      Server.
+    </p>
+    <div class="actions">
+      <a class="btn primary cta" href="{{editor}}">Editor öffnen</a>
+      <a class="btn cta" href="{{appDownload}}">App herunterladen</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="editor">
+  <div class="col">
+    <p class="label">Der Editor</p>
+    <h2>Hier entsteht das Vokabular</h2>
+    <p>
+      Der Editor ist eine Internetseite. Sie öffnen sie und arbeiten sofort
+      los: Es wird nichts installiert und niemand angemeldet. Die Sammlungen
+      liegen im Speicher Ihres Browsers und bleiben dort, bis Sie sie ändern.
+    </p>
+    <p>
+      Eine Sammlung besteht aus Seiten, eine Seite aus Tasten. Sie legen fest,
+      wie groß das Raster ist, was auf einer Taste steht, welches Bild darauf
+      liegt und was gesprochen wird.
+    </p>
+  </div>
+  <div class="wide">
+    <figure>
+      <img src="vorlaut.png"
+           alt="Der Editor: links die Sammlungen mit ihren Seiten und deren Aufwandswerten, rechts die geöffnete Seite mit ihren Tasten.">
+      <figcaption>
+        Eine Sammlung im Editor. Links die Seiten, rechts die Tasten der Seite,
+        die gerade offen ist.
+      </figcaption>
+    </figure>
+  </div>
+  <div class="col">
+    <dl class="facts">
+      <div>
+        <dt>Raster</dt>
+        <dd>
+          Pro Sammlung festgelegt, zum Beispiel drei Reihen mal fünf Spalten.
+          Seiten verweisen aufeinander: Eine Taste kann weiterführen, statt zu
+          sprechen.
+        </dd>
+      </div>
+      <div>
+        <dt>Bilder</dt>
+        <dd>
+          Piktogramme von ARASAAC, direkt im Editor gesucht. Wer METACOM
+          lizenziert hat, bindet den eigenen Ordner ein.
+        </dd>
+      </div>
+      <div>
+        <dt>Stimme</dt>
+        <dd>
+          Aussagen selbst einsprechen oder eine Computerstimme verwenden.
+        </dd>
+      </div>
+      <div>
+        <dt>Aufwand</dt>
+        <dd>
+          Zu jeder Seite steht, wie viele Wege dorthin führen und was der Weg
+          von der Startseite kostet. Das hilft, wenn eine Sammlung wächst und
+          häufige Wörter tief liegen.
+        </dd>
+      </div>
+      <div>
+        <dt>Sichern</dt>
+        <dd>
+          Einen Ordner einmal auswählen; von da an wird dorthin gesichert. Ein
+          geleerter Browserspeicher kostet dann keine Arbeit.
+        </dd>
+      </div>
+      <div>
+        <dt>Ausgeben</dt>
+        <dd>
+          Ein Paket für die App, eine Datei für den DIY-Talker und ein offenes
+          Board-Format, das andere UK-Programme lesen.
+        </dd>
+      </div>
+    </dl>
+    <div class="actions">
+      <a class="btn primary" href="{{editor}}">Editor öffnen</a>
+      <a class="btn" href="{{editorSource}}">Quelltext</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="app">
+  <div class="col">
+    <p class="label">Die App</p>
+    <h2>Hier wird es benutzt</h2>
+    <p>
+      Die App öffnet das Paket aus dem Editor und zeigt die Seiten so, wie Sie
+      sie angelegt haben. Ein Druck auf eine Taste spricht die Aussage.
+    </p>
+    <p>
+      Bearbeiten lässt sich in der App nichts. Das ist keine fehlende Funktion,
+      sondern die Grundentscheidung dahinter: Was im Alltag in der Hand liegt,
+      soll sich nicht verstellen lassen.
+    </p>
+  </div>
+  <div class="wide">
+    <figure>
+      <img src="vorlaut-app.png"
+           alt="Die App auf dem Tablet: eine Seite mit fünfzehn Tasten, darüber die Zeile für den entstehenden Satz.">
+      <figcaption>
+        Dieselbe Sammlung auf dem Tablet. Oben die Zeile, in der ein Satz
+        entsteht.
+      </figcaption>
+    </figure>
+  </div>
+  <div class="col">
+    <dl class="facts">
+      <div>
+        <dt>Bedienen</dt>
+        <dd>
+          Querformat, große Tasten, und der Bildschirm bleibt an, solange eine
+          Tafel geöffnet ist.
+        </dd>
+      </div>
+      <div>
+        <dt>Geöffnet bleiben</dt>
+        <dd>
+          Eine PIN sichert den Weg aus der Tafel heraus. Zusätzlich lässt sich
+          die App mit der Bildschirmfixierung von Android festhalten.
+        </dd>
+      </div>
+      <div>
+        <dt>Ohne Netz</dt>
+        <dd>
+          Die App hat keine Internet-Berechtigung. Bilder und Aufnahmen liegen
+          im Paket, nachgeladen wird nichts.
+        </dd>
+      </div>
+      <div>
+        <dt>Aktualisieren</dt>
+        <dd>
+          Ein neuer Import ersetzt das Paket vollständig. Es gibt keine halben
+          Stände und nichts zusammenzuführen.
+        </dd>
+      </div>
+      <div>
+        <dt>Installieren</dt>
+        <dd>
+          Die App liegt nicht bei Google Play, sondern als Installationsdatei
+          bereit. Das Tablet fragt beim ersten Mal einmal nach.
+        </dd>
+      </div>
+    </dl>
+    <div class="actions">
+      <a class="btn primary" href="{{appDownload}}">App herunterladen</a>
+      <a class="btn" href="{{appSource}}">Quelltext</a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="col">
+    <p class="label">Der Übergang</p>
+    <h2>Dazwischen liegt eine Datei</h2>
+    <p>
+      Der Editor schreibt eine Datei, die App liest sie. Mehr verbindet die
+      beiden nicht. Sie übertragen sie mit einem Kabel, über eine Speicherkarte
+      oder auf dem Weg, den Sie für Dateien ohnehin nutzen.
+    </p>
+    <p>
+      Diese Datei gehört Ihnen. Sie können sie aufheben, auf ein zweites Tablet
+      bringen und jederzeit durch eine neue Fassung ersetzen. Daneben schreibt
+      der Editor ein offenes Board-Format, sodass das Vokabular auch dann
+      lesbar bleibt, wenn Sie einmal mit einem anderen Programm weiterarbeiten.
+    </p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="col">
+    <p class="label">Daten</p>
+    <h2>Was nach außen geht</h2>
+    <dl class="facts">
+      <div>
+        <dt>Der Editor</dt>
+        <dd>
+          Nichts, mit einer Ausnahme: Die Symbolsuche fragt bei
+          <a href="{{arasaac}}">ARASAAC</a> nach Bildern und übermittelt dabei
+          das gesuchte Wort.
+        </dd>
+      </div>
+      <div>
+        <dt>Die App</dt>
+        <dd>Nichts. Sie hat keine Berechtigung dafür.</dd>
+      </div>
+      <div>
+        <dt>Diese Seite</dt>
+        <dd>
+          Nichts. Keine Zählung, keine Schriften und keine Skripte von anderswo.
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="band">
+  <div class="col">
+    <a class="pointer" href="index.html">
+      <div>
+        <strong>mitreden und bildhaft</strong>
+        <p class="note">
+          Die beiden anderen Programme: Sätze als Audiodateien in einer festen
+          Stimme, und Sätze als Piktogramme zum Ausdrucken.
+        </p>
+      </div>
+      <span class="go">Zur Übersicht →</span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="col">
+    <p class="footzeile">
+      <span>Kostenlos, unter der MIT-Lizenz.</span>
+      <a href="rechtliches.html#impressum">Impressum</a>
+      <a href="rechtliches.html#datenschutz">Datenschutz</a>
+      <a href="{{quelltext}}">Quelltext</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

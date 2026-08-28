@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="de" data-theme="light">
+<!-- data-theme above pins the light scheme; index.html says why. -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Der DIY-Talker · Lautstark</title>
+<meta name="description" content="Fünf Tasten, die zugleich Displays sind, ein ESP32-S3 dahinter: Teile, Entscheidungen, Toolchain und Stand des Selbstbau-Talkers.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<header class="top col">
+  <a class="wordmark" href="index.html">
+    <span class="trio" aria-hidden="true">
+      <img src="mark-vorlaut.svg" alt="" width="26" height="26">
+      <img src="mark-mitreden.svg" alt="" width="26" height="26">
+      <img src="mark-bildhaft.svg" alt="" width="26" height="26">
+    </span>
+    <span>Lautstark</span>
+  </a>
+  <nav>
+    <a href="vorlaut.html">vorlaut</a>
+    <a href="talker.html" aria-current="page">Talker</a>
+    <a href="index.html#mitreden">mitreden</a>
+    <a href="index.html#bildhaft">bildhaft</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="band">
+  <div class="col">
+    <p class="label">Selbstbau</p>
+    <h1>Der DIY-Talker</h1>
+    <p class="lead">
+      Fünf Tasten, die zugleich Displays sind, ein ESP32-S3 dahinter, ein
+      Gehäuse aus dem Drucker. Vier Tasten sprechen eine gespeicherte Aussage,
+      die fünfte schaltet das Set weiter: fünf Sets, zwanzig Aussagen.
+    </p>
+    <p>
+      Ich baue solche Sachen gern, und das hier ist eins davon. Es läuft, und
+      alles, was zum Nachbauen gehört, liegt offen: Teileliste mit
+      Bezugsquellen, Verdrahtung, das Gehäuse als OpenSCAD-Quelle statt als
+      fertiges STL, die Firmware, und die Seite, die den Inhalt durch das Kabel
+      schiebt.
+    </p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="col">
+    <p class="label">Wofür</p>
+    <h2>Was es im Alltag leistet</h2>
+    <p>
+      Zwanzig Aussagen, immer an derselben Stelle, ohne Menüs und ohne Wischen.
+      Das Gerät ist klein genug für eine Hand, und außer den fünf Tasten gibt es
+      nichts darauf, was sich verstellen ließe.
+    </p>
+    <p>
+      Ein Tablet kann mehr, und für die meisten ist es der richtige Weg. Das
+      hier ist für die Fälle daneben: unterwegs, draußen, im Bett, oder wenn ein
+      großer Touchscreen mehr Bedienung ist als Kommunikation.
+    </p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="col">
+    <p class="label">Teile</p>
+    <h2>Was drinsteckt</h2>
+    <dl class="facts">
+      <div>
+        <dt>Rechner</dt>
+        <dd>
+          Adafruit ESP32-S3 Feather, 8 MB Flash, kein PSRAM. Er lädt den Akku
+          über USB-C und bringt den passenden JST-PH-Stecker mit, deshalb
+          braucht das Gerät weder eine zweite Ladebuchse noch einen Schalter.
+        </dd>
+      </div>
+      <div>
+        <dt>Tasten</dt>
+        <dd>
+          Fünf Waveshare ScreenKeys, 0,85 Zoll IPS, 128 × 128, ST7735 — und
+          zwar die Ausführung <em>mit</em> Tastenmechanik. Es gibt dasselbe
+          Modul ohne, und dann ist es nur ein Display.
+        </dd>
+      </div>
+      <div>
+        <dt>Ton</dt>
+        <dd>
+          MAX98357A an I²S, dazu ein 40-mm-Lautsprecher mit 4 Ω in einer
+          geschlossenen Kammer im Gehäuse.
+        </dd>
+      </div>
+      <div>
+        <dt>Strom</dt>
+        <dd>LiPo 3,7 V mit 2500 mAh, an JST-PHR-2.</dd>
+      </div>
+      <div>
+        <dt>Gehäuse</dt>
+        <dd>
+          Drei gedruckte Teile — Wanne, Träger, Deckel — und sechs Schrauben.
+          Der Träger hält die fünf ScreenKeys mit nichts als zwanzig Löchern;
+          die Abstandsbolzen bringen die Module selbst mit.
+        </dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="band">
+  <div class="col">
+    <p class="label">Entscheidungen</p>
+    <h2>Warum es so gebaut ist</h2>
+    <dl class="facts">
+      <div>
+        <dt>Tasten sind Displays</dt>
+        <dd>
+          Was auf einer Taste steht, ändert sich mit dem Vokabular. Gedruckte
+          Einleger müsste man bei jeder Änderung neu schneiden, und am Anfang
+          ändert sich ständig etwas.
+        </dd>
+      </div>
+      <div>
+        <dt>Kein Ein-Aus-Schalter</dt>
+        <dd>
+          Das Gerät geht von selbst in Deep Sleep und wacht per Tastendruck
+          auf. Das ist auch der Grund, warum die Tasten auf GPIO 0 bis 21
+          liegen müssen: von anderen Pins weckt der Chip nicht auf.
+        </dd>
+      </div>
+      <div>
+        <dt>Kein Lautstärkeregler</dt>
+        <dd>
+          Die Pegel werden beim Kompilieren normalisiert. Ein Regler wäre ein
+          Bedienelement mehr, das im Alltag verstellt wird und dann leise steht,
+          wenn es darauf ankommt.
+        </dd>
+      </div>
+      <div>
+        <dt>Kein Funk</dt>
+        <dd>
+          Kein WLAN, kein Bluetooth. Der einzige Weg in das Gerät hinein ist das
+          Kabel, und das ist eine Eigenschaft und kein fehlendes Feature.
+        </dd>
+      </div>
+      <div>
+        <dt>Board nicht beliebig</dt>
+        <dd>
+          Ein Board ohne Ladeelektronik braucht ein zusätzliches Lademodul, und
+          die Pinbelegung ist auf dieses zugeschnitten. Tauschen geht, kostet
+          aber einen Nachmittag.
+        </dd>
+      </div>
+    </dl>
+    <div class="actions">
+      <a class="btn" href="{{talkerParts}}">Teileliste und Verdrahtung</a>
+      <a class="btn" href="{{talkerCase}}">Gehäuse</a>
+      <a class="btn" href="{{talkerFirmware}}">Firmware</a>
+    </div>
+    <p class="note spaced">Die Unterlagen im Repository sind auf Englisch.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="col">
+    <p class="label">Toolchain</p>
+    <h2>Wie Inhalte auf das Gerät kommen</h2>
+    <p>
+      Der Editor exportiert eine gerätespezifische Datei: Quellen unbearbeitet,
+      Negation als Flag, die WAVs, die das Gerät wirklich abspielt. Die
+      Ladeseite nimmt sie im Browser entgegen, prüft sie, rendert die Kacheln
+      auf Tastengröße, schreibt die Tabelle <code>layout.bin</code> und schiebt
+      alles über WebSerial durch das USB-C-Kabel. Für den Alltag braucht es
+      damit kein Flash-Werkzeug.
+    </p>
+    <p>
+      Wer lieber auf der Werkbank arbeitet: Dieselbe Seite schreibt den Build
+      auch in einen Ordner, aus dem sich mit <code>mklittlefs</code> ein Image
+      bauen lässt. Die Firmware selbst ist ein Arduino-Sketch in C++ und wird
+      einmal geflasht.
+    </p>
+  </div>
+  <div class="wide">
+    <figure>
+      <img src="talker-sets.png"
+           alt="Der Editor mit einer Sammlung für den Talker: oben die fünf Sets, darunter die vier Aussagen des ausgewählten Sets und die Taste zum Weiterschalten.">
+      <figcaption>
+        Die Autorenseite dazu: oben die fünf Sets, darunter die vier Aussagen
+        des ausgewählten Sets und die Taste, die weiterschaltet.
+      </figcaption>
+    </figure>
+  </div>
+  <div class="col">
+    <dl class="facts">
+      <div>
+        <dt>Browser</dt>
+        <dd>
+          WebSerial gibt es nur in Chrome und Edge. Prüfen und Kompilieren
+          läuft in jedem Browser, nur das Kabel nicht.
+        </dd>
+      </div>
+      <div>
+        <dt>Formatgrenze</dt>
+        <dd>
+          Der Editor schreibt eine Datei und hört da auf; Kompilieren und Senden
+          liegen im Repository des Geräts. Beide Seiten werden gegen dieselben
+          Fixtures geprüft, damit Browser und Firmware sich über die Bytes einig
+          bleiben.
+        </dd>
+      </div>
+    </dl>
+    <div class="actions">
+      <a class="btn primary cta" href="{{loader}}">Zur Ladeseite</a>
+      <a class="btn cta" href="{{editor}}">Zum Editor</a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="col">
+    <p class="label">Stand</p>
+    <h2>Was läuft und was offen ist</h2>
+    <p>
+      Durchgelaufen ist die ganze Kette: Vokabular im Editor, Export,
+      Ladeseite, Kabel, gesprochene Aussage auf dem Gerät. Der erste
+      Gehäusedruck hat fünf Dinge gezeigt, die nicht gepasst haben — der Träger
+      stieß an die Lautsprecherkammer, die ScreenKeys schrauben von hinten statt
+      in Dome auf der Frontplatte, die Tastenausschnitte waren zu locker, über
+      dem Träger fehlte Höhe, und das erhabene Logo wollte Füße, die es nicht
+      mehr braucht. Alle fünf stecken inzwischen im Modell.
+    </p>
+    <p>
+      Offen ist eine Messung: Wo der 40-mm-Treiber nach unten hin aufgibt, wurde
+      bisher nur am nackten Chassis geprüft, nicht in seiner eigenen Kammer. Die
+      ist beim Umbau des Gehäuses deutlich größer geworden, was die Antwort nach
+      unten verschieben sollte — nachgemessen ist sie nicht.
+    </p>
+    <div class="actions">
+      <a class="btn" href="{{talkerRepository}}">Repository</a>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="col">
+    <a class="pointer" href="vorlaut.html">
+      <div>
+        <strong>Editor und App</strong>
+        <p class="note">
+          Der Weg über ein Android-Tablet: größere Tafeln, kein Werkzeug, und
+          dasselbe Vokabular.
+        </p>
+      </div>
+      <span class="go">Zu vorlaut →</span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="col">
+    <p class="footzeile">
+      <span>Firmware, Gehäuse und Ladeseite unter der MIT-Lizenz.</span>
+      <a href="rechtliches.html#impressum">Impressum</a>
+      <a href="rechtliches.html#datenschutz">Datenschutz</a>
+      <a href="{{quelltext}}">Quelltext</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
