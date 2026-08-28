@@ -36,7 +36,13 @@ const dist = join(root, "dist");
 const design = join(root, "node_modules", "@lautstark", "design");
 
 rmSync(dist, { recursive: true, force: true });
-mkdirSync(join(dist, "design"), { recursive: true });
+// NOT "design/". On an organisation site every repository in the organisation
+// claims its own path prefix, and Lautstark/design has a project site — so
+// /design/ is served by that repository and shadows anything of the same name
+// here. It cost a deploy that looked green with no colour tokens on it. The
+// same trap waits for any folder named after a repository: vorlaut, mitreden,
+// bildhaft, bildquelle, sicherung, stimmquelle.
+mkdirSync(join(dist, "styles"), { recursive: true });
 
 for (const file of readdirSync(site)) {
   // The source pages may be opened directly during writing, so site/design
@@ -59,7 +65,7 @@ for (const file of readdirSync(site)) {
 // Self-hosted, both of them: no stylesheet on this site is fetched from
 // somewhere else, and the pinned tag in package.json is what says which version
 // a visitor gets.
-cpSync(join(design, "tokens", "vorlaut.css"), join(dist, "design", "tokens.css"));
-cpSync(join(design, "docs", "components.css"), join(dist, "design", "components.css"));
+cpSync(join(design, "tokens", "vorlaut.css"), join(dist, "styles", "tokens.css"));
+cpSync(join(design, "docs", "components.css"), join(dist, "styles", "components.css"));
 
 console.log(`Built ${readdirSync(dist).length} entries into dist/.`);
