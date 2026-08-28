@@ -1,0 +1,83 @@
+name: Deploy the organisation site to GitHub Pages
+
+# The shape is vorlaut's pages.yml, which is bildhaft's deploy.yml before it:
+# check, then build, then deploy, with pull requests checked and never
+# published.
+#
+# This is the organisation site. GitHub serves a repository named
+# <org>.github.io from the root rather than from /<repo>/, so there is no base
+# path here to get right - and every path in these pages is relative anyway,
+# which is what makes the same output correct at the root, under a project
+# path, and from a file:// path on disk.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish; queue at most one more. Cancelling a deploy half
+# way leaves Pages serving whatever it had got to.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Every outbound address comes out of links.mjs
+        # The one rule this site has. It fails rather than warns: an address
+        # written into a page reads correctly until the product it points at
+        # moves, and then it is the line nobody edits.
+        run: npm run check
+
+      - name: The design package, and whether anything newer has shipped
+        # Warns, never fails. The pin in package.json is what stops an install
+        # moving the look of the site; this is what stops the pin going quietly
+        # stale.
+        run: node node_modules/@lautstark/design/pins.js
+
+  build:
+    needs: check
+    # Pull requests are checked but never published.
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

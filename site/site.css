@@ -1,0 +1,238 @@
+/*
+ * The layout, and only that. Colour, radius, type family and shadow come from
+ * @lautstark/design; nothing here restates a value that file already holds.
+ *
+ * This is written as a Handreichung rather than as a product page: one column,
+ * a measure that stays readable, hairlines instead of coloured bands, and the
+ * accent kept for the things you can actually press. The reader is deciding
+ * something, often on a phone between appointments, and a page that shouts is
+ * a page they have to work through twice.
+ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 19px;
+  line-height: var(--leading);
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (max-width: 34rem) {
+  body { font-size: 17.5px; }
+}
+
+/* ------------------------------------------------------------------ measure */
+
+/* The page runs to 62rem; the running text inside it stops at 44rem.
+   Constraining the whole page to the text measure was the mistake in the first
+   cut: it left a thin ribbon down the middle of a laptop screen and wasted the
+   width the facts list and the screenshots actually want. So the container is
+   wide, prose is narrow inside it, and the two-column rows and the pictures use
+   what is left. */
+.col { max-width: 62rem; margin-inline: auto; padding-inline: 2rem; }
+.wide { max-width: 62rem; margin-inline: auto; padding-inline: 2rem; }
+
+.col > p, .col > .lead, .col > h1, .col > h2 { max-width: 44rem; }
+
+/* --------------------------------------------------------------- structure */
+
+.band { padding-block: 3.5rem; border-top: 1px solid var(--surface-3); }
+.band:first-of-type { border-top: 0; }
+
+@media (max-width: 34rem) {
+  .band { padding-block: 2.5rem; }
+  .col, .wide { padding-inline: 1.25rem; }
+}
+
+/* The small label above a heading. It names the part of the story, so a reader
+   who is skimming can find the one section they came for. */
+.label {
+  margin: 0 0 .6rem;
+  font-size: .78rem; font-weight: 700; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--text-faint);
+}
+
+/* --------------------------------------------------------------------- top */
+
+.top {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+  padding-block: 1.1rem;
+}
+.wordmark {
+  display: inline-flex; align-items: center; gap: .55rem;
+  font-size: 1.1rem; font-weight: 700; letter-spacing: -.01em;
+  color: var(--text); text-decoration: none;
+}
+.wordmark img { display: block; }
+.top nav { display: flex; gap: 1.1rem; font-size: .9rem; }
+.top nav a { color: var(--text-dim); text-decoration: none; }
+.top nav a:hover { color: var(--text); text-decoration: underline; }
+.top nav a[aria-current="page"] { color: var(--text); font-weight: 600; }
+
+/* -------------------------------------------------------------------- type */
+
+h1, h2, h3 { margin: 0 0 .7rem; line-height: 1.18; letter-spacing: -.018em; }
+h1 { font-size: clamp(1.9rem, 5.2vw, 2.5rem); font-weight: 700; }
+h2 { font-size: clamp(1.35rem, 3.4vw, 1.65rem); font-weight: 650; }
+h3 { font-size: 1.05rem; font-weight: 650; }
+
+p { margin: 0 0 1.05rem; }
+p:last-child { margin-bottom: 0; }
+.lead { font-size: 1.15rem; color: var(--text-dim); }
+.note { font-size: .92rem; color: var(--text-dim); }
+.note.spaced { margin-top: 1rem; }
+
+a { color: var(--accent-strong); text-underline-offset: 2px; }
+
+/* File and tool names on the talker page. Same size as the text around
+   it, because a monospace face at its natural size reads smaller. */
+code { font-family: var(--mono); font-size: .92em; }
+.accent { color: var(--accent-strong); }
+
+/* ----------------------------------------------------------------- actions */
+
+.actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.5rem; }
+a.btn { text-decoration: none; }
+.btn.cta { font-size: .95rem; padding: 12px 20px; }
+
+/* ------------------------------------------------------------------- facts */
+
+/* The dense part of each page: a word on the left, the fact on the right, one
+   hairline between rows. It reads as a table without being one, and somebody
+   comparing two tools can run down the left column alone. */
+.facts { margin: 1.75rem 0 0; }
+.facts > div {
+  display: grid; grid-template-columns: 11rem minmax(0, 44rem); gap: 2rem;
+  padding-block: .9rem;
+  border-top: 1px solid var(--surface-3);
+}
+.facts > div:last-child { border-bottom: 1px solid var(--surface-3); }
+.facts dt { font-weight: 650; }
+.facts dd { margin: 0; color: var(--text-dim); }
+
+@media (max-width: 40rem) {
+  .facts > div { grid-template-columns: 1fr; gap: .25rem; }
+}
+
+/* ------------------------------------------------------------------ figures */
+
+figure { margin: 2rem 0 0; }
+figure img {
+  display: block; width: 100%; height: auto;
+  border: 1px solid var(--surface-3);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+figcaption { margin-top: .6rem; font-size: .88rem; color: var(--text-dim); }
+
+/* ------------------------------------------------------------------ pointer */
+
+/* One row that is entirely a link: the talker on the front page, and the way
+   back on the talker page. Bigger than a word in a sentence, quieter than a
+   section of its own. */
+.pointer {
+  max-width: 44rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+  margin-top: 1.5rem; padding: 1.2rem 1.3rem;
+  border: 1px solid var(--surface-3); border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  text-decoration: none; color: inherit;
+}
+.pointer:hover { border-color: var(--accent); }
+
+/* A thumbnail in a pointer row. Wide crop, fixed height, so two rows beside
+   each other line up whatever the screenshot's own proportions are. */
+.thumb {
+  flex: 0 0 auto;
+  width: 9rem; height: 5.4rem;
+  object-fit: cover; object-position: left top;
+  border: 1px solid var(--surface-3);
+  border-radius: var(--radius-item);
+  background: var(--surface-3);
+  align-self: center;
+}
+.pointer > div { flex: 1 1 16rem; }
+
+@media (max-width: 34rem) {
+  .thumb { width: 100%; height: 8rem; }
+}
+.pointer strong { font-weight: 650; }
+.pointer .go { color: var(--accent-strong); font-weight: 600; white-space: nowrap; }
+.pointer p { margin: .3rem 0 0; }
+
+/* ------------------------------------------------------------------ footer */
+
+/* The row of small links every page ends with. Impressum and Datenschutz have
+   to be reachable from anywhere on the site, which is why they live in the
+   footer rather than in the navigation. */
+.footlinks { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 1rem; }
+
+/* A postal address is four lines, and they are lines rather than a paragraph
+   that happens to wrap. */
+.address { line-height: 1.5; }
+
+footer {
+  border-top: 1px solid var(--surface-3);
+  padding-block: 2.25rem 3rem;
+  font-size: .92rem; color: var(--text-dim);
+}
+
+/* ------------------------------------------------------- the three products */
+
+/* This page carries three accents at once, which no token file does: each
+   product's file derives every grey from its own hue, so they cannot be loaded
+   together. vorlaut's tokens are the ground -- it is the largest of the three
+   -- and each product section overrides only the accent pair with the values
+   out of that product's own token file, copied rather than approximated. If
+   this page ships, the honest home for those six lines is a neutral
+   lautstark.css generated in Lautstark/design the way the others are. */
+
+.produkt.vorlaut  { --accent: #9B7BFF; --accent-strong: #7652d3; }
+.produkt.mitreden { --accent: #ff8bc7; --accent-strong: #ac407c; }
+.produkt.bildhaft { --accent: #ff6b35; --accent-strong: #be3e00; }
+
+/* The product's own name over its section, with its mark beside it. This is
+   the only place the accent is loud; everything below it is ordinary text. */
+.produkt .label {
+  display: flex; align-items: center; gap: .45rem;
+  color: var(--accent-strong);
+}
+.produkt .label img { display: block; }
+.produkt .go { margin-top: 1.5rem; font-weight: 650; }
+.produkt .go a { color: var(--accent-strong); text-decoration: none; }
+.produkt .go a:hover { text-decoration: underline; }
+
+/* The three tiles under the opening paragraph: the whole family in one glance,
+   each one a jump to its own section further down. */
+.kacheln {
+  display: grid; gap: .9rem; margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  max-width: 44rem;
+}
+.kachel {
+  display: flex; flex-direction: column; gap: .15rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid var(--surface-3);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  text-decoration: none; color: inherit;
+}
+.kachel:hover { border-color: var(--accent); }
+.kachel img { display: block; margin-bottom: .5rem; }
+.kachel strong { font-size: 1.05rem; color: var(--accent-strong); }
+.kachel span { font-size: .9rem; color: var(--text-dim); }
+.kachel.vorlaut  { --accent: #9B7BFF; --accent-strong: #7652d3; }
+.kachel.mitreden { --accent: #ff8bc7; --accent-strong: #ac407c; }
+.kachel.bildhaft { --accent: #ff6b35; --accent-strong: #be3e00; }
+
+/* The three marks side by side are the organisation's mark: there is no fourth
+   drawing, and inventing one would be a logo for a thing nobody uses. */
+.trio { display: inline-flex; gap: .3rem; }
+.trio img { display: block; }

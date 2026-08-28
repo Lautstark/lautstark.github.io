@@ -1,0 +1,15 @@
+{
+  "name": "lautstark.github.io",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "The organisation site: what Lautstark offers - vorlaut, mitreden and bildhaft - for somebody meeting any of them for the first time.",
+  "license": "MIT",
+  "scripts": {
+    "check": "node tools/check.mjs",
+    "build": "node tools/check.mjs && node tools/build.mjs"
+  },
+  "dependencies": {
+    "@lautstark/design": "github:Lautstark/design#v1.17.0"
+  }
+}

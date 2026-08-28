@@ -1,0 +1,6 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="vorlaut">
+  <path d="M 128 76 H 384 Q 436 76 436 128 V 272 Q 436 324 384 324 H 314 L 256 408 L 198 324 H 128 Q 76 324 76 272 V 128 Q 76 76 128 76 Z" fill="#9B7BFF"/>
+  <circle cx="200" cy="174" r="22" fill="white"/>
+  <path d="M 290 174 A 22 22 0 0 1 334 174" fill="none" stroke="white" stroke-width="26" stroke-linecap="round"/>
+  <ellipse cx="256" cy="256" rx="46" ry="38" fill="white"/>
+</svg>
