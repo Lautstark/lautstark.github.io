@@ -1,0 +1,39 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lautstark">
+  <!-- The organisation's mark, path for path out of Lautstark/design, on a
+       white plate.
+
+       The plate is the difference between the explainer pages and the products
+       themselves. A product's tab icon is the bare bubble, because the product
+       is the thing and its accent is what names it. These pages are about the
+       products rather than being one, and a bare mark in a browser's dark tab
+       strip loses its white eyes and mouth against the dark ground. The plate
+       gives it a surface of its own wherever it is shown. -->
+  <rect width="512" height="512" rx="112" fill="#ffffff"/>
+
+  <defs>
+    <linearGradient id="hues" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#ff6b35"/>
+      <stop offset=".333" stop-color="#ff6b35"/>
+      <stop offset=".333" stop-color="#ff8bc7"/>
+      <stop offset=".667" stop-color="#ff8bc7"/>
+      <stop offset=".667" stop-color="#9B7BFF"/>
+      <stop offset="1"    stop-color="#9B7BFF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Scaled to 0.78 and centred on the mark's own middle rather than the
+       box's: the bubble's tail hangs below centre, so centring the box would
+       sit the whole thing high on the plate. -->
+  <g transform="translate(256,256) scale(0.78) translate(-256,-242)">
+    <path
+      d="M 128 76 H 384 Q 436 76 436 128 V 272 Q 436 324 384 324 H 314 L 256 408 L 198 324 H 128 Q 76 324 76 272 V 128 Q 76 76 128 76 Z"
+      fill="url(#hues)"
+    />
+    <circle cx="200" cy="178" r="22" fill="white" />
+    <circle cx="312" cy="178" r="22" fill="white" />
+    <path
+      d="M 190 226 C 190 288 322 288 322 226"
+      fill="none" stroke="white" stroke-width="26" stroke-linecap="round"
+    />
+  </g>
+</svg>
