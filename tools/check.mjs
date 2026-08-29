@@ -82,6 +82,9 @@ for (const key of Object.keys(links)) {
 const ENTRIES = new URL("../sammlungen/entries/", import.meta.url).pathname;
 const SCHEMA = 1;
 const PRODUCTS = ["vorlaut-app", "vorlaut-talker", "bildhaft", "mitreden"];
+/* "none" is the format's own third value (exchange/SPEC.md §5.1), and a
+ * mitreden Sammlung is what it is for: sentences carry no pictures at all. */
+const SOURCES = ["arasaac", "none"];
 const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const PICTURE = /\.(png|jpe?g|gif|webp|avif|svg|bmp)$/i;
 /* Not word-bounded: `metacom:haus` and `METACOM_wasser_01` both have to be
@@ -121,8 +124,20 @@ if (existsSync(ENTRIES)) {
         + "lower-case words joined by hyphens — a URL is built from it.");
     }
     if (entries.has(entry.id)) problems.push(`${here}/entry.json: repeats the id "${entry.id}".`);
-    for (const field of ["name", "description", "attribution", "payload"]) {
+    for (const field of ["name", "description", "payload"]) {
       if (!String(entry[field] ?? "").trim()) problems.push(`${here}/entry.json: has no ${field}.`);
+    }
+    /* Attribution is owed where there are pictures and is meaningless where
+       there are none — an entry drawn in nothing has nobody to credit. */
+    if (entry.symbols !== "none" && !String(entry.attribution ?? "").trim()) {
+      problems.push(`${here}/entry.json: has no attribution, and its symbols are ${entry.symbols}.`);
+    }
+    if (entry.symbols === "none" && String(entry.attribution ?? "").trim()) {
+      problems.push(`${here}/entry.json: credits somebody for symbols it does not have.`);
+    }
+    if (!SOURCES.includes(entry.symbols)) {
+      problems.push(`${here}/entry.json: names the symbol source "${entry.symbols}". `
+        + `Known: ${SOURCES.join(", ")}.`);
     }
     if (!PRODUCTS.includes(entry.product)) {
       problems.push(`${here}/entry.json: names the product "${entry.product}". `

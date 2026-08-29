@@ -1,0 +1,292 @@
+{
+  "sentences": [
+    {
+      "text": "Bär"
+    },
+    {
+      "text": "Ball"
+    },
+    {
+      "text": "Blume"
+    },
+    {
+      "text": "Blumenstrauß"
+    },
+    {
+      "text": "Brille"
+    },
+    {
+      "text": "Brot"
+    },
+    {
+      "text": "Brotdose"
+    },
+    {
+      "text": "Creme"
+    },
+    {
+      "text": "Dose"
+    },
+    {
+      "text": "Ei"
+    },
+    {
+      "text": "Eis"
+    },
+    {
+      "text": "Eisbär"
+    },
+    {
+      "text": "Finger"
+    },
+    {
+      "text": "Fingernagel"
+    },
+    {
+      "text": "Fisch"
+    },
+    {
+      "text": "Flasche"
+    },
+    {
+      "text": "Flaschenpost"
+    },
+    {
+      "text": "Fliege"
+    },
+    {
+      "text": "Fliegenpilz"
+    },
+    {
+      "text": "Fuß"
+    },
+    {
+      "text": "Fußball"
+    },
+    {
+      "text": "Gold"
+    },
+    {
+      "text": "Goldfisch"
+    },
+    {
+      "text": "Hahn"
+    },
+    {
+      "text": "Hand"
+    },
+    {
+      "text": "Handpuppe"
+    },
+    {
+      "text": "Handschuh"
+    },
+    {
+      "text": "Handtuch"
+    },
+    {
+      "text": "Haus"
+    },
+    {
+      "text": "Hemd"
+    },
+    {
+      "text": "Korb"
+    },
+    {
+      "text": "Kröte"
+    },
+    {
+      "text": "Lebkuchen"
+    },
+    {
+      "text": "Lebkuchenmann"
+    },
+    {
+      "text": "Lippe"
+    },
+    {
+      "text": "Lippenstift"
+    },
+    {
+      "text": "Löwe"
+    },
+    {
+      "text": "Löwenzahn"
+    },
+    {
+      "text": "Mann"
+    },
+    {
+      "text": "Messer"
+    },
+    {
+      "text": "Milch"
+    },
+    {
+      "text": "Milchreis"
+    },
+    {
+      "text": "Motor"
+    },
+    {
+      "text": "Motorrad"
+    },
+    {
+      "text": "Nacht"
+    },
+    {
+      "text": "Nachthemd"
+    },
+    {
+      "text": "Nagel"
+    },
+    {
+      "text": "Ohr"
+    },
+    {
+      "text": "Ohrring"
+    },
+    {
+      "text": "Ohrwurm"
+    },
+    {
+      "text": "Pilz"
+    },
+    {
+      "text": "Post"
+    },
+    {
+      "text": "Puppe"
+    },
+    {
+      "text": "Puppenhaus"
+    },
+    {
+      "text": "Rad"
+    },
+    {
+      "text": "Ratte"
+    },
+    {
+      "text": "Reis"
+    },
+    {
+      "text": "Riese"
+    },
+    {
+      "text": "Riesenrad"
+    },
+    {
+      "text": "Ring"
+    },
+    {
+      "text": "Schild"
+    },
+    {
+      "text": "Schildkröte"
+    },
+    {
+      "text": "Schlüssel"
+    },
+    {
+      "text": "Schnecke"
+    },
+    {
+      "text": "Schnee"
+    },
+    {
+      "text": "Schneemann"
+    },
+    {
+      "text": "Schraube"
+    },
+    {
+      "text": "Schraubenschlüssel"
+    },
+    {
+      "text": "Schuh"
+    },
+    {
+      "text": "Schuhcreme"
+    },
+    {
+      "text": "See"
+    },
+    {
+      "text": "Seestern"
+    },
+    {
+      "text": "Sonne"
+    },
+    {
+      "text": "Sonnenblume"
+    },
+    {
+      "text": "Sonnenbrille"
+    },
+    {
+      "text": "Sonnencreme"
+    },
+    {
+      "text": "Spiegel"
+    },
+    {
+      "text": "Spiegelei"
+    },
+    {
+      "text": "Stern"
+    },
+    {
+      "text": "Stift"
+    },
+    {
+      "text": "Strand"
+    },
+    {
+      "text": "Strandkorb"
+    },
+    {
+      "text": "Strauß"
+    },
+    {
+      "text": "Tasche"
+    },
+    {
+      "text": "Taschenmesser"
+    },
+    {
+      "text": "Tuch"
+    },
+    {
+      "text": "Wasser"
+    },
+    {
+      "text": "Wasserhahn"
+    },
+    {
+      "text": "Wasserratte"
+    },
+    {
+      "text": "Watte"
+    },
+    {
+      "text": "Wurm"
+    },
+    {
+      "text": "Zahn"
+    },
+    {
+      "text": "Zimt"
+    },
+    {
+      "text": "Zimtschnecke"
+    },
+    {
+      "text": "Zucker"
+    },
+    {
+      "text": "Zuckerwatte"
+    }
+  ]
+}
