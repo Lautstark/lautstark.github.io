@@ -11,6 +11,6 @@
     "downloads": "node tools/downloads.mjs"
   },
   "dependencies": {
-    "@lautstark/design": "github:Lautstark/design#v1.17.0"
+    "@lautstark/design": "github:Lautstark/design#v1.21.0"
   }
 }
