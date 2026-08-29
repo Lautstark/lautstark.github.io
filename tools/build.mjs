@@ -13,9 +13,10 @@
  * path on disk. There is no base to configure and so no base to get wrong.
  */
 
-import { cpSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { cpSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import { links } from "../links.mjs";
+import { sammlungen } from "./sammlungen.mjs";
 
 /* A PNG's own width and height, out of its IHDR: eight bytes of signature, a
  * four-byte length, the four letters, then the two numbers.
@@ -44,21 +45,42 @@ rmSync(dist, { recursive: true, force: true });
 // bildhaft, bildquelle, sicherung, stimmquelle.
 mkdirSync(join(dist, "styles"), { recursive: true });
 
-for (const file of readdirSync(site)) {
-  // The source pages may be opened directly during writing, so site/design
-  // holds local copies of the shared styles. The build writes its pinned copy
-  // below, and must not try to copy this directory as if it were a file.
-  if (file === "design") continue;
-  if (file.endsWith(".html")) {
-    const html = readFileSync(join(site, file), "utf8")
-      .replace(/\{\{\s*([A-Za-z]+)\s*\}\}/g, (_, key) => links[key])
+/* The shelf, before the pages: it writes its own index and payloads into dist/
+ * and hands back the holes its page carries. Those holes are generated content
+ * rather than addresses, which is why they are substituted from here and not
+ * from links.mjs — and why tools/check.mjs knows their names. */
+const shelf = sammlungen(root, dist) ?? {};
+
+/* site/ has a folder in it now, so the walk recurses. It used to be one level
+ * and a `continue` past site/design; both facts moved into here. */
+function* under(dir, prefix = "") {
+  for (const name of readdirSync(dir)) {
+    // Local copies of the shared styles, for opening a page straight off disk.
+    // The build writes its pinned copy below and must not treat this as a page.
+    if (prefix === "" && name === "design") continue;
+    const path = join(dir, name);
+    if (statSync(path).isDirectory()) yield* under(path, `${prefix}${name}/`);
+    else yield { path, out: `${prefix}${name}`, dir };
+  }
+}
+
+for (const file of under(site)) {
+  const to = join(dist, file.out);
+  mkdirSync(dirname(to), { recursive: true });
+
+  if (file.out.endsWith(".html")) {
+    const html = readFileSync(file.path, "utf8")
+      .replace(/\{\{\s*([A-Za-z]+)\s*\}\}/g, (_, key) =>
+        key in shelf ? shelf[key] : links[key])
+      // Resolved against the page's own folder, not against site/: a page in a
+      // subdirectory names its pictures relative to itself.
       .replace(/<img[^>]*?src="([^"]+\.png)"/g, (whole, src) => {
-        const { width, height } = pngSize(join(site, src));
+        const { width, height } = pngSize(join(file.dir, src));
         return `${whole} width="${width}" height="${height}"`;
       });
-    writeFileSync(join(dist, file), html);
+    writeFileSync(to, html);
   } else {
-    cpSync(join(site, file), join(dist, file));
+    cpSync(file.path, to);
   }
 }
 

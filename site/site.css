@@ -272,3 +272,90 @@ footer {
   display: flex; flex-wrap: wrap; align-items: baseline; gap: 1.25rem;
   margin: 0;
 }
+
+/* ------------------------------------------------------------- Sammlungen */
+
+/* The shelf page. Its filter is radio inputs and a sibling selector — there is
+   no JavaScript on this site and this page did not get an exception. The rules
+   that hide what a chosen radio excludes are generated per page, because they
+   name the products that are actually there; see tools/sammlungen.mjs. */
+
+.wahl { position: absolute; opacity: 0; pointer-events: none; }
+
+.band--regal { border-top: 0; padding-top: 1.5rem; }
+
+.filter {
+  border: 0; margin: 0; padding: 0;
+  border-top: 1px solid var(--surface-3);
+  padding-block: 1.25rem 0;
+  max-width: 62rem; margin-inline: auto; padding-inline: 2rem;
+  display: flex; align-items: center; flex-wrap: wrap; gap: .3rem;
+}
+.filter legend {
+  float: left; padding: 0; margin-right: .6rem;
+  font-size: .7rem; font-weight: 700; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--text-faint);
+}
+.filter .chip { cursor: pointer; }
+/* Which chip reads as chosen is generated beside the hiding rules — there is no
+   class to keep in step with the checked input, which is the point. */
+
+@media (max-width: 34rem) { .filter { padding-inline: 1.25rem; } }
+
+.regalkopf {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1rem; margin: 0 0 1.2rem;
+}
+.regalkopf .label { margin: 0; }
+.stand { font-size: .82rem; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+
+.regal {
+  display: grid; gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr));
+}
+
+.karte {
+  border: 1px solid var(--surface-3); border-radius: var(--radius);
+  background: var(--surface); padding: 1.2rem 1.3rem 1.3rem;
+  display: flex; flex-direction: column; gap: .7rem;
+}
+.karte h3 { margin: 0; font-size: 1.05rem; font-weight: 650; letter-spacing: -.012em; }
+.karte p { margin: 0; }
+.karte__wer {
+  display: inline-flex; align-items: center; gap: .4rem; align-self: flex-start;
+  font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  border-radius: var(--radius-pill); padding: .15rem .6rem .15rem .45rem;
+  background: var(--accent-soft); color: var(--accent-strong);
+}
+.punkt { width: 7px; height: 7px; border-radius: 999px; background: var(--accent); }
+.karte__was { font-size: .87rem; line-height: 1.5; color: var(--text-dim); }
+.karte__zahlen { font-size: .76rem; color: var(--text-faint); font-variant-numeric: tabular-nums; }
+.karte__tun { font-size: .82rem; margin-top: auto; padding-top: .2rem; }
+.dazu { color: var(--text-faint); }
+
+.marken { display: flex; flex-wrap: wrap; gap: .3rem; }
+.marke {
+  font-size: .74rem; color: var(--text-faint);
+  border: 1px solid var(--surface-3); border-radius: var(--radius-pill);
+  padding: .1rem .55rem;
+}
+
+/* The preview is the layout, not the artwork: this site ships no pictograms.
+   The free cells are what the entry is actually claiming, so they are drawn
+   rather than left blank. */
+.brett { display: grid; grid-template-columns: repeat(var(--spalten), minmax(0, 1fr)); gap: 3px; }
+.zelle {
+  border-radius: 4px; background: var(--surface-2);
+  font-size: .58rem; line-height: 1.1; color: var(--text-dim);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 2px; min-height: 26px; overflow: hidden;
+}
+.zelle--frei { background: transparent; border: 1px dashed var(--surface-3); }
+.zelle--spalte { background: var(--surface-3); color: var(--text); font-weight: 600; }
+
+.hinweis {
+  margin-top: 1.5rem; max-width: 44rem;
+  border: 1px solid var(--surface-3); border-radius: var(--radius);
+  padding: 1rem 1.2rem; font-size: .88rem; color: var(--text-dim); line-height: 1.55;
+}
+.hinweis strong { color: var(--text); }

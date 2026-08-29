@@ -1,0 +1,339 @@
+/*
+ * The Sammlungen section: reading the entries, drawing the page, and building
+ * the file somebody downloads.
+ *
+ * Lives beside build.mjs rather than in its own repository because it needs
+ * three things this one already has and none of them is worth having twice: an
+ * Impressum reachable from every page, the footer that carries it, and the rule
+ * that every outbound address comes out of links.mjs.
+ *
+ * ## No JavaScript, on purpose
+ *
+ * The filter is radio inputs and a sibling selector. It was a script once, and
+ * a script bought two things: typing to search, and filtering without a
+ * repaint. At this size the first is what the browser's own find already does
+ * and the second is not a wait anybody notices — and the cost was that this
+ * page could not live here, on a site whose pages carry no JavaScript at all.
+ * The trade only looks close until you notice the filter still works with the
+ * script that is not there.
+ *
+ * Radios rather than buttons is also the better answer for a single-select
+ * filter: a screen reader announces a group with one chosen, which is what this
+ * is, instead of eight independent things that happen to be pressed.
+ *
+ * ## No picture is committed
+ *
+ * The entries hold ARASAAC numbers. `downloads()` fetches the pixels at build
+ * time, straight into dist/, and the cache under .cache/ is not committed
+ * either. The board previews on the page carry Aufschriften rather than
+ * pictograms — which is the more useful preview anyway, and means this page
+ * owes no attribution: that is a licence obligation wherever the pictograms
+ * appear, and here none does.
+ */
+
+import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync }
+  from "node:fs";
+import { dirname, join } from "node:path";
+
+const SCHEMA = 1;
+
+export const PRODUCTS = {
+  "vorlaut-app": { label: "vorlaut", hue: "vorlaut" },
+  "vorlaut-talker": { label: "Talker", hue: "vorlaut" },
+  bildhaft: { label: "bildhaft", hue: "bildhaft" },
+  mitreden: { label: "mitreden", hue: "mitreden" },
+};
+
+const esc = (value) => String(value)
+  .replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")
+  .replaceAll('"', "&quot;");
+
+/* ---------------------------------------------------------------- reading --- */
+
+const boardFacts = (payload) => {
+  const { rows, columns } = payload.grid ?? {};
+  return {
+    grid: `${rows}×${columns}`,
+    cells: rows * columns,
+    filled: (payload.pages ?? []).reduce((n, page) => n + (page.buttons?.length ?? 0), 0),
+    pages: (payload.pages ?? []).length,
+  };
+};
+const sentenceFacts = (payload) => ({ sentences: (payload.sentences ?? []).length });
+
+const factsFor = {
+  "vorlaut-app": boardFacts,
+  "vorlaut-talker": (payload) => ({
+    sets: (payload.sets ?? []).length,
+    filled: (payload.sets ?? []).reduce((n, s) => n + (s.keys?.filter(Boolean).length ?? 0), 0),
+  }),
+  bildhaft: sentenceFacts,
+  mitreden: sentenceFacts,
+};
+
+/** Every entry, sorted by id so a rebuild with nothing changed is the same bytes. */
+export function readEntries(root) {
+  const dir = join(root, "sammlungen", "entries");
+  if (!existsSync(dir)) return [];
+  const found = [];
+
+  for (const name of readdirSync(dir)) {
+    if (!statSync(join(dir, name)).isDirectory()) continue;
+    const entry = JSON.parse(readFileSync(join(dir, name, "entry.json"), "utf8"));
+    const payload = JSON.parse(readFileSync(join(dir, name, entry.payload), "utf8"));
+    found.push({
+      meta: {
+        ...entry,
+        facts: (factsFor[entry.product] ?? (() => ({})))(payload),
+        payload: `entries/${entry.id}/${entry.payload}`,
+      },
+      payload,
+      from: join(dir, name, entry.payload),
+    });
+  }
+
+  found.sort((a, b) => a.meta.id.localeCompare(b.meta.id));
+  return found;
+}
+
+/* ---------------------------------------------------------------- drawing --- */
+
+/** A board as its Aufschriften and its empty cells. Not the artwork: see the
+ *  head of this file for why that is the better picture and not only the
+ *  cheaper one. */
+function boardPreview(payload) {
+  const { rows, columns } = payload.grid;
+  const home = payload.pages.find((p) => p.id === payload.home) ?? payload.pages[0];
+  const at = new Map(home.buttons.map((b) => [`${b.row},${b.col}`, b]));
+  const cells = [];
+
+  for (let row = 0; row < rows; row += 1) {
+    for (let col = 0; col < columns; col += 1) {
+      const button = at.get(`${row},${col}`);
+      if (!button) { cells.push('<span class="zelle zelle--frei"></span>'); continue; }
+      const shared = payload.firstColumnShared && col === 0;
+      cells.push(`<span class="zelle${shared ? " zelle--spalte" : ""}">${esc(button.text)}</span>`);
+    }
+  }
+  return `<div class="brett" style="--spalten: ${columns}">${cells.join("")}</div>`;
+}
+
+function factLine(meta) {
+  const f = meta.facts;
+  if (meta.product === "vorlaut-app") {
+    return `${f.grid} · ${f.filled} von ${f.cells} Tasten belegt · `
+      + (f.pages === 1 ? "eine Seite" : `${f.pages} Seiten`);
+  }
+  if (meta.product === "vorlaut-talker") return `${f.sets} Sets · ${f.filled} Tasten belegt`;
+  return `${f.sentences} Sätze`;
+}
+
+/** Only the tablet Sammlungen have a file yet. The others say so rather than
+ *  offering a link that would answer 404. */
+const download = (meta) => meta.product === "vorlaut-app"
+  ? `<a href="download/${esc(meta.id)}.json" download>Herunterladen</a>`
+    + '<span class="dazu"> — im Editor unter „Sammlung einlesen“ öffnen</span>'
+  : '<span class="dazu">Datei folgt</span>';
+
+function card({ meta, payload }) {
+  const product = PRODUCTS[meta.product];
+  const tags = (meta.tags ?? []).map((t) => `<span class="marke">${esc(t)}</span>`).join("");
+  const seeAlso = (meta.seeAlso ?? []).length
+    ? `<span class="marke">siehe auch: ${meta.seeAlso.length}</span>` : "";
+
+  return `      <article class="karte produkt ${esc(product.hue)}" data-produkt="${esc(meta.product)}">
+        <p class="karte__wer"><span class="punkt"></span>${esc(product.label)}</p>
+        <h3>${esc(meta.name)}</h3>
+        ${meta.product === "vorlaut-app" ? boardPreview(payload) : ""}
+        <p class="karte__was">${esc(meta.description)}</p>
+        <p class="karte__zahlen">${esc(factLine(meta))}</p>
+        <p class="marken">${tags}${seeAlso}</p>
+        <p class="karte__tun">${download(meta)}</p>
+      </article>`;
+}
+
+/**
+ * The filter, as radio inputs that precede everything they act on.
+ *
+ * Produkt is always drawn, even holding one value: it is what this page is
+ * organised by, and a row that appears the day a second product lands leaves
+ * somebody hunting for a control that was never there.
+ */
+function filter(entries) {
+  const counts = new Map();
+  for (const { meta } of entries) counts.set(meta.product, (counts.get(meta.product) ?? 0) + 1);
+
+  const inputs = ['<input type="radio" name="produkt" id="p-alle" class="wahl" checked>'];
+  const chips = ['<label class="chip" for="p-alle">Alle</label>'];
+  for (const [product, n] of counts) {
+    inputs.push(`<input type="radio" name="produkt" id="p-${esc(product)}" class="wahl">`);
+    chips.push(`<label class="chip" for="p-${esc(product)}">${esc(PRODUCTS[product].label)}`
+      + `<span class="n">${n}</span></label>`);
+  }
+
+  return `${inputs.join("\n    ")}
+    <fieldset class="filter">
+      <legend>Produkt</legend>
+      ${chips.join("\n      ")}
+    </fieldset>`;
+}
+
+/** The rules that hide what a chosen radio excludes, written for the products
+ *  actually present so the stylesheet never names one that is not here. */
+function filterRules(entries) {
+  const chosen = (id) => `#${id}:checked ~ .filter .chip[for="${id}"] `
+    + "{ background: var(--accent-soft); color: var(--accent-strong); font-weight: 600; }";
+
+  const rules = [chosen("p-alle")];
+  for (const product of new Set(entries.map((e) => e.meta.product))) {
+    rules.push(chosen(`p-${product}`));
+    rules.push(`#p-${product}:checked ~ section .karte:not([data-produkt="${product}"]) `
+      + "{ display: none; }");
+  }
+  return rules.join("\n");
+}
+
+/* -------------------------------------------------------------- assembly --- */
+
+/** The page's three holes, and the index the programs will fetch. */
+export function sammlungen(root, dist) {
+  const entries = readEntries(root);
+  if (!entries.length) return null;
+
+  mkdirSync(join(dist, "sammlungen"), { recursive: true });
+  writeFileSync(
+    join(dist, "sammlungen", "index.json"),
+    `${JSON.stringify({
+      schema: SCHEMA,
+      generatedAt: new Date().toISOString(),
+      entries: entries.map((one) => one.meta),
+    }, null, 2)}\n`,
+  );
+  for (const one of entries) {
+    const at = join(dist, "sammlungen", one.meta.payload);
+    mkdirSync(dirname(at), { recursive: true });
+    cpSync(one.from, at);
+  }
+
+  const count = `${entries.length} ${entries.length === 1 ? "Sammlung" : "Sammlungen"}`;
+  return {
+    filter: filter(entries),
+    filterRules: filterRules(entries),
+    karten: entries.map(card).join("\n"),
+    anzahl: count,
+    stand: new Date().toISOString().slice(0, 10).split("-").reverse().join("."),
+  };
+}
+
+/* ------------------------------------------------------------- downloads --- */
+
+const symbolName = (id) => `arasaac-${id}.png`;
+
+async function pictogram(cache, id) {
+  const at = join(cache, `${id}.png`);
+  if (existsSync(at)) return readFileSync(at);
+  const answer = await fetch(`https://static.arasaac.org/pictograms/${id}/${id}_500.png`);
+  if (!answer.ok) throw new Error(`ARASAAC ${id}: HTTP ${answer.status}`);
+  const bytes = Buffer.from(await answer.arrayBuffer());
+  mkdirSync(cache, { recursive: true });
+  writeFileSync(at, bytes);
+  return bytes;
+}
+
+/**
+ * One of this repository's boards as the editor's own AppLayout.
+ *
+ * The shapes differ on purpose. An entry holds a concept and the words to find
+ * it by, which is what makes it resolvable in whatever symbol source the reader
+ * has; an AppLayout holds a file name, because by then the question is
+ * answered. This is where the answering happens.
+ */
+function toLayout(payload) {
+  const button = (b, index) => ({
+    id: `b${index}`,
+    row: b.row,
+    col: b.col,
+    label: b.text,
+    vocalization: "",
+    symbol: b.arasaac ? symbolName(b.arasaac) : "",
+    wordClass: b.wordclass ?? "",
+    act: b.act === "home" ? { kind: "home" } : { kind: "append" },
+  });
+
+  let index = 0;
+  const firstColumn = [];
+  const pages = payload.pages.map((page) => ({
+    id: page.id,
+    name: page.name ?? "",
+    buttons: page.buttons.filter((b) => {
+      if (payload.firstColumnShared && b.col === 0) { firstColumn.push(button(b, index++)); return false; }
+      return true;
+    }).map((b) => button(b, index++)),
+  }));
+
+  return {
+    target: "app",
+    language: payload.language ?? "de",
+    symbolSource: "arasaac",
+    grid: payload.grid,
+    pages,
+    ...(firstColumn.length ? { firstColumn } : {}),
+    home: payload.home,
+  };
+}
+
+/**
+ * The file somebody downloads, as a Sicherung of exactly one Sammlung.
+ *
+ * Not an .obz, and that is not a preference. The editor's importBoard() sends
+ * anything zip-shaped to obf.importObz(), which builds a DiyLayout of four
+ * slots to a set — a 4×7 board throws „exactly 4 are allowed" rather than
+ * degrading. A Sicherung is the only shape that becomes a tablet Sammlung.
+ */
+export async function downloads(root, dist) {
+  const entries = readEntries(root).filter((one) => one.meta.product === "vorlaut-app");
+  if (!entries.length) return [];
+
+  const cache = join(root, ".cache", "arasaac");
+  mkdirSync(join(dist, "sammlungen", "download"), { recursive: true });
+  const written = [];
+
+  for (const { meta, payload } of entries) {
+    const numbers = [...new Set(payload.pages
+      .flatMap((page) => page.buttons.map((b) => b.arasaac).filter(Boolean)))];
+
+    const symbols = [];
+    for (const id of numbers) {
+      symbols.push({ name: symbolName(id), data: (await pictogram(cache, id)).toString("base64") });
+    }
+
+    const layout = toLayout(payload);
+    /* The invariants the editor's importer relies on, asserted here rather than
+     * discovered by somebody whose board arrived with grey crosses on it. This
+     * cannot prove the editor accepts the file — only running its code does —
+     * but it catches every way the mapping above could drift from what that
+     * code reads. */
+    const named = [...layout.pages.flatMap((p) => p.buttons), ...(layout.firstColumn ?? [])]
+      .map((b) => b.symbol).filter(Boolean);
+    const have = new Set(symbols.map((s) => s.name));
+    for (const name of named) {
+      if (!have.has(name)) throw new Error(`${meta.id}: a button names ${name}, which is not in the file.`);
+    }
+    if (!named.length) throw new Error(`${meta.id}: no button carries a symbol.`);
+
+    const at = join(dist, "sammlungen", "download", `${meta.id}.json`);
+    writeFileSync(at, `${JSON.stringify({
+      format: "vorlaut-backup",
+      version: 2,
+      exportedAt: new Date().toISOString(),
+      boards: [{ id: meta.id, name: meta.name, layout }],
+      current: null,
+      symbols,
+      settings: { activeProvider: "arasaac" },
+      notice: `${meta.name} — ${meta.attribution}`,
+    })}\n`);
+    written.push({ id: meta.id, symbols: symbols.length, bytes: readFileSync(at).length });
+  }
+
+  return written;
+}

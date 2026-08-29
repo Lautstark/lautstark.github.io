@@ -15,6 +15,10 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  schedule:
+    # Mondays, early. Nobody is deploying, and a symbol number that stopped
+    # resolving over the weekend is a mail on Monday rather than a surprise.
+    - cron: "17 5 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -46,6 +50,13 @@ jobs:
         # moves, and then it is the line nobody edits.
         run: npm run check
 
+      - name: The same rules, and whether ARASAAC still has every number
+        # Not about the commit in front of it. A pictogram can be retired
+        # upstream months after the entry naming it was merged, and this is the
+        # only thing that would ever notice — which is what the schedule below
+        # is for, so that it is noticed without waiting for the next push.
+        run: npm run check -- --online
+
       - name: The design package, and whether anything newer has shipped
         # Warns, never fails. The pin in package.json is what stops an install
         # moving the look of the site; this is what stops the pin going quietly
@@ -65,6 +76,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+
+      # Its own step, and after the build: this is the one thing here that
+      # reaches a third party. A page that fails to build is a mistake in this
+      # repository; a download step that fails is usually ARASAAC having a bad
+      # morning, and the two should not read as the same failure.
+      - run: npm run downloads
 
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5

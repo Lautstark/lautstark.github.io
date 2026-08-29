@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de" data-theme="light">
+<!-- data-theme pins the light scheme, as on the other pages. -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fertige Sammlungen · Lautstark</title>
+<meta name="description" content="Sammlungen, die schon gebaut sind — für die vorlaut-App, den Talker, bildhaft und mitreden. Zum Herunterladen und Umbauen.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/components.css">
+<link rel="stylesheet" href="../site.css">
+<style>
+/* Written by tools/sammlungen.mjs for the products actually present, so the
+   stylesheet never names one that is not here. */
+{{filterRules}}
+</style>
+</head>
+<body>
+
+<header class="top col">
+  <a class="wordmark" href="../index.html">
+    <span class="trio" aria-hidden="true">
+      <img src="../mark-vorlaut.svg" alt="" width="26" height="26">
+      <img src="../mark-mitreden.svg" alt="" width="26" height="26">
+      <img src="../mark-bildhaft.svg" alt="" width="26" height="26">
+    </span>
+    <span>Lautstark</span>
+  </a>
+  <nav>
+    <a href="../vorlaut.html">vorlaut</a>
+    <a href="../talker.html">Talker</a>
+    <a href="../index.html#mitreden">mitreden</a>
+    <a href="../index.html#bildhaft">bildhaft</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="band">
+  <div class="col">
+    <p class="label">Sammlungen</p>
+    <h1>Fertige Sammlungen</h1>
+    <p class="lead">
+      Sammlungen, die schon gebaut sind — für die vorlaut-App, den Talker,
+      bildhaft und mitreden. Nimm eine als Anfang und bau sie um, oder sieh sie
+      dir einfach an.
+    </p>
+  </div>
+</section>
+
+<!-- The radios come before every section they act on, because that is the whole
+     mechanism: a sibling selector and no script. -->
+{{filter}}
+
+<section class="band band--regal">
+  <div class="col">
+    <p class="regalkopf">
+      <span class="label">{{anzahl}}</span>
+      <span class="stand">Stand {{stand}}</span>
+    </p>
+
+    <div class="regal">
+{{karten}}
+    </div>
+
+    <p class="hinweis">
+      <strong>Noch im Bau.</strong> Herunterladen und im Editor einlesen geht
+      schon. Eine Sammlung direkt aus den Programmen heraus zu öffnen, ohne den
+      Umweg über die Datei, kommt als Nächstes.
+    </p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="col">
+    <p class="label">Die Bilder</p>
+    <h2>Was in einer Datei steht, und was nicht</h2>
+    <p>
+      In den Dateien stehen Wörter, ihre Plätze und die Wörter, unter denen sich
+      ein Symbol finden lässt — keine Bilder. Welches Bild eine Taste bekommt,
+      entscheidet sich beim Öffnen: aus ARASAAC, oder aus der eigenen
+      METACOM-Sammlung, wenn eine verknüpft ist. Findet sich keins, bleibt die
+      Taste lieber leer als falsch.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="col">
+    <p class="footzeile">
+      <span>Kostenlos, unter der MIT-Lizenz.</span>
+      <a href="../rechtliches.html#impressum">Impressum</a>
+      <a href="../rechtliches.html#datenschutz">Datenschutz</a>
+      <a href="{{quelltext}}">Quelltext</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
