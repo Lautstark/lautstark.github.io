@@ -1,0 +1,31 @@
+{
+  "grid": { "rows": 4, "columns": 7 },
+  "firstColumnShared": true,
+  "home": "start",
+  "pages": [
+    {
+      "id": "start",
+      "name": "",
+      "buttons": [
+        { "row": 0, "col": 0, "text": "ich", "wordclass": "pronoun", "concept": "ich", "terms": ["ich"], "arasaac": 6632 },
+        { "row": 1, "col": 0, "text": "will", "wordclass": "verb", "concept": "wollen", "terms": ["wollen", "möchten"], "arasaac": 5441 },
+        { "row": 2, "col": 0, "text": "nicht", "wordclass": "important", "concept": "nicht", "terms": ["nein", "verneinen"], "arasaac": 5526 },
+        { "row": 3, "col": 0, "text": "Start", "wordclass": "", "act": "home" },
+
+        { "row": 0, "col": 1, "text": "mehr", "wordclass": "descriptor", "concept": "mehr", "terms": ["hinzufügen"], "arasaac": 8026 },
+        { "row": 0, "col": 2, "text": "nochmal", "wordclass": "descriptor", "concept": "nochmal", "terms": ["noch einmal", "wieder"], "arasaac": 37162 },
+        { "row": 0, "col": 3, "text": "weg", "wordclass": "descriptor", "concept": "weg", "terms": ["sich entfernen", "weggehen"], "arasaac": 36107 },
+
+        { "row": 1, "col": 1, "text": "machen", "wordclass": "verb", "concept": "machen", "terms": ["machen"], "arasaac": 32751 },
+        { "row": 1, "col": 2, "text": "gehen", "wordclass": "verb", "concept": "gehen", "terms": ["gehen"], "arasaac": 8142 },
+        { "row": 1, "col": 3, "text": "haben", "wordclass": "verb", "concept": "haben", "terms": ["haben"], "arasaac": 32761 },
+
+        { "row": 2, "col": 1, "text": "das", "wordclass": "pronoun", "concept": "das", "terms": ["das", "dieses"], "arasaac": 7091 },
+        { "row": 2, "col": 2, "text": "hier", "wordclass": "place", "concept": "hier", "terms": ["hier"], "arasaac": 5382 },
+
+        { "row": 3, "col": 1, "text": "essen", "wordclass": "verb", "concept": "essen", "terms": ["essen"], "arasaac": 6456 },
+        { "row": 3, "col": 2, "text": "trinken", "wordclass": "verb", "concept": "trinken", "terms": ["trinken"], "arasaac": 6061 }
+      ]
+    }
+  ]
+}
