@@ -8,7 +8,8 @@
   "scripts": {
     "check": "node tools/check.mjs",
     "build": "node tools/check.mjs && node tools/build.mjs",
-    "downloads": "node tools/downloads.mjs"
+    "downloads": "node tools/downloads.mjs",
+    "entry": "node tools/entry.mjs"
   },
   "dependencies": {
     "@lautstark/design": "github:Lautstark/design#v1.21.0"

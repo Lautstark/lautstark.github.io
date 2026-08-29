@@ -75,6 +75,26 @@ number is what everyone else gets.
 and carries a payload only that product reads. `seeAlso` is how two entries say
 they were written for each other, without any format knowing about it.
 
+### Adding one
+
+Until the editor can export one, an entry is written by hand — and the numbers
+are the part worth having help with.
+
+```bash
+npm run entry -- neu essen-und-trinken     # the folder, with both files in it
+npm run entry -- symbol mehr weg nochmal   # what ARASAAC has, and how well
+npm run check                              # what is still missing
+```
+
+`symbol` prints candidates rather than picking one, and says whether a hit
+carries the word itself or merely contains it. Read the keywords, not the
+rating: `weg` returns an exact match for the *noun* — a footpath — and
+`nochmal` returns nothing at all until you ask for `noch einmal`. Where the
+number you choose is a substitution rather than a match, say why in
+`symbolNotes`; that sentence is the entry's most useful line.
+
+Pictures are at `arasaac.org/pictograms/de/<nummer>`.
+
 ### What the check enforces
 
 `npm run check` fails on a METACOM name anywhere under `sammlungen/`, on a
