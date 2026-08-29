@@ -55,14 +55,26 @@
 
 <section class="band band--regal">
   <div class="col">
+    <!-- Revealed by search.js. Hidden until then, because a search box that
+         cannot search is worse than no search box. -->
+    <p class="suchzeile" hidden>
+      <label class="visually-hidden" for="suche">Sammlung suchen</label>
+      <input class="field" id="suche" type="search" autocomplete="off"
+             placeholder="Sammlung suchen &hellip;">
+    </p>
+
     <p class="regalkopf">
-      <span class="label">{{anzahl}}</span>
+      <span class="label" id="anzahl">{{anzahl}}</span>
       <span class="stand">Stand {{stand}}</span>
     </p>
 
-    <div class="regal">
+    <div class="regal" id="regal">
 {{karten}}
     </div>
+
+    <p class="nichts" id="nichts" hidden>
+      <strong>Nichts gefunden.</strong> Andere W&ouml;rter, oder ein Filter weniger.
+    </p>
 
     <p class="hinweis">
       <strong>Noch im Bau.</strong> Herunterladen und im Editor einlesen geht
@@ -84,6 +96,8 @@
     </p>
   </div>
 </footer>
+
+<script src="search.js"></script>
 
 </body>
 </html>

@@ -359,3 +359,27 @@ footer {
   padding: 1rem 1.2rem; font-size: .88rem; color: var(--text-dim); line-height: 1.55;
 }
 .hinweis strong { color: var(--text); }
+
+/* The search field, and the two things that answer it. Everything here is
+   inert until site/sammlungen/search.js reveals the row. */
+
+.suchzeile { margin: 0 0 1.1rem; }
+.suchzeile[hidden] { display: none; }
+.suchzeile .field { max-width: 26rem; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip-path: inset(50%); white-space: nowrap;
+}
+
+/* Beats .karte's own display, and sits alongside the radios' rules rather than
+   fighting them: both only ever hide, so a card has to survive both. */
+.karte[hidden] { display: none; }
+
+.nichts {
+  margin-top: 1.2rem; padding: 2rem 1.25rem;
+  border: 1px dashed var(--surface-3); border-radius: var(--radius);
+  text-align: center; color: var(--text-dim); font-size: .9rem;
+}
+.nichts[hidden] { display: none; }
+.nichts strong { display: block; color: var(--text); margin-bottom: .2rem; }

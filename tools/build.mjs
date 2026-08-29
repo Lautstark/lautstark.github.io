@@ -49,7 +49,7 @@ mkdirSync(join(dist, "styles"), { recursive: true });
  * and hands back the holes its page carries. Those holes are generated content
  * rather than addresses, which is why they are substituted from here and not
  * from links.mjs — and why tools/check.mjs knows their names. */
-const shelf = sammlungen(root, dist) ?? {};
+const shelf = sammlungen(root, dist, links) ?? {};
 
 /* site/ has a folder in it now, so the walk recurses. It used to be one level
  * and a `continue` past site/design; both facts moved into here. */

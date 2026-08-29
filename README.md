@@ -36,9 +36,14 @@ fetches the pixels at build time into `dist/`, cached under `.cache/`. Neither
 is in git — which keeps this repository's "no symbols" posture true and is why
 an entry is kilobytes.
 
-**The page carries no JavaScript**, like every other page here. The product
-filter is radio inputs and a sibling selector, and the rules that hide what a
-chosen radio excludes are generated for the products actually present.
+**The product filter needs no JavaScript.** It is radio inputs and a sibling
+selector, and the rules that hide what a chosen radio excludes are generated for
+the products actually present — so the page filters with the script absent.
+
+`site/sammlungen/search.js` is the one script on this site, and it is an
+addition rather than a requirement: it reveals a search field and narrows by
+free text, which CSS cannot do. Without it the page is complete and still
+filters, which is why the field is `hidden` in the markup until it runs.
 
 ### An entry
 

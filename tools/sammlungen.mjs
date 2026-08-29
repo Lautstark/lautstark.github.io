@@ -128,27 +128,50 @@ function factLine(meta) {
   return `${f.sentences} Sätze`;
 }
 
-/** Only the tablet Sammlungen have a file yet. The others say so rather than
- *  offering a link that would answer 404. */
-const download = (meta) => meta.product === "vorlaut-app"
-  ? `<a href="download/${esc(meta.id)}.json" download>Herunterladen</a>`
-    + '<span class="dazu"> — im Editor unter „Sammlung einlesen“ öffnen</span>'
-  : '<span class="dazu">Datei folgt</span>';
+/* Somebody typing "worter" or "woerter" means „Wörter", and a catalogue in
+ * German that answers neither has a trick to it. Folded on both sides — here
+ * into the haystack, and in search.js into what was typed. */
+const fold = (value) => value.toLowerCase().replaceAll("ß", "ss")
+  .normalize("NFD").replace(/\p{M}/gu, "");
+const spelt = (value) => value.toLowerCase()
+  .replaceAll("ä", "ae").replaceAll("ö", "oe").replaceAll("ü", "ue").replaceAll("ß", "ss");
+const searchable = (value) => `${fold(value)} ${fold(spelt(value))}`;
 
-function card({ meta, payload }) {
+/**
+ * What a card offers.
+ *
+ * The editor takes an id in the address and opens that Sammlung straight away.
+ * The address itself comes from links.mjs through build.mjs rather than being
+ * written here: the substitution pass does not rescan its own output, so a
+ * {{editor}} left in a generated card would ship as four literal braces.
+ *
+ * Only the tablet Sammlungen have a file yet. The others say so rather than
+ * offering a link that would answer 404.
+ */
+const actions = (meta, editor) => meta.product === "vorlaut-app"
+  ? `<a href="${esc(editor)}?sammlung=${esc(meta.id)}">Im Editor öffnen</a>`
+    + `<span class="dazu"> · </span><a href="download/${esc(meta.id)}.json" download>Herunterladen</a>`
+  : '<span class="dazu">Kommt noch</span>';
+
+function card({ meta, payload }, editor) {
   const product = PRODUCTS[meta.product];
   const tags = (meta.tags ?? []).map((t) => `<span class="marke">${esc(t)}</span>`).join("");
   const seeAlso = (meta.seeAlso ?? []).length
     ? `<span class="marke">siehe auch: ${meta.seeAlso.length}</span>` : "";
 
-  return `      <article class="karte produkt ${esc(product.hue)}" data-produkt="${esc(meta.product)}">
+  const haystack = searchable(
+    [meta.name, meta.description, ...(meta.tags ?? []), product.label, meta.facts.grid ?? ""]
+      .join(" "));
+
+  return `      <article class="karte produkt ${esc(product.hue)}" data-produkt="${esc(meta.product)}"
+        data-text="${esc(haystack)}">
         <p class="karte__wer"><span class="punkt"></span>${esc(product.label)}</p>
         <h3>${esc(meta.name)}</h3>
         ${meta.product === "vorlaut-app" ? boardPreview(payload) : ""}
         <p class="karte__was">${esc(meta.description)}</p>
         <p class="karte__zahlen">${esc(factLine(meta))}</p>
         <p class="marken">${tags}${seeAlso}</p>
-        <p class="karte__tun">${download(meta)}</p>
+        <p class="karte__tun">${actions(meta, editor)}</p>
       </article>`;
 }
 
@@ -196,7 +219,7 @@ function filterRules(entries) {
 /* -------------------------------------------------------------- assembly --- */
 
 /** The page's three holes, and the index the programs will fetch. */
-export function sammlungen(root, dist) {
+export function sammlungen(root, dist, links) {
   const entries = readEntries(root);
   if (!entries.length) return null;
 
@@ -219,7 +242,7 @@ export function sammlungen(root, dist) {
   return {
     filter: filter(entries),
     filterRules: filterRules(entries),
-    karten: entries.map(card).join("\n"),
+    karten: entries.map((one) => card(one, links.editor)).join("\n"),
     anzahl: count,
     stand: new Date().toISOString().slice(0, 10).split("-").reverse().join("."),
   };
