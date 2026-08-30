@@ -24,8 +24,11 @@ export const links = {
 
   // Named because the symbol search sends a word there, and the site says so.
   arasaac: "https://arasaac.org/",
-  mitreden: "https://lautstark.github.io/mitreden/",
-  bildhaft: "https://lautstark.github.io/bildhaft/",
+  /* Their own addresses, not the repository-named ones. Both of those answer
+     301 to these, and a redirect that works today is exactly the thing this
+     file exists to stop being relied on. */
+  mitreden: "https://mitreden.lautstark.tech/",
+  bildhaft: "https://bildhaft.lautstark.tech/",
   quelltext: "https://github.com/Lautstark",
   meldungen: "https://github.com/Lautstark/lautstark.github.io/issues",
   post: "mailto:steffi@lautstark.tech",
