@@ -170,26 +170,24 @@ for (const product of Object.keys(OPENS)) {
 const downloadable = (meta) => FILES.has(meta.product);
 
 /**
- * What a card offers: the file, and — where the program can take it — the link
- * that skips the file entirely.
+ * What a card offers: one link, into the program that reads it.
+ *
+ * There was a „Herunterladen" beside it, from when no program could take a link
+ * and a file was the only way across. All three can now, and the file is what
+ * the link fetches — so the button offered a second, longer route to the same
+ * place, and asked somebody to think about file management to get there.
+ *
+ * The files stay published. They are what these links fetch, and somebody who
+ * wants one can still take it from the address the link uses.
  *
  * A new tab, because this page is a shelf: somebody comparing three Sammlungen
- * should not lose the shelf to try one. The download is left alone; `download`
- * does not navigate, and a tab that opens and closes again is a flash.
+ * should not lose the shelf to try one.
  */
 function actions(meta, links) {
-  const file = downloadable(meta)
-    ? `<a href="download/${esc(meta.id)}.json" download>Herunterladen</a>`
-    : "";
   const key = OPENS[meta.product];
-  const open = key
-    ? `<a href="${esc(links[key])}?sammlung=${esc(meta.id)}" target="_blank" rel="noopener">`
-      + `In ${esc(PRODUCTS[meta.product].label)} öffnen</a>`
-    : "";
-
-  const both = [open, file].filter(Boolean);
-  if (!both.length) return '<span class="dazu">Kommt noch</span>';
-  return both.join('<span class="dazu"> · </span>');
+  if (!key) return '<span class="dazu">Kommt noch</span>';
+  return `<a href="${esc(links[key])}?sammlung=${esc(meta.id)}" target="_blank" rel="noopener">`
+    + `In ${esc(PRODUCTS[meta.product].label)} öffnen</a>`;
 }
 
 /**

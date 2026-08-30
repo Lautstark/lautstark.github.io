@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "id": "einkaufsliste",
+  "product": "bildhaft",
+  "name": "Einkaufsliste",
+  "description": "Hundertachtundzwanzig Sachen zum Einkaufen, nach Gängen sortiert: Obst, Gemüse, Brot, Kühlregal, Süßes, Putzmittel. Zum Ausdrucken und Abhaken, oder zum Draufzeigen im Laden.",
+  "tags": [
+    "Situation",
+    "zum Drucken"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [],
+  "payload": "saetze.json",
+  "symbolNotes": {
+    "spülmittel": "Das Symbol für „Geschirrspülmittel“.",
+    "putzmittel": "Das Symbol für „Reinigungsmittel“.",
+    "müllbeutel": "Das Symbol für „Müllsack“.",
+    "binden": "Das Symbol für „Damenbinde“.",
+    "watte": "Das Symbol für „Wattestäbchen“ — Watte allein hat keins.",
+    "Pommes": "Das Symbol für „Pommes frites“.",
+    "schnitzel": "Das Symbol für „Kotelett“.",
+    "kartoffelpüree": "Das Symbol für „Püree“.",
+    "konserven": "Das Symbol für „Konservendose“.",
+    "Haferflocken": "Das Symbol für „Hafer“.",
+    "Brezel": "Das Symbol für „Gebäck“ — allgemeiner als das Wort, aber im richtigen Gang.",
+    "knäckebrot": "Das Symbol für „Cracker“.",
+    "nüsse": "Das Symbol für „Walnuss“.",
+    "Senf": "Ohne Symbol. ARASAAC hat keins, das „Senf“ trägt.",
+    "salzstangen": "Ohne Symbol. Das nächste wäre „Chips“, und die stehen schon daneben — zwei gleiche Bilder in einer Zeile sind schlechter als ein leeres Feld.",
+    "gummibärchen": "Ohne Symbol, aus demselben Grund: „Bonbon“ steht schon in derselben Zeile.",
+    "Müsli": "Ohne Symbol: „Cornflakes“ steht schon daneben.",
+    "schmand": "Ohne Symbol: „Sahne“ steht schon in derselben Zeile.",
+    "zwieback": "Ohne Symbol: das nächste wäre „Toast“, und „Toastbrot“ steht schon daneben."
+  }
+}

@@ -1,0 +1,688 @@
+{
+  "sentences": [
+    {
+      "text": "Spülmittel, Putzmittel, Waschmittel, Weichspüler, Müllbeutel, Schwamm, Alufolie, Frischhaltefolie, Backpapier, Batterien, Kerzen, Blumen, Tierfutter",
+      "slots": [
+        {
+          "token": "Spülmittel",
+          "concept": "spülmittel",
+          "arasaac": 7143
+        },
+        {
+          "token": "Putzmittel",
+          "concept": "putzmittel",
+          "arasaac": 4871
+        },
+        {
+          "token": "Waschmittel",
+          "concept": "waschmittel",
+          "arasaac": 7021
+        },
+        {
+          "token": "Weichspüler",
+          "concept": "weichspüler",
+          "arasaac": 7262
+        },
+        {
+          "token": "Müllbeutel",
+          "concept": "müllbeutel",
+          "arasaac": 6065
+        },
+        {
+          "token": "Schwamm",
+          "concept": "schwamm",
+          "arasaac": 2749
+        },
+        {
+          "token": "Alufolie",
+          "concept": "alufolie",
+          "arasaac": 8250
+        },
+        {
+          "token": "Frischhaltefolie",
+          "concept": "frischhaltefolie",
+          "arasaac": 36919
+        },
+        {
+          "token": "Backpapier",
+          "concept": "backpapier",
+          "arasaac": 38203
+        },
+        {
+          "token": "Batterien",
+          "concept": "batterie",
+          "arasaac": 8320
+        },
+        {
+          "token": "Kerzen",
+          "concept": "kerzen",
+          "arasaac": 6242
+        }
+      ]
+    },
+    {
+      "text": "Toilettenpapier, Taschentücher, Küchenrolle, Zahnpasta, Zahnbürste, Seife, Duschgel, Shampoo, Deo, Rasierer, Creme, Windeln, Binden, Watte, Pflaster",
+      "slots": [
+        {
+          "token": "Toilettenpapier",
+          "concept": "toilettenpapier",
+          "arasaac": 2862
+        },
+        {
+          "token": "Taschentücher",
+          "concept": "taschentücher",
+          "arasaac": 8647
+        },
+        {
+          "token": "Küchenrolle",
+          "concept": "küchenrolle",
+          "arasaac": 6166
+        },
+        {
+          "token": "Zahnpasta",
+          "concept": "Zahnpasta",
+          "arasaac": 2858
+        },
+        {
+          "token": "Zahnbürste",
+          "concept": "Zahnbürste",
+          "arasaac": 2694
+        },
+        {
+          "token": "Seife",
+          "concept": "Seife",
+          "arasaac": 8094
+        },
+        {
+          "token": "Duschgel",
+          "concept": "duschgel",
+          "arasaac": 3335
+        },
+        {
+          "token": "Shampoo",
+          "concept": "shampoo",
+          "arasaac": 2699
+        },
+        {
+          "token": "Deo",
+          "concept": "deo",
+          "arasaac": 2735
+        },
+        {
+          "token": "Rasierer",
+          "concept": "rasierer",
+          "arasaac": 2726
+        },
+        {
+          "token": "Creme",
+          "concept": "creme",
+          "arasaac": 3376
+        },
+        {
+          "token": "Windeln",
+          "concept": "Windel",
+          "arasaac": 22017
+        },
+        {
+          "token": "Binden",
+          "concept": "binden",
+          "arasaac": 31981
+        },
+        {
+          "token": "Watte",
+          "concept": "watte",
+          "arasaac": 8294
+        },
+        {
+          "token": "Pflaster",
+          "concept": "Pflaster",
+          "arasaac": 3306
+        }
+      ]
+    },
+    {
+      "text": "Pizza, Pommes, Tiefkühlgemüse, Eis, Fertiggericht",
+      "slots": [
+        {
+          "token": "Pizza",
+          "concept": "Pizza",
+          "arasaac": 2527
+        },
+        {
+          "token": "Pommes",
+          "concept": "Pommes",
+          "arasaac": 2505
+        },
+        {
+          "token": "Gemüse",
+          "concept": "gemüse",
+          "arasaac": 29131
+        },
+        {
+          "token": "Eis",
+          "concept": "Eis",
+          "arasaac": 7128
+        }
+      ]
+    },
+    {
+      "text": "Schokolade, Kekse, Gummibärchen, Bonbons, Chips, Salzstangen, Nüsse, Popcorn, Eis, Kaugummi, Riegel",
+      "slots": [
+        {
+          "token": "Schokolade",
+          "concept": "Schokolade",
+          "arasaac": 25940
+        },
+        {
+          "token": "Kekse",
+          "concept": "kekse",
+          "arasaac": 2402
+        },
+        {
+          "token": "Gummibärchen",
+          "concept": "gummibärchen"
+        },
+        {
+          "token": "Bonbons",
+          "concept": "bonbons",
+          "arasaac": 22182
+        },
+        {
+          "token": "Chips",
+          "concept": "chips",
+          "arasaac": 5400
+        },
+        {
+          "token": "Salzstangen",
+          "concept": "salzstangen"
+        },
+        {
+          "token": "Nüsse",
+          "concept": "nüsse",
+          "arasaac": 2880
+        },
+        {
+          "token": "Popcorn",
+          "concept": "popcorn",
+          "arasaac": 5534
+        },
+        {
+          "token": "Eis",
+          "concept": "Eis",
+          "arasaac": 7128
+        },
+        {
+          "token": "Kaugummi",
+          "concept": "kaugummi",
+          "arasaac": 8724
+        }
+      ]
+    },
+    {
+      "text": "Hähnchen, Hackfleisch, Schnitzel, Steak, Wurst, Salami, Schinken, Speck, Würstchen, Fisch, Lachs, Thunfisch, Fischstäbchen",
+      "slots": [
+        {
+          "token": "Hackfleisch",
+          "concept": "hackfleisch",
+          "arasaac": 35635
+        },
+        {
+          "token": "Schnitzel",
+          "concept": "schnitzel",
+          "arasaac": 6976
+        },
+        {
+          "token": "Wurst",
+          "concept": "Wurst",
+          "arasaac": 8554
+        },
+        {
+          "token": "Salami",
+          "concept": "salami",
+          "arasaac": 3290
+        },
+        {
+          "token": "Schinken",
+          "concept": "schinken",
+          "arasaac": 2433
+        },
+        {
+          "token": "Speck",
+          "concept": "speck",
+          "arasaac": 2994
+        },
+        {
+          "token": "Würstchen",
+          "concept": "würstchen",
+          "arasaac": 6647
+        },
+        {
+          "token": "Fisch",
+          "concept": "Fisch",
+          "arasaac": 2520
+        },
+        {
+          "token": "Lachs",
+          "concept": "lachs",
+          "arasaac": 7808
+        },
+        {
+          "token": "Fischstäbchen",
+          "concept": "fischstäbchen",
+          "arasaac": 6653
+        }
+      ]
+    },
+    {
+      "text": "Nudeln, Reis, Kartoffelpüree, Mehl, Zucker, Salz, Pfeffer, Gewürze, Öl, Essig, Ketchup, Senf, Mayonnaise, Tomatensoße, Konserven, Bohnen, Linsen, Müsli, Cornflakes, Haferflocken, Marmelade, Honig, Nutella, Erdnussbutter",
+      "slots": [
+        {
+          "token": "Nudeln",
+          "concept": "nudeln",
+          "arasaac": 8652
+        },
+        {
+          "token": "Reis",
+          "concept": "Reis",
+          "arasaac": 39387
+        },
+        {
+          "token": "Kartoffelpüree",
+          "concept": "kartoffelpüree",
+          "arasaac": 2539
+        },
+        {
+          "token": "Mehl",
+          "concept": "Mehl",
+          "arasaac": 8600
+        },
+        {
+          "token": "Zucker",
+          "concept": "Zucker",
+          "arasaac": 25560
+        },
+        {
+          "token": "Salz",
+          "concept": "Salz",
+          "arasaac": 25576
+        },
+        {
+          "token": "Pfeffer",
+          "concept": "pfeffer",
+          "arasaac": 25331
+        },
+        {
+          "token": "Gewürze",
+          "concept": "gewürze",
+          "arasaac": 37094
+        },
+        {
+          "token": "Öl",
+          "concept": "Öl",
+          "arasaac": 2246
+        },
+        {
+          "token": "Essig",
+          "concept": "essig",
+          "arasaac": 5605
+        },
+        {
+          "token": "Ketchup",
+          "concept": "ketchup",
+          "arasaac": 6540
+        },
+        {
+          "token": "Senf",
+          "concept": "Senf"
+        },
+        {
+          "token": "Mayonnaise",
+          "concept": "mayonnaise",
+          "arasaac": 5509
+        },
+        {
+          "token": "Tomatensoße",
+          "concept": "tomatensoße",
+          "arasaac": 17008
+        },
+        {
+          "token": "Konserven",
+          "concept": "konserven",
+          "arasaac": 6544
+        },
+        {
+          "token": "Bohnen",
+          "concept": "bohnen",
+          "arasaac": 38595
+        },
+        {
+          "token": "Linsen",
+          "concept": "linsen",
+          "arasaac": 2448
+        },
+        {
+          "token": "Müsli",
+          "concept": "Müsli"
+        },
+        {
+          "token": "Cornflakes",
+          "concept": "cornflakes",
+          "arasaac": 2328
+        },
+        {
+          "token": "Haferflocken",
+          "concept": "Haferflocken",
+          "arasaac": 6921
+        },
+        {
+          "token": "Marmelade",
+          "concept": "Marmelade",
+          "arasaac": 2470
+        },
+        {
+          "token": "Honig",
+          "concept": "Honig",
+          "arasaac": 2911
+        }
+      ]
+    },
+    {
+      "text": "Brot, Brötchen, Toastbrot, Baguette, Croissant, Brezel, Knäckebrot, Zwieback, Kuchen",
+      "slots": [
+        {
+          "token": "Brot",
+          "concept": "Brot",
+          "arasaac": 2494
+        },
+        {
+          "token": "Brötchen",
+          "concept": "Brötchen",
+          "arasaac": 10231
+        },
+        {
+          "token": "Toastbrot",
+          "concept": "toastbrot",
+          "arasaac": 2865
+        },
+        {
+          "token": "Baguette",
+          "concept": "baguette",
+          "arasaac": 2494
+        },
+        {
+          "token": "Croissant",
+          "concept": "croissant",
+          "arasaac": 2358
+        },
+        {
+          "token": "Brezel",
+          "concept": "Brezel",
+          "arasaac": 8042
+        },
+        {
+          "token": "Knäckebrot",
+          "concept": "knäckebrot",
+          "arasaac": 37883
+        },
+        {
+          "token": "Zwieback",
+          "concept": "zwieback"
+        },
+        {
+          "token": "Kuchen",
+          "concept": "Kuchen",
+          "arasaac": 2502
+        }
+      ]
+    },
+    {
+      "text": "Milch, Joghurt, Quark, Butter, Margarine, Käse, Frischkäse, Sahne, Schmand, Pudding, Buttermilch, Eier",
+      "slots": [
+        {
+          "token": "Milch",
+          "concept": "Milch",
+          "arasaac": 2445
+        },
+        {
+          "token": "Joghurt",
+          "concept": "Joghurt",
+          "arasaac": 2618
+        },
+        {
+          "token": "Quark",
+          "concept": "Quark",
+          "arasaac": 15367
+        },
+        {
+          "token": "Margarine",
+          "concept": "margarine",
+          "arasaac": 26196
+        },
+        {
+          "token": "Käse",
+          "concept": "Käse",
+          "arasaac": 2541
+        },
+        {
+          "token": "Frischkäse",
+          "concept": "frischkäse",
+          "arasaac": 15505
+        },
+        {
+          "token": "Sahne",
+          "concept": "Sahne",
+          "arasaac": 13376
+        },
+        {
+          "token": "Schmand",
+          "concept": "schmand"
+        },
+        {
+          "token": "Pudding",
+          "concept": "Pudding",
+          "arasaac": 25111
+        },
+        {
+          "token": "Butter",
+          "concept": "butter",
+          "arasaac": 2461
+        },
+        {
+          "token": "Milch",
+          "concept": "milch",
+          "arasaac": 2445
+        },
+        {
+          "token": "Eier",
+          "concept": "eier",
+          "arasaac": 34039
+        }
+      ]
+    },
+    {
+      "text": "Tomate, Gurke, Paprika, Karotte, Kartoffel, Zwiebel, Knoblauch, Salat, Brokkoli, Blumenkohl, Zucchini, Aubergine, Champignons, Spinat, Erbsen, Mais, Lauch, Kürbis",
+      "slots": [
+        {
+          "token": "Tomate",
+          "concept": "Tomate",
+          "arasaac": 2594
+        },
+        {
+          "token": "Gurke",
+          "concept": "Gurke",
+          "arasaac": 2847
+        },
+        {
+          "token": "Paprika",
+          "concept": "Paprika",
+          "arasaac": 2839
+        },
+        {
+          "token": "Karotte",
+          "concept": "Karotte",
+          "arasaac": 2619
+        },
+        {
+          "token": "Kartoffel",
+          "concept": "Kartoffel",
+          "arasaac": 2503
+        },
+        {
+          "token": "Zwiebel",
+          "concept": "Zwiebel",
+          "arasaac": 2323
+        },
+        {
+          "token": "Knoblauch",
+          "concept": "knoblauch",
+          "arasaac": 2641
+        },
+        {
+          "token": "Salat",
+          "concept": "Salat",
+          "arasaac": 8104
+        },
+        {
+          "token": "Brokkoli",
+          "concept": "brokkoli",
+          "arasaac": 23853
+        },
+        {
+          "token": "Blumenkohl",
+          "concept": "blumenkohl",
+          "arasaac": 23953
+        },
+        {
+          "token": "Zucchini",
+          "concept": "zucchini",
+          "arasaac": 2678
+        },
+        {
+          "token": "Aubergine",
+          "concept": "aubergine",
+          "arasaac": 2660
+        },
+        {
+          "token": "Champignons",
+          "concept": "champignons",
+          "arasaac": 2331
+        },
+        {
+          "token": "Spinat",
+          "concept": "spinat",
+          "arasaac": 5460
+        },
+        {
+          "token": "Erbsen",
+          "concept": "erbsen",
+          "arasaac": 7182
+        },
+        {
+          "token": "Mais",
+          "concept": "Mais",
+          "arasaac": 36287
+        },
+        {
+          "token": "Lauch",
+          "concept": "lauch",
+          "arasaac": 3378
+        },
+        {
+          "token": "Kürbis",
+          "concept": "Kürbis",
+          "arasaac": 2679
+        }
+      ]
+    },
+    {
+      "text": "Apfel, Banane, Birne, Orange, Mandarine, Zitrone, Weintrauben, Erdbeeren, Himbeeren, Blaubeeren, Kirschen, Pfirsich, Melone, Ananas, Kiwi, Pflaume, Avocado",
+      "slots": [
+        {
+          "token": "Apfel",
+          "concept": "Apfel",
+          "arasaac": 2462
+        },
+        {
+          "token": "Banane",
+          "concept": "Banane",
+          "arasaac": 2530
+        },
+        {
+          "token": "Birne",
+          "concept": "Birne",
+          "arasaac": 2561
+        },
+        {
+          "token": "Orange",
+          "concept": "Orange",
+          "arasaac": 2888
+        },
+        {
+          "token": "Mandarine",
+          "concept": "mandarine",
+          "arasaac": 11298
+        },
+        {
+          "token": "Zitrone",
+          "concept": "Zitrone",
+          "arasaac": 3022
+        },
+        {
+          "token": "Weintrauben",
+          "concept": "weintrauben",
+          "arasaac": 3247
+        },
+        {
+          "token": "Erdbeeren",
+          "concept": "Erdbeere",
+          "arasaac": 2400
+        },
+        {
+          "token": "Himbeeren",
+          "concept": "Himbeere",
+          "arasaac": 13084
+        },
+        {
+          "token": "Blaubeeren",
+          "concept": "Blaubeere",
+          "arasaac": 13034
+        },
+        {
+          "token": "Kirschen",
+          "concept": "kirschen",
+          "arasaac": 2329
+        },
+        {
+          "token": "Pfirsich",
+          "concept": "Pfirsich",
+          "arasaac": 2468
+        },
+        {
+          "token": "Melone",
+          "concept": "Melone",
+          "arasaac": 5928
+        },
+        {
+          "token": "Ananas",
+          "concept": "Ananas",
+          "arasaac": 2525
+        },
+        {
+          "token": "Kiwi",
+          "concept": "kiwi",
+          "arasaac": 2955
+        },
+        {
+          "token": "Pflaume",
+          "concept": "Pflaume",
+          "arasaac": 8305
+        },
+        {
+          "token": "Avocado",
+          "concept": "avocado",
+          "arasaac": 8009
+        }
+      ]
+    }
+  ]
+}
