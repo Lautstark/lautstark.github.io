@@ -1,0 +1,59 @@
+{
+  "sets": [
+    {
+      "name": "Sprechen",
+      "concept": "sprechen",
+      "arasaac": 6517,
+      "keys": [
+        { "text": "Ja!", "concept": "ja", "arasaac": 5584 },
+        { "text": "Nein!", "concept": "nein", "arasaac": 5526 },
+        { "text": "Guck mal!", "concept": "gucken", "arasaac": 6564 },
+        { "text": "Stopp!", "concept": "stoppen", "arasaac": 7196 }
+      ]
+    },
+    {
+      "name": "Immer",
+      "concept": "immer",
+      "arasaac": 17322,
+      "keys": [
+        { "text": "Nochmal.", "concept": "noch einmal", "arasaac": 37162 },
+        { "text": "Fertig!", "concept": "fertig", "arasaac": 28429 },
+        { "text": "Mehr!", "concept": "mehr", "arasaac": 5508 },
+        { "text": "Ich auch.", "concept": "ich auch", "arasaac": 11591 }
+      ]
+    },
+    {
+      "name": "Ich und Du",
+      "concept": "wir",
+      "arasaac": 7183,
+      "keys": [
+        { "text": "Ich", "concept": "ich", "arasaac": 6632 },
+        { "text": "Duuuu", "concept": "du", "arasaac": 6625 },
+        { "text": "Komm her!", "concept": "kommen", "arasaac": 32669 },
+        { "text": "Hilf mir!", "concept": "helfen", "arasaac": 32648 }
+      ]
+    },
+    {
+      "name": "Essen",
+      "concept": "essen",
+      "arasaac": 6456,
+      "keys": [
+        { "text": "hunger", "concept": "hunger", "arasaac": 35559 },
+        { "text": "durst", "concept": "durst", "arasaac": 7273 },
+        { "text": "satt", "concept": "satt", "arasaac": 38801 },
+        { "text": "mehr", "concept": "mehr", "arasaac": 5508 }
+      ]
+    },
+    {
+      "name": "Spielen",
+      "concept": "spielen",
+      "arasaac": 23392,
+      "keys": [
+        { "text": "Spielen.", "concept": "spielen", "arasaac": 23392 },
+        { "text": "Basteln.", "concept": "basteln", "arasaac": 7794 },
+        { "text": "Turnen", "concept": "turnen", "arasaac": 10156 },
+        { "text": "Raus gehen.", "concept": "hinausgehen", "arasaac": 6606 }
+      ]
+    }
+  ]
+}

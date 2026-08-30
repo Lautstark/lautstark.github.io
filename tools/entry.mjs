@@ -21,6 +21,7 @@
  * reason.
  */
 
+import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, join } from "node:path";
 
@@ -167,6 +168,12 @@ async function symbol(words) {
  */
 async function aus(path, wantedId) {
   if (!path || !existsSync(path)) { say(`No such file: ${path}`); process.exit(1); }
+
+  // "PK", where every zip starts and no JSON does — a talker Sammlung exported
+  // „für ein anderes Programm".
+  const head = readFileSync(path).subarray(0, 2);
+  if (head[0] === 0x50 && head[1] === 0x4b) return ausTalker(path, wantedId);
+
   const file = JSON.parse(readFileSync(path, "utf8"));
 
   if (file.format !== "bildhaft.collection") {
@@ -242,6 +249,85 @@ async function aus(path, wantedId) {
   say("");
   say("Dann: entry.json braucht noch description und tags. npm run check sagt, was fehlt.");
 }
+
+/* ---------------------------------------------------------- aus, talker --- */
+
+/**
+ * A talker Sammlung: five sets of four keys, exported „für ein anderes
+ * Programm" — Open Board Format, one board per set, symbols as names and no
+ * pixels in it at all.
+ *
+ * That export is the one that works for a Sammlung drawn in METACOM:
+ * checkLicensing() refuses METACOM *pixels* and permits a reference, so the
+ * file names each symbol without carrying it. The names are dropped here, as
+ * they must be; what is kept is the words, the sets and the order.
+ *
+ * ## The concept is the label, stripped
+ *
+ * A talker key has no lemma behind it — somebody typed „Komm her!" and picked a
+ * picture. So the first guess is the label with its punctuation off, and it is
+ * only a guess: „Guck mal!" and „Raus gehen." are phrases, and the report at the
+ * end is where they land for a person to decide.
+ */
+function ausTalker(path, wantedId) {
+  /* `unzip -p`, and not a zip reader written here: node ships no unzip, this is
+   * an authoring tool somebody runs by hand on a Mac or a Linux box, and forty
+   * lines of central-directory parsing to save a shell call is forty lines to
+   * keep right. Nothing in CI runs this verb. */
+  const read = (member) => JSON.parse(execFileSync("unzip", ["-p", path, member], {
+    encoding: "utf8", maxBuffer: 32 * 1024 * 1024,
+  }));
+
+  const manifest = read("manifest.json");
+  const boards = manifest.paths?.boards ?? {};
+  const order = Object.keys(boards).sort();
+  if (!order.length) { say("No boards in that file."); process.exit(1); }
+
+  const sets = order.map((key) => {
+    const board = read(boards[key]);
+    const byId = new Map((board.buttons ?? []).map((b) => [b.id, b]));
+    /* grid.order is where the positions are. Two things in it are not keys:
+     * the null in the top left, which is the hole the speaker sits in
+     * (obf.ts's grid(), docs/hardware.md), and the button carrying load_board,
+     * which is the set key that switches to the next set. Four are left, which
+     * is what a set is. */
+    const keys = [];
+    let name = board.name ?? key;
+    for (const id of (board.grid?.order ?? []).flat()) {
+      const button = id ? byId.get(id) : null;
+      if (!button) continue;
+      if (button.load_board) { name = button.label || name; continue; }
+      const text = button.vocalization || button.label || "";
+      keys.push({ text, concept: conceptOf(text) });
+    }
+    return { name, concept: conceptOf(name), keys };
+  });
+
+  const id = wantedId || slug(sets[0]?.name ?? basename(path));
+  const dir = join(ROOT, "sammlungen", "entries", id);
+  if (existsSync(dir)) { say(`${id} is already there.`); process.exit(1); }
+
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, "saetze.json"), `${JSON.stringify({ sets }, null, 2)}\n`);
+  const entry = SKELETON(id);
+  entry.product = "vorlaut-talker";
+  entry.name = "";
+  entry.payload = "saetze.json";
+  writeFileSync(join(dir, "entry.json"), `${JSON.stringify(entry, null, 2)}\n`);
+
+  const words = sets.flatMap((s) => s.keys.filter(Boolean));
+  say(`sammlungen/entries/${id}/  —  ${sets.length} Sets, ${words.length} Tasten`);
+  say("");
+  for (const set of sets) {
+    say(`  ${set.name.padEnd(14)} ${set.keys.filter(Boolean).map((k) => k.text).join(" · ")}`);
+  }
+  say("");
+  say("Keine Nummern: eine Taste trägt einen Satz, kein Lemma, und was „Guck mal!“");
+  say("heißen soll ist eine Entscheidung. npm run entry -- symbol <wort> für jede.");
+}
+
+/** A first guess at what a key is about: the label without what it ends in. */
+const conceptOf = (text) => text.trim().replace(/[!.?…]+$/u, "").trim().toLowerCase();
 
 /** A confident number for one concept, or null. See aus() for what confident
  *  means and why nothing less is written into a file. */

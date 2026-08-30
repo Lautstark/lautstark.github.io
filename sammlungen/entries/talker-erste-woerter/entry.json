@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "id": "talker-erste-woerter",
+  "product": "vorlaut-talker",
+  "name": "Erste Wörter für den Talker",
+  "description": "Fünf Sets für das Fünf-Tasten-Gerät: Ja und Nein, „Nochmal“ und „Fertig“, ich und du, Hunger und Durst, spielen und rausgehen. Zwanzig Tasten, die auf fast jeden Tag passen — und die gedacht sind zum Ändern.",
+  "tags": [
+    "Kernwörter",
+    "Anfang",
+    "Alltag",
+    "Fünf Tasten"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [],
+  "payload": "saetze.json",
+  "symbolNotes": {
+    "Guck mal!": "ARASAAC führt „gucken“ nur zusammen mit sehen und schauen — 6564 ist dieses Bild.",
+    "Stopp!": "Kein Bild trägt den Zuruf. 7196 ist die aufgehaltene Hand: anhalten, aufhören.",
+    "Fertig!": "28429 heißt bei ARASAAC „Ich bin fertig!“ — der Satz, den die Taste sagt.",
+    "Raus gehen.": "„rausgehen“ findet nur den Hund. 6606 ist hinausgehen, dieselbe Bewegung.",
+    "Ich und Du": "Das Set-Bild ist „wir“ (7183): zwei Menschen, worum es in diesem Set geht."
+  }
+}

@@ -356,6 +356,10 @@ footer {
   display: flex; align-items: center; justify-content: center;
   text-align: center; padding: 2px; min-height: 26px; overflow: hidden;
 }
+/* The five sets of a talker, stacked — each its own two-by-three. */
+/* Four times the gap inside a set, because at this size a 6px one read as a
+   single ten-row grid and put „Sprechen“ in the same table as „Immer“. */
+.saetze { display: flex; flex-direction: column; gap: 12px; }
 .zelle--frei { background: transparent; border: 1px dashed var(--surface-3); }
 .zelle--spalte { background: var(--surface-3); color: var(--text); font-weight: 600; }
 

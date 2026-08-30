@@ -151,7 +151,18 @@ const searchable = (value) => `${fold(value)} ${fold(spelt(value))}`;
 /* Which programs take a Sammlung from the address, and what each calls itself
  * in „In … öffnen". A product missing here still offers its file; the button
  * arrives when that program learns to read ?sammlung=. */
-const OPENS = { "vorlaut-app": "editor", mitreden: "mitreden", bildhaft: "bildhaft" };
+const OPENS = {
+  "vorlaut-app": "editor", "vorlaut-talker": "editor",
+  mitreden: "mitreden", bildhaft: "bildhaft",
+};
+
+/* What „In … öffnen" names, which is the program and not the Sammlung.
+ *
+ * The two are the same word for three of the four and were written as one for
+ * a while, until the talker entry landed and the button read „In Talker
+ * öffnen" — pointing at vorlaut. „Talker" is the kind of Sammlung, the chip on
+ * the filter row; the door it opens is vorlaut either way. */
+const PROGRAMS = { editor: "vorlaut", mitreden: "mitreden", bildhaft: "bildhaft" };
 
 /**
  * Which products have a file to hand over.
@@ -161,7 +172,7 @@ const OPENS = { "vorlaut-app": "editor", mitreden: "mitreden", bildhaft: "bildha
  * so its card promised a door with nothing behind it — the entry did not exist
  * yet when that was written, and then it did.
  */
-const FILES = new Set(["vorlaut-app", "mitreden", "bildhaft"]);
+const FILES = new Set(["vorlaut-app", "vorlaut-talker", "mitreden", "bildhaft"]);
 for (const product of Object.keys(OPENS)) {
   if (!FILES.has(product)) {
     throw new Error(`${product} can be opened from a link but has no file to open.`);
@@ -187,7 +198,7 @@ function actions(meta, links) {
   const key = OPENS[meta.product];
   if (!key) return '<span class="dazu">Kommt noch</span>';
   return `<a href="${esc(links[key])}?sammlung=${esc(meta.id)}" target="_blank" rel="noopener">`
-    + `In ${esc(PRODUCTS[meta.product].label)} öffnen</a>`;
+    + `In ${esc(PROGRAMS[key])} öffnen</a>`;
 }
 
 /**
@@ -203,6 +214,30 @@ const credit = (meta) => meta.source
     + (meta.source.publisher ? `, ${esc(meta.source.publisher)}` : "") + "</p>"
   : "";
 
+/**
+ * The five sets, each drawn the way the device is.
+ *
+ * Two rows of three with the top left empty, because that is where the speaker
+ * is — obf.ts's grid() and docs/hardware.md, and the same picture the export
+ * writes. Somebody who has held one recognises it; somebody who has not learns
+ * from the card that four keys and a set key is the whole of the thing.
+ */
+function setsPreview(payload) {
+  const sets = (payload.sets ?? []).map((set) => {
+    const keys = (set.keys ?? []).map((k) => `<span class="zelle">${esc(k.text)}</span>`);
+    const cells = [
+      '<span class="zelle zelle--frei"></span>', keys[0] ?? "", keys[1] ?? "",
+      `<span class="zelle zelle--spalte">${esc(set.name)}</span>`, keys[2] ?? "", keys[3] ?? "",
+    ];
+    return `<div class="brett" style="--spalten: 3">${cells.join("")}</div>`;
+  });
+  return `<div class="saetze">${sets.join("")}</div>`;
+}
+
+/** Which products show what is inside before you take it. A product with no
+ *  preview simply has none; the fact line still says how much there is. */
+const PREVIEW = { "vorlaut-app": boardPreview, "vorlaut-talker": setsPreview };
+
 function card({ meta, payload }, links) {
   const product = PRODUCTS[meta.product];
   const tags = (meta.tags ?? []).map((t) => `<span class="marke">${esc(t)}</span>`).join("");
@@ -217,7 +252,7 @@ function card({ meta, payload }, links) {
         data-text="${esc(haystack)}">
         <p class="karte__wer"><span class="punkt"></span>${esc(product.label)}</p>
         <h3>${esc(meta.name)}</h3>
-        ${meta.product === "vorlaut-app" ? boardPreview(payload) : ""}
+        ${PREVIEW[meta.product]?.(payload) ?? ""}
         <p class="karte__was">${esc(meta.description)}</p>
         <p class="karte__zahlen">${esc(factLine(meta))}</p>
         <p class="marken">${tags}${seeAlso}</p>
@@ -436,6 +471,60 @@ export async function downloads(root, dist) {
         .filter(Boolean).join(" "),
     }, null, 2)}\n`);
     written.push({ id: meta.id, what: `${sentences.length} Sätze`, bytes: readFileSync(at).length });
+  }
+
+  /* A talker Sammlung is a DiyLayout: sets of four slots, each naming a picture
+     the file carries. Same Sicherung wrapper as the tablet boards below — it is
+     the only shape that becomes a Sammlung rather than being read as a board
+     with no buttons. */
+  for (const { meta, payload } of entries.filter((one) => one.meta.product === "vorlaut-talker")) {
+    const numbers = [...new Set((payload.sets ?? []).flatMap((set) =>
+      [set.arasaac, ...(set.keys ?? []).map((k) => k.arasaac)]).filter(Boolean))];
+
+    const symbols = [];
+    for (const id of numbers) {
+      symbols.push({ name: symbolName(id), data: (await pictogram(cache, id)).toString("base64") });
+    }
+
+    const layout = {
+      target: "diy",
+      language: meta.language,
+      symbolSource: "arasaac",
+      sets: (payload.sets ?? []).map((set) => ({
+        name: set.name,
+        symbol: set.arasaac ? symbolName(set.arasaac) : "",
+        /* Four, always: the ring has four keys and a set short of them is a
+           set the device cannot draw. An unfilled one travels as a slot with
+           nothing in it rather than as a missing one. */
+        slots: Array.from({ length: 4 }, (_, n) => {
+          const slot = (set.keys ?? [])[n];
+          if (!slot) return { text: "", symbol: "" };
+          return { text: slot.text, symbol: slot.arasaac ? symbolName(slot.arasaac) : "" };
+        }),
+      })),
+    };
+
+    if (layout.sets.length > 5) throw new Error(`${meta.id}: ${layout.sets.length} Sets, the device takes five.`);
+    const have = new Set(symbols.map((s) => s.name));
+    for (const set of layout.sets) {
+      for (const name of [set.symbol, ...set.slots.map((s) => s.symbol)].filter(Boolean)) {
+        if (!have.has(name)) throw new Error(`${meta.id}: a key names ${name}, which is not in the file.`);
+      }
+    }
+
+    const at = join(to, `${meta.id}.json`);
+    writeFileSync(at, `${JSON.stringify({
+      format: "vorlaut-backup",
+      version: 2,
+      exportedAt: new Date().toISOString(),
+      boards: [{ id: meta.id, name: meta.name, layout }],
+      current: null,
+      symbols,
+      settings: { activeProvider: "arasaac" },
+      notice: `${meta.name} — ${meta.attribution}`,
+    })}\n`);
+    written.push({ id: meta.id, what: `${layout.sets.length} Sets, ${symbols.length} Bilder`,
+      bytes: readFileSync(at).length });
   }
 
   for (const { meta, payload } of entries.filter((one) => one.meta.product === "vorlaut-app")) {
