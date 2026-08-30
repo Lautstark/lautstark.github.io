@@ -148,12 +148,47 @@ const searchable = (value) => `${fold(value)} ${fold(spelt(value))}`;
  * Only the tablet Sammlungen have a file yet. The others say so rather than
  * offering a link that would answer 404.
  */
-const actions = (meta, editor) => meta.product === "vorlaut-app"
-  ? `<a href="${esc(editor)}?sammlung=${esc(meta.id)}">Im Editor öffnen</a>`
-    + `<span class="dazu"> · </span><a href="download/${esc(meta.id)}.json" download>Herunterladen</a>`
-  : '<span class="dazu">Kommt noch</span>';
+/* Which programs take a Sammlung from the address, and what each calls itself
+ * in „In … öffnen". A product missing here still offers its file; the button
+ * arrives when that program learns to read ?sammlung=. */
+const OPENS = { "vorlaut-app": "editor" };
 
-function card({ meta, payload }, editor) {
+/**
+ * Which products have a file to hand over.
+ *
+ * bildhaft is missing and that is not an oversight. Its importer passes a
+ * sentence through as it stands, so a file built from a payload that holds only
+ * texts would import rows with no pictograms on them and no way to fill them
+ * short of retyping. That builder is worth writing beside the first bildhaft
+ * entry, where it can be tried, and not before it.
+ */
+const FILES = new Set(["vorlaut-app", "mitreden"]);
+const downloadable = (meta) => FILES.has(meta.product);
+
+/**
+ * What a card offers: the file, and — where the program can take it — the link
+ * that skips the file entirely.
+ *
+ * A new tab, because this page is a shelf: somebody comparing three Sammlungen
+ * should not lose the shelf to try one. The download is left alone; `download`
+ * does not navigate, and a tab that opens and closes again is a flash.
+ */
+function actions(meta, links) {
+  const file = downloadable(meta)
+    ? `<a href="download/${esc(meta.id)}.json" download>Herunterladen</a>`
+    : "";
+  const key = OPENS[meta.product];
+  const open = key
+    ? `<a href="${esc(links[key])}?sammlung=${esc(meta.id)}" target="_blank" rel="noopener">`
+      + `In ${esc(PRODUCTS[meta.product].label)} öffnen</a>`
+    : "";
+
+  const both = [open, file].filter(Boolean);
+  if (!both.length) return '<span class="dazu">Kommt noch</span>';
+  return both.join('<span class="dazu"> · </span>');
+}
+
+function card({ meta, payload }, links) {
   const product = PRODUCTS[meta.product];
   const tags = (meta.tags ?? []).map((t) => `<span class="marke">${esc(t)}</span>`).join("");
   const seeAlso = (meta.seeAlso ?? []).length
@@ -171,14 +206,14 @@ function card({ meta, payload }, editor) {
         <p class="karte__was">${esc(meta.description)}</p>
         <p class="karte__zahlen">${esc(factLine(meta))}</p>
         <p class="marken">${tags}${seeAlso}</p>
-        <p class="karte__tun">${actions(meta, editor)}</p>
+        <p class="karte__tun">${actions(meta, links)}</p>
       </article>`;
 }
 
 /**
  * The filter, as radio inputs that precede everything they act on.
  *
- * Produkt is always drawn, even holding one value: it is what this page is
+ * „Für“ is always drawn, even holding one value: it is what this page is
  * organised by, and a row that appears the day a second product lands leaves
  * somebody hunting for a control that was never there.
  *
@@ -200,7 +235,7 @@ function filter(entries) {
 
   return `${inputs.join("\n    ")}
     <fieldset class="filter">
-      <legend>Produkt</legend>
+      <legend>Für</legend>
       ${chips.join("\n      ")}
     </fieldset>`;
 }
@@ -246,7 +281,7 @@ export function sammlungen(root, dist, links) {
   return {
     filter: filter(entries),
     filterRules: filterRules(entries),
-    karten: entries.map((one) => card(one, links.editor)).join("\n"),
+    karten: entries.map((one) => card(one, links)).join("\n"),
     anzahl: count,
     stand: new Date().toISOString().slice(0, 10).split("-").reverse().join("."),
   };
@@ -318,14 +353,28 @@ function toLayout(payload) {
  * degrading. A Sicherung is the only shape that becomes a tablet Sammlung.
  */
 export async function downloads(root, dist) {
-  const entries = readEntries(root).filter((one) => one.meta.product === "vorlaut-app");
+  const entries = readEntries(root).filter((one) => downloadable(one.meta));
   if (!entries.length) return [];
 
   const cache = join(root, ".cache", "arasaac");
-  mkdirSync(join(dist, "sammlungen", "download"), { recursive: true });
+  const to = join(dist, "sammlungen", "download");
+  mkdirSync(to, { recursive: true });
   const written = [];
 
-  for (const { meta, payload } of entries) {
+  /* mitreden reads `sentences` — or `items`, or a bare list — and takes
+   * `collection` as the name to file them under. So its file is the payload
+   * with a name on it, and mitreden needs to learn nothing. */
+  for (const { meta, payload } of entries.filter((one) => one.meta.product === "mitreden")) {
+    const at = join(to, `${meta.id}.json`);
+    writeFileSync(at, `${JSON.stringify({
+      collection: meta.name,
+      sentences: (payload.sentences ?? []).map(({ text }) => ({ text })),
+    }, null, 2)}\n`);
+    written.push({ id: meta.id, what: `${(payload.sentences ?? []).length} Sätze`,
+      bytes: readFileSync(at).length });
+  }
+
+  for (const { meta, payload } of entries.filter((one) => one.meta.product === "vorlaut-app")) {
     const numbers = [...new Set(payload.pages
       .flatMap((page) => page.buttons.map((b) => b.arasaac).filter(Boolean)))];
 
@@ -359,7 +408,7 @@ export async function downloads(root, dist) {
       settings: { activeProvider: "arasaac" },
       notice: `${meta.name} — ${meta.attribution}`,
     })}\n`);
-    written.push({ id: meta.id, symbols: symbols.length, bytes: readFileSync(at).length });
+    written.push({ id: meta.id, what: `${symbols.length} Bilder`, bytes: readFileSync(at).length });
   }
 
   return written;

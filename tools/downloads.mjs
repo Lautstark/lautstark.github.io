@@ -15,6 +15,6 @@ const written = await downloads(root, `${root}dist`);
 
 for (const one of written) {
   console.log(`sammlungen/download/${one.id}.json: `
-    + `${one.symbols} Bilder, ${Math.round(one.bytes / 1024)} KB.`);
+    + `${one.what}, ${Math.round(one.bytes / 1024)} KB.`);
 }
 if (!written.length) console.log("No tablet Sammlungen to package.");
