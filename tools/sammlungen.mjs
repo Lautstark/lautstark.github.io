@@ -151,7 +151,7 @@ const searchable = (value) => `${fold(value)} ${fold(spelt(value))}`;
 /* Which programs take a Sammlung from the address, and what each calls itself
  * in „In … öffnen". A product missing here still offers its file; the button
  * arrives when that program learns to read ?sammlung=. */
-const OPENS = { "vorlaut-app": "editor", mitreden: "mitreden" };
+const OPENS = { "vorlaut-app": "editor", mitreden: "mitreden", bildhaft: "bildhaft" };
 
 /**
  * Which products have a file to hand over.
