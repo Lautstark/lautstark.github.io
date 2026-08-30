@@ -135,6 +135,22 @@ if (existsSync(ENTRIES)) {
     if (entry.symbols === "none" && String(entry.attribution ?? "").trim()) {
       problems.push(`${here}/entry.json: credits somebody for symbols it does not have.`);
     }
+    /* Where an entry is made of somebody else's work — a word list out of a
+       published game, the sentences of a picture book — `source` is where that
+       is said. Half a credit is worse than none: a title nobody can follow is a
+       claim that somebody was credited. */
+    if (entry.source !== undefined) {
+      const s = entry.source ?? {};
+      for (const field of ["title", "by", "url"]) {
+        if (!String(s[field] ?? "").trim()) {
+          problems.push(`${here}/entry.json: source has no ${field}.`);
+        }
+      }
+      if (s.url && !/^https:\/\//.test(String(s.url))) {
+        problems.push(`${here}/entry.json: source.url is not an https address.`);
+      }
+    }
+
     if (!SOURCES.includes(entry.symbols)) {
       problems.push(`${here}/entry.json: names the symbol source "${entry.symbols}". `
         + `Known: ${SOURCES.join(", ")}.`);

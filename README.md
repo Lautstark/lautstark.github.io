@@ -64,6 +64,7 @@ sammlungen/entries/<id>/<payload>      what it holds, read only by that product
 | `seeAlso` | ids of entries written to go with this one, named on both sides |
 | `payload` | the file name beside this one |
 | `symbolNotes` | why a symbol is a substitution rather than a match |
+| `source` | whose work the entry is made of, where it is somebody else's: `title`, `by`, optionally `publisher`, and a `url` that resolves. All three of the first are required together — a title nobody can follow is a claim that somebody was credited. It stands on the card and travels inside the download, because a file gets forwarded. |
 
 A `vorlaut-app` payload holds `grid`, `home`, `firstColumnShared` and `pages`,
 each button carrying `row`, `col`, `text`, `wordclass`, and — where one is known

@@ -3,12 +3,18 @@
   "id": "spiegel-und-ei",
   "product": "mitreden",
   "name": "Spiegel und Ei",
-  "description": "Sechsundneunzig Wörter, die sich zu anderen Wörtern zusammensetzen: Spiegel und Ei ergeben Spiegelei, Sonne und Blume eine Sonnenblume. Zum Aufnehmen und Zusammenschieben.",
+  "description": "Sechsundneunzig Wörter, die sich zu anderen Wörtern zusammensetzen: Spiegel und Ei ergeben Spiegelei, Sonne und Blume eine Sonnenblume. Die Wörterpaare stammen aus dem Kartenspiel „Spiegel & Ei“.",
   "tags": [
     "Wortspiel"
   ],
   "language": "de",
   "symbols": "none",
   "seeAlso": [],
-  "payload": "saetze.json"
+  "payload": "saetze.json",
+  "source": {
+    "title": "Spiegel & Ei",
+    "by": "Annette Kitzinger",
+    "publisher": "Diana Künne – Pädagogischer Verlag & Buchhandlung",
+    "url": "https://dianakuenne.de/p/kitzinger-spiegel-und-ei"
+  }
 }

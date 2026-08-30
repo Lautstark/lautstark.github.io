@@ -389,3 +389,8 @@ footer {
 }
 .nichts[hidden] { display: none; }
 .nichts strong { display: block; color: var(--text); margin-bottom: .2rem; }
+
+/* Whose work a Sammlung is made of. Quiet, but on the card rather than only in
+   the file: this is where somebody decides to take it. */
+.quelle { font-size: .78rem; color: var(--text-faint); line-height: 1.45; }
+.quelle a { color: var(--text-dim); }

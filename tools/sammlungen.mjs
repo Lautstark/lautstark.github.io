@@ -188,6 +188,19 @@ function actions(meta, links) {
   return both.join('<span class="dazu"> · </span>');
 }
 
+/**
+ * Whose work an entry is made of, where it is somebody else's.
+ *
+ * On the card and not only in the file, because the card is where somebody
+ * decides to take it — and a credit that only travels inside the download is a
+ * credit nobody reads before they have already helped themselves.
+ */
+const credit = (meta) => meta.source
+  ? `<p class="quelle">Nach <a href="${esc(meta.source.url)}" target="_blank" rel="noopener">`
+    + `${esc(meta.source.title)}</a> von ${esc(meta.source.by)}`
+    + (meta.source.publisher ? `, ${esc(meta.source.publisher)}` : "") + "</p>"
+  : "";
+
 function card({ meta, payload }, links) {
   const product = PRODUCTS[meta.product];
   const tags = (meta.tags ?? []).map((t) => `<span class="marke">${esc(t)}</span>`).join("");
@@ -206,6 +219,7 @@ function card({ meta, payload }, links) {
         <p class="karte__was">${esc(meta.description)}</p>
         <p class="karte__zahlen">${esc(factLine(meta))}</p>
         <p class="marken">${tags}${seeAlso}</p>
+        ${credit(meta)}
         <p class="karte__tun">${actions(meta, links)}</p>
       </article>`;
 }
@@ -368,6 +382,11 @@ export async function downloads(root, dist) {
     const at = join(to, `${meta.id}.json`);
     writeFileSync(at, `${JSON.stringify({
       collection: meta.name,
+      /* Travels with the file as well as standing on the card: a file gets
+         forwarded, and the credit has to survive that. */
+      ...(meta.source ? { quelle: `Nach „${meta.source.title}“ von ${meta.source.by}`
+        + (meta.source.publisher ? `, ${meta.source.publisher}` : "")
+        + ` — ${meta.source.url}` } : {}),
       sentences: (payload.sentences ?? []).map(({ text }) => ({ text })),
     }, null, 2)}\n`);
     written.push({ id: meta.id, what: `${(payload.sentences ?? []).length} Sätze`,
