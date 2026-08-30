@@ -3,6 +3,7 @@
  *
  *     npm run entry -- neu <id>              a folder with the two files in it
  *     npm run entry -- symbol <wort> …       what ARASAAC has, and how well
+ *     npm run entry -- aus <datei> [id]      an export from a product, converted
  *
  * ## Why the second verb exists
  *
@@ -20,8 +21,8 @@
  * reason.
  */
 
-import { existsSync, mkdirSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { basename, join } from "node:path";
 
 const ROOT = new URL("../", import.meta.url).pathname;
 const [verb, ...rest] = process.argv.slice(2);
@@ -139,10 +140,139 @@ async function symbol(words) {
 
 /* ----------------------------------------------------------------- said --- */
 
+/* ------------------------------------------------------------------ aus --- */
+
+/**
+ * An export from one of the products, as an entry.
+ *
+ * ## What it does with the symbols
+ *
+ * A bildhaft slot carries a `concept` — the lemma it was looked up under — and
+ * a `choice` per provider. Somebody working in METACOM has only the METACOM
+ * half, and that half may not be published: it is a filename out of a licensed
+ * folder. So the concept is looked up at ARASAAC instead, here, once per
+ * concept rather than once per slot.
+ *
+ * **A confident answer is one that carries the word itself.** Anything else is
+ * left empty and listed at the end, because a wrong symbol on a board reads
+ * fine until somebody uses it — and 272 concepts is exactly the scale at which
+ * "close enough" gets waved through. What comes out is an entry that is right
+ * as far as it goes and honest about the rest.
+ *
+ * ## What it drops
+ *
+ * Ids, timestamps, the collection uuid, the candidate lists, and every METACOM
+ * path. None of them is anybody's business on a shelf, and the last would fail
+ * the check anyway.
+ */
+async function aus(path, wantedId) {
+  if (!path || !existsSync(path)) { say(`No such file: ${path}`); process.exit(1); }
+  const file = JSON.parse(readFileSync(path, "utf8"));
+
+  if (file.format !== "bildhaft.collection") {
+    say("Only a bildhaft export so far — its slots carry a concept, which is what");
+    say("makes this possible at all. A mitreden export is a list of texts and needs");
+    say("no conversion; a vorlaut board carries no concept to look anything up by.");
+    process.exit(1);
+  }
+
+  const name = file.collection?.name ?? basename(path);
+  const id = wantedId || slug(name);
+  const dir = join(ROOT, "sammlungen", "entries", id);
+  if (existsSync(dir)) { say(`${id} is already there.`); process.exit(1); }
+
+  /* One lookup per concept, not per slot: the same word turns up in a dozen
+   * sentences and ARASAAC does not need asking a dozen times. */
+  const concepts = new Map();
+  for (const sentence of file.sentences ?? []) {
+    for (const slot of sentence.slots ?? []) {
+      const key = slot.concept || slot.sourceToken;
+      if (key && !concepts.has(key)) concepts.set(key, null);
+    }
+  }
+
+  say(`${concepts.size} Begriffe bei ARASAAC nachschlagen …`);
+  const unsure = [];
+  let at = 0;
+  const keys = [...concepts.keys()];
+  await Promise.all(Array.from({ length: 6 }, async () => {
+    while (at < keys.length) {
+      const key = keys[at++];
+      const found = await lookup(key);
+      if (found) concepts.set(key, found);
+      else unsure.push(key);
+    }
+  }));
+
+  const sentences = (file.sentences ?? []).map((sentence) => ({
+    text: sentence.rawInput ?? "",
+    slots: (sentence.slots ?? []).map((slot) => {
+      const key = slot.concept || slot.sourceToken;
+      const number = concepts.get(key);
+      return {
+        token: slot.sourceToken ?? key,
+        concept: key,
+        ...(number ? { arasaac: number } : {}),
+      };
+    }),
+  }));
+
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, "saetze.json"), `${JSON.stringify({ sentences }, null, 2)}\n`);
+  const entry = SKELETON(id);
+  entry.product = "bildhaft";
+  entry.name = name;
+  entry.payload = "saetze.json";
+  writeFileSync(join(dir, "entry.json"), `${JSON.stringify(entry, null, 2)}\n`);
+
+  const slots = sentences.reduce((n, s) => n + s.slots.length, 0);
+  const filled = sentences.reduce((n, s) => n + s.slots.filter((x) => x.arasaac).length, 0);
+
+  say("");
+  say(`sammlungen/entries/${id}/  —  ${sentences.length} Sätze, ${slots} Felder`);
+  say(`  ${filled} haben eine ARASAAC-Nummer, ${slots - filled} nicht.`);
+  if (unsure.length) {
+    say("");
+    say(`Ohne Nummer, weil kein Piktogramm das Wort selbst trägt (${unsure.length}):`);
+    say(`  ${unsure.sort().join(", ")}`);
+    say("");
+    say("Für jedes davon: npm run entry -- symbol <wort>   und die Nummer eintragen,");
+    say("mit einem Satz in symbolNotes, warum sie eine Ersetzung ist.");
+  }
+  say("");
+  say("Dann: entry.json braucht noch description und tags. npm run check sagt, was fehlt.");
+}
+
+/** A confident number for one concept, or null. See aus() for what confident
+ *  means and why nothing less is written into a file. */
+async function lookup(word) {
+  try {
+    const answer = await fetch(
+      `https://api.arasaac.org/v1/pictograms/de/search/${encodeURIComponent(word)}`);
+    if (!answer.ok) return null;
+    const found = await answer.json();
+    if (!Array.isArray(found)) return null;
+    const exact = found.find((one) => rate(one, word) === "genau");
+    return exact ? exact._id : null;
+  } catch {
+    return null;
+  }
+}
+
+/** „Kommunikationsfächer" -> „kommunikationsfaecher". The same shape ids have. */
+const slug = (name) => name.toLowerCase()
+  .replaceAll("ä", "ae").replaceAll("ö", "oe").replaceAll("ü", "ue").replaceAll("ß", "ss")
+  .normalize("NFD").replace(/\p{M}/gu, "")
+  .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+/* ----------------------------------------------------------------- said --- */
+
 if (verb === "neu") neu(rest[0]);
 else if (verb === "symbol") await symbol(rest);
+else if (verb === "aus") await aus(rest[0], rest[1]);
 else {
   say("npm run entry -- neu <id>            eine neue Sammlung anlegen");
   say("npm run entry -- symbol <wort> …     Nummern bei ARASAAC suchen");
+  say("npm run entry -- aus <datei> [id]    einen Export umwandeln");
   process.exit(1);
 }
