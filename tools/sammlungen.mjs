@@ -101,21 +101,69 @@ export function readEntries(root) {
 /** A board as its Aufschriften and its empty cells. Not the artwork: see the
  *  head of this file for why that is the better picture and not only the
  *  cheaper one. */
-function boardPreview(payload) {
-  const { rows, columns } = payload.grid;
-  const home = payload.pages.find((p) => p.id === payload.home) ?? payload.pages[0];
-  const at = new Map(home.buttons.map((b) => [`${b.row},${b.col}`, b]));
-  const cells = [];
+/**
+ * One page of a preview at a time, with an arrow either side.
+ *
+ * The alternative was every page stacked, which is what the talker card did for
+ * an afternoon: five little grids down a card, so a shelf of them scrolled past
+ * anything you could compare. A card should show what the Sammlung opens on and
+ * let you look further if you want to.
+ *
+ * No script, like the filter above it. A radio per page, each immediately
+ * followed by the page it shows, and `.wahl:checked + .seite` — which is why
+ * the order below is input, page, input, page rather than the two lists apart.
+ * That also leaves the pages reachable from the keyboard for free: the radios
+ * are a group, and a group answers arrow keys whether or not anything drew it.
+ *
+ * The ring wraps at both ends. On the talker that is literally the device — the
+ * set key cycles — and on a board of pages it is the shorter way back to the
+ * first from the last.
+ *
+ * The arrows are aria-hidden, which is the point of them rather than an
+ * oversight: a <label for> lends its text to the control it names, so two of
+ * them pointing at one radio would call that page „Weiter Zurück". Hidden, they
+ * still take the click, the radios stay a keyboard group, and what a reader
+ * hears when one is chosen is the page itself — which says „Sprechen · 1 von 5"
+ * in so many words.
+ */
+function pager(id, pages) {
+  if (pages.length <= 1) return pages[0]?.html ?? "";
 
-  for (let row = 0; row < rows; row += 1) {
-    for (let col = 0; col < columns; col += 1) {
-      const button = at.get(`${row},${col}`);
-      if (!button) { cells.push('<span class="zelle zelle--frei"></span>'); continue; }
-      const shared = payload.firstColumnShared && col === 0;
-      cells.push(`<span class="zelle${shared ? " zelle--spalte" : ""}">${esc(button.text)}</span>`);
+  const at = (n) => `bl-${id}-${(n + pages.length) % pages.length}`;
+  return `<div class="blaettern">${pages.map((page, n) => `
+        <input type="radio" name="bl-${esc(id)}" id="${esc(at(n))}" class="wahl"${n ? "" : " checked"}>
+        <div class="seite">${page.html}
+          <p class="blaettern__zeile">
+            <label class="pfeil" for="${esc(at(n - 1))}" title="Zurück" aria-hidden="true">‹</label>
+            <span>${esc(page.label)} · ${n + 1} von ${pages.length}</span>
+            <label class="pfeil" for="${esc(at(n + 1))}" title="Weiter" aria-hidden="true">›</label>
+          </p>
+        </div>`).join("")}
+      </div>`;
+}
+
+/** A tablet board, a page at a time — the one it opens on first. */
+function boardPreview(payload, id) {
+  const { rows, columns } = payload.grid;
+  const home = payload.pages.find((p) => p.id === payload.home);
+  const pages = [home, ...payload.pages.filter((p) => p !== home)].filter(Boolean);
+
+  return pager(id, pages.map((page, n) => {
+    const at = new Map(page.buttons.map((b) => [`${b.row},${b.col}`, b]));
+    const cells = [];
+    for (let row = 0; row < rows; row += 1) {
+      for (let col = 0; col < columns; col += 1) {
+        const button = at.get(`${row},${col}`);
+        if (!button) { cells.push('<span class="zelle zelle--frei"></span>'); continue; }
+        const shared = payload.firstColumnShared && col === 0;
+        cells.push(`<span class="zelle${shared ? " zelle--spalte" : ""}">${esc(button.text)}</span>`);
+      }
     }
-  }
-  return `<div class="brett" style="--spalten: ${columns}">${cells.join("")}</div>`;
+    return {
+      label: page.name || `Seite ${n + 1}`,
+      html: `<div class="brett" style="--spalten: ${columns}">${cells.join("")}</div>`,
+    };
+  }));
 }
 
 function factLine(meta) {
@@ -215,23 +263,25 @@ const credit = (meta) => meta.source
   : "";
 
 /**
- * The five sets, each drawn the way the device is.
+ * One set of a talker, drawn the way the device is.
  *
  * Two rows of three with the top left empty, because that is where the speaker
  * is — obf.ts's grid() and docs/hardware.md, and the same picture the export
  * writes. Somebody who has held one recognises it; somebody who has not learns
  * from the card that four keys and a set key is the whole of the thing.
  */
-function setsPreview(payload) {
-  const sets = (payload.sets ?? []).map((set) => {
+function setsPreview(payload, id) {
+  return pager(id, (payload.sets ?? []).map((set) => {
     const keys = (set.keys ?? []).map((k) => `<span class="zelle">${esc(k.text)}</span>`);
     const cells = [
       '<span class="zelle zelle--frei"></span>', keys[0] ?? "", keys[1] ?? "",
       `<span class="zelle zelle--spalte">${esc(set.name)}</span>`, keys[2] ?? "", keys[3] ?? "",
     ];
-    return `<div class="brett" style="--spalten: 3">${cells.join("")}</div>`;
-  });
-  return `<div class="saetze">${sets.join("")}</div>`;
+    return {
+      label: set.name,
+      html: `<div class="brett" style="--spalten: 3">${cells.join("")}</div>`,
+    };
+  }));
 }
 
 /** Which products show what is inside before you take it. A product with no
@@ -252,7 +302,7 @@ function card({ meta, payload }, links) {
         data-text="${esc(haystack)}">
         <p class="karte__wer"><span class="punkt"></span>${esc(product.label)}</p>
         <h3>${esc(meta.name)}</h3>
-        ${PREVIEW[meta.product]?.(payload) ?? ""}
+        ${PREVIEW[meta.product]?.(payload, meta.id) ?? ""}
         <p class="karte__was">${esc(meta.description)}</p>
         <p class="karte__zahlen">${esc(factLine(meta))}</p>
         <p class="marken">${tags}${seeAlso}</p>

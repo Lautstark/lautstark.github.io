@@ -357,9 +357,23 @@ footer {
   text-align: center; padding: 2px; min-height: 26px; overflow: hidden;
 }
 /* The five sets of a talker, stacked — each its own two-by-three. */
-/* Four times the gap inside a set, because at this size a 6px one read as a
-   single ten-row grid and put „Sprechen“ in the same table as „Immer“. */
-.saetze { display: flex; flex-direction: column; gap: 12px; }
+/* One page of a preview at a time. The radios are drawn by nothing and hidden
+   by .wahl; each is immediately followed by the page it shows, which is the
+   whole mechanism — see pager() in tools/sammlungen.mjs. */
+.seite { display: none; }
+.wahl:checked + .seite { display: block; }
+
+.blaettern__zeile {
+  display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+  margin: .45rem 0 0; font-size: .7rem; color: var(--text-dim);
+}
+.blaettern__zeile span { flex: 1; text-align: center; }
+.pfeil {
+  cursor: pointer; user-select: none; line-height: 1;
+  padding: 0 .4rem; border-radius: 4px; font-size: 1rem;
+  border: 1px solid var(--surface-3); color: var(--text-dim);
+}
+.pfeil:hover { color: var(--text); border-color: var(--text-dim); }
 .zelle--frei { background: transparent; border: 1px dashed var(--surface-3); }
 .zelle--spalte { background: var(--surface-3); color: var(--text); font-weight: 600; }
 
