@@ -424,7 +424,15 @@ export async function downloads(root, dist) {
       format: "bildhaft.collection",
       version: 3,
       exportedAt: new Date().toISOString(),
-      collection: { name: meta.name, sentenceIds: sentences.map((s) => s.id) },
+      /* The language travels with the Sammlung, because the symbol search has
+         to be asked in it: somebody reading the interface in English still
+         needs „Zähne putzen" looked up in German, or no correction they make
+         can find the right picture. */
+      collection: {
+        name: meta.name,
+        language: meta.language,
+        sentenceIds: sentences.map((s) => s.id),
+      },
       sentences,
       notice: [meta.attribution, meta.source && `Nach „${meta.source.title}" von ${meta.source.by}`]
         .filter(Boolean).join(" "),
