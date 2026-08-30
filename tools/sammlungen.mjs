@@ -156,13 +156,17 @@ const OPENS = { "vorlaut-app": "editor", mitreden: "mitreden", bildhaft: "bildha
 /**
  * Which products have a file to hand over.
  *
- * bildhaft is missing and that is not an oversight. Its importer passes a
- * sentence through as it stands, so a file built from a payload that holds only
- * texts would import rows with no pictograms on them and no way to fill them
- * short of retyping. That builder is worth writing beside the first bildhaft
- * entry, where it can be tried, and not before it.
+ * Every product in OPENS must be here too: the link a card offers fetches the
+ * same file the download does. bildhaft was in one and not the other for a day,
+ * so its card promised a door with nothing behind it — the entry did not exist
+ * yet when that was written, and then it did.
  */
-const FILES = new Set(["vorlaut-app", "mitreden"]);
+const FILES = new Set(["vorlaut-app", "mitreden", "bildhaft"]);
+for (const product of Object.keys(OPENS)) {
+  if (!FILES.has(product)) {
+    throw new Error(`${product} can be opened from a link but has no file to open.`);
+  }
+}
 const downloadable = (meta) => FILES.has(meta.product);
 
 /**
@@ -391,6 +395,41 @@ export async function downloads(root, dist) {
     }, null, 2)}\n`);
     written.push({ id: meta.id, what: `${(payload.sentences ?? []).length} Sätze`,
       bytes: readFileSync(at).length });
+  }
+
+  /* bildhaft reads its own export and passes a sentence through as it stands,
+   * so the file is that shape with the ARASAAC half of each slot filled in and
+   * the METACOM half absent — which is the whole point: whoever opens it in
+   * METACOM has their own, and this one may not carry theirs. */
+  for (const { meta, payload } of entries.filter((one) => one.meta.product === "bildhaft")) {
+    const sentences = (payload.sentences ?? []).map((sentence, n) => ({
+      id: `s${n}`,
+      rawInput: sentence.text ?? "",
+      normalizedInput: (sentence.text ?? "").toLowerCase(),
+      slots: (sentence.slots ?? []).map((slot, m) => ({
+        id: `s${n}-${m}`,
+        sourceToken: slot.token ?? slot.concept ?? "",
+        concept: slot.concept ?? "",
+        origin: "lemma",
+        // A number the shelf published, as the string a provider id is. An
+        // empty slot travels as one: the word is there and the picture is not,
+        // which is what „leer statt falsch" looks like in a file.
+        choice: slot.arasaac ? { arasaac: String(slot.arasaac) } : {},
+        candidates: {},
+      })),
+    }));
+
+    const at = join(to, `${meta.id}.json`);
+    writeFileSync(at, `${JSON.stringify({
+      format: "bildhaft.collection",
+      version: 3,
+      exportedAt: new Date().toISOString(),
+      collection: { name: meta.name, sentenceIds: sentences.map((s) => s.id) },
+      sentences,
+      notice: [meta.attribution, meta.source && `Nach „${meta.source.title}" von ${meta.source.by}`]
+        .filter(Boolean).join(" "),
+    }, null, 2)}\n`);
+    written.push({ id: meta.id, what: `${sentences.length} Sätze`, bytes: readFileSync(at).length });
   }
 
   for (const { meta, payload } of entries.filter((one) => one.meta.product === "vorlaut-app")) {
