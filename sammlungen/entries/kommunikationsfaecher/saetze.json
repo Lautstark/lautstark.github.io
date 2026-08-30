@@ -1,0 +1,348 @@
+{
+  "sentences": [
+    {
+      "text": "Kopfschmerzen, Zahnschmerzen, Bauchschmerzen, Schmerzen, übel, weiss nicht",
+      "slots": [
+        {
+          "token": "Kopfschmerzen",
+          "concept": "kopfschmerzen",
+          "arasaac": 28651
+        },
+        {
+          "token": "Zahnschmerzen",
+          "concept": "zahnschmerzen",
+          "arasaac": 10263
+        },
+        {
+          "token": "Bauchschmerzen",
+          "concept": "bauchschmerzen",
+          "arasaac": 28766
+        },
+        {
+          "token": "Schmerzen",
+          "concept": "schmerzen",
+          "arasaac": 2367
+        },
+        {
+          "token": "übel",
+          "concept": "übel",
+          "arasaac": 38403
+        },
+        {
+          "token": "weiß nicht",
+          "concept": "weiss",
+          "arasaac": 7180
+        }
+      ]
+    },
+    {
+      "text": "stopp, wegnehmen, schreien, hauen, warten, entschuldigen",
+      "slots": [
+        {
+          "token": "stopp",
+          "concept": "stopp",
+          "arasaac": 7196
+        },
+        {
+          "token": "wegnehmen",
+          "concept": "wegnehmen",
+          "arasaac": 15469
+        },
+        {
+          "token": "schreien",
+          "concept": "schreien",
+          "arasaac": 6552
+        },
+        {
+          "token": "hauen",
+          "concept": "hauen",
+          "arasaac": 8999
+        },
+        {
+          "token": "warten",
+          "concept": "warten",
+          "arasaac": 36914
+        },
+        {
+          "token": "entschuldigen",
+          "concept": "entschuldigen",
+          "arasaac": 38360
+        }
+      ]
+    },
+    {
+      "text": "hunger, durst, schwitzen, frieren, müde, ausruhen",
+      "slots": [
+        {
+          "token": "hunger",
+          "concept": "Hunger",
+          "arasaac": 35559
+        },
+        {
+          "token": "durst",
+          "concept": "Durst",
+          "arasaac": 7273
+        },
+        {
+          "token": "schwitzen",
+          "concept": "schwitzen",
+          "arasaac": 8469
+        },
+        {
+          "token": "frieren",
+          "concept": "frieren",
+          "arasaac": 35583
+        },
+        {
+          "token": "müde",
+          "concept": "müde",
+          "arasaac": 35537
+        },
+        {
+          "token": "ausruhen",
+          "concept": "ausruhen",
+          "arasaac": 16643
+        }
+      ]
+    },
+    {
+      "text": "gut, nicht gut, traurig, wütend, aufregen, laut",
+      "slots": [
+        {
+          "token": "gut",
+          "concept": "gut",
+          "arasaac": 4581
+        },
+        {
+          "token": "nicht",
+          "concept": "nicht",
+          "arasaac": 5526
+        },
+        {
+          "token": "traurig",
+          "concept": "traurig",
+          "arasaac": 35545
+        },
+        {
+          "token": "wütend",
+          "concept": "wütend",
+          "arasaac": 35539
+        },
+        {
+          "token": "aufregen",
+          "concept": "aufregen"
+        },
+        {
+          "token": "laut",
+          "concept": "laut",
+          "arasaac": 7157
+        }
+      ]
+    },
+    {
+      "text": "anziehen, ausziehen, jacke, schuhe, regensachen, mütze",
+      "slots": [
+        {
+          "token": "anziehen",
+          "concept": "anziehen",
+          "arasaac": 6627
+        },
+        {
+          "token": "ausziehen",
+          "concept": "ausziehen",
+          "arasaac": 11233
+        },
+        {
+          "token": "jacke",
+          "concept": "Jacke",
+          "arasaac": 2319
+        },
+        {
+          "token": "schuhe",
+          "concept": "schuhe",
+          "arasaac": 2622
+        },
+        {
+          "token": "Regensachen",
+          "concept": "regensachen",
+          "arasaac": 4927
+        },
+        {
+          "token": "mütze",
+          "concept": "Mütze",
+          "arasaac": 39395
+        }
+      ]
+    },
+    {
+      "text": "toilette, klopapier, windel, zähneputzen, hände waschen, abtrockenen",
+      "slots": [
+        {
+          "token": "toilette",
+          "concept": "Toilette",
+          "arasaac": 5921
+        },
+        {
+          "token": "windel",
+          "concept": "Windel",
+          "arasaac": 22017
+        },
+        {
+          "token": "Zähne putzen",
+          "concept": "zähneputzen",
+          "arasaac": 2326
+        },
+        {
+          "token": "waschen",
+          "concept": "waschen",
+          "arasaac": 34826
+        },
+        {
+          "token": "abtrocknen",
+          "concept": "abtrockenen",
+          "arasaac": 2566
+        }
+      ]
+    },
+    {
+      "text": "draussen, ausflug, schaukeln, klettern, sand, fahrzeuge",
+      "slots": [
+        {
+          "token": "draußen",
+          "concept": "draussen",
+          "arasaac": 5475
+        },
+        {
+          "token": "ausflug",
+          "concept": "ausflug",
+          "arasaac": 6532
+        },
+        {
+          "token": "schaukeln",
+          "concept": "schaukeln",
+          "arasaac": 5430
+        },
+        {
+          "token": "klettern",
+          "concept": "klettern",
+          "arasaac": 8226
+        },
+        {
+          "token": "sand",
+          "concept": "sand",
+          "arasaac": 4565
+        },
+        {
+          "token": "Fahrzeuge",
+          "concept": "fahrzeuge",
+          "arasaac": 34461
+        }
+      ]
+    },
+    {
+      "text": "drinnen, keris, spielen, basteln, turnen, aufräumen",
+      "slots": [
+        {
+          "token": "drinnen",
+          "concept": "drinnen",
+          "arasaac": 5439
+        },
+        {
+          "token": "Morgenkreis",
+          "concept": "morgenkreis",
+          "arasaac": 27574
+        },
+        {
+          "token": "spielen",
+          "concept": "spielen",
+          "arasaac": 23392
+        },
+        {
+          "token": "basteln",
+          "concept": "basteln",
+          "arasaac": 7794
+        },
+        {
+          "token": "turnen",
+          "concept": "turnen",
+          "arasaac": 10156
+        },
+        {
+          "token": "aufräumen",
+          "concept": "aufräumen",
+          "arasaac": 5514
+        }
+      ]
+    },
+    {
+      "text": "nicht, helfen, noch mal, fertig, komm mal. lass mich.",
+      "slots": [
+        {
+          "token": "nicht",
+          "concept": "nicht",
+          "arasaac": 5526
+        },
+        {
+          "token": "helfen",
+          "concept": "helfen",
+          "arasaac": 32648
+        },
+        {
+          "token": "noch mal",
+          "concept": "noch",
+          "arasaac": 37162
+        },
+        {
+          "token": "fertig",
+          "concept": "fertig",
+          "arasaac": 28429
+        },
+        {
+          "token": "komm",
+          "concept": "komm",
+          "arasaac": 32669
+        },
+        {
+          "token": "mich",
+          "concept": "mich",
+          "arasaac": 6632
+        }
+      ]
+    },
+    {
+      "text": "Hallo Tschüss Kits nach Hause ja nein",
+      "slots": [
+        {
+          "token": "Hallo",
+          "concept": "hallo",
+          "arasaac": 6522
+        },
+        {
+          "token": "Tschüss",
+          "concept": "tschüss",
+          "arasaac": 6028
+        },
+        {
+          "token": "Kita",
+          "concept": "kits",
+          "arasaac": 29853
+        },
+        {
+          "token": "nach Hause",
+          "concept": "Hause",
+          "arasaac": 6964
+        },
+        {
+          "token": "ja",
+          "concept": "ja",
+          "arasaac": 5584
+        },
+        {
+          "token": "nein",
+          "concept": "nein",
+          "arasaac": 5526
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "id": "kommunikationsfaecher",
+  "product": "bildhaft",
+  "name": "Kommunikationsfächer",
+  "description": "Zehn Fächer zu je sechs Symbolen, für den Tag: Schmerzen, Gefühle, Anziehen, Toilette, draußen, drinnen. Gedacht zum Ausdrucken und Zusammenheften — ein Fächer, den man aufklappt und auf das zeigt, was gerade gilt.",
+  "tags": [
+    "Situation",
+    "zum Drucken"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [],
+  "payload": "saetze.json",
+  "symbolNotes": {
+    "weiss": "„Ich weiß es nicht“ — ARASAAC hat kein Bild für „weiß“ in diesem Sinn, und das für die Farbe wäre das falsche.",
+    "übel": "Das Symbol für „Übelkeit“; „übel“ allein hat keins.",
+    "stopp": "Das Symbol für „anhalten“, das auch „stoppen“ trägt.",
+    "entschuldigen": "Das Symbol für „Entschuldigung“, das auch „Es tut mir leid“ trägt.",
+    "regensachen": "Das Symbol für „Regenjacke“ — eine Ersetzung, kein Sammelbegriff.",
+    "noch": "Gefunden unter „noch einmal“. Unter „noch“ allein findet ARASAAC nichts.",
+    "fertig": "Das Symbol für „beenden“, das auch „Ich bin fertig!“ trägt.",
+    "nicht": "Das Symbol für „nein“. ARASAAC hat keins für „nicht“ allein, und im Deutschen wird ohnehin meist durchgekreuzt statt ersetzt.",
+    "Hause": "Das Symbol für „Zuhause“.",
+    "kits": "Im Export stand „Kits“ — gemeint ist die Kita.",
+    "aufregen": "Ohne Symbol. „wütend“ steht schon im selben Fächer, und ARASAAC hat nichts, das „aufregen“ selbst trägt.",
+    "morgenkreis": "Im Export stand „keris“ — gemeint ist der Morgenkreis, und dafür gibt es ein eigenes Symbol."
+  }
+}
