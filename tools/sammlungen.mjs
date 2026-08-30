@@ -38,8 +38,12 @@ import { dirname, join } from "node:path";
 const SCHEMA = 1;
 
 export const PRODUCTS = {
-  "vorlaut-app": { label: "vorlaut", hue: "vorlaut" },
-  "vorlaut-talker": { label: "Talker", hue: "vorlaut" },
+  /* Both are talkers and both are built in vorlaut; what differs is what they
+     run on. „vorlaut" as a label said which program rather than which device,
+     and stopped being an answer the day a second kind of Sammlung landed
+     beside it — see PROGRAMS for the other half of that split. */
+  "vorlaut-app": { label: "Talker (Android)", hue: "vorlaut" },
+  "vorlaut-talker": { label: "Talker (DIY)", hue: "vorlaut" },
   bildhaft: { label: "bildhaft", hue: "bildhaft" },
   mitreden: { label: "mitreden", hue: "mitreden" },
 };
