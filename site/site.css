@@ -132,9 +132,9 @@ figcaption { margin-top: .6rem; font-size: .88rem; color: var(--text-dim); }
 
 /* ------------------------------------------------------------------ pointer */
 
-/* One row that is entirely a link: the talker on the front page, and the way
-   back on the talker page. Bigger than a word in a sentence, quieter than a
-   section of its own. */
+/* One row that is entirely a link: the shelf on the front page, the DIY-Talker
+   at the end of the vorlaut page, and the way back from there. Bigger than a
+   word in a sentence, quieter than a section of its own. */
 .pointer {
   max-width: 44rem;
   display: flex; align-items: center; justify-content: space-between;
@@ -204,7 +204,13 @@ footer {
   color: var(--accent-strong);
 }
 .produkt .label img { display: block; }
-.produkt .go { margin-top: 1.5rem; font-weight: 650; }
+/* Two links now, where there was one: the product itself and the shelf filtered
+   to it. A row that wraps rather than a list, because on a phone the second one
+   goes under the first and stays a line rather than becoming a bullet. */
+.produkt .go {
+  display: flex; flex-wrap: wrap; gap: .35rem 1.6rem;
+  margin-top: 1.5rem; font-weight: 650;
+}
 .produkt .go a { color: var(--accent-strong); text-decoration: none; }
 .produkt .go a:hover { text-decoration: underline; }
 

@@ -26,9 +26,9 @@
   </a>
   <nav>
     <a href="vorlaut.html" aria-current="page">vorlaut</a>
-    <a href="talker.html">Talker</a>
     <a href="index.html#mitreden">mitreden</a>
     <a href="index.html#bildhaft">bildhaft</a>
+    <a href="sammlungen/index.html">Sammlungen</a>
   </nav>
 </header>
 
@@ -47,16 +47,16 @@
     <p>
       Welche Wörter dort liegen, bestimmen Sie. Das Vokabular entsteht im
       Editor am Rechner und wächst mit: erst ein paar Tasten, dann Seiten, dann
-      Wege dazwischen. Wem ein Tablet nicht passt, legt dasselbe Vokabular auf
-      ein kleines Gerät mit fünf Tasten.
+      Wege dazwischen.
     </p>
     <p class="note">
-      Ein fertiges Vokabular bringt vorlaut nicht mit. Sie fangen mit einer
-      leeren Sammlung an und bauen auf, was gebraucht wird. Das ist Arbeit, und
-      es ist der Grund, warum die Tafeln am Ende zu einem bestimmten Menschen
-      passen und nicht zu allen ein bisschen. vorlaut ist eines von drei
-      Programmen bei <a href="index.html">Lautstark</a>, alle kostenlos, ohne
-      Konto und ohne Server.
+      Sie fangen mit einer leeren Sammlung an oder mit einer
+      <a href="sammlungen/index.html?produkt=vorlaut-app">fertigen Sammlung</a>,
+      die Sie umbauen. Beides ist Arbeit, und es ist der Grund, warum die Tafeln
+      am Ende zu einem bestimmten Menschen passen und nicht zu allen ein
+      bisschen. vorlaut ist eines von drei Programmen bei
+      <a href="index.html">Lautstark</a>, alle kostenlos, ohne Konto und ohne
+      Server.
     </p>
     <div class="actions">
       <a class="btn primary cta" href="{{editor}}">Editor öffnen</a>
@@ -110,7 +110,8 @@
       <div>
         <dt>Stimme</dt>
         <dd>
-          Aussagen selbst einsprechen oder eine Computerstimme verwenden.
+          Mehrere Stimmen sind dabei; welche spricht, wählen Sie aus, und
+          weitere können dazukommen.
         </dd>
       </div>
       <div>
@@ -131,13 +132,14 @@
       <div>
         <dt>Ausgeben</dt>
         <dd>
-          Ein Paket für die App, eine Datei für den DIY-Talker und ein offenes
-          Board-Format, das andere UK-Programme lesen.
+          Ein Paket für die App und ein offenes Board-Format, das andere
+          UK-Programme lesen.
         </dd>
       </div>
     </dl>
     <div class="actions">
       <a class="btn primary" href="{{editor}}">Editor öffnen</a>
+      <a class="btn" href="sammlungen/index.html?produkt=vorlaut-app">Fertige Sammlungen</a>
       <a class="btn" href="{{editorSource}}">Quelltext</a>
     </div>
   </div>
@@ -186,8 +188,8 @@
       <div>
         <dt>Ohne Netz</dt>
         <dd>
-          Die App hat keine Internet-Berechtigung. Bilder und Aufnahmen liegen
-          im Paket, nachgeladen wird nichts.
+          Die App hat keine Internet-Berechtigung. Bilder und Töne liegen im
+          Paket, nachgeladen wird nichts.
         </dd>
       </div>
       <div>
@@ -200,8 +202,10 @@
       <div>
         <dt>Installieren</dt>
         <dd>
-          Die App liegt nicht bei Google Play, sondern als Installationsdatei
-          bereit. Das Tablet fragt beim ersten Mal einmal nach.
+          Bei Google Play liegt die App noch nicht. Bis dahin laden Sie sie als
+          <a href="{{appDownload}}">Installationsdatei</a> herunter, eine APK;
+          beim ersten Mal fragt das Tablet einmal nach, ob es sie installieren
+          darf.
         </dd>
       </div>
     </dl>
@@ -259,12 +263,38 @@
 
 <section class="band">
   <div class="col">
+    <p class="label">Für Bastler</p>
+    <h2>Der DIY-Talker</h2>
+    <p>
+      Daneben liegt ein Selbstbau-Projekt: ein kleines Gerät mit fünf Tasten,
+      die zugleich Displays sind, ein ESP32-S3 dahinter, ein Gehäuse aus dem
+      Drucker. Der Editor schreibt die Datei dafür mit.
+    </p>
+    <p class="note">
+      Das ist kein Produkt, sondern ein Bastelprojekt: Teileliste, Verdrahtung,
+      Gehäusequelle und Firmware liegen offen, gelötet, gedruckt und geflasht
+      wird selbst. Wer das nicht bauen möchte, ist mit dem Tablet richtig.
+    </p>
+    <a class="pointer" href="talker.html">
+      <div>
+        <strong>Der DIY-Talker</strong>
+        <p class="note">
+          Teile, Entscheidungen und der Stand des Projekts.
+        </p>
+      </div>
+      <span class="go">Ansehen →</span>
+    </a>
+  </div>
+</section>
+
+<section class="band">
+  <div class="col">
     <a class="pointer" href="index.html">
       <div>
         <strong>mitreden und bildhaft</strong>
         <p class="note">
-          Die beiden anderen Programme: Sätze als Audiodateien in einer festen
-          Stimme, und Sätze als Piktogramme zum Ausdrucken.
+          Die beiden anderen Programme: Sätze als Audiodateien, und Sätze als
+          Piktogramme zum Ausdrucken.
         </p>
       </div>
       <span class="go">Zur Übersicht →</span>

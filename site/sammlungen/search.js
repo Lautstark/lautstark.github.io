@@ -9,9 +9,12 @@
  * That is why the field is `hidden` in the markup and revealed here: a search
  * box that cannot search is worse than no search box.
  *
- * It hides and shows, and never touches the radios. Both mechanisms only ever
- * hide, so a card has to survive both to be seen, and the two combine without
- * either knowing about the other.
+ * It hides and shows, and the radios it only ever sets once, on arrival: a
+ * link from another page may name a product — sammlungen/index.html?produkt=
+ * mitreden — and an address is the one thing CSS cannot read. Without this file
+ * such a link opens the shelf on „Alle", which is everything and never a wrong
+ * answer. Otherwise both mechanisms only ever hide, so a card has to survive
+ * both to be seen, and the two combine without either knowing about the other.
  */
 
 (() => {
@@ -25,6 +28,13 @@
   const all = count ? count.textContent : "";
 
   box.closest(".suchzeile").hidden = false;
+
+  /* The product a link asked for, if that product is on this shelf at all.
+     A name with no entries has no radio to check — the shelf then opens whole,
+     which is the same thing an unfiltered visit shows. */
+  const asked = new URLSearchParams(location.search).get("produkt");
+  const chosen = asked && document.getElementById(`p-${asked}`);
+  if (chosen) chosen.checked = true;
 
   /* The same folding the haystack was built with, so „wörter", "worter" and
    * "woerter" all reach the same card. See tools/sammlungen.mjs. */

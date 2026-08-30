@@ -181,6 +181,10 @@ function card({ meta, payload }, editor) {
  * Produkt is always drawn, even holding one value: it is what this page is
  * organised by, and a row that appears the day a second product lands leaves
  * somebody hunting for a control that was never there.
+ *
+ * The ids are what the rest of the site links against: another page sends
+ * ?produkt=<id> and search.js checks the radio of that name. A product with no
+ * entries has no radio here, and such a link simply opens the whole shelf.
  */
 function filter(entries) {
   const counts = new Map();
