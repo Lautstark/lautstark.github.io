@@ -30,7 +30,7 @@ entries, where an entry is a text with the pictures that belong to it.
 
 Generic, unpersonalised pots published on `lautstark.tech/sammlungen/`:
 *Frühstück*, *Kleidung*, *Gefühle*, *Kerntafel 60 Wörter*. In every product a
-**„Wortschatz hinzufügen"** pulls one in.
+**„Wörter hinzufügen"** pulls one in.
 
 The machinery exists. `@lautstark/werkzeuge/sammlung` already fetches an entry
 by id (`?sammlung=<id>`) and all three products use it; the address carries an
@@ -45,6 +45,17 @@ answer to what *adding* means:
 
 A copy on adding, never a reference. Import adds and never overwrites, as
 everywhere else in this family.
+
+**Naming, because it is easy to get wrong:** *shelf* is a word for code
+comments only. What people are shown is what the products already say —
+`lautstark.tech/sammlungen` is headed **„Fertige Sammlungen"**, bildhaft says
+„Eine **fertige Sammlung holen**", vorlaut says „wenn du eine **von
+lautstark.tech holst**". A German „Regal" appears nowhere and should not start
+now. The dialog is therefore **„Wörter hinzufügen"** (what happens) with the
+sources named as they already are: *Fertige Sammlungen · Mein Wortschatz ·
+Meine Sammlungen*. Which also means a thematic Wortschatz needs **no new kind
+of shelf entry** — it is a fertige Sammlung that happens to hold words, and the
+only change the shelf needs is product-neutrality.
 
 ### 2 · The personal layer — the interesting half
 
@@ -166,7 +177,7 @@ and one of them is "nowhere".
 
 A shelf Wortschatz is **not something you own — it is something you pour in.**
 Next to the composer, where a person already stands when content should go in,
-a quiet second path: **„oder Wortschatz vom Regal holen"** → list → chosen →
+a quiet second path: **„Wörter hinzufügen"** → list → chosen →
 the entries land as rows or cards in the open Sammlung. After that you manage
 what you always manage: your Sammlung. Contributing one is likewise nothing
 new — you **publish a Sammlung** to the shelf. No second object in the sidebar,
