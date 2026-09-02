@@ -1,7 +1,12 @@
 # Wortschatz
 
-**Status: a proposal, not a decision.** Written 2026-08-31 from a long design
-conversation; nothing here is built. It lives in this repository rather than in
+**Status: a proposal, with one product now deciding on its own half.** Written
+2026-08-31 from a long design conversation; **updated 2026-09-02**, when two
+things that this document treated as obstacles turned out to be solved or
+shipped — see *origins* below, which no longer says what it said. bildhaft has
+taken the first product-level decision out of this
+([`bildhaft/adr/0002`](https://github.com/Lautstark/bildhaft/blob/main/adr/0002-the-wortschatz-is-a-place-and-material-has-a-kind.md));
+the cross-product half is still a proposal. It lives in this repository rather than in
 a product's `adr/` because it spans all of them, and rather than in
 `@lautstark/design`'s `conventions.md` because that document describes what the
 products have *settled* — this has not. If it gets built, the parts that turn
@@ -16,10 +21,15 @@ Every product already holds a version of the same noun, in its own dialect:
 | **bildhaft** | `Slot`: concept, symbol choice **per source**, label, negation, own picture. Overrides remember corrections. | the corrections are invisible and ungrouped — there is no pot |
 | **mitreden** | `Phrase`: text, voice, audio | **no symbols at all** |
 | **vorlaut-editor** | `Slot` / `AppButton`: label, **vocalization**, symbol, **word class**, negation | every field is searched for on its own; nothing accumulates |
+| **wochenwerk** | a calendar whose entries are symbols | the same words as everywhere else, resolved a fourth time |
 
-Three products, three dialects of one thing, and nothing can hand anything to
+Four products, four dialects of one thing, and nothing can hand anything to
 anything — except one accident: mitreden already reads bildhaft's files and
 throws away everything but the text.
+
+Since the domain move each of them also resolves the same words against the same
+sources under a different origin, so *Oma* is corrected four times by the same
+household, and four times again on the next device.
 
 A **Wortschatz** is that noun made explicit and portable: a named pot of
 entries, where an entry is a text with the pictures that belong to it.
@@ -117,6 +127,30 @@ Teil       = token · symbol{arasaac?, metacom?}? · own picture? · negated? ·
 Symbols stay **per source**, the way bildhaft models them, so ARASAAC travels
 universally and METACOM only resolves for a licence holder.
 
+## Tags — lenses, not folders
+
+A pot of three hundred entries needs a way to be looked at, and the shape it
+takes decides how much work a person has to do before the pot is useful.
+
+**Tags, not folders.** A word carries any number of them; a tag is a filter over
+one list, not a container holding its own copy. The alternative forces *Apfel*
+into *Essen* or into *Kita* and asks the person who wanted both to keep two
+apples — which is two answers to what an apple looks like, the exact thing a
+Wortschatz exists to prevent.
+
+**Derived first, own second.** ARASAAC hands back, per pictogram, a
+`categories` list (`['fruit', 'core vocabulary-feeding']`), `tags`, and
+`keywords[].type` — 2 for a noun, 3 for a verb. Wortart, Thema and
+Kernwortschatz can therefore be filled in from responses the products already
+make, which matters more than it sounds: a person who has to tag three hundred
+words by hand tags none of them. The person's own tags (*Kita*, *Oma*, *Urlaub*)
+sit beside the derived ones and are the ones worth pinning where they can be
+seen.
+
+**A tag can be a row in the sidebar**, which is how bildhaft is taking it: „Alle
+Wörter" plus the pinned tags, each row one lens over one list. A word in no tag
+is not lost — it is in „Alle Wörter", where it always was.
+
 ## Wort, Satz, Text — derived, not declared
 
 The three shapes are not three types anybody has to choose between. They fall
@@ -183,18 +217,28 @@ what you always manage: your Sammlung. Contributing one is likewise nothing
 new — you **publish a Sammlung** to the shelf. No second object in the sidebar,
 no second mental model.
 
-### The personal layer: one list, device-wide, grows by itself
+### The personal layer: one list, and it outgrows Einstellungen
 
 By `conventions.md` §3.10's own test — "does this setting's answer change when
-something else is selected?" — it belongs in **Einstellungen**: Oma's picture is
+something else is selected?" — it starts in **Einstellungen**: Oma's picture is
 the same whichever Sammlung is open, and it applies *forward*, to the next thing
-made. That is exactly the semantics described there.
+made. That is exactly the semantics described there, and it is where bildhaft's
+panel „Mein Wörterbuch" already stands and works: it counts the entries in its
+heading, lists them, lets one be removed.
 
-- **Einstellungen → panel „Mein Wortschatz"**, which per design.md §3.4 states
-  its status before offering a control: „47 Wörter · zuletzt geändert vor 3
-  Tagen" → **„Wörter ansehen"**
-- That opens a wide sheet: a grid of word plus picture, a search field, click
-  opens the familiar picker, remove per entry. Nothing is *created* here.
+§3.10 decides *where a setting goes*. It does not decide whether something is a
+setting, and this one stops being one at the point where a person goes looking
+for it on purpose — to see what they have, to file a word before they need it,
+to look at one tag. A thing with tags, a filter and its own empty state is a
+place, and a place belongs in the sidebar. That is bildhaft's ADR 0002: the
+panel keeps working and stops being the only door.
+
+- The panel per design.md §3.4 states its status before offering a control: „47
+  Wörter · zuletzt geändert vor 3 Tagen".
+- The place it opens into: word plus **picture** (a list of words pointing at
+  labels is a record of what was decided; the pictures are the thing itself), a
+  search field, tag chips as filters, click opens the familiar picker, remove
+  per entry.
 - **Creation happens while working**: a correction in the picker, an own picture
   for a word the library does not know — bildhaft's `unmatched` state is the
   natural on-ramp, because that is exactly where the proper nouns stand (Oma,
@@ -202,6 +246,9 @@ made. That is exactly the semantics described there.
   errand.
 - **At the point of use**, a tile showing a personal picture says so, with a
   click to change or release it.
+- Nothing here is a precondition. Typing sentences into a new Sammlung, with an
+  empty Wortschatz and no tags, stays a complete way to use the product — the
+  Wortschatz is what use leaves behind, not what it demands up front.
 
 ### The case that breaks it
 
@@ -213,7 +260,7 @@ family, necessary for a professional. Build the simple version, ship file
 export/import as the valve, and let use decide whether the named variant is
 really needed.
 
-## The hard part: origins — verified 2026-08-31
+## The part that was hard: origins — verified 2026-08-31, answered 2026-09-02
 
 Cross-product automatic sharing is not a code problem, it is a browser problem.
 The CNAMEs say:
@@ -246,15 +293,45 @@ and the browser forbids it. Three honest routes:
    greps the built bundle for unknown hosts. Out.
 3. **The Sicherung folder** — and here is the turn that makes it simple for a
    person: the Wortschatz does not travel *beside* the backup, it travels
-   **inside** it. Every product already writes into one folder chosen once. A
-   shared `wortschatz-aktuell.json` in it, read at boot and written on change,
-   and there is no new concept to learn: "the folder holds your things, all the
-   tools read it." Price stays: Chromium desktop only, and for `sicherung` a
-   **new inlet**, which its own rule makes a major version.
+   **inside** it. Every product already writes into one folder chosen once. No
+   new concept to learn: "the folder holds your things, all the tools read it."
 
-Suggested order: build the personal layer **per product first** (immediate
-value, no infrastructure — in bildhaft three quarters of it exists already),
-then the folder as the bridge, with file export as the universal fallback.
+### Route 3 is no longer hypothetical
+
+When this was written, the folder route was priced as "a new inlet for
+`sicherung`, which its own rule makes a major version". That inlet was built for
+another reason and has shipped:
+[`sicherung/adr/0001 — a folder can be the store`](https://github.com/Lautstark/sicherung/blob/main/adr/0001-a-folder-can-be-the-store.md).
+The **Ablage** is a folder that *is* a product's store rather than a copy of it:
+one record per file named by its id, each carrying `updatedAt`, the folder the
+truth and the browser's copy a mirror, conflicts reported and never merged. It
+is namespaced `<folder>/<app>/<kind>/<id>.json`, and binary files sit beside the
+records.
+
+A folder is not bound to an origin. **That is the whole answer to the four
+subdomains** — not a workaround for them, the thing itself. And bildhaft is
+already there: its overrides are written through `src/db/folder.ts` under the
+kind `woerterbuch`, one file per entry, in a folder the household picked. The
+store a shared Wortschatz needs exists and has records in it.
+
+The price that remains is the one route 3 always carried — **Chromium on the
+desktop**, deliberately, per that ADR: not a progressive enhancement, a stated
+scope. Everywhere else, file export/import stays the valve.
+
+### The one gap left
+
+`AblageOptions.app` keys **both** the subtree under the folder **and** the
+remembered folder handle. A product asking for a second, shared `wortschatz`
+compartment beside its own would therefore ask the household to **pick the same
+folder twice**, under two names that look alike — which `ablage.ts`'s own
+`handle()` doc names as the thing it exists to spare people. The fix is small
+and additive: a way to seed an Ablage from an existing `handle()`. That is the
+only package change this proposal now needs.
+
+Suggested order, revised: build the personal layer **per product first**
+(immediate value, no infrastructure — in bildhaft most of it exists already),
+then close the `handle()` gap, then let the second product read the same
+compartment. File export stays the universal fallback throughout.
 
 ## The boundary that must be structural
 
@@ -291,13 +368,24 @@ it, no symbol committed, numbers fetched at build time — stays as it is.
 
 1. **Is the personal layer per device/household or per person?** Oma is the same
    Oma for both children — until a professional has eight.
-2. **Does bildhaft's override dictionary *become* the personal layer** —
-   visible, browsable, exportable — or live on beside it? It is the prototype
-   that already serves people, only invisibly.
+2. ~~Does bildhaft's override dictionary *become* the personal layer?~~
+   **Answered: it becomes it.** It was always keyed `lang:provider:token` and
+   never by Sammlung, so it was household-wide before anybody called it a
+   Wortschatz. It grows visibility, pictures and tags rather than being replaced
+   (bildhaft ADR 0002).
 3. **Where is a Wortschatz authored?** Authoring in bildhaft and consuming
    everywhere avoids building the same surface three times; vorlaut-editor is
    the counter-argument, since it is the only product that knows word classes.
-4. **Is a shared origin thinkable at all**, or is the folder bridge the ceiling?
+   Leaning bildhaft, which is becoming the material creator — a household holds
+   words with tags and makes things out of them: Karten, Satzkarten, Tafeln,
+   Kommunikationsfächer, Plauderbücher.
+4. ~~Is a shared origin thinkable at all, or is the folder bridge the ceiling?~~
+   **Answered: the folder is the bridge**, and it is built. The origins stay
+   four; the store stops being four.
+5. **Who writes it when two products are open at once?** The Ablage reports
+   conflicts and never merges them, which is the right default — but a
+   Wortschatz edited in bildhaft while wochenwerk has it open is the first case
+   where two *products* conflict on one record rather than two devices.
 
 ## Related
 
@@ -305,5 +393,12 @@ it, no symbol committed, numbers fetched at build time — stays as it is.
   [`Lautstark/druckwerk`](https://github.com/Lautstark/druckwerk); its
   `mocks/index.html` holds the material designs (Tagesplan, Auswahltafel,
   Kommunikationstafel) and the "duplicate as" matrix.
+- [`bildhaft/adr/0002`](https://github.com/Lautstark/bildhaft/blob/main/adr/0002-the-wortschatz-is-a-place-and-material-has-a-kind.md)
+  — the first product decision taken out of this document: two nouns in the
+  sidebar, tags as lenses, a kind per material, and material still makeable
+  without a Wortschatz.
+- [`sicherung/adr/0001`](https://github.com/Lautstark/sicherung/blob/main/adr/0001-a-folder-can-be-the-store.md)
+  — the Ablage, which is what turned the origins problem from a blocker into a
+  scope statement.
 - `@lautstark/design`'s `docs/conventions.md` is where the parts of this that
   become binding belong, once they are — including the glossary amendment.
