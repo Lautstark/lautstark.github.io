@@ -11,6 +11,20 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Die vier Akzente als ein Verlauf, in der Reihenfolge des Farbkreises. Steht
+   hier oben, weil zwei Stellen ihn zeigen -- der Titel und das Beta-Band -- und
+   zwei Kopien irgendwann auseinanderlaufen. Die Werte selbst sind aus den
+   Token-Dateien der Produkte abgeschrieben; siehe die Notiz weiter unten bei
+   .produkt, warum sie hier überhaupt stehen. */
+:root {
+  --verlauf: linear-gradient(100deg,
+    #2d5ee3 0%, #7652d3 34%, #ac407c 68%, #be3e00 100%);
+  /* Dieselbe Reihenfolge in den zarten Tönen: das ist --accent-soft jedes
+     Produkts, hell genug, dass Text darauf ruhig bleibt. */
+  --verlauf-zart: linear-gradient(100deg,
+    #edf3ff 0%, #f3f1ff 34%, #ffedf5 68%, #ffefea 100%);
+}
+
 body {
   margin: 0;
   background: var(--surface);
@@ -177,12 +191,19 @@ figcaption { margin-top: .6rem; font-size: .88rem; color: var(--text-dim); }
    Gedeckt statt laut: eine Warnfarbe würde behaupten, dass etwas kaputt ist,
    und das ist nicht, was Beta hier heißt. */
 .beta {
+  position: relative;
   margin: 0;
-  border-bottom: 1px solid var(--surface-3);
-  background: var(--surface-2);
+  /* Die vier Produktfarben in ihrer zarten Fassung, dazu unten die Kante in
+     denselben Farben satt. Das Band ist damit sichtbar Teil der Familie und
+     bleibt trotzdem ruhig genug, dass der Titel darunter der Anfang ist. */
+  background-image: var(--verlauf-zart);
   color: var(--text-dim);
   font-size: .88rem; line-height: 1.5;
-  padding: .7rem 2rem;
+  padding: .7rem 2rem calc(.7rem + 3px);
+}
+.beta::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 3px;
+  background-image: var(--verlauf);
 }
 .beta strong { color: var(--text); }
 
@@ -301,8 +322,7 @@ footer {
 
 @supports ((background-clip: text) or (-webkit-background-clip: text)) {
   .bunt {
-    background-image: linear-gradient(100deg,
-      #2d5ee3 0%, #7652d3 34%, #ac407c 68%, #be3e00 100%);
+    background-image: var(--verlauf);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
