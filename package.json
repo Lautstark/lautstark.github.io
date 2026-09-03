@@ -12,6 +12,6 @@
     "entry": "node tools/entry.mjs"
   },
   "dependencies": {
-    "@lautstark/design": "github:Lautstark/design#v1.22.0"
+    "@lautstark/design": "github:Lautstark/design#v1.29.0"
   }
 }
