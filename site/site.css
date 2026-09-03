@@ -83,13 +83,54 @@ body {
   color: var(--text); text-decoration: none;
 }
 .wordmark img { display: block; }
-/* Wickelt um, seit die Navigation fünf Namen trägt: bei 390 px stand
-   "Sammlungen" sonst über dem rechten Rand hinaus und die ganze Seite ließ
-   sich seitwärts schieben. */
+/* Fünf Namen passen auf einen Laptop in eine Zeile und auf ein Telefon nicht.
+   Dort klappen sie hinter das ☰, das der vorlaut-Editor für seine Seitenleiste
+   benutzt -- ein .btn.quiet.icon aus dem Paket -- und die Liste darunter sieht
+   aus wie das .menu der Produkte. Die Mechanik ist dieselbe wie beim Filter im
+   Regal: ein Ankreuzfeld, das nichts zeichnet, ein Label, das es umschaltet,
+   und ein Geschwisterselektor dazwischen. Kein JavaScript, und die Links
+   stehen in der Seite, wo sie hingehören. */
 .top nav { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; font-size: .9rem; }
+.menulinks { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; }
+.menuknopf { display: none; }
 .top nav a { color: var(--text-dim); text-decoration: none; }
 .top nav a:hover { color: var(--text); text-decoration: underline; }
 .top nav a[aria-current="page"] { color: var(--text); font-weight: 600; }
+
+@media (max-width: 44rem) {
+  /* Der Knopf bleibt, wo er ist, und die Liste hängt rechtsbündig darunter --
+     dieselbe Geometrie wie .menu-anchor im Paket, 6px Abstand, rechte Kante
+     an rechter Kante. */
+  .top nav { position: relative; margin-left: auto; }
+  .menuknopf { display: inline-flex; font-size: 1.15rem; user-select: none; }
+  /* Das Feld zeichnet nichts, also muss das Label zeigen, dass es den Fokus
+     hat -- sonst ist der Knopf mit der Tastatur unauffindbar. */
+  nav .wahl:focus-visible ~ .menuknopf {
+    outline: 2px solid var(--accent); outline-offset: 2px;
+  }
+  nav .wahl:checked ~ .menuknopf { background: var(--surface-2); color: var(--text); }
+  .menulinks { display: none; }
+  /* Das Aussehen von .menu aus components.css, nachgezeichnet statt geerbt:
+     dessen Zeilen sind <button>, diese hier sind Links, und die Klasse würde
+     auf dem Laptop, wo die Links eine Zeile sind, einen Kasten darum malen. */
+  nav .wahl:checked ~ .menulinks {
+    display: flex; flex-direction: column; gap: 0;
+    position: absolute; z-index: 30;
+    right: 0; top: calc(100% + 6px); min-width: 196px;
+    padding: 6px;
+    background: var(--surface);
+    border: 1px solid var(--line); border-radius: var(--radius-sm);
+    box-shadow: var(--shadow);
+  }
+  nav .wahl:checked ~ .menulinks a {
+    display: block; white-space: nowrap;
+    font-size: 14px; padding: 8px 11px;
+    border-radius: var(--radius-item);
+    color: var(--text);
+  }
+  nav .wahl:checked ~ .menulinks a:hover { background: var(--surface-2); text-decoration: none; }
+  nav .wahl:checked ~ .menulinks a[aria-current="page"] { color: var(--accent-strong); }
+}
 
 /* -------------------------------------------------------------------- type */
 
