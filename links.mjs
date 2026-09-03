@@ -29,6 +29,9 @@ export const links = {
      file exists to stop being relied on. */
   mitreden: "https://mitreden.lautstark.tech/",
   bildhaft: "https://bildhaft.lautstark.tech/",
+  /* Seit dem 2. September 2026 unter eigener Adresse; vorher lag es unter
+     lautstark.tech/Wochenwerk/ und teilte sich den Origin mit dieser Seite. */
+  wochenwerk: "https://wochenwerk.lautstark.tech/",
   quelltext: "https://github.com/Lautstark",
   meldungen: "https://github.com/Lautstark/lautstark.github.io/issues",
   post: "mailto:steffi@lautstark.tech",

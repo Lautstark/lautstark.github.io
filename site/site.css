@@ -69,7 +69,10 @@ body {
   color: var(--text); text-decoration: none;
 }
 .wordmark img { display: block; }
-.top nav { display: flex; gap: 1.1rem; font-size: .9rem; }
+/* Wickelt um, seit die Navigation fünf Namen trägt: bei 390 px stand
+   "Sammlungen" sonst über dem rechten Rand hinaus und die ganze Seite ließ
+   sich seitwärts schieben. */
+.top nav { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; font-size: .9rem; }
 .top nav a { color: var(--text-dim); text-decoration: none; }
 .top nav a:hover { color: var(--text); text-decoration: underline; }
 .top nav a[aria-current="page"] { color: var(--text); font-weight: 600; }
@@ -166,6 +169,42 @@ figcaption { margin-top: .6rem; font-size: .88rem; color: var(--text-dim); }
 .pointer .go { color: var(--accent-strong); font-weight: 600; white-space: nowrap; }
 .pointer p { margin: .3rem 0 0; }
 
+/* -------------------------------------------------------------------- beta */
+
+/* Der Streifen ganz oben, auf jeder Seite. Er steht vor der Kopfzeile, weil er
+   die Bedingung ist, unter der alles darunter gilt — und nicht am Fuß, wo ihn
+   niemand liest, der oben schon auf einen Download geklickt hat.
+   Gedeckt statt laut: eine Warnfarbe würde behaupten, dass etwas kaputt ist,
+   und das ist nicht, was Beta hier heißt. */
+.beta {
+  margin: 0;
+  border-bottom: 1px solid var(--surface-3);
+  background: var(--surface-2);
+  color: var(--text-dim);
+  font-size: .88rem; line-height: 1.5;
+  padding: .7rem 2rem;
+}
+.beta strong { color: var(--text); }
+
+@media (max-width: 34rem) { .beta { padding-inline: 1.25rem; } }
+
+/* Was Beta bei diesem einen Programm bedeutet, unter seiner Faktenliste: das
+   Allgemeine steht oben, hier steht das Konkrete. Eingerückt hinter einer
+   Kante in der Produktfarbe, damit es zum Abschnitt gehört und nicht zur
+   nächsten Überschrift. */
+.betazeile {
+  max-width: 44rem;
+  margin-top: 1.5rem;
+  border-left: 3px solid var(--accent);
+  padding: .1rem 0 .1rem 1rem;
+  font-size: .92rem; color: var(--text-dim);
+}
+.betazeile strong { color: var(--accent-strong); }
+
+/* Die Faktenliste endet auf einer Haarlinie; eine Stand-Zeile direkt darunter
+   säße sonst darauf. */
+.facts + .betazeile { margin-top: 1.25rem; }
+
 /* ------------------------------------------------------------------ footer */
 
 /* The row of small links every page ends with. Impressum and Datenschutz have
@@ -185,17 +224,18 @@ footer {
 
 /* ------------------------------------------------------- the three products */
 
-/* This page carries three accents at once, which no token file does: each
+/* This page carries four accents at once, which no token file does: each
    product's file derives every grey from its own hue, so they cannot be loaded
-   together. vorlaut's tokens are the ground -- it is the largest of the three
+   together. vorlaut's tokens are the ground -- it is the largest of the four
    -- and each product section overrides only the accent pair with the values
    out of that product's own token file, copied rather than approximated. If
-   this page ships, the honest home for those six lines is a neutral
+   this page ships, the honest home for those eight lines is a neutral
    lautstark.css generated in Lautstark/design the way the others are. */
 
-.produkt.vorlaut  { --accent: #9B7BFF; --accent-strong: #7652d3; }
-.produkt.mitreden { --accent: #ff8bc7; --accent-strong: #ac407c; }
-.produkt.bildhaft { --accent: #ff6b35; --accent-strong: #be3e00; }
+.produkt.vorlaut    { --accent: #9B7BFF; --accent-strong: #7652d3; }
+.produkt.mitreden   { --accent: #ff8bc7; --accent-strong: #ac407c; }
+.produkt.bildhaft   { --accent: #ff6b35; --accent-strong: #be3e00; }
+.produkt.wochenwerk { --accent: #3B6FF5; --accent-strong: #2d5ee3; }
 
 /* The product's own name over its section, with its mark beside it. This is
    the only place the accent is loud; everything below it is ordinary text. */
@@ -214,12 +254,14 @@ footer {
 .produkt .go a { color: var(--accent-strong); text-decoration: none; }
 .produkt .go a:hover { text-decoration: underline; }
 
-/* The three tiles under the opening paragraph: the whole family in one glance,
-   each one a jump to its own section further down. */
+/* The tiles under the opening paragraph: the whole family in one glance, each
+   one a jump to its own section further down. Wider than the text measure since
+   wochenwerk made it four: at 44rem the fourth tile wrapped to a line of its
+   own and the family read as three plus an afterthought. */
 .kacheln {
   display: grid; gap: .9rem; margin-top: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-  max-width: 44rem;
+  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+  max-width: 50rem;
 }
 .kachel {
   display: flex; flex-direction: column; gap: .15rem;
@@ -234,26 +276,33 @@ footer {
 .kachel strong { font-size: 1.05rem; color: var(--accent-strong); }
 .kachel span { font-size: .9rem; color: var(--text-dim); }
 /* --tint is each product's --accent-soft, from its own token file. */
-.kachel.vorlaut  { --accent: #9B7BFF; --accent-strong: #7652d3; --tint: #f3f1ff; }
-.kachel.mitreden { --accent: #ff8bc7; --accent-strong: #ac407c; --tint: #ffedf5; }
-.kachel.bildhaft { --accent: #ff6b35; --accent-strong: #be3e00; --tint: #ffefea; }
+.kachel.vorlaut    { --accent: #9B7BFF; --accent-strong: #7652d3; --tint: #f3f1ff; }
+.kachel.mitreden   { --accent: #ff8bc7; --accent-strong: #ac407c; --tint: #ffedf5; }
+.kachel.bildhaft   { --accent: #ff6b35; --accent-strong: #be3e00; --tint: #ffefea; }
+.kachel.wochenwerk { --accent: #3B6FF5; --accent-strong: #2d5ee3; --tint: #edf3ff; }
 
-/* The three marks side by side are the organisation's mark: there is no fourth
-   drawing, and inventing one would be a logo for a thing nobody uses. */
-.trio { display: inline-flex; gap: .3rem; }
-.trio img { display: block; }
+/* The marks side by side are the organisation's mark: there is no drawing of
+   its own, and inventing one would be a logo for a thing nobody uses. It was
+   three of them until wochenwerk; the class is named after what it is rather
+   than after how many, so the next product costs one line of markup. */
+.familie { display: inline-flex; gap: .3rem; }
+.familie img { display: block; }
 
-/* ----------------------------------------------------------- three at once */
+/* ------------------------------------------------------------ all at once */
 
-/* The title runs through all three accents in order, which is the one place
-   the family can be seen rather than listed. The plain colour is declared
-   first and the gradient only inside @supports: a browser that cannot clip a
-   background to text would otherwise render transparent letters on white. */
-.dreifarbig { color: var(--accent-strong); }
+/* The title runs through every accent, which is the one place the family can be
+   seen rather than listed. The order is the wheel's, not the page's: blue,
+   violet, pink, orange are neighbours all the way along, and running the
+   section order instead put orange next to blue and drew a band of mud through
+   the middle of a word. The plain colour is declared first and the gradient
+   only inside @supports: a browser that cannot clip a background to text would
+   otherwise render transparent letters on white. */
+.bunt { color: var(--accent-strong); }
 
 @supports ((background-clip: text) or (-webkit-background-clip: text)) {
-  .dreifarbig {
-    background-image: linear-gradient(100deg, #7652d3 0%, #ac407c 52%, #be3e00 100%);
+  .bunt {
+    background-image: linear-gradient(100deg,
+      #2d5ee3 0%, #7652d3 34%, #ac407c 68%, #be3e00 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -269,8 +318,14 @@ footer {
 }
 .paar figure { margin: 0; }
 
+/* Dasselbe Paar, andersherum gewichtet. Bei vorlaut steht das Werkzeug links
+   und breit; bei wochenwerk ist es umgekehrt, weil das Brett das ist, was
+   niemand kennt — der Kalender daneben muss nur zeigen, dass er ein ganz
+   gewöhnliches Wochenraster ist, und dafür reicht ein Daumennagel. */
+.paar--brett { grid-template-columns: 1fr 1.6fr; }
+
 @media (max-width: 48rem) {
-  .paar { grid-template-columns: 1fr; }
+  .paar, .paar--brett { grid-template-columns: 1fr; }
 }
 
 /* One line, and it wraps to two only on a narrow screen. */

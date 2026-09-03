@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>vorlaut · Vokabular bauen und auf dem Tablet benutzen</title>
-<meta name="description" content="Ein Board-Editor im Browser und eine Android-App: Vokabular selbst anlegen, sichern und auf dem Tablet benutzen. Kostenlos, ohne Konto, ohne Server.">
+<meta name="description" content="Ein Talker, dessen Wörter du selbst bestimmst: Tafeln im Browser bauen, auf dem Tablet benutzen. Kostenlos, ohne Konto, ohne Server.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/components.css">
@@ -15,12 +15,20 @@
 </head>
 <body>
 
+<!-- Steht vor der Kopfzeile und auf jeder Seite; index.html sagt, warum. -->
+<p class="beta">
+  <strong>Alles hier ist Beta.</strong> Die Programme laufen — bei uns, jeden
+  Tag. Aber sie sind jung, sie ändern sich noch, und du wirst auf Ecken stoßen.
+  <a href="{{meldungen}}">Erzähl mir davon</a>, dann werden es weniger.
+</p>
+
 <header class="top col">
   <a class="wordmark" href="index.html">
-    <span class="trio" aria-hidden="true">
+    <span class="familie" aria-hidden="true">
       <img src="mark-vorlaut.svg" alt="" width="26" height="26">
       <img src="mark-mitreden.svg" alt="" width="26" height="26">
       <img src="mark-bildhaft.svg" alt="" width="26" height="26">
+      <img src="mark-wochenwerk.svg" alt="" width="26" height="26">
     </span>
     <span>Lautstark</span>
   </a>
@@ -28,6 +36,7 @@
     <a href="vorlaut.html" aria-current="page">vorlaut</a>
     <a href="index.html#mitreden">mitreden</a>
     <a href="index.html#bildhaft">bildhaft</a>
+    <a href="index.html#wochenwerk">wochenwerk</a>
     <a href="sammlungen/index.html">Sammlungen</a>
   </nav>
 </header>
@@ -42,19 +51,19 @@
       Auf dem Tablet liegen Seiten mit Tasten, auf jeder ein Bild und ein Wort.
       Ein Druck, und der Satz ist gesagt: ein Wunsch, eine Antwort, ein Nein.
       Für Menschen, die nicht oder nicht immer mit der eigenen Stimme sprechen,
-      und für die, die mit ihnen arbeiten.
+      und für alle, die mit ihnen zu tun haben.
     </p>
     <p>
-      Welche Wörter dort liegen, bestimmen Sie. Das Vokabular entsteht im
-      Editor am Rechner und wächst mit: erst ein paar Tasten, dann Seiten, dann
-      Wege dazwischen.
+      Welche Wörter dort liegen, bestimmst du. Sie entstehen im Editor am
+      Rechner und wachsen mit: erst ein paar Tasten, dann Seiten, dann Wege
+      dazwischen. Bei uns fehlt regelmäßig eines, und dann kommt es dazu.
     </p>
     <p class="note">
-      Sie fangen mit einer leeren Sammlung an oder mit einer
+      Du fängst leer an oder mit einer
       <a href="sammlungen/index.html?produkt=vorlaut-app">fertigen Sammlung</a>,
-      die Sie umbauen. Beides ist Arbeit, und es ist der Grund, warum die Tafeln
-      am Ende zu einem bestimmten Menschen passen und nicht zu allen ein
-      bisschen. vorlaut ist eines von drei Programmen bei
+      die du umbaust. Beides ist Arbeit, und das bleibt so. Dafür passen die
+      Tafeln am Ende zu einem bestimmten Menschen und nicht zu allen ein
+      bisschen. vorlaut ist eines von vier Programmen bei
       <a href="index.html">Lautstark</a>, alle kostenlos, ohne Konto und ohne
       Server.
     </p>
@@ -70,14 +79,14 @@
     <p class="label">Der Editor</p>
     <h2>Hier entsteht das Vokabular</h2>
     <p>
-      Der Editor ist eine Internetseite. Sie öffnen sie und arbeiten sofort
-      los: Es wird nichts installiert und niemand angemeldet. Die Sammlungen
-      liegen im Speicher Ihres Browsers und bleiben dort, bis Sie sie ändern.
+      Der Editor ist eine Internetseite: aufmachen und loslegen. Nichts zu
+      installieren, niemanden anzumelden. Deine Sammlungen liegen im Speicher
+      des Browsers und bleiben dort, bis du sie änderst.
     </p>
     <p>
-      Eine Sammlung besteht aus Seiten, eine Seite aus Tasten. Sie legen fest,
+      Eine Sammlung besteht aus Seiten, eine Seite aus Tasten. Du legst fest,
       wie groß das Raster ist, was auf einer Taste steht, welches Bild darauf
-      liegt und was gesprochen wird.
+      liegt und was sie sagt, wenn jemand sie drückt.
     </p>
   </div>
   <div class="wide">
@@ -96,44 +105,44 @@
         <dt>Raster</dt>
         <dd>
           Pro Sammlung festgelegt, zum Beispiel drei Reihen mal fünf Spalten.
-          Seiten verweisen aufeinander: Eine Taste kann weiterführen, statt zu
-          sprechen.
+          Eine Taste kann auch weiterführen, statt zu sprechen; so hängen die
+          Seiten zusammen.
         </dd>
       </div>
       <div>
         <dt>Bilder</dt>
         <dd>
-          Piktogramme von ARASAAC, direkt im Editor gesucht. Wer METACOM
-          lizenziert hat, bindet den eigenen Ordner ein.
+          Piktogramme von ARASAAC, direkt im Editor gesucht. Wenn du METACOM
+          lizenziert hast, bindest du deinen eigenen Ordner ein.
         </dd>
       </div>
       <div>
         <dt>Stimme</dt>
         <dd>
-          Mehrere Stimmen sind dabei; welche spricht, wählen Sie aus, und
+          Mehrere Stimmen sind dabei; welche spricht, wählst du aus, und
           weitere können dazukommen.
         </dd>
       </div>
       <div>
         <dt>Aufwand</dt>
         <dd>
-          Zu jeder Seite steht, wie viele Wege dorthin führen und was der Weg
-          von der Startseite kostet. Das hilft, wenn eine Sammlung wächst und
-          häufige Wörter tief liegen.
+          Zu jeder Seite steht, wie viele Wege dorthin führen und wie viele
+          Tastendrücke sie von der Startseite entfernt ist. Wenn eine Sammlung
+          wächst, sieht man daran, welches häufige Wort zu tief gerutscht ist.
         </dd>
       </div>
       <div>
         <dt>Sichern</dt>
         <dd>
-          Einen Ordner einmal auswählen; von da an wird dorthin gesichert. Ein
-          geleerter Browserspeicher kostet dann keine Arbeit.
+          Einen Ordner einmal auswählen, ab dann wird dorthin gesichert. Ein
+          geleerter Browserspeicher kostet dich dann keinen Nachmittag.
         </dd>
       </div>
       <div>
         <dt>Ausgeben</dt>
         <dd>
-          Ein Paket für die App und ein offenes Board-Format, das andere
-          UK-Programme lesen.
+          Ein Paket für die App und zusätzlich ein offenes Board-Format, das
+          andere UK-Programme lesen können.
         </dd>
       </div>
     </dl>
@@ -150,13 +159,14 @@
     <p class="label">Die App</p>
     <h2>Hier wird es benutzt</h2>
     <p>
-      Die App öffnet das Paket aus dem Editor und zeigt die Seiten so, wie Sie
-      sie angelegt haben. Ein Druck auf eine Taste spricht die Aussage.
+      Die App öffnet das Paket aus dem Editor und zeigt die Seiten genau so,
+      wie du sie angelegt hast. Ein Druck auf eine Taste, und der Satz ist
+      gesagt.
     </p>
     <p>
-      Bearbeiten lässt sich in der App nichts. Das ist keine fehlende Funktion,
-      sondern die Grundentscheidung dahinter: Was im Alltag in der Hand liegt,
-      soll sich nicht verstellen lassen.
+      Bearbeiten lässt sich in der App nichts. Das fehlt nicht, das war
+      Absicht: Ein Tablet, das den ganzen Tag herumgereicht wird, soll abends
+      noch dieselben Tafeln zeigen wie morgens.
     </p>
   </div>
   <div class="wide">
@@ -174,8 +184,8 @@
       <div>
         <dt>Bedienen</dt>
         <dd>
-          Querformat, große Tasten, und der Bildschirm bleibt an, solange eine
-          Tafel geöffnet ist.
+          Querformat, große Tasten, und der Bildschirm geht nicht aus, solange
+          eine Tafel offen ist.
         </dd>
       </div>
       <div>
@@ -196,13 +206,14 @@
         <dt>Aktualisieren</dt>
         <dd>
           Ein neuer Import ersetzt das Paket vollständig. Es gibt keine halben
-          Stände und nichts zusammenzuführen.
+          Stände und nichts zusammenzuführen: Was im Editor steht, steht danach
+          auf dem Tablet.
         </dd>
       </div>
       <div>
         <dt>Installieren</dt>
         <dd>
-          Bei Google Play liegt die App noch nicht. Bis dahin laden Sie sie als
+          Bei Google Play liegt die App noch nicht. Bis dahin lädst du sie als
           <a href="{{appDownload}}">Installationsdatei</a> herunter, eine APK;
           beim ersten Mal fragt das Tablet einmal nach, ob es sie installieren
           darf.
@@ -222,14 +233,14 @@
     <h2>Dazwischen liegt eine Datei</h2>
     <p>
       Der Editor schreibt eine Datei, die App liest sie. Mehr verbindet die
-      beiden nicht. Sie übertragen sie mit einem Kabel, über eine Speicherkarte
-      oder auf dem Weg, den Sie für Dateien ohnehin nutzen.
+      beiden nicht. Du überträgst sie per Kabel, über eine Speicherkarte oder
+      auf dem Weg, den du für Dateien ohnehin nimmst.
     </p>
     <p>
-      Diese Datei gehört Ihnen. Sie können sie aufheben, auf ein zweites Tablet
+      Diese Datei gehört dir. Du kannst sie aufheben, auf ein zweites Tablet
       bringen und jederzeit durch eine neue Fassung ersetzen. Daneben schreibt
       der Editor ein offenes Board-Format, sodass das Vokabular auch dann
-      lesbar bleibt, wenn Sie einmal mit einem anderen Programm weiterarbeiten.
+      lesbar bleibt, wenn du einmal mit einem anderen Programm weiterarbeitest.
     </p>
   </div>
 </section>
@@ -268,12 +279,14 @@
     <p>
       Daneben liegt ein Selbstbau-Projekt: ein kleines Gerät mit fünf Tasten,
       die zugleich Displays sind, ein ESP32-S3 dahinter, ein Gehäuse aus dem
-      Drucker. Der Editor schreibt die Datei dafür mit.
+      Drucker. Ich baue solche Sachen gern, und für draußen und fürs Bett ist es
+      handlicher als ein Tablet. Der Editor schreibt die Datei dafür mit.
     </p>
     <p class="note">
       Das ist kein Produkt, sondern ein Bastelprojekt: Teileliste, Verdrahtung,
       Gehäusequelle und Firmware liegen offen, gelötet, gedruckt und geflasht
-      wird selbst. Wer das nicht bauen möchte, ist mit dem Tablet richtig.
+      wird selbst. Wenn du nicht basteln möchtest, bist du mit dem Tablet
+      richtig.
     </p>
     <a class="pointer" href="talker.html">
       <div>
@@ -291,10 +304,10 @@
   <div class="col">
     <a class="pointer" href="index.html">
       <div>
-        <strong>mitreden und bildhaft</strong>
+        <strong>mitreden, bildhaft und wochenwerk</strong>
         <p class="note">
-          Die beiden anderen Programme: Sätze als Audiodateien, und Sätze als
-          Piktogramme zum Ausdrucken.
+          Die drei anderen Programme: Sätze als Audiodateien, Sätze als
+          Piktogramme zum Ausdrucken, und die Woche als Bild an der Wand.
         </p>
       </div>
       <span class="go">Zur Übersicht →</span>

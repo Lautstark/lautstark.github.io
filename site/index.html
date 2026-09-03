@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Lautstark · freie Werkzeuge für Unterstützte Kommunikation</title>
-<meta name="description" content="Drei freie Programme für Unterstützte Kommunikation: vorlaut baut Vokabular, mitreden macht Audiodateien, bildhaft druckt Piktogramme. Kostenlos, ohne Konto, ohne Server.">
+<meta name="description" content="Vier kleine Programme, die für unseren Alltag mit Unterstützter Kommunikation entstanden sind: Tafeln für den Talker, Audiodateien für die Geräte, Symbolkarten zum Drucken und die Woche als Bild an der Wand. Alles Beta, kostenlos, ohne Konto, ohne Server.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/components.css">
@@ -13,12 +13,21 @@
 </head>
 <body>
 
+<!-- Steht vor der Kopfzeile und auf jeder Seite: wer hier landet, soll es
+     gelesen haben, bevor er etwas herunterlädt. -->
+<p class="beta">
+  <strong>Alles hier ist Beta.</strong> Wir benutzen die Programme täglich, aber
+  sie sind jung, sie ändern sich noch, und du wirst auf Ecken stoßen.
+  <a href="{{meldungen}}">Erzähl mir davon</a>, dann werden es weniger.
+</p>
+
 <header class="top col">
   <a class="wordmark" href="index.html" aria-current="page">
-    <span class="trio" aria-hidden="true">
+    <span class="familie" aria-hidden="true">
       <img src="mark-vorlaut.svg" alt="" width="26" height="26">
       <img src="mark-mitreden.svg" alt="" width="26" height="26">
       <img src="mark-bildhaft.svg" alt="" width="26" height="26">
+      <img src="mark-wochenwerk.svg" alt="" width="26" height="26">
     </span>
     <span>Lautstark</span>
   </a>
@@ -26,6 +35,7 @@
     <a href="vorlaut.html">vorlaut</a>
     <a href="#mitreden">mitreden</a>
     <a href="#bildhaft">bildhaft</a>
+    <a href="#wochenwerk">wochenwerk</a>
     <a href="sammlungen/index.html">Sammlungen</a>
   </nav>
 </header>
@@ -36,28 +46,34 @@
   <div class="col">
     <p class="label">Unterstützte Kommunikation</p>
     <h1>Lautstark: freie Werkzeuge für
-      <span class="dreifarbig">Unterstützte Kommunikation.</span></h1>
+      <span class="bunt">Unterstützte Kommunikation.</span></h1>
     <p class="lead">
-      Drei Programme, die zusammengehören und einzeln benutzbar sind. Eines baut
-      das Vokabular für einen Talker, eines macht aus Sätzen Audiodateien, eines
-      bringt Sätze als Piktogramme auf Papier. Kostenlos, ohne Konto und ohne
-      Server.
+      Meine Tochter benutzt Unterstützte Kommunikation. Für unseren Alltag sind
+      nach und nach vier kleine Programme entstanden: Tafeln für den Talker,
+      Audiodateien für die Geräte, Symbolkarten zum Ausdrucken und die Woche als
+      Bild an der Wand. Sie stehen hier, weil sie vielleicht auch woanders
+      nützlich sind. Kostenlos, ohne Konto und ohne Server.
     </p>
     <div class="kacheln">
       <a class="kachel vorlaut" href="vorlaut.html">
         <img src="mark-vorlaut.svg" alt="" width="34" height="34">
         <strong>vorlaut</strong>
-        <span>Sprechen mit Symbolen</span>
+        <span>Tafeln für den Talker</span>
       </a>
       <a class="kachel mitreden" href="#mitreden">
         <img src="mark-mitreden.svg" alt="" width="34" height="34">
         <strong>mitreden</strong>
-        <span>Sätze als Audiodatei</span>
+        <span>Überall dieselbe Stimme</span>
       </a>
       <a class="kachel bildhaft" href="#bildhaft">
         <img src="mark-bildhaft.svg" alt="" width="34" height="34">
         <strong>bildhaft</strong>
-        <span>Symbole zum Drucken</span>
+        <span>Symbolkarten zum Drucken</span>
+      </a>
+      <a class="kachel wochenwerk" href="#wochenwerk">
+        <img src="mark-wochenwerk.svg" alt="" width="34" height="34">
+        <strong>wochenwerk</strong>
+        <span>Die Woche als Bild</span>
       </a>
     </div>
   </div>
@@ -66,19 +82,21 @@
 <section class="band produkt vorlaut" id="vorlaut">
   <div class="col">
     <p class="label"><img src="mark-vorlaut.svg" alt="" width="18" height="18"> vorlaut</p>
-    <h2>Mit Symbolen sprechen</h2>
+    <h2>Das Vokabular selbst bauen</h2>
     <p>
-      Ein Talker, dessen Vokabular Sie selbst bauen. Im Editor am Rechner legen
-      Sie das Raster fest, die Seiten und wie sie aufeinander verweisen, und zu
-      jeder Taste das Wort, das Bild und die Aussage; auf dem Tablet wird daraus
-      die Tafel, die im Alltag in der Hand liegt.
+      Ich wollte die Tafeln für meine Tochter selbst anlegen können, und vor
+      allem ändern können, wenn ihr ein Wort fehlt. Nicht irgendwann, sondern am
+      selben Abend. Dafür ist vorlaut entstanden.
     </p>
     <p>
-      Anfangen können Sie leer oder mit einer fertigen Sammlung aus dem Regal,
-      die Sie umbauen. Wer schon mit Talkern gearbeitet hat, kennt den Aufwand,
-      der darin steckt — er ist der Preis dafür, dass am Ende genau die Wörter
-      dort liegen, die dieser eine Mensch braucht, und zwar an den Stellen, an
-      denen sie gesucht werden.
+      Am Rechner legst du das Raster an, die Seiten und die Wege dazwischen, und
+      zu jeder Taste ein Wort, ein Bild und den Satz, der gesprochen wird. Auf
+      dem Tablet wird daraus die Tafel, die im Alltag in der Hand liegt.
+    </p>
+    <p>
+      Das ist Arbeit, auch wenn du mit einer fertigen Sammlung anfängst und sie
+      nur umbaust. Bei uns hat es sich gelohnt: „nochmal“ liegt da, wo meine
+      Tochter danach greift, und nicht auf Seite vier unter „Verben“.
     </p>
   </div>
   <div class="wide">
@@ -100,25 +118,39 @@
       <div>
         <dt>Zwei Teile</dt>
         <dd>
-          Der Editor im Browser, in dem das Vokabular entsteht, und die
-          Android-App auf dem Tablet, in der es benutzt wird.
+          Der Editor läuft im Browser, dort entsteht das Vokabular. Die
+          Android-App zeigt es auf dem Tablet. Dazwischen liegt eine Datei, und
+          die gehört dir.
         </dd>
       </div>
       <div>
-        <dt>Ihre Bilder</dt>
+        <dt>Nichts verstellt sich</dt>
         <dd>
-          Die Symbolsuche für ARASAAC ist eingebaut. Wer eine METACOM-Lizenz
-          besitzt, wählt stattdessen den eigenen Ordner aus.
+          In der App lässt sich nichts bearbeiten. Das war Absicht: Ein Tablet,
+          das den ganzen Tag herumgereicht wird, soll abends noch dieselben
+          Tafeln zeigen wie morgens.
+        </dd>
+      </div>
+      <div>
+        <dt>Die Bilder</dt>
+        <dd>
+          Die Symbolsuche für ARASAAC ist eingebaut und kostet nichts. Wer
+          METACOM lizenziert hat, hängt stattdessen den eigenen Ordner ein.
         </dd>
       </div>
       <div>
         <dt>Die Stimme</dt>
         <dd>
-          vorlaut bringt mehrere Stimmen mit. Sie wählen aus, welche spricht,
-          und es können weitere dazukommen.
+          Mehrere Stimmen sind dabei, du suchst dir eine aus. Weitere lassen
+          sich nachrüsten.
         </dd>
       </div>
     </dl>
+    <p class="betazeile">
+      <strong>Beta:</strong> Editor und App laufen hier jeden Tag. Bei Google
+      Play liegt die App noch nicht, du installierst sie von Hand; das Tablet
+      fragt beim ersten Mal einmal nach.
+    </p>
     <p class="go">
       <a href="vorlaut.html">Mehr über vorlaut →</a>
       <a href="sammlungen/index.html?produkt=vorlaut-app">Fertige Sammlungen →</a>
@@ -129,16 +161,17 @@
 <section class="band produkt mitreden" id="mitreden">
   <div class="col">
     <p class="label"><img src="mark-mitreden.svg" alt="" width="18" height="18"> mitreden</p>
-    <h2>Sätze eintippen, Audiodateien zurückbekommen</h2>
+    <h2>Überall dieselbe Stimme</h2>
     <p>
-      Wer mit Unterstützter Kommunikation lebt, spricht oft über mehrere Geräte:
-      eine Talker-App auf dem Tablet, ein Vorlesestift, einzelne Sprechtasten am
-      Rollstuhl. Jedes bringt seine eigene Stimme mit, und derselbe Satz klingt
-      je nach Gerät nach einer anderen Person.
+      Meine Tochter spricht nicht über ein Gerät, sondern über mehrere: die
+      Talker-App auf dem Tablet, den Vorlesestift am Bilderbuch, einzelne
+      Sprechtasten. Jedes bringt seine eigene Stimme mit. Derselbe Satz klang
+      dann jedes Mal nach jemand anderem, und ihr fiel das auf, bevor es mir
+      auffiel.
     </p>
     <p>
-      In mitreden tippen Sie den Satz einmal ein und bekommen eine Audiodatei
-      zurück. „Ich bin dran“ klingt dann auf der Sprechtaste genauso wie im
+      In mitreden tippe ich den Satz einmal ein und bekomme eine Audiodatei
+      zurück. „Ich bin dran“ klingt auf der Sprechtaste seitdem genauso wie im
       Vorlesestift, weil überall dieselbe Aufnahme liegt.
     </p>
   </div>
@@ -154,34 +187,40 @@
       <div>
         <dt>Eine Stimme</dt>
         <dd>
-          Die Stimme gehört zur Sammlung, nicht zum einzelnen Satz. Entscheiden
-          Sie sich später für eine andere, nimmt mitreden alle Sätze damit neu
-          auf, und es passt wieder zusammen.
+          Die Stimme gehört zur Sammlung, nicht zum einzelnen Satz. Gefällt dir
+          später eine andere besser, nimmt mitreden alles damit neu auf, und es
+          passt wieder zusammen.
         </dd>
       </div>
       <div>
         <dt>Fertige Dateien</dt>
         <dd>
-          Die Aufnahmen laden Sie herunter und kopieren sie auf das Gerät, das
-          sie abspielen soll. Danach braucht das Gerät kein Internet.
+          Du lädst die Aufnahmen herunter und kopierst sie auf das Gerät, das
+          sie abspielen soll. Danach braucht es kein Internet mehr.
         </dd>
       </div>
       <div>
         <dt>Für den Anybook-Stift</dt>
         <dd>
-          Für den Vorlesestift kommt es fertig heraus: die Aufkleber auf dem
-          Bogen, jeder schon an seinen Satz gebunden, als Projekt, das Anybook
-          Studio öffnet. Zuordnen und Nummerieren von Hand entfällt.
+          Der Bogen kommt fertig heraus: jeder Aufkleber schon an seinen Satz
+          gebunden, als Projekt, das Anybook Studio öffnet. Nummerieren und
+          Zuordnen von Hand entfällt.
         </dd>
       </div>
       <div>
         <dt>Kein Talker</dt>
         <dd>
-          mitreden spricht nicht für jemanden. Es ist die Werkstatt dahinter:
-          Text hinein, Aufnahmen heraus.
+          mitreden spricht für niemanden. Es ist die Werkstatt dahinter: Text
+          hinein, Aufnahmen heraus.
         </dd>
       </div>
     </dl>
+    <p class="betazeile">
+      <strong>Beta:</strong> Gesprochen wird im Browser, kein Satz geht an einen
+      Server. Dafür lädt die Stimme beim ersten Mal rund 60 MB und bleibt dann
+      auf deinem Rechner. Welche Geräteformate dazukommen, hängt daran, was
+      gebraucht wird.
+    </p>
     <p class="go">
       <a href="{{mitreden}}">Zu mitreden →</a>
       <a href="sammlungen/index.html?produkt=mitreden">Fertige Sammlungen →</a>
@@ -192,16 +231,17 @@
 <section class="band produkt bildhaft" id="bildhaft">
   <div class="col">
     <p class="label"><img src="mark-bildhaft.svg" alt="" width="18" height="18"> bildhaft</p>
-    <h2>Sätze in Piktogramme übersetzen und drucken</h2>
+    <h2>Viele Karten auf einmal</h2>
     <p>
-      Sie tippen einen Satz und bekommen eine Reihe Symbole zurück. Aus „Ich
-      möchte einen Apfel essen“ werden vier Bilder mit Beschriftung, die Sie
-      ausdrucken und laminieren können.
+      Symbolkarten braucht man selten einzeln. Man braucht dreißig, weil ein
+      Bilderbuch dreißig Zeilen hat oder weil eine ganze Gruppe welche bekommen
+      soll. Eine Weile habe ich das von Hand gemacht: Symbol suchen, einsetzen,
+      ausrichten, drucken, schneiden, laminieren.
     </p>
     <p>
-      Gedacht ist das für alle, die viel auf einmal übersetzen: dreißig Zeilen
-      an einem Nachmittag, ein ganzes Bilderbuch, die Karten für eine ganze
-      Gruppe.
+      In bildhaft tippe ich die Zeilen einfach untereinander. Aus „Ich möchte
+      einen Apfel essen“ werden vier Bilder mit Beschriftung, aus dreißig Zeilen
+      dreißig Streifen. Was danach bleibt, ist nachbessern, nicht bauen.
     </p>
   </div>
   <div class="wide">
@@ -214,30 +254,117 @@
   <div class="col">
     <dl class="facts">
       <div>
-        <dt>Zum Nachbessern</dt>
+        <dt>Du hast das letzte Wort</dt>
         <dd>
-          Zu jedem Wort schlägt bildhaft ein Symbol vor. Passt eines nicht,
-          wählen Sie ein anderes; die Änderung bleibt gespeichert.
+          Zu jedem Wort schlägt bildhaft ein Symbol vor. Passt es nicht, nimmst
+          du ein anderes, und deine Wahl bleibt gespeichert. Beim nächsten Mal
+          steht sie schon da.
         </dd>
       </div>
       <div>
         <dt>Zum Drucken</dt>
         <dd>
-          Satzstreifen für eine Zeile, Kartenbögen für einzelne Wörter. Beides
+          Satzstreifen für ganze Zeilen, Kartenbögen für einzelne Wörter. Beides
           geht direkt in den Drucker.
         </dd>
       </div>
       <div>
-        <dt>Eigene Symbole</dt>
+        <dt>Die Bilder</dt>
         <dd>
-          ARASAAC ist eingebaut. Wer eine METACOM-Lizenz besitzt, wählt
-          stattdessen den eigenen Ordner aus.
+          ARASAAC ist eingebaut. Wer METACOM lizenziert hat, hängt stattdessen
+          den eigenen Ordner ein.
         </dd>
       </div>
     </dl>
+    <p class="betazeile">
+      <strong>Beta:</strong> Gebaut für den Rechner, an dem auch der Drucker
+      steht. Auf dem Telefon ist die Ansicht noch nicht eingerichtet.
+    </p>
     <p class="go">
       <a href="{{bildhaft}}">Zu bildhaft →</a>
       <a href="sammlungen/index.html?produkt=bildhaft">Fertige Sammlungen →</a>
+    </p>
+  </div>
+</section>
+
+<section class="band produkt wochenwerk" id="wochenwerk">
+  <div class="col">
+    <p class="label"><img src="mark-wochenwerk.svg" alt="" width="18" height="18"> wochenwerk</p>
+    <h2>Die Woche sehen, ohne lesen zu können</h2>
+    <p>
+      Meine Kinder können noch nicht lesen, also können sie auch keinen Kalender
+      lesen. Ihre Woche erfuhren sie nur über uns: Sie fragten, wir antworteten,
+      und eine halbe Stunde später fragten sie wieder. Ob heute Schwimmen ist,
+      ob Oma kommt, ob morgen wieder Kita ist, das lag alles bei den Erwachsenen.
+    </p>
+    <p>
+      wochenwerk hängt die Woche in Bildern an die Wand. Sieben Spalten, jeder
+      Termin eine Karte mit seinem Symbol. Der heutige Tag ist der breiteste,
+      was vorbei ist wird blass, was gerade läuft hebt sich ab. Sie gehen jetzt
+      hin und sehen selbst nach.
+    </p>
+    <p>
+      Geplant wird nicht am Brett, sondern in einem gewöhnlichen Wochenkalender
+      am Rechner. Das Brett ist nur seine Ansicht: Was ich eintrage, hängt
+      binnen einer Minute an der Wand.
+    </p>
+  </div>
+  <div class="wide">
+    <div class="paar paar--brett">
+      <figure>
+        <img src="wochenwerk-kalender.png"
+             alt="Der Kalender von wochenwerk: eine Woche als Raster aus Stunden und sieben Tagesspalten, darin Termine wie Kindergarten, Logopädie und Abendessen.">
+        <figcaption>Geplant wird im Kalender.</figcaption>
+      </figure>
+      <figure>
+        <img src="wochenwerk.png"
+             alt="Das Brett von wochenwerk: sieben farbige Tagesspalten mit Piktogrammen, der heutige Tag breit und hell hervorgehoben.">
+        <figcaption>Angesehen wird am Brett.</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="col">
+    <dl class="facts">
+      <div>
+        <dt>Zwei Ansichten</dt>
+        <dd>
+          Der Kalender für die Erwachsenen, das Brett für die Kinder. Beide
+          zeigen dieselben Termine, und am Brett lässt sich nichts verstellen.
+        </dd>
+      </div>
+      <div>
+        <dt>Wann, ohne Uhr</dt>
+        <dd>
+          Morgens, mittags, nachmittags und abends stehen als kleine Zeichen
+          neben dem heutigen Tag. Wer die Uhr noch nicht liest, kann trotzdem
+          einordnen, ob etwas gleich kommt oder erst nach dem Mittagessen.
+        </dd>
+      </div>
+      <div>
+        <dt>Wie lang, sieht man</dt>
+        <dd>
+          Die Höhe einer Karte sagt, wie lange etwas dauert. Der lange Vormittag
+          in der Kita sieht anders aus als die dreiviertel Stunde Logopädie
+          danach, und man sieht, wie viel vom Tag noch übrig ist.
+        </dd>
+      </div>
+      <div>
+        <dt>Die Bilder</dt>
+        <dd>
+          Ohne Ordner zeichnet wochenwerk aus ARASAAC, so wie auf den Bildern
+          oben. Mit einer METACOM-Lizenz hängst du deinen eigenen Ordner ein;
+          gelesen wird er im Browser, hochgeladen wird nichts.
+        </dd>
+      </div>
+    </dl>
+    <p class="betazeile">
+      <strong>Beta:</strong> Das jüngste der vier und das am wenigsten erprobte.
+      Es hängt bisher an einer Wand, meiner. Für einen eigenen METACOM-Ordner
+      braucht der Kalender Chrome oder Edge am Rechner, ohne Ordner genügt jeder
+      Browser. Fertige Sammlungen gibt es dafür noch nicht.
+    </p>
+    <p class="go">
+      <a href="{{wochenwerk}}">Zu wochenwerk →</a>
     </p>
   </div>
 </section>
@@ -247,9 +374,9 @@
     <p class="label">Zum Anfangen</p>
     <h2>Fertige Sammlungen</h2>
     <p>
-      Ein leeres Raster ist ein schwerer Anfang. Im Regal liegen Sammlungen,
-      die schon gebaut sind — für die vorlaut-App, für mitreden und für
-      bildhaft. Herunterladen, einlesen und umbauen, bis es passt.
+      Ein leeres Raster ist ein schwerer Anfang. Deshalb liegen im Regal ein
+      paar Sammlungen, die schon gebaut sind: für die vorlaut-App, für mitreden
+      und für bildhaft. Herunterladen, einlesen, umbauen, bis es passt.
     </p>
     <a class="pointer" href="sammlungen/index.html">
       <div>
@@ -267,27 +394,35 @@
 <section class="band">
   <div class="col">
     <p class="label">Gemeinsam</p>
-    <h2>Was für alle drei gilt</h2>
+    <h2>Was für alle vier gilt</h2>
     <dl class="facts">
       <div>
         <dt>Im Browser</dt>
         <dd>
-          Aufrufen und anfangen. Nichts zu installieren, nichts anzumelden, kein
-          Schlüssel einzutragen.
+          Aufrufen und loslegen. Nichts zu installieren, niemanden anzumelden,
+          keinen Schlüssel einzutragen.
         </dd>
       </div>
       <div>
-        <dt>Auf Ihrem Gerät</dt>
+        <dt>Auf deinem Gerät</dt>
         <dd>
-          Was Sie anlegen, bleibt in Ihrem Browser und in den Dateien, die Sie
-          selbst sichern. Es gibt keinen Server, auf dem etwas davon liegt.
+          Was du anlegst, bleibt in deinem Browser und in den Dateien, die du
+          selbst sicherst. Es gibt keinen Server, auf dem etwas davon liegt.
         </dd>
       </div>
       <div>
         <dt>Quelloffen</dt>
         <dd>
-          MIT-Lizenz, <a href="{{quelltext}}">Quelltext bei GitHub</a>. Wer
-          etwas anders braucht, kann es ändern oder melden.
+          MIT-Lizenz, <a href="{{quelltext}}">Quelltext bei GitHub</a>. Wenn dir
+          etwas fehlt, kannst du es melden oder selbst ändern.
+        </dd>
+      </div>
+      <div>
+        <dt>Noch Beta</dt>
+        <dd>
+          Alle vier sind jung. Ich baue weiter daran, weil wir sie selbst
+          benutzen. Was als Nächstes kommt, entscheidet sich meist daran, was
+          uns gerade fehlt, oder wovon ich höre.
         </dd>
       </div>
     </dl>
@@ -297,15 +432,17 @@
 <section class="band">
   <div class="col">
     <p class="label">Woher das kommt</p>
-    <h2>Gebaut von einer Mutter, nicht von einer Firma</h2>
+    <h2>Warum es das überhaupt gibt</h2>
     <p>
-      Ich baue diese Programme für meine Tochter. Was dabei entsteht, steht
-      offen, weil andere Familien vor denselben Fragen stehen und Hilfsmittel
-      für Unterstützte Kommunikation teuer sind.
+      Ich bin keine Firma und verkaufe nichts. Ich baue diese Programme für
+      meine Kinder, und ich stelle sie offen ins Netz, weil andere Familien vor
+      denselben Fragen sitzen. Wenn eines davon jemandem den Alltag mit
+      Unterstützter Kommunikation leichter macht, hat es seinen Zweck erfüllt.
     </p>
     <p>
-      Es gibt keine Firma dahinter, keine Finanzierung und nichts zu verkaufen.
-      Rückmeldungen gehen an <a href="{{post}}">steffi@lautstark.tech</a>.
+      Es gibt keine Förderung dahinter und keinen Plan, etwas daraus zu machen.
+      Wenn dir etwas fehlt oder etwas kaputt ist, schreib mir:
+      <a href="{{post}}">steffi@lautstark.tech</a>.
     </p>
   </div>
 </section>
