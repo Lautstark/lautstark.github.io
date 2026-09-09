@@ -1,12 +1,22 @@
 # Wortschatz
 
-**Status: a proposal, with one product now deciding on its own half.** Written
-2026-08-31 from a long design conversation; **updated 2026-09-02**, when two
-things that this document treated as obstacles turned out to be solved or
-shipped — see *origins* below, which no longer says what it said. bildhaft has
-taken the first product-level decision out of this
-([`bildhaft/adr/0002`](https://github.com/Lautstark/bildhaft/blob/main/adr/0002-the-wortschatz-is-a-place-and-material-has-a-kind.md));
-the cross-product half is still a proposal. It lives in this repository rather than in
+**Status: built in one product, still a proposal across them.** Written
+2026-08-31 from a long design conversation; **updated 2026-09-02** and
+**2026-09-09**, each time because something this document treated as an
+obstacle or a plan had been solved or shipped.
+
+**What is live in bildhaft**, under
+[`adr/0002`](https://github.com/Lautstark/bildhaft/blob/main/adr/0002-the-wortschatz-is-a-place-and-material-has-a-kind.md):
+the Wortschatz is a row in the sidebar above the Sammlungen, with a composer, a
+wall of cards and a filter; an entry is a word, a picture and the text that goes
+with it; tags are typed on a word and pinned to the sidebar; the source's own
+categories and word class arrive as *suggested* tags through
+[`bildquelle` 2.1.0](https://github.com/Lautstark/bildquelle); and a Sammlung is
+a Satzstreifen or a Wortkarten template, which is how words become paper. The
+settings panel this all started as is gone.
+
+**What is still a proposal** is everything below that says *products*, plural:
+one Wortschatz that mitreden, vorlaut and wochenwerk read too. It lives in this repository rather than in
 a product's `adr/` because it spans all of them, and rather than in
 `@lautstark/design`'s `conventions.md` because that document describes what the
 products have *settled* — this has not. If it gets built, the parts that turn
@@ -127,6 +137,16 @@ Teil       = token · symbol{arasaac?, metacom?}? · own picture? · negated? ·
 Symbols stay **per source**, the way bildhaft models them, so ARASAAC travels
 universally and METACOM only resolves for a licence holder.
 
+**Two fields the shape above was missing, learned by building it.** An entry
+needs the **text that goes with the symbol**, kept apart from the source's own
+name for the picture: „washerwoman" is what ARASAAC calls the pictogram somebody
+chose for Oma, and „Omi" is what should be printed. Conflating them was a real
+bug — the field appeared to work and threw what was typed away. And an entry
+carries **what the source said about it** — its categories and word class, raw —
+because the tags shown are derived from that at display time. A stored „Essen &
+Trinken" would be a German word on an English page that nothing could
+re-translate; the fact keeps, the wording does not.
+
 ## Tags — lenses, not folders
 
 A pot of three hundred entries needs a way to be looked at, and the shape it
@@ -217,28 +237,33 @@ what you always manage: your Sammlung. Contributing one is likewise nothing
 new — you **publish a Sammlung** to the shelf. No second object in the sidebar,
 no second mental model.
 
-### The personal layer: one list, and it outgrows Einstellungen
+### The personal layer: a place, not a setting — settled by building it
 
-By `conventions.md` §3.10's own test — "does this setting's answer change when
-something else is selected?" — it starts in **Einstellungen**: Oma's picture is
-the same whichever Sammlung is open, and it applies *forward*, to the next thing
-made. That is exactly the semantics described there, and it is where bildhaft's
-panel „Mein Wörterbuch" already stands and works: it counts the entries in its
-heading, lists them, lets one be removed.
+This said the layer belonged in **Einstellungen** by `conventions.md` §3.10's
+own test — Oma's picture is the same whichever Sammlung is open — and that it
+would keep a panel there as a second door. Half right and half wrong, and the
+wrong half is worth recording.
 
 §3.10 decides *where a setting goes*. It does not decide whether something is a
 setting, and this one stops being one at the point where a person goes looking
 for it on purpose — to see what they have, to file a word before they need it,
 to look at one tag. A thing with tags, a filter and its own empty state is a
-place, and a place belongs in the sidebar. That is bildhaft's ADR 0002: the
-panel keeps working and stops being the only door.
+place, and a place belongs in the sidebar.
 
-- The panel per design.md §3.4 states its status before offering a control: „47
-  Wörter · zuletzt geändert vor 3 Tagen".
-- The place it opens into: word plus **picture** (a list of words pointing at
-  labels is a record of what was decided; the pictures are the thing itself), a
-  search field, tag chips as filters, click opens the familiar picker, remove
-  per entry.
+**And then the panel goes entirely**, which is the correction. It held the list
+only because there was nowhere else to put it; once there is a place, any trace
+left in Einstellungen is one count kept in two places and two answers to "where
+is my Wortschatz". What stays in that dialog is what a setting is.
+
+- The place: a **wall of cards** — picture, the text that goes with it, and the
+  word it answers to where they differ. A list of words pointing at labels is a
+  record of what was decided; the pictures are the thing itself.
+- Adding a word is **the composer**, the same box a Sammlung has: Enter adds,
+  Shift+Enter makes a line, and a list pasted out of a parental letter is one
+  paste and one keystroke. No sheet, no confirming button.
+- A word the source has no picture for is **not refused** — it waits as a card
+  with a question mark, and the same click opens the same picker, own photo
+  included. That is where the proper nouns are.
 - **Creation happens while working**: a correction in the picker, an own picture
   for a word the library does not know — bildhaft's `unmatched` state is the
   natural on-ramp, because that is exactly where the proper nouns stand (Oma,
@@ -250,7 +275,7 @@ panel keeps working and stops being the only door.
   empty Wortschatz and no tags, stays a complete way to use the product — the
   Wortschatz is what use leaves behind, not what it demands up front.
 
-### The case that breaks it
+### The case that breaks it — still open
 
 A therapist with eight children: eight „Mama" photographs, one browser. One
 device-wide layer cannot hold that. The escape would be to make the personal
@@ -329,9 +354,14 @@ and additive: a way to seed an Ablage from an existing `handle()`. That is the
 only package change this proposal now needs.
 
 Suggested order, revised: build the personal layer **per product first**
-(immediate value, no infrastructure — in bildhaft most of it exists already),
-then close the `handle()` gap, then let the second product read the same
-compartment. File export stays the universal fallback throughout.
+(immediate value, no infrastructure), then close the `handle()` gap, then let
+the second product read the same compartment. File export stays the universal
+fallback throughout.
+
+**The first of those is done** — bildhaft's is built, in use, and writing to the
+folder under the kind `woerterbuch`. The `handle()` gap is therefore the next
+thing anybody touches, and it is now the *only* thing between one product's
+Wortschatz and four.
 
 ## The boundary that must be structural
 
@@ -373,22 +403,32 @@ it, no symbol committed, numbers fetched at build time — stays as it is.
    never by Sammlung, so it was household-wide before anybody called it a
    Wortschatz. It grows visibility, pictures and tags rather than being replaced
    (bildhaft ADR 0002).
-3. **Where is a Wortschatz authored?** Authoring in bildhaft and consuming
-   everywhere avoids building the same surface three times; vorlaut-editor is
-   the counter-argument, since it is the only product that knows word classes.
-   Leaning bildhaft, which is becoming the material creator — a household holds
-   words with tags and makes things out of them: Karten, Satzkarten, Tafeln,
-   Kommunikationsfächer, Plauderbücher.
+3. ~~Where is a Wortschatz authored?~~ **Answered by building it: bildhaft.**
+   It is the material creator — a household holds words with tags and makes
+   things out of them — and it is the one that already had the words. The
+   counter-argument stands and has not been paid: vorlaut-editor is the only
+   product that knows *word classes*, and bildhaft now derives them from
+   ARASAAC instead. Whether those two agree is a question for the day the
+   second product reads the compartment.
 4. ~~Is a shared origin thinkable at all, or is the folder bridge the ceiling?~~
    **Answered: the folder is the bridge**, and it is built. The origins stay
    four; the store stops being four.
-5. **Who writes it when two products are open at once?** The Ablage reports
+5. **How does a word get *out* of one product and into another's material?**
+   bildhaft answers it within itself — „Sammlung daraus" turns what a tag is
+   showing into printable cards, copied rather than referenced, so paper printed
+   in March does not change in June. The cross-product version of that is
+   unanswered: does mitreden pull from the Wortschatz the same way, and does it
+   copy too?
+6. **Who writes it when two products are open at once?** The Ablage reports
    conflicts and never merges them, which is the right default — but a
    Wortschatz edited in bildhaft while wochenwerk has it open is the first case
    where two *products* conflict on one record rather than two devices.
 
 ## Related
 
+- [`bildquelle`'s README](https://github.com/Lautstark/bildquelle#what-a-candidate-says-about-a-symbol)
+  on what a source says about a symbol — the raw material the derived tags are
+  made of, and why ARASAAC's categories are identifiers rather than words.
 - The print-material work this came out of is archived at
   [`Lautstark/druckwerk`](https://github.com/Lautstark/druckwerk); its
   `mocks/index.html` holds the material designs (Tagesplan, Auswahltafel,
