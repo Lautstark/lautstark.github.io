@@ -6,8 +6,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>vorlaut · Vokabular bauen und auf dem Tablet benutzen</title>
-<meta name="description" content="Ein Talker, dessen Wörter du selbst bestimmst: Tafeln am Rechner bauen, auf dem Tablet benutzen. Kostenlos, ohne Anmeldung, nichts wird hochgeladen.">
+<title>vorlaut · der Talker fürs Android-Tablet</title>
+<meta name="description" content="Eine Talker-App für Android: Seiten mit Tasten, ein Druck spricht. Welche Wörter darauf liegen, bestimmst du selbst und baust sie im Browser. Kostenlos, ohne Anmeldung, nichts wird hochgeladen.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/components.css">
@@ -50,17 +50,18 @@
 <section class="band">
   <div class="col">
     <p class="label"><img src="mark-vorlaut.svg" alt="" width="18" height="18"> vorlaut</p>
-    <h1>Vorlaut: <span class="accent">mit Symbolen sprechen.</span></h1>
+    <h1>Vorlaut: <span class="accent">der Talker fürs Tablet.</span></h1>
     <p class="lead">
-      Auf dem Tablet liegen Seiten mit Tasten, auf jeder ein Bild und ein Wort.
-      Ein Druck, und der Satz ist gesagt: ein Wunsch, eine Antwort, ein Nein.
-      Für Menschen, die nicht oder nicht immer mit der eigenen Stimme sprechen,
-      und für alle, die mit ihnen zu tun haben.
+      Eine Talker-App für Android-Tablets, dazu ein Editor im Browser, in dem
+      ihre Tafeln entstehen. Das Vokabular kommt nicht fertig mit: Es wächst mit
+      dem Menschen, der damit spricht, und in manchen Wochen ändert es sich
+      mehrmals.
     </p>
     <p>
-      Welche Wörter dort liegen, bestimmst du. Sie entstehen im Editor am
-      Rechner und wachsen mit: erst ein paar Tasten, dann Seiten, dann Wege
-      dazwischen. Bei uns fehlt regelmäßig eines, und dann kommt es dazu.
+      Zwischen Editor und Tablet liegt nichts als eine Datei. Du baust die
+      Tafeln im Browser, kopierst die Datei hinüber, und auf dem Tablet steht
+      die neue Fassung. Kein Konto, kein Server, keine Synchronisierung, die
+      gerade klemmt.
     </p>
     <p class="note">
       Du fängst leer an oder mit einer
@@ -72,89 +73,8 @@
       Anmeldung.
     </p>
     <div class="actions">
-      <a class="btn primary cta" href="{{editor}}">Editor öffnen</a>
-      <a class="btn cta" href="{{appDownload}}">App herunterladen</a>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="editor">
-  <div class="col">
-    <p class="label">Der Editor</p>
-    <h2>Hier entsteht das Vokabular</h2>
-    <p>
-      Der Editor ist eine Internetseite: aufmachen und loslegen. Es gibt nichts
-      zu installieren und nichts anzumelden. Deine Sammlungen bleiben auf deinem
-      Rechner, im Browser, bis du sie änderst.
-    </p>
-    <p>
-      Eine Sammlung besteht aus Seiten, eine Seite aus Tasten. Du legst fest,
-      wie groß das Raster ist, was auf einer Taste steht, welches Bild darauf
-      liegt und was sie sagt, wenn jemand sie drückt.
-    </p>
-  </div>
-  <div class="wide">
-    <figure>
-      <img src="vorlaut.png"
-           alt="Der Editor: links die Sammlungen mit ihren Seiten und deren Aufwandswerten, rechts die geöffnete Seite mit ihren Tasten.">
-      <figcaption>
-        Eine Sammlung im Editor. Links die Seiten, rechts die Tasten der Seite,
-        die gerade offen ist.
-      </figcaption>
-    </figure>
-  </div>
-  <div class="col">
-    <dl class="facts">
-      <div>
-        <dt>Raster</dt>
-        <dd>
-          Pro Sammlung festgelegt, zum Beispiel drei Reihen mal fünf Spalten.
-          Eine Taste kann auch weiterführen, statt zu sprechen; so hängen die
-          Seiten zusammen.
-        </dd>
-      </div>
-      <div>
-        <dt>Bilder</dt>
-        <dd>
-          Die Bilder von ARASAAC suchst du direkt im Editor. Wenn du METACOM
-          gekauft hast, wählst du stattdessen deinen eigenen Ordner aus.
-        </dd>
-      </div>
-      <div>
-        <dt>Stimme</dt>
-        <dd>
-          Mehrere Stimmen sind dabei; welche spricht, wählst du aus, und
-          weitere können dazukommen.
-        </dd>
-      </div>
-      <div>
-        <dt>Aufwand</dt>
-        <dd>
-          Zu jeder Seite steht, wie viele Wege dorthin führen und wie viele
-          Tastendrücke sie von der Startseite entfernt ist. Wenn eine Sammlung
-          wächst, sieht man daran, welches häufige Wort zu tief gerutscht ist.
-        </dd>
-      </div>
-      <div>
-        <dt>Sichern</dt>
-        <dd>
-          Einen Ordner auf deinem Rechner einmal auswählen, ab dann wird
-          dorthin gesichert. Wenn der Browser irgendwann aufgeräumt wird, kostet
-          dich das keinen Nachmittag.
-        </dd>
-      </div>
-      <div>
-        <dt>Ausgeben</dt>
-        <dd>
-          Eine Datei für die App, und daneben eine zweite in einem offenen
-          Format, das auch andere UK-Programme lesen können.
-        </dd>
-      </div>
-    </dl>
-    <div class="actions">
-      <a class="btn primary" href="{{editor}}">Editor öffnen</a>
-      <a class="btn" href="sammlungen/index.html?produkt=vorlaut-app">Fertige Sammlungen</a>
-      <a class="btn" href="{{editorSource}}">Quelltext</a>
+      <a class="btn primary cta" href="{{appDownload}}">App herunterladen</a>
+      <a class="btn cta" href="{{editor}}">Editor öffnen</a>
     </div>
   </div>
 </section>
@@ -162,16 +82,16 @@
 <section class="band" id="app">
   <div class="col">
     <p class="label">Die App</p>
-    <h2>Hier wird es benutzt</h2>
+    <h2>Auf dem Tablet</h2>
     <p>
-      Die App öffnet die Datei aus dem Editor und zeigt die Seiten genau so,
-      wie du sie angelegt hast. Ein Druck auf eine Taste, und der Satz ist
-      gesagt.
+      Die App kann wenig, und das ist ihre Aufgabe. Sie zeigt die Tafeln und
+      spricht, sonst nichts: kein Konto, keine Einstellungen, nichts, was sich
+      im Vorbeigehen verstellen lässt.
     </p>
     <p>
-      Bearbeiten lässt sich in der App nichts. Das fehlt nicht, das war
-      Absicht: Ein Tablet, das den ganzen Tag herumgereicht wird, soll abends
-      noch dieselben Tafeln zeigen wie morgens.
+      Ein Tablet, das den ganzen Tag herumgereicht wird, soll abends dieselben
+      Tafeln zeigen wie morgens. Alles andere wäre bequemer und würde genau das
+      kaputt machen.
     </p>
   </div>
   <div class="wide">
@@ -228,6 +148,87 @@
     <div class="actions">
       <a class="btn primary" href="{{appDownload}}">App herunterladen</a>
       <a class="btn" href="{{appSource}}">Quelltext</a>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="editor">
+  <div class="col">
+    <p class="label">Der Editor</p>
+    <h2>Wo die Tafeln herkommen</h2>
+    <p>
+      Der Editor ist eine Internetseite: aufmachen und loslegen, nichts
+      installieren, nichts anmelden. Die Sammlungen bleiben in deinem Browser
+      und gehen von dort nirgendwohin.
+    </p>
+    <p>
+      Eine Sammlung besteht aus Seiten, eine Seite aus Tasten. Du legst das
+      Raster fest, schreibst auf jede Taste ein Wort, suchst das Bild dazu und
+      bestimmst, was sie sagt. Manche Taste spricht nicht, sondern führt weiter;
+      daraus werden die Wege durch die Sammlung.
+    </p>
+  </div>
+  <div class="wide">
+    <figure>
+      <img src="vorlaut.png"
+           alt="Der Editor: links die Sammlungen mit ihren Seiten und deren Aufwandswerten, rechts die geöffnete Seite mit ihren Tasten.">
+      <figcaption>
+        Eine Sammlung im Editor. Links die Seiten, rechts die Tasten der Seite,
+        die gerade offen ist.
+      </figcaption>
+    </figure>
+  </div>
+  <div class="col">
+    <dl class="facts">
+      <div>
+        <dt>Raster</dt>
+        <dd>
+          Pro Sammlung festgelegt, zum Beispiel drei Reihen mal fünf Spalten.
+          Eine Taste kann auch weiterführen, statt zu sprechen; so hängen die
+          Seiten zusammen.
+        </dd>
+      </div>
+      <div>
+        <dt>Bilder</dt>
+        <dd>
+          Die Bilder von ARASAAC suchst du direkt im Editor. Wenn du METACOM
+          gekauft hast, wählst du stattdessen deinen eigenen Ordner aus.
+        </dd>
+      </div>
+      <div>
+        <dt>Stimme</dt>
+        <dd>
+          Mehrere Stimmen sind dabei; welche spricht, wählst du aus, und
+          weitere können dazukommen.
+        </dd>
+      </div>
+      <div>
+        <dt>Aufwand</dt>
+        <dd>
+          Zu jeder Seite steht, wie viele Wege dorthin führen und wie viele
+          Tastendrücke sie von der Startseite entfernt ist. Wenn eine Sammlung
+          wächst, sieht man daran, welches häufige Wort zu tief gerutscht ist.
+        </dd>
+      </div>
+      <div>
+        <dt>Sichern</dt>
+        <dd>
+          Einen Ordner einmal auswählen, ab dann wird dorthin gesichert. Wenn der Browser irgendwann aufgeräumt wird, kostet
+          dich das keinen Nachmittag.
+        </dd>
+      </div>
+      <div>
+        <dt>Ausgeben</dt>
+        <dd>
+          Eine Datei für die App, und daneben eine zweite in einem offenen
+          Format, das auch andere UK-Programme lesen können.
+        </dd>
+      </div>
+    </dl>
+    <div class="actions">
+      <a class="btn primary" href="{{editor}}">Editor öffnen</a>
+      <a class="btn" href="sammlungen/index.html?produkt=vorlaut-app">Fertige Sammlungen</a>
+      <a class="btn" href="{{editorSource}}">Quelltext</a>
     </div>
   </div>
 </section>
