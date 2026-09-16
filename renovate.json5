@@ -1,0 +1,41 @@
+// Renovate, for this repository.
+//
+// Everything general - when updates arrive, what groups with what, what may
+// merge itself, and since 2026-09-16 how the family's own packages and the
+// toolchain are handled - lives in Lautstark/.github and is true of every
+// repository. What is here is the part that is true of this one and would be
+// wrong to inherit.
+//
+// The .json5 is spelled out on purpose: the //path/to/file syntax implies a
+// .json extension, so omitting it looks for a file that is not there and
+// Renovate stops before it does anything. The shorter "owner/repo:name" form
+// implies it too.
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["github>Lautstark/.github//renovate-shared.json5"],
+
+  packageRules: [
+    // -----------------------------------------------------------------------
+    // The shared packages: what "a bump is a decision" means since 2026-09-16
+    // -----------------------------------------------------------------------
+    //
+    // Until that date this file disabled Renovate for @lautstark/** outright:
+    // the packages were github: tags, hard for the npm manager to follow, and
+    // a bump of one was a decision rather than an update - made by a person
+    // moving the pin, with pins.js saying when one had fallen behind.
+    //
+    // The packages are on npmjs.org now, released from their main branches by
+    // CI, and the decision has not gone away; it has moved to where the
+    // information is. The package's author makes it in the commit subject -
+    // feat is a minor, fix a patch, feat! a major - and this repository's
+    // tests make it again on the branch Renovate pushes. So the shared preset
+    // says: a minor or a patch of a shared package merges to main on its own
+    // once the tests here are green, and a major waits for a person with the
+    // changelog in front of them. That rule is not repeated here.
+    //
+    // This repository takes one shared package, @lautstark/design, and it
+    // follows the preset. Nothing to except - the rule is written for the
+    // namespace there, so which packages this repository depends on can
+    // change without this file noticing.
+  ],
+}
