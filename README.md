@@ -76,7 +76,7 @@ number is what everyone else gets.
 A `bildhaft` payload holds `sentences`, each with `slots` carrying `token`,
 `concept`, an `arasaac` number and — for a Sammlung offered with both — a
 `metacom` symbol, named as its path inside a METACOM folder
-(`METACOM_Symbole/…/name.png`). bildhaft draws whichever source the reader has;
+(`METACOM_Symbole/…/name.png`, or `.jpg` where METACOM has one). bildhaft draws whichever source the reader has;
 the path names a picture and is not one, so nothing of METACOM's is published.
 A Tafel adds `kind: "tafel"`, its `board` (`cols`, `rows`, `cells` as row
 numbers or `null`, `zones`, `styles`), its `print` settings and a `title`

@@ -1,0 +1,429 @@
+{
+  "kind": "lied",
+  "print": {
+    "symbolSizeMm": 18,
+    "cutMarginMm": 1,
+    "showLabel": true,
+    "labelPosition": "below",
+    "labelSizePt": 9,
+    "layout": "lied",
+    "paper": "a4",
+    "orientation": "portrait",
+    "sheetFit": "grid",
+    "cardWidthMm": 54,
+    "cardHeightMm": 84,
+    "gridCols": 7,
+    "gridRows": 4,
+    "showCutLines": true,
+    "onePerPage": false,
+    "showSentenceText": false,
+    "sentencePosition": "above",
+    "sentenceSizePt": 10,
+    "showCollectionTitle": true,
+    "titleSizePt": 15,
+    "titleColour": null,
+    "titleLine": true,
+    "stripFrame": false,
+    "cardBorderMm": 0,
+    "cardBorderColor": "#2e2e2e",
+    "cardRadiusMm": 2,
+    "cardBackground": null,
+    "accentColour": "#2c66c8",
+    "songHeadings": true,
+    "songRepeats": true,
+    "songRefrainOnce": true,
+    "showPageNumbers": true
+  },
+  "sentences": [
+    {
+      "text": "Ich geh’ mit meiner Laterne",
+      "slots": [
+        {
+          "token": "Ich",
+          "concept": "ich",
+          "arasaac": 31807,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/ich.png"
+        },
+        {
+          "token": "geh",
+          "concept": "geh",
+          "arasaac": 2432,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/gehen2.png"
+        },
+        {
+          "token": "mit",
+          "concept": "mit",
+          "arasaac": 7064,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/mit4.png"
+        },
+        {
+          "token": "meiner",
+          "concept": "ich",
+          "arasaac": 12264,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/ich.png"
+        },
+        {
+          "token": "Laterne",
+          "concept": "laterne",
+          "arasaac": 9178,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lieder_Mit_den_Haenden/laterne.png"
+        }
+      ]
+    },
+    {
+      "text": "und meine Laterne mit mir.",
+      "slots": [
+        {
+          "token": "und",
+          "concept": "und",
+          "arasaac": 11399,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/und1.png"
+        },
+        {
+          "token": "meine",
+          "concept": "meine",
+          "arasaac": 12264,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/mein2.png"
+        },
+        {
+          "token": "Laterne",
+          "concept": "laterne",
+          "arasaac": 9178,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lieder_Mit_den_Haenden/laterne.png"
+        },
+        {
+          "token": "mit",
+          "concept": "mit",
+          "arasaac": 7064,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/mit4.png"
+        },
+        {
+          "token": "mir",
+          "concept": "mir",
+          "arasaac": 31807,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/mir.png"
+        }
+      ]
+    },
+    {
+      "text": "Dort oben leuchten die Sterne,",
+      "slots": [
+        {
+          "token": "Dort",
+          "concept": "dort",
+          "arasaac": 5375,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/dort.png"
+        },
+        {
+          "token": "oben",
+          "concept": "oben",
+          "arasaac": 5388,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/oben1.png"
+        },
+        {
+          "token": "leuchten",
+          "concept": "leuchten",
+          "arasaac": 6015,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/licht.png"
+        },
+        {
+          "token": "Sterne",
+          "concept": "sterne",
+          "label": "die Sterne",
+          "arasaac": 6978,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sterne.png"
+        }
+      ]
+    },
+    {
+      "text": "und unten, da leuchten wir.",
+      "slots": [
+        {
+          "token": "und",
+          "concept": "und",
+          "arasaac": 11399,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/und1.png"
+        },
+        {
+          "token": "unten",
+          "concept": "unten",
+          "arasaac": 5355,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/unten1.png"
+        },
+        {
+          "token": "da",
+          "concept": "da",
+          "arasaac": 5375,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/da.png"
+        },
+        {
+          "token": "leuchten",
+          "concept": "leuchten",
+          "arasaac": 6015,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/licht.png"
+        },
+        {
+          "token": "wir",
+          "concept": "wir",
+          "arasaac": 7183,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/wir.png"
+        }
+      ]
+    },
+    {
+      "text": "Der Martinsmann, der zieht voran,",
+      "slots": [
+        {
+          "token": "Martinsmann",
+          "concept": "martinsmann",
+          "label": "Der Martinsmann",
+          "arasaac": 6643,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Feste/martinstag.png"
+        },
+        {
+          "token": "zieht",
+          "concept": "ziehen",
+          "label": "der zieht voran",
+          "arasaac": 35483,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Sport/reiten_galopp.png",
+          "mirrored": true
+        }
+      ]
+    },
+    {
+      "text": "rabimmel, rabammel, rabum.",
+      "slots": [
+        {
+          "token": "rabimmel",
+          "concept": "rabimmel",
+          "arasaac": 2578,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Musik/trommel.png"
+        },
+        {
+          "token": "rabammel",
+          "concept": "rabammel",
+          "arasaac": 2578,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Musik/trommel.png"
+        },
+        {
+          "token": "rabum",
+          "concept": "rabum",
+          "arasaac": 2578,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Musik/trommel.png"
+        }
+      ]
+    },
+    {
+      "text": "Wie schön das klingt, wenn jeder singt,",
+      "slots": [
+        {
+          "token": "Wie",
+          "concept": "wie",
+          "arasaac": 22619,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fragen/wie.png"
+        },
+        {
+          "token": "schön",
+          "concept": "schön",
+          "arasaac": 11194,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/schoen.png"
+        },
+        {
+          "token": "klingt",
+          "concept": "klingt",
+          "label": "das klingt",
+          "arasaac": 27073,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Konversation_Interaktion/klingtwie.png"
+        },
+        {
+          "token": "wenn",
+          "concept": "wenn",
+          "arasaac": 24053,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/wenn.png"
+        },
+        {
+          "token": "jeder",
+          "concept": "jed",
+          "arasaac": 36081,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/jede.png"
+        },
+        {
+          "token": "singt",
+          "concept": "singen",
+          "arasaac": 28657,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/singen2.png"
+        }
+      ]
+    },
+    {
+      "text": "Ein Kuchenduft, liegt in der Luft,",
+      "slots": [
+        {
+          "token": "Kuchenduft",
+          "concept": "kuchenduft",
+          "label": "Ein Kuchen-",
+          "arasaac": 2502,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/KuchenGuglehupf.png"
+        },
+        {
+          "token": "riechen",
+          "concept": "riechen",
+          "label": "Duft",
+          "arasaac": 25275,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/riechen.png"
+        },
+        {
+          "token": "liegt",
+          "concept": "liegen",
+          "arasaac": 8241,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/liegen.png"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 7034,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/in.png"
+        },
+        {
+          "token": "Luft",
+          "concept": "luft",
+          "arasaac": 23731,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/wolken.png"
+        }
+      ]
+    },
+    {
+      "text": "Ein Lichtermeer zu Martins Ehr,",
+      "slots": [
+        {
+          "token": "Lichtermeer",
+          "concept": "lichtermeer",
+          "label": "Ein Lichtermeer",
+          "arasaac": 8155,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lieder_Mit_den_Haenden/laterne.png"
+        },
+        {
+          "token": "Martins",
+          "concept": "martins",
+          "label": "zu Martins",
+          "arasaac": 6643,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Feste/martinstag.png"
+        },
+        {
+          "token": "Ehr",
+          "concept": "ehr",
+          "arasaac": 14660,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Sonstiges/ehre.png"
+        }
+      ]
+    },
+    {
+      "text": "Mein Licht ist aus, ich geh’ nach Haus,",
+      "slots": [
+        {
+          "token": "Mein",
+          "concept": "mein",
+          "arasaac": 12264,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/mein.png"
+        },
+        {
+          "token": "Licht",
+          "concept": "licht",
+          "arasaac": 8619,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/licht.png"
+        },
+        {
+          "token": "aus",
+          "concept": "aus",
+          "label": "geht aus",
+          "arasaac": 8252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/ein_aus_rot.png"
+        },
+        {
+          "token": "ich",
+          "concept": "ich",
+          "arasaac": 31807,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/ich.png"
+        },
+        {
+          "token": "geh",
+          "concept": "geh",
+          "arasaac": 2432,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/gehen2.png"
+        },
+        {
+          "token": "nach",
+          "concept": "nach",
+          "arasaac": 7041,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/nach.png"
+        },
+        {
+          "token": "Haus",
+          "concept": "Haus",
+          "arasaac": 6964,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/haus2.png"
+        }
+      ]
+    }
+  ],
+  "song": {
+    "parts": [
+      {
+        "kind": "refrain",
+        "lines": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "kind": "strophe",
+        "lines": [
+          4,
+          5
+        ]
+      },
+      {
+        "kind": "strophe",
+        "lines": [
+          6,
+          5
+        ]
+      },
+      {
+        "kind": "strophe",
+        "lines": [
+          7,
+          5
+        ]
+      },
+      {
+        "kind": "strophe",
+        "lines": [
+          8,
+          5
+        ]
+      },
+      {
+        "kind": "strophe",
+        "lines": [
+          9,
+          5
+        ]
+      }
+    ],
+    "order": [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3,
+      0,
+      4,
+      0,
+      5
+    ]
+  }
+}

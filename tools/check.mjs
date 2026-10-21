@@ -24,7 +24,7 @@ const BARE_URL = /https?:\/\/[^\s"'<>]+/g;
  * generated content, not addresses, and the rule below would otherwise report
  * each of them as a missing entry. */
 const GENERATED = new Set(["filter", "filterRules", "karten", "anzahl", "stand", "beides",
-  "titel", "titelbild", "beschreibung", "zahlen", "oeffnen", "tafel", "quelle"]);
+  "titel", "titelbild", "art", "beschreibung", "zahlen", "oeffnen", "tafel", "quelle"]);
 
 /* site/ has folders in it, so the walk recurses — a page in a subdirectory owes
  * the same rule as one at the top. */
@@ -99,7 +99,7 @@ const PICTURE = /\.(png|jpe?g|gif|webp|avif|svg|bmp)$/i;
 const METACOM = /metacom/i;
 /* What a `metacom` value is: a picture's path inside a METACOM folder, the
    way bildhaft stores it. Never an address, never a way out of the folder. */
-const METACOM_PATH = /^METACOM_Symbole\/(?:[^/\\:]+\/)*[^/\\:]+\.png$/;
+const METACOM_PATH = /^METACOM_Symbole\/(?:[^/\\:]+\/)*[^/\\:]+\.(?:png|jpe?g)$/;
 
 /** A file's JSON with every `metacom` path checked and taken out, so what is
  *  left can be searched for METACOM named anywhere it may not be. */
@@ -111,7 +111,7 @@ function withoutMetacomPaths(value, here, problems) {
     if (key === "metacom") {
       if (typeof inner !== "string" || !METACOM_PATH.test(inner) || inner.includes("..")) {
         problems.push(`${here}: has the METACOM symbol ${JSON.stringify(inner)}, which is not `
-          + "a path inside a METACOM folder (METACOM_Symbole/…/name.png).");
+          + "a path inside a METACOM folder (METACOM_Symbole/…/name.png or .jpg).");
       }
       continue;
     }
@@ -207,6 +207,21 @@ if (existsSync(ENTRIES)) {
           problems.push(`${here}/${entry.payload}: „${slot.label || slot.token}“ has `
             + `${slot.arasaac ? "no METACOM symbol" : "no ARASAAC number"}, and the rest have both.`);
         }
+      }
+      const rows = (payload.sentences ?? []).length;
+      if (payload.kind === "lied") {
+        const parts = payload.song?.parts ?? [];
+        if (!parts.length || parts.some((part) => !["refrain", "strophe"].includes(part.kind)
+          || !(part.lines ?? []).every((at) => Number.isInteger(at) && at >= 0 && at < rows))) {
+          problems.push(`${here}/${entry.payload}: a Lied needs parts, each a refrain or a strophe of rows that are there.`);
+        }
+        if ((payload.song?.order ?? []).some((at) => !parts[at])) {
+          problems.push(`${here}/${entry.payload}: the song's order names a part that is not there.`);
+        }
+      }
+      if (payload.kind === "rezept" && (payload.sentences ?? []).some((row) =>
+        !["zutat", "hilfsmittel", "schritt"].includes(row.part))) {
+        problems.push(`${here}/${entry.payload}: every row of a Rezept is a zutat, a hilfsmittel or a schritt.`);
       }
       if (payload.kind === "tafel") {
         const { cols, rows, cells } = payload.board ?? {};

@@ -1,0 +1,1402 @@
+{
+  "kind": "einkaufsliste",
+  "sentences": [
+    {
+      "text": "zwiebel",
+      "slots": [
+        {
+          "token": "zwiebel",
+          "concept": "zwiebel",
+          "arasaac": 2323,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zwiebel.png"
+        }
+      ]
+    },
+    {
+      "text": "zwieback",
+      "slots": [
+        {
+          "token": "zwieback",
+          "concept": "zwieback",
+          "arasaac": 2787,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zwieback.png"
+        }
+      ]
+    },
+    {
+      "text": "zucker",
+      "slots": [
+        {
+          "token": "zucker",
+          "concept": "zucker",
+          "arasaac": 25560,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucker.png"
+        }
+      ]
+    },
+    {
+      "text": "zucchini",
+      "slots": [
+        {
+          "token": "zucchini",
+          "concept": "zucchini",
+          "arasaac": 2678,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucchini.png"
+        }
+      ]
+    },
+    {
+      "text": "zitrone",
+      "slots": [
+        {
+          "token": "zitrone",
+          "concept": "zitrone",
+          "arasaac": 3022,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zitrone.png"
+        }
+      ]
+    },
+    {
+      "text": "zahnpasta",
+      "slots": [
+        {
+          "token": "zahnpasta",
+          "concept": "zahnpasta",
+          "arasaac": 2858,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/zahnpasta.png"
+        }
+      ]
+    },
+    {
+      "text": "zahnbürste",
+      "slots": [
+        {
+          "token": "zahnbürste",
+          "concept": "zahnbürste",
+          "arasaac": 2694,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/zahnbuerste.png"
+        }
+      ]
+    },
+    {
+      "text": "würstchen",
+      "slots": [
+        {
+          "token": "würstchen",
+          "concept": "würstchen",
+          "arasaac": 6647,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/wuerstchen.png"
+        }
+      ]
+    },
+    {
+      "text": "wurst",
+      "slots": [
+        {
+          "token": "wurst",
+          "concept": "wurst",
+          "arasaac": 3280,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/wurst.png"
+        }
+      ]
+    },
+    {
+      "text": "windeln",
+      "slots": [
+        {
+          "token": "windeln",
+          "concept": "windeln",
+          "arasaac": 22017,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/windel.png"
+        }
+      ]
+    },
+    {
+      "text": "weintrauben",
+      "slots": [
+        {
+          "token": "weintrauben",
+          "concept": "weintrauben",
+          "arasaac": 3247,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/weintraubengruen.png"
+        }
+      ]
+    },
+    {
+      "text": "weichspüler",
+      "slots": [
+        {
+          "token": "weichspüler",
+          "concept": "weichspüler",
+          "arasaac": 7262,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/weichspueler.png"
+        }
+      ]
+    },
+    {
+      "text": "watte",
+      "slots": [
+        {
+          "token": "watte",
+          "concept": "watte",
+          "arasaac": 2985,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/watte.png"
+        }
+      ]
+    },
+    {
+      "text": "waschmittel",
+      "slots": [
+        {
+          "token": "waschmittel",
+          "concept": "waschmittel",
+          "arasaac": 7021,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/waschmittelwaschpulver.png"
+        }
+      ]
+    },
+    {
+      "text": "tomatensoße",
+      "slots": [
+        {
+          "token": "tomatensoße",
+          "concept": "tomatensoße",
+          "arasaac": 17008,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/tomatenmark.png"
+        }
+      ]
+    },
+    {
+      "text": "tomate",
+      "slots": [
+        {
+          "token": "tomate",
+          "concept": "tomate",
+          "arasaac": 2594,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/tomate.png"
+        }
+      ]
+    },
+    {
+      "text": "toilettenpapier",
+      "slots": [
+        {
+          "token": "toilettenpapier",
+          "concept": "toilettenpapier",
+          "arasaac": 2862,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/toilettenpapier.png"
+        }
+      ]
+    },
+    {
+      "text": "toastbrot",
+      "slots": [
+        {
+          "token": "toastbrot",
+          "concept": "toastbrot",
+          "arasaac": 2865,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/toast.png"
+        }
+      ]
+    },
+    {
+      "text": "taschentücher",
+      "slots": [
+        {
+          "token": "taschentücher",
+          "concept": "taschentücher",
+          "arasaac": 8647,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/taschentuchSW.png"
+        }
+      ]
+    },
+    {
+      "text": "spülmittel",
+      "slots": [
+        {
+          "token": "spülmittel",
+          "concept": "spülmittel",
+          "arasaac": 7143,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/geschirrspuelmittel2.png"
+        }
+      ]
+    },
+    {
+      "text": "spinat",
+      "slots": [
+        {
+          "token": "spinat",
+          "concept": "spinat",
+          "arasaac": 5460,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/spinat.png"
+        }
+      ]
+    },
+    {
+      "text": "speck",
+      "slots": [
+        {
+          "token": "speck",
+          "concept": "speck",
+          "arasaac": 2994,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/speck.png"
+        }
+      ]
+    },
+    {
+      "text": "shampoo",
+      "slots": [
+        {
+          "token": "shampoo",
+          "concept": "shampoo",
+          "arasaac": 2699,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/shampoo.png"
+        }
+      ]
+    },
+    {
+      "text": "senf",
+      "slots": [
+        {
+          "token": "senf",
+          "concept": "senf",
+          "arasaac": 6565,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/senf.png"
+        }
+      ]
+    },
+    {
+      "text": "seife",
+      "slots": [
+        {
+          "token": "seife",
+          "concept": "seife",
+          "arasaac": 8094,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/seife.png"
+        }
+      ]
+    },
+    {
+      "text": "schwamm",
+      "slots": [
+        {
+          "token": "schwamm",
+          "concept": "schwamm",
+          "arasaac": 2749,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/schwamm.png"
+        }
+      ]
+    },
+    {
+      "text": "schokolade",
+      "slots": [
+        {
+          "token": "schokolade",
+          "concept": "schokolade",
+          "arasaac": 25940,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/schokolade.png"
+        }
+      ]
+    },
+    {
+      "text": "schnitzel",
+      "slots": [
+        {
+          "token": "schnitzel",
+          "concept": "schnitzel",
+          "arasaac": 36999,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/schnitzel.png"
+        }
+      ]
+    },
+    {
+      "text": "schmand",
+      "slots": [
+        {
+          "token": "schmand",
+          "concept": "schmand",
+          "arasaac": 39904,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kaesecreme.png"
+        }
+      ]
+    },
+    {
+      "text": "schinken",
+      "slots": [
+        {
+          "token": "schinken",
+          "concept": "schinken",
+          "arasaac": 2433,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/schinken.png"
+        }
+      ]
+    },
+    {
+      "text": "salzstangen",
+      "slots": [
+        {
+          "token": "salzstangen",
+          "concept": "salzstangen",
+          "arasaac": 38770,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/salzstangen.png"
+        }
+      ]
+    },
+    {
+      "text": "salz",
+      "slots": [
+        {
+          "token": "salz",
+          "concept": "salz",
+          "arasaac": 25576,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/salz2.png"
+        }
+      ]
+    },
+    {
+      "text": "salat",
+      "slots": [
+        {
+          "token": "salat",
+          "concept": "salat",
+          "arasaac": 8104,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/salat.png"
+        }
+      ]
+    },
+    {
+      "text": "salami",
+      "slots": [
+        {
+          "token": "salami",
+          "concept": "salami",
+          "arasaac": 3290,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/salami.png"
+        }
+      ]
+    },
+    {
+      "text": "sahne",
+      "slots": [
+        {
+          "token": "sahne",
+          "concept": "sahne",
+          "arasaac": 13376,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/sahne.png"
+        }
+      ]
+    },
+    {
+      "text": "reis",
+      "slots": [
+        {
+          "token": "reis",
+          "concept": "reis",
+          "arasaac": 39387,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/reis.png"
+        }
+      ]
+    },
+    {
+      "text": "rasierer",
+      "slots": [
+        {
+          "token": "rasierer",
+          "concept": "rasierer",
+          "arasaac": 2726,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/rasierer.png"
+        }
+      ]
+    },
+    {
+      "text": "quark",
+      "slots": [
+        {
+          "token": "quark",
+          "concept": "quark",
+          "arasaac": 15367,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/quark.png"
+        }
+      ]
+    },
+    {
+      "text": "putzmittel",
+      "slots": [
+        {
+          "token": "putzmittel",
+          "concept": "putzmittel",
+          "arasaac": 39289,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Raumschilder/putzmittelraum.png"
+        }
+      ]
+    },
+    {
+      "text": "pudding",
+      "slots": [
+        {
+          "token": "pudding",
+          "concept": "pudding",
+          "arasaac": 25111,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/dessert_pudding.png"
+        }
+      ]
+    },
+    {
+      "text": "popcorn",
+      "slots": [
+        {
+          "token": "popcorn",
+          "concept": "popcorn",
+          "arasaac": 5534,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/popcorn.png"
+        }
+      ]
+    },
+    {
+      "text": "pommes",
+      "slots": [
+        {
+          "token": "pommes",
+          "concept": "pommes",
+          "arasaac": 2505,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/pommes.png"
+        }
+      ]
+    },
+    {
+      "text": "pizza",
+      "slots": [
+        {
+          "token": "pizza",
+          "concept": "pizza",
+          "arasaac": 2527,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/pizza.png"
+        }
+      ]
+    },
+    {
+      "text": "pflaume",
+      "slots": [
+        {
+          "token": "pflaume",
+          "concept": "pflaume",
+          "arasaac": 8305,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/pflaumeblau.png"
+        }
+      ]
+    },
+    {
+      "text": "pflaster",
+      "slots": [
+        {
+          "token": "pflaster",
+          "concept": "pflaster",
+          "arasaac": 3306,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Arzt_Gesundheit/pflaster.png"
+        }
+      ]
+    },
+    {
+      "text": "pfirsich",
+      "slots": [
+        {
+          "token": "pfirsich",
+          "concept": "pfirsich",
+          "arasaac": 2468,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/pfirsich.png"
+        }
+      ]
+    },
+    {
+      "text": "pfeffer",
+      "slots": [
+        {
+          "token": "pfeffer",
+          "concept": "pfeffer",
+          "arasaac": 25331,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/pfefferSW.png"
+        }
+      ]
+    },
+    {
+      "text": "paprika",
+      "slots": [
+        {
+          "token": "paprika",
+          "concept": "paprika",
+          "arasaac": 2839,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/paprikarot.png"
+        }
+      ]
+    },
+    {
+      "text": "orange",
+      "slots": [
+        {
+          "token": "orange",
+          "concept": "orange",
+          "arasaac": 2483,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/orangefrucht.png"
+        }
+      ]
+    },
+    {
+      "text": "öl",
+      "slots": [
+        {
+          "token": "öl",
+          "concept": "öl",
+          "arasaac": 2246,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/oel.png"
+        }
+      ]
+    },
+    {
+      "text": "nüsse",
+      "slots": [
+        {
+          "token": "nüsse",
+          "concept": "nüsse",
+          "arasaac": 2880,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/nuesse.png"
+        }
+      ]
+    },
+    {
+      "text": "nudeln",
+      "slots": [
+        {
+          "token": "nudeln",
+          "concept": "nudeln",
+          "arasaac": 25486,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/nudeln.png"
+        }
+      ]
+    },
+    {
+      "text": "müsli",
+      "slots": [
+        {
+          "token": "müsli",
+          "concept": "müsli",
+          "arasaac": 2328,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/muesli2.png"
+        }
+      ]
+    },
+    {
+      "text": "müllbeutel",
+      "slots": [
+        {
+          "token": "müllbeutel",
+          "concept": "müllbeutel",
+          "arasaac": 6065,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/muellbeutel.png"
+        }
+      ]
+    },
+    {
+      "text": "milch",
+      "slots": [
+        {
+          "token": "milch",
+          "concept": "milch",
+          "arasaac": 2445,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/milch.png"
+        }
+      ]
+    },
+    {
+      "text": "melone",
+      "slots": [
+        {
+          "token": "melone",
+          "concept": "melone",
+          "arasaac": 2557,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/melone.png"
+        }
+      ]
+    },
+    {
+      "text": "mehl",
+      "slots": [
+        {
+          "token": "mehl",
+          "concept": "mehl",
+          "arasaac": 8600,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mehl.png"
+        }
+      ]
+    },
+    {
+      "text": "mayonnaise",
+      "slots": [
+        {
+          "token": "mayonnaise",
+          "concept": "mayonnaise",
+          "arasaac": 5509,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mayonaise_tube.png"
+        }
+      ]
+    },
+    {
+      "text": "marmelade",
+      "slots": [
+        {
+          "token": "marmelade",
+          "concept": "marmelade",
+          "arasaac": 2470,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/marmelade1.png"
+        }
+      ]
+    },
+    {
+      "text": "margarine",
+      "slots": [
+        {
+          "token": "margarine",
+          "concept": "margarine",
+          "arasaac": 26196,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/margarinerund.png"
+        }
+      ]
+    },
+    {
+      "text": "mandarine",
+      "slots": [
+        {
+          "token": "mandarine",
+          "concept": "mandarine",
+          "arasaac": 11298,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mandarine.png"
+        }
+      ]
+    },
+    {
+      "text": "mais",
+      "slots": [
+        {
+          "token": "mais",
+          "concept": "mais",
+          "arasaac": 7150,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mais.png"
+        }
+      ]
+    },
+    {
+      "text": "linsen",
+      "slots": [
+        {
+          "token": "linsen",
+          "concept": "linsen",
+          "arasaac": 2448,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/linsen.png"
+        }
+      ]
+    },
+    {
+      "text": "lauch",
+      "slots": [
+        {
+          "token": "lauch",
+          "concept": "lauch",
+          "arasaac": 3378,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/lauch.png"
+        }
+      ]
+    },
+    {
+      "text": "lachs",
+      "slots": [
+        {
+          "token": "lachs",
+          "concept": "lachs",
+          "arasaac": 7808,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/lachs.png"
+        }
+      ]
+    },
+    {
+      "text": "kürbis",
+      "slots": [
+        {
+          "token": "kürbis",
+          "concept": "kürbis",
+          "arasaac": 2679,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kuerbis.png"
+        }
+      ]
+    },
+    {
+      "text": "küchenrolle",
+      "slots": [
+        {
+          "token": "küchenrolle",
+          "concept": "küchenrolle",
+          "arasaac": 6166,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/kuechenrolleSW.png"
+        }
+      ]
+    },
+    {
+      "text": "kuchen",
+      "slots": [
+        {
+          "token": "kuchen",
+          "concept": "kuchen",
+          "arasaac": 2502,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/schnecke.png"
+        }
+      ]
+    },
+    {
+      "text": "konserven",
+      "slots": [
+        {
+          "token": "konserven",
+          "concept": "konserven",
+          "arasaac": 6544,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/passierte_tomaten_dose.png"
+        }
+      ]
+    },
+    {
+      "text": "knoblauch",
+      "slots": [
+        {
+          "token": "knoblauch",
+          "concept": "knoblauch",
+          "arasaac": 2641,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/knoblauch.png"
+        }
+      ]
+    },
+    {
+      "text": "knäckebrot",
+      "slots": [
+        {
+          "token": "knäckebrot",
+          "concept": "knäckebrot",
+          "arasaac": 10230,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/knaeckebrot2.png"
+        }
+      ]
+    },
+    {
+      "text": "kiwi",
+      "slots": [
+        {
+          "token": "kiwi",
+          "concept": "kiwi",
+          "arasaac": 2955,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kiwi.png"
+        }
+      ]
+    },
+    {
+      "text": "kirschen",
+      "slots": [
+        {
+          "token": "kirschen",
+          "concept": "kirschen",
+          "arasaac": 2329,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kirsche.png"
+        }
+      ]
+    },
+    {
+      "text": "ketchup",
+      "slots": [
+        {
+          "token": "ketchup",
+          "concept": "ketchup",
+          "arasaac": 6540,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/ketchup1.png"
+        }
+      ]
+    },
+    {
+      "text": "kerzen",
+      "slots": [
+        {
+          "token": "kerzen",
+          "concept": "kerzen",
+          "arasaac": 6242,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Feste/kerzen.png"
+        }
+      ]
+    },
+    {
+      "text": "kekse",
+      "slots": [
+        {
+          "token": "kekse",
+          "concept": "kekse",
+          "arasaac": 2402,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kekse.png"
+        }
+      ]
+    },
+    {
+      "text": "kaugummi",
+      "slots": [
+        {
+          "token": "kaugummi",
+          "concept": "kaugummi",
+          "arasaac": 8724,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kaugummi.png"
+        }
+      ]
+    },
+    {
+      "text": "käse",
+      "slots": [
+        {
+          "token": "käse",
+          "concept": "käse",
+          "arasaac": 2541,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kaese.png"
+        }
+      ]
+    },
+    {
+      "text": "kartoffelpüree",
+      "slots": [
+        {
+          "token": "kartoffelpüree",
+          "concept": "kartoffelpüree",
+          "arasaac": 2539,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kartoffelbrei2.png"
+        }
+      ]
+    },
+    {
+      "text": "kartoffel",
+      "slots": [
+        {
+          "token": "kartoffel",
+          "concept": "kartoffel",
+          "arasaac": 2503,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kartoffel.png"
+        }
+      ]
+    },
+    {
+      "text": "karotte",
+      "slots": [
+        {
+          "token": "karotte",
+          "concept": "karotte",
+          "arasaac": 2619,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mohrruebekarotte.png"
+        }
+      ]
+    },
+    {
+      "text": "joghurt",
+      "slots": [
+        {
+          "token": "joghurt",
+          "concept": "joghurt",
+          "arasaac": 2618,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/joghurt4.png"
+        }
+      ]
+    },
+    {
+      "text": "honig",
+      "slots": [
+        {
+          "token": "honig",
+          "concept": "honig",
+          "arasaac": 2911,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/honig.png"
+        }
+      ]
+    },
+    {
+      "text": "himbeeren",
+      "slots": [
+        {
+          "token": "himbeeren",
+          "concept": "himbeeren",
+          "arasaac": 13084,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/himbeere.png"
+        }
+      ]
+    },
+    {
+      "text": "haferflocken",
+      "slots": [
+        {
+          "token": "haferflocken",
+          "concept": "haferflocken",
+          "arasaac": 6921,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/haferflocken.png"
+        }
+      ]
+    },
+    {
+      "text": "hackfleisch",
+      "slots": [
+        {
+          "token": "hackfleisch",
+          "concept": "hackfleisch",
+          "arasaac": 35635,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/hackfleisch.png"
+        }
+      ]
+    },
+    {
+      "text": "gurke",
+      "slots": [
+        {
+          "token": "gurke",
+          "concept": "gurke",
+          "arasaac": 2847,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/gurke.png"
+        }
+      ]
+    },
+    {
+      "text": "gummibärchen",
+      "slots": [
+        {
+          "token": "gummibärchen",
+          "concept": "gummibärchen",
+          "arasaac": 7118,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/gummibaerchenbunt.png"
+        }
+      ]
+    },
+    {
+      "text": "gewürze",
+      "slots": [
+        {
+          "token": "gewürze",
+          "concept": "gewürze",
+          "arasaac": 37094,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/gewuerz.png"
+        }
+      ]
+    },
+    {
+      "text": "gemüse",
+      "slots": [
+        {
+          "token": "gemüse",
+          "concept": "gemüse",
+          "arasaac": 28343,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/gemuese.png"
+        }
+      ]
+    },
+    {
+      "text": "frischkäse",
+      "slots": [
+        {
+          "token": "frischkäse",
+          "concept": "frischkäse",
+          "arasaac": 15505,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/frischkaesebrot.png"
+        }
+      ]
+    },
+    {
+      "text": "frischhaltefolie",
+      "slots": [
+        {
+          "token": "frischhaltefolie",
+          "concept": "frischhaltefolie",
+          "arasaac": 36919,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/frischhaltefolie.png"
+        }
+      ]
+    },
+    {
+      "text": "fischstäbchen",
+      "slots": [
+        {
+          "token": "fischstäbchen",
+          "concept": "fischstäbchen",
+          "arasaac": 6653,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/fischstaebchen.png"
+        }
+      ]
+    },
+    {
+      "text": "fisch",
+      "slots": [
+        {
+          "token": "fisch",
+          "concept": "fisch",
+          "arasaac": 2520,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/fisch3.png"
+        }
+      ]
+    },
+    {
+      "text": "essig",
+      "slots": [
+        {
+          "token": "essig",
+          "concept": "essig",
+          "arasaac": 5605,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/essig.png"
+        }
+      ]
+    },
+    {
+      "text": "erdbeeren",
+      "slots": [
+        {
+          "token": "erdbeeren",
+          "concept": "erdbeeren",
+          "arasaac": 2400,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/erdbeere.png"
+        }
+      ]
+    },
+    {
+      "text": "erbsen",
+      "slots": [
+        {
+          "token": "erbsen",
+          "concept": "erbsen",
+          "arasaac": 7182,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/erbsen.png"
+        }
+      ]
+    },
+    {
+      "text": "eis",
+      "slots": [
+        {
+          "token": "eis",
+          "concept": "eis",
+          "arasaac": 35209,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/eistuete.png"
+        }
+      ]
+    },
+    {
+      "text": "eier",
+      "slots": [
+        {
+          "token": "eier",
+          "concept": "eier",
+          "arasaac": 34039,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Behaelter_Taschen/eierkarton.png"
+        }
+      ]
+    },
+    {
+      "text": "duschgel",
+      "slots": [
+        {
+          "token": "duschgel",
+          "concept": "duschgel",
+          "arasaac": 3335,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/duschbad.png"
+        }
+      ]
+    },
+    {
+      "text": "deo",
+      "slots": [
+        {
+          "token": "deo",
+          "concept": "deo",
+          "arasaac": 2735,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/deospray.png"
+        }
+      ]
+    },
+    {
+      "text": "croissant",
+      "slots": [
+        {
+          "token": "croissant",
+          "concept": "croissant",
+          "arasaac": 2358,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/croissant.png"
+        }
+      ]
+    },
+    {
+      "text": "creme",
+      "slots": [
+        {
+          "token": "creme",
+          "concept": "creme",
+          "arasaac": 3376,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/creme.png"
+        }
+      ]
+    },
+    {
+      "text": "cornflakes",
+      "slots": [
+        {
+          "token": "cornflakes",
+          "concept": "cornflakes",
+          "arasaac": 2328,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/cornflakes2.png"
+        }
+      ]
+    },
+    {
+      "text": "chips",
+      "slots": [
+        {
+          "token": "chips",
+          "concept": "chips",
+          "arasaac": 5400,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/chips.png"
+        }
+      ]
+    },
+    {
+      "text": "champignons",
+      "slots": [
+        {
+          "token": "champignons",
+          "concept": "champignons",
+          "arasaac": 2331,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/pilz1.png"
+        }
+      ]
+    },
+    {
+      "text": "butter",
+      "slots": [
+        {
+          "token": "butter",
+          "concept": "butter",
+          "arasaac": 2461,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/butter.png"
+        }
+      ]
+    },
+    {
+      "text": "brötchen",
+      "slots": [
+        {
+          "token": "brötchen",
+          "concept": "brötchen",
+          "arasaac": 10231,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/broetchen.png"
+        }
+      ]
+    },
+    {
+      "text": "brot",
+      "slots": [
+        {
+          "token": "brot",
+          "concept": "brot",
+          "arasaac": 38733,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/brot.png"
+        }
+      ]
+    },
+    {
+      "text": "brokkoli",
+      "slots": [
+        {
+          "token": "brokkoli",
+          "concept": "brokkoli",
+          "arasaac": 23853,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/brokoli.png"
+        }
+      ]
+    },
+    {
+      "text": "brezel",
+      "slots": [
+        {
+          "token": "brezel",
+          "concept": "brezel",
+          "arasaac": 39058,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/brezel.png"
+        }
+      ]
+    },
+    {
+      "text": "bonbons",
+      "slots": [
+        {
+          "token": "bonbons",
+          "concept": "bonbons",
+          "arasaac": 22182,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/bonbons.png"
+        }
+      ]
+    },
+    {
+      "text": "bohnen",
+      "slots": [
+        {
+          "token": "bohnen",
+          "concept": "bohnen",
+          "arasaac": 38595,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/bohnen.png"
+        }
+      ]
+    },
+    {
+      "text": "blumenkohl",
+      "slots": [
+        {
+          "token": "blumenkohl",
+          "concept": "blumenkohl",
+          "arasaac": 23953,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/blumenkohl.png"
+        }
+      ]
+    },
+    {
+      "text": "blaubeeren",
+      "slots": [
+        {
+          "token": "blaubeeren",
+          "concept": "blaubeeren",
+          "arasaac": 13034,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/heidelbeeren.png"
+        }
+      ]
+    },
+    {
+      "text": "blaubeere",
+      "slots": [
+        {
+          "token": "blaubeere",
+          "concept": "blaubeere",
+          "arasaac": 36488,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/heidelbeeren.png"
+        }
+      ]
+    },
+    {
+      "text": "birne",
+      "slots": [
+        {
+          "token": "birne",
+          "concept": "birne",
+          "arasaac": 2561,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/birne.png"
+        }
+      ]
+    },
+    {
+      "text": "binden",
+      "slots": [
+        {
+          "token": "binden",
+          "concept": "binden",
+          "arasaac": 36631,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/tampon.png"
+        }
+      ]
+    },
+    {
+      "text": "batterien",
+      "slots": [
+        {
+          "token": "batterien",
+          "concept": "batterien",
+          "arasaac": 8320,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/TV_Audio_Foto/batterie.png"
+        }
+      ]
+    },
+    {
+      "text": "banane",
+      "slots": [
+        {
+          "token": "banane",
+          "concept": "banane",
+          "arasaac": 2530,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/banane.png"
+        }
+      ]
+    },
+    {
+      "text": "baguette",
+      "slots": [
+        {
+          "token": "baguette",
+          "concept": "baguette",
+          "arasaac": 2494,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/baguette3.png"
+        }
+      ]
+    },
+    {
+      "text": "backpapier",
+      "slots": [
+        {
+          "token": "backpapier",
+          "concept": "backpapier",
+          "arasaac": 38203,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/backpapier.png"
+        }
+      ]
+    },
+    {
+      "text": "avocado",
+      "slots": [
+        {
+          "token": "avocado",
+          "concept": "avocado",
+          "arasaac": 8009,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/avocado.png"
+        }
+      ]
+    },
+    {
+      "text": "aubergine",
+      "slots": [
+        {
+          "token": "aubergine",
+          "concept": "aubergine",
+          "arasaac": 2660,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/aubergine.png"
+        }
+      ]
+    },
+    {
+      "text": "apfel",
+      "slots": [
+        {
+          "token": "apfel",
+          "concept": "apfel",
+          "arasaac": 2462,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel2.png"
+        }
+      ]
+    },
+    {
+      "text": "ananas",
+      "slots": [
+        {
+          "token": "ananas",
+          "concept": "ananas",
+          "arasaac": 2525,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/ananas.png"
+        }
+      ]
+    },
+    {
+      "text": "alufolie",
+      "slots": [
+        {
+          "token": "alufolie",
+          "concept": "alufolie",
+          "arasaac": 8250,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/alufolie.png"
+        }
+      ]
+    }
+  ]
+}

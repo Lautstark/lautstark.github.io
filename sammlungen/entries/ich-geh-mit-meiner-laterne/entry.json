@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "id": "ich-geh-mit-meiner-laterne",
+  "product": "bildhaft",
+  "name": "Ich geh mit meiner Laterne",
+  "description": "Zum Mitsingen beim Laternenumzug, mit „rabimmel, rabammel, rabum“.",
+  "tags": [
+    "Lied",
+    "St. Martin"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [
+    "laterne-laterne"
+  ],
+  "payload": "lied.json"
+}

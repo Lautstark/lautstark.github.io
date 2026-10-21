@@ -687,3 +687,62 @@ footer {
 .sym-m:checked ~ .druck .blatt { opacity: .15; filter: grayscale(1); }
 .blatt__satz { color: #444; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .blatt__karte--schnitt { border: calc(.2 * var(--mm)) dashed #bdbdbd; }
+
+/* The other templates' sheets: cards in rows, an Einkaufsliste's zones and cart. */
+.blatt__karte--klein img { flex: 1 1 auto; min-height: 0; }
+.blatt__platz { display: flex; align-items: center; justify-content: center; }
+.blatt__platz--wort { flex-direction: column; justify-content: flex-start; }
+.blatt__platz img, .blatt__schnitt img { flex: 1 1 auto; min-height: 0; max-width: 100%; object-fit: contain; }
+.blatt__platz--wort span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.blatt__schnitt { display: flex; border: calc(.2 * var(--mm)) dashed #bdbdbd; }
+.blatt__punkt { border-style: dashed; border-color: #d2d2d2; border-radius: 50%; }
+.blatt__wagen {
+  position: absolute; overflow: visible; fill: none; stroke: #b4b9be;
+  stroke-width: .6; stroke-linecap: round; stroke-linejoin: round;
+}
+.blatt__anleitung { color: #333; line-height: 1.4; }
+.blatt__anleitung strong { display: block; color: #000; }
+.blatt__anleitung ol { margin: 0; padding-left: 1.4em; }
+
+/* An Einkaufsliste's cover: the board in front, its places askew behind it. */
+.stapel { position: relative; padding: 0 0 7% 7%; }
+.stapel__hinten { position: absolute; inset: 0 7% 7% 0; transform: rotate(-3deg); }
+.stapel__vorn { position: relative; }
+
+/* A material's sheets, all of them, side by side. */
+.seiten {
+  display: grid; gap: 1.4rem; margin-top: .4rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+}
+.seiten figure { margin: 0; }
+.seiten .druck__papier { max-width: none; }
+.seiten figcaption { font-size: .8rem; color: var(--text-faint); margin-top: .4rem; }
+.tafelbild--blaetter { background: transparent; padding: 0; overflow: visible; }
+.sym-m:checked ~ .tafelbild .seiten .blatt { filter: grayscale(1) blur(1.5px); opacity: .35; }
+.tafelbild--blaetter .tafel__metacom { align-items: flex-start; padding-top: 4rem; }
+
+/* The shelf, tighter: more tiles to a row, and every bildhaft cover in one
+   frame of the same shape, so a row reads as a row. */
+.regal { grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr)); gap: 1rem; }
+.karte--blatt .oben {
+  aspect-ratio: 4 / 3; box-sizing: border-box; container-type: size;
+  display: grid; place-items: center; padding: 2.7rem .9rem .9rem;
+}
+.karte--blatt .oben--woerter { padding: .9rem; }
+.deckel { width: min(100cqw, calc(100cqh * var(--seite))); }
+.karte--blatt .stapel { padding: 0 0 5% 5%; }
+.karte--blatt .stapel__hinten { inset: 0 5% 5% 0; }
+.karte--blatt > .symbolwahl { top: .6rem; left: .7rem; }
+.karte--blatt .symbolwahl label { padding: .15rem .6rem; font-size: .72rem; }
+.karte--blatt .karte__text { padding: .9rem 1rem 1rem; gap: .55rem; }
+.karte--blatt .karte__was {
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.karte--blatt .hinweis-m { inset: 2.7rem .6rem .6rem; padding: .4rem; }
+.karte--blatt .hinweis-m > div { padding: .75rem .85rem; }
+.karte--blatt .hm-titel { font-size: .86rem; }
+.karte--blatt .hinweis-m ol { font-size: .8rem; gap: .25rem; margin: .3rem 0 .35rem; }
+.karte--blatt .hm-klein { font-size: .72rem; }
+.karte--blatt .wand { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; }
+.karte--blatt .wand span { min-width: 0; }
+.karte--blatt .wand .wand__mehr { font-size: .72rem; }

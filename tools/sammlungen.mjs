@@ -88,12 +88,24 @@ const bildhaftFacts = (payload) => ({
   ...sentenceFacts(payload),
   words: slotsOf(payload).length,
   metacom: bothSources(payload),
+  ...(payload.kind ? { kind: payload.kind } : {}),
   ...(payload.kind === "tafel" ? {
     tafel: true,
     grid: `${payload.board.cols} × ${payload.board.rows}`,
     filled: payload.board.cells.filter((cell) => cell !== null).length,
   } : {}),
+  ...(payload.kind === "lied" ? {
+    strophen: payload.song.parts.filter((part) => part.kind === "strophe").length,
+    refrain: payload.song.parts.some((part) => part.kind === "refrain"),
+  } : {}),
+  ...(payload.kind === "rezept" ? {
+    zutaten: payload.sentences.filter((row) => row.part === "zutat").length,
+    schritte: payload.sentences.filter((row) => row.part === "schritt").length,
+  } : {}),
 });
+
+/** The templates the shelf knows by name; a payload without a kind is Satzstreifen. */
+const KINDS = { tafel: "Tafel", lied: "Lied", rezept: "Rezept", einkaufsliste: "Einkaufsliste" };
 
 const factsFor = {
   "vorlaut-app": boardFacts,
@@ -209,7 +221,7 @@ function boardPreview(payload, id) {
  * not: it is the words to make one from.
  */
 const kindLabel = (meta) => meta.product !== "bildhaft" ? ""
-  : meta.art ?? (meta.facts.tafel ? "Tafel" : "Satzstreifen");
+  : meta.art ?? KINDS[meta.facts.kind] ?? "Satzstreifen";
 
 function factLine(meta) {
   const f = meta.facts;
@@ -219,6 +231,11 @@ function factLine(meta) {
   }
   if (meta.product === "vorlaut-talker") return `${f.sets} Sets · ${f.filled} Tasten belegt`;
   if (f.tafel) return `Tafel · ${f.grid} · ${f.filled} Felder`;
+  if (f.kind === "lied") {
+    return `Lied · ${f.refrain ? "Refrain und " : ""}${f.strophen} ${f.strophen === 1 ? "Strophe" : "Strophen"}`;
+  }
+  if (f.kind === "rezept") return `Rezept · ${f.zutaten} Zutaten · ${f.schritte} Schritte`;
+  if (f.kind === "einkaufsliste") return `Einkaufsliste · ${f.sentences} Karten`;
   if (meta.art === "Wortliste") return `${f.words} Wörter in ${f.sentences} Gruppen`;
   return `${f.sentences} Sätze`;
 }
@@ -294,7 +311,7 @@ function actions(meta, links) {
   if (!key) return '<span class="dazu">Kommt noch</span>';
   const open = `<a href="${esc(links[key])}?sammlung=${esc(meta.id)}" target="_blank" rel="noopener">`
     + `In ${esc(PROGRAMS[key])} öffnen</a>`;
-  return meta.facts.tafel
+  return hasPage(meta)
     ? `<a href="${esc(meta.id)}.html">Ansehen</a> <span class="dazu">·</span> ${open}`
     : open;
 }
@@ -364,7 +381,7 @@ const METACOM_HINT = `<div class="hinweis-m"><div>
         </div></div>`;
 
 /** How many pictures a Wortliste's wall holds before it says how many more. */
-const WALL = 23;
+const WALL = 17;
 
 /**
  * The top of a bildhaft card: what comes out of the printer, the first page of
@@ -377,7 +394,7 @@ function bildhaftTop(entry) {
   const sheet = sheetOf(entry);
   let top;
   if (sheet) {
-    top = `<div class="druck__papier">${sheet.html}</div>`;
+    top = coverOf(entry);
   } else {
     const numbers = [...new Set(slotsOf(payload).map((slot) => slot.arasaac).filter(Boolean))];
     const more = meta.facts.words - Math.min(WALL, numbers.length);
@@ -637,45 +654,304 @@ export function stripPreview(payload, attribution) {
   };
 }
 
-/** The printed first page of what an entry is, where it is a thing to print. */
-export const sheetOf = ({ meta, payload }) => {
-  if (meta.product !== "bildhaft" || meta.art === "Wortliste") return null;
-  return payload.kind === "tafel"
-    ? printPreview(payload, meta.name, meta.attribution)
-    : stripPreview(payload, meta.attribution);
-};
+/* ------------------------------------------- Lied, Rezept, Einkaufsliste --- */
 
-/** A Tafel's own page: the whole board, and the same switch the card has. */
-function tafelPage({ meta, payload }, links) {
-  const sheet = printPreview(payload, meta.name, meta.attribution);
-  const { cols } = payload.board;
-  const groups = [...new Set(payload.board.zones ?? [])]
-    .map((zone) => payload.board.styles?.[zone]?.name).filter(Boolean);
-  const open = `${esc(links.bildhaft)}?sammlung=${esc(meta.id)}`;
+/*
+ * The other templates' sheets, measured off the same file in bildhaft as the
+ * Tafel's — print.css's song, recipe and shopping rules and sheetBlocks() in
+ * printSheet.ts. A block a page does not break inside goes to the next page
+ * whole, which is where bildhaft breaks it too. A word that wraps to a second
+ * line can move a break by a block; the sizes are bildhaft's.
+ */
+
+/** A sheet of paper: its things, the credit at its foot, as bildhaft prints every page. */
+function paperSheet(W, H, inner, attribution, label, bg = "#fff") {
   return {
-    titel: esc(meta.name),
-    beschreibung: esc(meta.description),
-    titelbild: payload.title?.arasaac ? picture(payload.title.arasaac, 56) : "",
-    zahlen: esc(factLine(meta) + (groups.length ? ` · Gruppen: ${groups.join(", ")}` : "")),
-    oeffnen: open,
-    tafel: `${symbolSwitch(meta.id)}
-      <div class="tafelbild">
-        <div class="tafel" style="--spalten: ${cols}">
-          ${payload.board.cells.map((_, i) => field(payload, i)).join("\n          ")}
-        </div>
-        <div class="tafel__metacom">
+    label,
+    html: `<div class="blatt" style="--breite: ${W}; aspect-ratio: ${W} / ${H}; background: ${esc(bg)}" role="img" `
+      + `aria-label="So sieht es gedruckt aus">${inner}<span class="blatt__fuss" style="left: ${mm(10)}; bottom: ${mm(6)}; `
+      + `width: ${mm(W - 20)}; font-size: ${mm(6.5 * PT)}">${esc(attribution.replace(/\.$/, ""))}${esc(MADE_WITH)}</span></div>`,
+  };
+}
+
+/** One card of a row, .ps-card: the symbol in its cut margin, the word under it. */
+function rowCard(slot, x, y, sym, cut, labelPt, look = "") {
+  const w = sym + 2 * cut;
+  const h = w + 1 + labelPt * PT * 1.15;
+  return { w, h, html: `<span class="blatt__karte blatt__karte--klein" style="${box(x, y, w, h)}; padding: ${mm(cut)}; ${look}">`
+    + `<img width="64" height="64" src="bilder/${esc(slot.arasaac)}.png" alt="">`
+    + `<span style="font-size: ${mm(labelPt * PT)}">${esc(slot.label || slot.token)}</span></span>` };
+}
+
+/** Lays blocks of known height onto pages: `draw(y)` puts a block at y and returns its parts. */
+function paginate(W, H, attribution, label, blocks, bg) {
+  const foot = H - 6 - creditMm(attribution, W - 20);
+  const pages = [[]];
+  let y = 10;
+  for (const block of blocks) {
+    if (y + block.h > foot && pages.at(-1).length > 0) { pages.push([]); y = 10; }
+    pages.at(-1).push(block.draw(y));
+    y += block.h + (block.after ?? 0);
+  }
+  return pages.map((parts, n) => paperSheet(W, H, parts.join(""),
+    attribution, `${label}${pages.length > 1 ? ` · Blatt ${n + 1} von ${pages.length}` : ""}`, bg));
+}
+
+/** The name at the top, with its picture where it has one: bildhaft's .ps-title. */
+function titleBlock(name, p, colour, picture) {
+  const size = p.titleSizePt ?? 12;
+  const pic = 3 * size * PT;
+  const h = picture ? Math.max(size * PT * 1.3, pic) : size * PT * 1.3;
+  return { h, after: 4, draw: (y) => `<span class="blatt__titel" style="${box(10, y, 190, h)}; font-size: ${mm(size * PT)}; `
+    + `color: ${esc(colour)}; font-weight: 700">`
+    + (picture ? `<span class="blatt__titelbild" style="width: ${mm(pic)}; height: ${mm(pic)}">`
+      + `<img width="64" height="64" src="bilder/${esc(picture.arasaac)}.png" alt=""></span>` : "")
+    + `<span>${esc(name)}</span></span>` };
+}
+
+const paperLabel = (p) => `${(p.paper ?? "a4").toUpperCase()} ${p.orientation === "landscape" ? "quer" : "hoch"}`;
+
+export function liedPages(payload, name, attribution) {
+  const p = { paper: "a4", orientation: "portrait", symbolSizeMm: 18, cutMarginMm: 1, labelSizePt: 9,
+    accentColour: "#2c66c8", titleSizePt: 15, ...(payload.print ?? {}) };
+  const [W, H] = sheetSize(p);
+  const accent = p.titleColour ?? p.accentColour;
+  const sym = p.symbolSizeMm; const cut = p.cutMarginMm; const lab = p.labelSizePt;
+  const cardH = sym + 2 * cut + 1 + lab * PT * 1.15;
+  const headH = 9 * PT * 1.3 + 1;
+  const tint = `color-mix(in srgb, ${esc(p.accentColour)} 14%, #fff)`;
+  const blocks = p.showCollectionTitle === false ? [] : [titleBlock(name, p, accent, payload.title)];
+
+  const parts = payload.song.parts;
+  const order = payload.song.order ?? parts.map((_, i) => i);
+  const seen = new Set(); let strophe = 0;
+  const numbers = new Map();
+  for (const at of order) {
+    if (parts[at].kind === "strophe" && !numbers.has(at)) numbers.set(at, ++strophe);
+  }
+  for (const at of order) {
+    const part = parts[at]; const first = !seen.has(at); seen.add(at);
+    const refrain = part.kind === "refrain";
+    if (p.songRefrainOnce && refrain && !first) {
+      const h = 3 + 10 * PT * 1.3;
+      blocks.push({ h, after: 3, draw: (y) => `<span style="${box(10, y, W - 20, h)}; background: ${tint}; `
+        + `border-radius: ${mm(2)}; color: ${esc(p.accentColour)}; font-weight: 700; font-size: ${mm(10 * PT)}; `
+        + `padding: ${mm(1.5)} ${mm(2)}">↻ Refrain</span>` });
+      continue;
+    }
+    const groups = [];
+    for (const row of part.lines) {
+      const line = payload.sentences[row]; const last = groups.at(-1);
+      if (p.songRepeats && last && last.line.text === line.text) last.times += 1;
+      else groups.push({ line, times: 1 });
+    }
+    const h = 3 + (p.songHeadings === false ? 0 : headH) + groups.length * cardH;
+    blocks.push({ h, after: 3, draw: (y) => {
+      const out = [`<span style="${box(10, y, W - 20, h)}; background: ${refrain ? tint : "#f2f1f0"}; border-radius: ${mm(2)}"></span>`];
+      let ly = y + 1.5;
+      if (p.songHeadings !== false) {
+        out.push(`<span style="${box(12, ly, 80, headH)}; font-size: ${mm(9 * PT)}; font-weight: 700; `
+          + `color: ${refrain ? esc(p.accentColour) : "#666"}">${refrain ? "Refrain" : `Strophe ${numbers.get(at)}`}</span>`);
+        ly += headH;
+      }
+      for (const { line, times } of groups) {
+        let x = 12;
+        for (const slot of line.slots) { const c = rowCard(slot, x, ly, sym, cut, lab); out.push(c.html); x += c.w; }
+        if (times > 1) {
+          out.push(`<span style="${box(x + 2, ly + 1, 0.6, cardH - 2)}; background: ${esc(p.accentColour)}"></span>`
+            + `<span style="${box(x + 4, ly + cardH / 2 - 3, 14, 6)}; font-size: ${mm(14 * PT)}; font-weight: 800; `
+            + `line-height: 1; color: ${esc(p.accentColour)}">${times}×</span>`);
+        }
+        ly += cardH;
+      }
+      return out.join("");
+    } });
+  }
+  return paginate(W, H, attribution, paperLabel(p), blocks);
+}
+
+export function rezeptPages(payload, name, attribution) {
+  const p = { paper: "a4", orientation: "portrait", symbolSizeMm: 19, cutMarginMm: 1.5, labelSizePt: 9,
+    accentColour: "#e3262b", titleSizePt: 15, ...(payload.print ?? {}) };
+  const [W, H] = sheetSize(p);
+  const red = esc(p.accentColour);
+  const sym = p.symbolSizeMm; const cut = p.cutMarginMm; const lab = p.labelSizePt;
+  const cardW = sym + 2 * cut; const cardH = cardW + 1 + lab * PT * 1.15;
+  const bandH = 11 * PT * 1.3 + 2;
+  const band = (y, text) => `<span style="${box(10, y, W - 20, bandH)}; background: ${red}; color: #fff; `
+    + `border-radius: ${mm(1.2)}; padding: ${mm(1)} ${mm(3)}; font-size: ${mm(11 * PT)}; font-weight: 700">${text}</span>`;
+  const blocks = p.showCollectionTitle === false ? [] : [titleBlock(name, p, p.titleColour ?? p.accentColour, payload.title)];
+
+  for (const [part, head] of [["zutat", "Zutaten"], ["hilfsmittel", "Hilfsmittel"]]) {
+    const slots = payload.sentences.filter((row) => (row.part ?? "zutat") === part).map((row) => row.slots[0]);
+    if (!slots.length) continue;
+    const perRow = Math.max(1, Math.floor((W - 20 + 1.5) / (cardW + 1.5)));
+    const rows = Math.ceil(slots.length / perRow);
+    const h = bandH + 2 + rows * cardH + (rows - 1) * 1.5;
+    blocks.push({ h, after: 4, draw: (y) => band(y, head) + slots.map((slot, i) => rowCard(slot,
+      10 + (i % perRow) * (cardW + 1.5), y + bandH + 2 + Math.floor(i / perRow) * (cardH + 1.5), sym, cut, lab,
+      `border: ${mm(0.3)} dotted ${red}; border-radius: ${mm(1)}`).html).join("") });
+  }
+  payload.sentences.filter((row) => row.part === "schritt").forEach((row, n) => {
+    const top = n === 0 ? bandH + 2 : 0;
+    const perRow = Math.max(1, Math.floor((W - 20 - 9) / cardW));
+    const h = top + Math.ceil(row.slots.length / perRow) * cardH + 1.5;
+    blocks.push({ h, after: 1.5, draw: (y) => (n === 0 ? band(y, "Schritte") : "")
+      + `<span style="${box(10, y + top + cardH / 2 - 3.5, 7, 7)}; border-radius: 50%; background: ${red}; color: #fff; `
+      + `font-weight: 700; font-size: ${mm(11 * PT)}; display: grid; place-items: center">${n + 1}</span>`
+      + row.slots.map((slot, i) => rowCard(slot, 19 + (i % perRow) * cardW, y + top + Math.floor(i / perRow) * cardH,
+        sym, cut, lab).html).join("")
+      + `<span style="${box(10, y + h - 0.3, W - 20, 0)}; border-bottom: ${mm(0.3)} dotted ${red}"></span>` });
+  });
+  return paginate(W, H, attribution, paperLabel(p), blocks);
+}
+
+/** bildhaft's SHOPPING: the list's zones, the cart's zones, and the paper's factor on all of it. */
+const SHOPPING = { list: [3, 5], cart: [5, 3] };
+const SHOPPING_SCALE = { a5: 0.7, a4: 1, a3: 1.4 };
+const GUIDE = ["Alles laminieren. Nur die Karten auf diesem Blatt ausschneiden.",
+  "Klett hinten auf jede Karte, das Gegenstück in jeden Kreis auf dem Einkaufsbrett und auf jeden Platz im Blatt mit den Wörtern.",
+  "Was fehlt, auf die Liste. Im Laden in den Wagen, zu Hause zurück an seinen Platz."];
+
+export function einkaufPages(payload, name, attribution) {
+  const p = { paper: "a4", ...(payload.print ?? {}) };
+  const k = SHOPPING_SCALE[p.paper] ?? 1;
+  const [W, H] = sheetSize({ paper: p.paper, orientation: "landscape" });
+  const sym = Math.round(20 * k); const cut = Math.round(3 * k * 2) / 2; const lab = Math.round(11 * k * 2) / 2;
+  const card = sym + 2 * cut; const zone = card + 3 * k; const gap = 2 * k;
+  const foot = H - 6 - creditMm(attribution, W - 20);
+  const label = `${p.paper.toUpperCase()} quer`;
+  const slots = payload.sentences.map((row) => row.slots[0]);
+  const img = (slot) => `<img width="64" height="64" src="bilder/${esc(slot.arasaac)}.png" alt="">`;
+  const zones = (x0, y0, [cols, rows]) => Array.from({ length: cols * rows }, (_, i) =>
+    `<span class="blatt__zone blatt__platz" style="${box(x0 + (i % cols) * (zone + gap), y0 + Math.floor(i / cols) * (zone + gap), zone, zone)}; `
+    + `border: ${mm(0.3)} solid #c9c9c9; border-radius: ${mm(2 * k)}; background: #fff"><span class="blatt__punkt" `
+    + `style="width: ${mm(5 * k)}; height: ${mm(5 * k)}; border-width: ${mm(0.3)}"></span></span>`).join("");
+
+  // The board: the list, and the cart drawn round its zones.
+  const titleH = p.showCollectionTitle === false ? 0 : (p.titleSizePt ?? 12) * PT * 1.3 + 8 * k;
+  const listW = SHOPPING.list[0] * zone + (SHOPPING.list[0] - 1) * gap;
+  const cartW = SHOPPING.cart[0] * zone + (SHOPPING.cart[0] - 1) * gap;
+  const cartH = SHOPPING.cart[1] * zone + (SHOPPING.cart[1] - 1) * gap;
+  const cx = 10 + listW + 24 * k; const cy = 10 + titleH + 18 * k;
+  const cart = `<svg class="blatt__wagen" style="left: ${mm(cx)}; top: ${mm(cy)}; width: ${mm(cartW)}; height: ${mm(cartH)}" `
+    + `viewBox="0 0 ${cartW} ${cartH}" preserveAspectRatio="none" aria-hidden="true">`
+    + `<path d="M ${-5 * k} ${-5 * k} H ${cartW + 5 * k} V ${cartH + 5 * k} H ${-5 * k} Z"/>`
+    + `<path d="M ${-5 * k} ${-5 * k} L ${-13 * k} ${-14 * k} H ${-22 * k}"/>`
+    + `<path d="M ${-5 * k} ${cartH + 5 * k} L ${4 * k} ${cartH + 16 * k} H ${cartW - 7 * k}"/>`
+    + `<circle cx="${24 * k}" cy="${cartH + 22 * k}" r="${6 * k}"/><circle cx="${cartW - 21 * k}" cy="${cartH + 22 * k}" r="${6 * k}"/></svg>`;
+  const board = (titleH ? `<span class="blatt__titel" style="${box(10, 10, W - 20, titleH - 8 * k)}; `
+    + `font-size: ${mm((p.titleSizePt ?? 12) * PT)}; color: ${esc(p.titleColour ?? "#000")}; font-weight: 600">${esc(name)}</span>` : "")
+    + zones(10, 10 + titleH, SHOPPING.list) + cart + zones(cx, cy, SHOPPING.cart);
+  const sheets = [paperSheet(W, H, board, attribution, `${label} · das Brett`)];
+
+  // The places: a zone each, the word under the card.
+  const placeH = card + lab * 0.85 * PT * 1.1 + 1 * k;
+  const perRow = Math.floor((W - 20 + gap) / (zone + gap));
+  const rowsPerPage = Math.max(1, Math.floor((foot - 10 + gap) / (placeH + gap)));
+  for (let at = 0; at < slots.length; at += perRow * rowsPerPage) {
+    sheets.push(paperSheet(W, H, slots.slice(at, at + perRow * rowsPerPage).map((slot, i) =>
+      `<span class="blatt__zone blatt__platz blatt__platz--wort" style="${box(10 + (i % perRow) * (zone + gap), 10 + Math.floor(i / perRow) * (placeH + gap), zone, placeH)}; `
+      + `border: ${mm(0.3)} solid #c9c9c9; border-radius: ${mm(2 * k)}; padding: ${mm(cut)} ${mm(cut)} ${mm(1 * k)}">${img(slot)}`
+      + `<span style="font-size: ${mm(lab * 0.85 * PT)}">${esc(slot.label || slot.token)}</span></span>`).join(""),
+    attribution, `${label} · die Plätze`));
+  }
+
+  // The cards to cut, no word; under the first sheet of them, what the sheets are for.
+  const cols = Math.floor((W - 20) / card);
+  const guideH = 10 * k + 11 * k * PT * 1.4 + 2 * k + 3 * 9 * k * PT * 1.4 * 2;
+  let at = 0; let first = true;
+  while (at < slots.length) {
+    const rows = Math.max(1, Math.floor((foot - 10 - (first ? guideH : 0)) / card));
+    const these = slots.slice(at, at + rows * cols);
+    let inner = these.map((slot, i) => `<span class="blatt__zone blatt__schnitt" style="${box(10 + (i % cols) * card, 10 + Math.floor(i / cols) * card, card, card)}; `
+      + `padding: ${mm(cut)}">${img(slot)}</span>`).join("");
+    if (first) {
+      const gy = 10 + Math.ceil(these.length / cols) * card + 10 * k;
+      inner += `<span class="blatt__anleitung" style="${box(10, gy, 190 * k, guideH)}; font-size: ${mm(9 * k * PT)}">`
+        + `<strong style="font-size: ${mm(11 * k * PT)}">So geht’s</strong><ol>${GUIDE.map((g) => `<li>${esc(g)}</li>`).join("")}</ol></span>`;
+    }
+    sheets.push(paperSheet(W, H, inner, attribution, `${label} · Karten zum Ausschneiden`));
+    at += these.length; first = false;
+  }
+  return sheets;
+}
+
+/** Every printed page of an entry, where it is a thing to print: not a Wortliste, which is words to build from. */
+export function pagesOf({ meta, payload }) {
+  if (meta.product !== "bildhaft" || meta.art === "Wortliste") return null;
+  switch (payload.kind) {
+    case "tafel": return [printPreview(payload, meta.name, meta.attribution)];
+    case "lied": return liedPages(payload, meta.name, meta.attribution);
+    case "rezept": return rezeptPages(payload, meta.name, meta.attribution);
+    case "einkaufsliste": return einkaufPages(payload, meta.name, meta.attribution);
+    default: return [stripPreview(payload, meta.attribution)];
+  }
+}
+
+/** The first of them, which is what a card shows. */
+export const sheetOf = (entry) => pagesOf(entry)?.[0] ?? null;
+
+/** Which entries have a page of their own: every template the shelf draws. */
+const hasPage = (meta) => meta.product === "bildhaft" && meta.art !== "Wortliste" && meta.facts.kind in KINDS;
+
+/**
+ * What a card shows on top. An Einkaufsliste's first sheet is its empty board,
+ * which says nothing about it on its own: the places lie behind it, askew, so
+ * a shelf sees the pictures belong.
+ */
+function coverOf(entry) {
+  const pages = pagesOf(entry);
+  /* Every cover in the same frame, whatever the paper: the sheet as large as
+     the frame lets it be, upright or across. The ratio is the sheet's own. */
+  const [, w, h] = pages[0].html.match(/aspect-ratio: ([\d.]+) \/ ([\d.]+)/);
+  const inner = entry.payload.kind === "einkaufsliste" && pages.length > 1
+    ? `<div class="stapel"><div class="stapel__hinten"><div class="druck__papier">${pages[1].html}</div></div>`
+      + `<div class="stapel__vorn"><div class="druck__papier">${pages[0].html}</div></div></div>`
+    : `<div class="druck__papier">${pages[0].html}</div>`;
+  return `<div class="deckel" style="--seite: ${w} / ${h}">${inner}</div>`;
+}
+
+const METACOM_STEPS = (open, id) => `<div class="tafel__metacom">
           <div>
             <h2>So bekommst du METACOM</h2>
             <ol><li><span>1</span>In bildhaft öffnen</li><li><span>2</span>Einmal deinen METACOM-Ordner wählen</li></ol>
             <p class="hm-klein">Dafür brauchst du eine eigene METACOM-Lizenz.</p>
-            <p class="tafel__tun"><a class="btn primary" href="${open}" target="_blank" rel="noopener">In bildhaft öffnen</a> <label for="q-${esc(meta.id)}-a">Zurück zu ARASAAC</label></p>
+            <p class="tafel__tun"><a class="btn primary" href="${open}" target="_blank" rel="noopener">In bildhaft öffnen</a> <label for="q-${esc(id)}-a">Zurück zu ARASAAC</label></p>
           </div>
+        </div>`;
+
+/**
+ * A material's own page. A Tafel shows its board as on screen and its sheet
+ * under it; every other template is its sheets, all of them, side by side.
+ */
+function materialPage(entry, links) {
+  const { meta, payload } = entry;
+  const pages = pagesOf(entry);
+  const open = `${esc(links.bildhaft)}?sammlung=${esc(meta.id)}`;
+  const both = bothSources(payload);
+  const groups = payload.kind === "tafel" ? [...new Set(payload.board.zones ?? [])]
+    .map((zone) => payload.board.styles?.[zone]?.name).filter(Boolean) : [];
+  const sheets = `<div class="seiten">${pages.map((sheet) => `<figure><div class="druck__papier">${sheet.html}</div>`
+    + `<figcaption>${esc(sheet.label)}</figcaption></figure>`).join("")}</div>`;
+  const body = payload.kind === "tafel"
+    ? `<div class="tafelbild">
+        <div class="tafel" style="--spalten: ${payload.board.cols}">
+          ${payload.board.cells.map((_, i) => field(payload, i)).join("\n          ")}
         </div>
+        ${both ? METACOM_STEPS(open, meta.id) : ""}
       </div>
-      <section class="druck">
-        <h2>Gedruckt <span>${esc(sheet.label)}</span></h2>
-        <div class="druck__papier">${sheet.html}</div>
-      </section>`,
+      <section class="druck"><h2>Gedruckt</h2>${sheets}</section>`
+    : `<div class="tafelbild tafelbild--blaetter">${sheets}${both ? METACOM_STEPS(open, meta.id) : ""}</div>`;
+  return {
+    titel: esc(meta.name),
+    art: esc(kindLabel(meta)),
+    beschreibung: esc(meta.description),
+    titelbild: payload.title?.arasaac ? picture(payload.title.arasaac, 56) : "",
+    zahlen: esc(factLine(meta) + (groups.length ? ` · Gruppen: ${groups.join(", ")}` : "")),
+    oeffnen: open,
+    tafel: `${both ? symbolSwitch(meta.id) : ""}
+      ${body}`,
     quelle: esc(meta.attribution),
   };
 }
@@ -710,8 +986,8 @@ export function sammlungen(root, dist, links) {
     beides: entries.some((one) => one.meta.facts.metacom) ? BOTH : "",
     /* One page per Tafel, from site/sammlungen/_tafel.html; build.mjs writes
        them, because it is what knows how a page is filled. */
-    tafeln: entries.filter((one) => one.meta.facts.tafel)
-      .map((one) => ({ out: `sammlungen/${one.meta.id}.html`, holes: tafelPage(one, links) })),
+    tafeln: entries.filter((one) => hasPage(one.meta))
+      .map((one) => ({ out: `sammlungen/${one.meta.id}.html`, holes: materialPage(one, links) })),
     anzahl: count,
     stand: new Date().toISOString().slice(0, 10).split("-").reverse().join("."),
   };
@@ -848,6 +1124,8 @@ export async function downloads(root, dist) {
       rawInput: sentence.text ?? "",
       normalizedInput: (sentence.text ?? "").toLowerCase(),
       slots: (sentence.slots ?? []).map((slot, m) => slotOf(slot, `s${n}-${m}`)),
+      // A Rezept's rows say which of its parts they are in.
+      ...(sentence.part ? { part: sentence.part } : {}),
     }));
     // A Tafel's title picture is a row of its own, on no field.
     if (payload.title) {
@@ -875,6 +1153,14 @@ export async function downloads(root, dist) {
         ...(payload.board ? {
           board: { ...payload.board,
             cells: payload.board.cells.map((at) => (at === null ? null : `s${at}`)) },
+        } : {}),
+        // A Lied's parts name their rows by number in the entry, and by id here.
+        ...(payload.song ? {
+          song: {
+            parts: payload.song.parts.map((part, i) => ({
+              id: `p${i}`, kind: part.kind, lines: part.lines.map((at) => `s${at}`) })),
+            order: (payload.song.order ?? payload.song.parts.map((_, i) => i)).map((i) => `p${i}`),
+          },
         } : {}),
         ...(payload.print ? { print: payload.print } : {}),
       },

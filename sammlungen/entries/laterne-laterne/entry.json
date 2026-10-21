@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "id": "laterne-laterne",
+  "product": "bildhaft",
+  "name": "Laterne, Laterne",
+  "description": "Das Laternenlied zum Mitsingen und Mitzeigen, für St. Martin.",
+  "tags": [
+    "Lied",
+    "St. Martin"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [
+    "ich-geh-mit-meiner-laterne"
+  ],
+  "payload": "lied.json"
+}

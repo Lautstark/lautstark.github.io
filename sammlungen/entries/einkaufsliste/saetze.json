@@ -11,7 +11,7 @@
         {
           "token": "Putzmittel",
           "concept": "putzmittel",
-          "arasaac": 4871
+          "arasaac": 39289
         },
         {
           "token": "Waschmittel",
@@ -126,12 +126,12 @@
         {
           "token": "Binden",
           "concept": "binden",
-          "arasaac": 31981
+          "arasaac": 36631
         },
         {
           "token": "Watte",
           "concept": "watte",
-          "arasaac": 8294
+          "arasaac": 2985
         },
         {
           "token": "Pflaster",
@@ -156,12 +156,12 @@
         {
           "token": "Gemüse",
           "concept": "gemüse",
-          "arasaac": 29131
+          "arasaac": 28343
         },
         {
           "token": "Eis",
           "concept": "Eis",
-          "arasaac": 7128
+          "arasaac": 35209
         }
       ]
     },
@@ -180,7 +180,8 @@
         },
         {
           "token": "Gummibärchen",
-          "concept": "gummibärchen"
+          "concept": "gummibärchen",
+          "arasaac": 7118
         },
         {
           "token": "Bonbons",
@@ -194,7 +195,8 @@
         },
         {
           "token": "Salzstangen",
-          "concept": "salzstangen"
+          "concept": "salzstangen",
+          "arasaac": 38770
         },
         {
           "token": "Nüsse",
@@ -209,7 +211,7 @@
         {
           "token": "Eis",
           "concept": "Eis",
-          "arasaac": 7128
+          "arasaac": 35209
         },
         {
           "token": "Kaugummi",
@@ -229,12 +231,12 @@
         {
           "token": "Schnitzel",
           "concept": "schnitzel",
-          "arasaac": 6976
+          "arasaac": 36999
         },
         {
           "token": "Wurst",
           "concept": "Wurst",
-          "arasaac": 8554
+          "arasaac": 3280
         },
         {
           "token": "Salami",
@@ -279,7 +281,7 @@
         {
           "token": "Nudeln",
           "concept": "nudeln",
-          "arasaac": 8652
+          "arasaac": 25486
         },
         {
           "token": "Reis",
@@ -333,7 +335,8 @@
         },
         {
           "token": "Senf",
-          "concept": "Senf"
+          "concept": "Senf",
+          "arasaac": 6565
         },
         {
           "token": "Mayonnaise",
@@ -362,7 +365,8 @@
         },
         {
           "token": "Müsli",
-          "concept": "Müsli"
+          "concept": "Müsli",
+          "arasaac": 2328
         },
         {
           "token": "Cornflakes",
@@ -392,7 +396,7 @@
         {
           "token": "Brot",
           "concept": "Brot",
-          "arasaac": 2494
+          "arasaac": 38733
         },
         {
           "token": "Brötchen",
@@ -417,16 +421,17 @@
         {
           "token": "Brezel",
           "concept": "Brezel",
-          "arasaac": 8042
+          "arasaac": 39058
         },
         {
           "token": "Knäckebrot",
           "concept": "knäckebrot",
-          "arasaac": 37883
+          "arasaac": 10230
         },
         {
           "token": "Zwieback",
-          "concept": "zwieback"
+          "concept": "zwieback",
+          "arasaac": 2787
         },
         {
           "token": "Kuchen",
@@ -475,7 +480,8 @@
         },
         {
           "token": "Schmand",
-          "concept": "schmand"
+          "concept": "schmand",
+          "arasaac": 39904
         },
         {
           "token": "Pudding",
@@ -580,7 +586,7 @@
         {
           "token": "Mais",
           "concept": "Mais",
-          "arasaac": 36287
+          "arasaac": 7150
         },
         {
           "token": "Lauch",
@@ -615,7 +621,7 @@
         {
           "token": "Orange",
           "concept": "Orange",
-          "arasaac": 2888
+          "arasaac": 2483
         },
         {
           "token": "Mandarine",
@@ -660,7 +666,7 @@
         {
           "token": "Melone",
           "concept": "Melone",
-          "arasaac": 5928
+          "arasaac": 2557
         },
         {
           "token": "Ananas",

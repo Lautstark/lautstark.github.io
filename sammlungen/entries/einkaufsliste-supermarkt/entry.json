@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "id": "einkaufsliste-supermarkt",
+  "product": "bildhaft",
+  "name": "Einkaufsliste für den Supermarkt",
+  "description": "Zum Einkaufen mit Klettkarten: Was fehlt, kommt auf die Liste, was gefunden ist, in den Wagen.",
+  "tags": [
+    "Einkaufen",
+    "Alltag"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [
+    "einkaufsliste"
+  ],
+  "payload": "einkaufsliste.json"
+}

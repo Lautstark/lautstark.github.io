@@ -86,10 +86,10 @@ for (const file of under(site)) {
   else cpSync(file.path, to);
 }
 
-/* A Tafel on the shelf has a page of its own, all of them from one template. */
+/* A material on the shelf has a page of its own, all of them from one template. */
 for (const page of shelf.tafeln ?? []) {
   writeFileSync(join(dist, page.out),
-    fill(join(site, "sammlungen", "_tafel.html"), join(site, "sammlungen"), page.holes));
+    fill(join(site, "sammlungen", "_material.html"), join(site, "sammlungen"), page.holes));
 }
 
 // Self-hosted, both of them: no stylesheet on this site is fetched from

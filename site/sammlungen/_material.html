@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="de" data-theme="light">
-<!-- The page of one Tafel on the shelf. tools/build.mjs fills it once per
-     Tafel from the holes tafelPage() in tools/sammlungen.mjs hands back. -->
+<!-- The page of one material on the shelf. tools/build.mjs fills it once per
+     material from the holes materialPage() in tools/sammlungen.mjs hands back. -->
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -52,7 +52,7 @@
     <div class="tafelkopf">
       {{titelbild}}
       <div>
-        <p class="karte__wer"><span class="punkt"></span>bildhaft · Tafel</p>
+        <p class="karte__wer"><span class="punkt"></span>bildhaft · {{art}}</p>
         <h1>{{titel}}</h1>
       </div>
     </div>

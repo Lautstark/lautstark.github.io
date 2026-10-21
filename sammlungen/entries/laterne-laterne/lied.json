@@ -1,0 +1,319 @@
+{
+  "kind": "lied",
+  "print": {
+    "symbolSizeMm": 18,
+    "cutMarginMm": 1,
+    "showLabel": true,
+    "labelPosition": "below",
+    "labelSizePt": 9,
+    "layout": "lied",
+    "paper": "a4",
+    "orientation": "portrait",
+    "sheetFit": "grid",
+    "cardWidthMm": 54,
+    "cardHeightMm": 84,
+    "gridCols": 7,
+    "gridRows": 4,
+    "showCutLines": true,
+    "onePerPage": false,
+    "showSentenceText": false,
+    "sentencePosition": "above",
+    "sentenceSizePt": 10,
+    "showCollectionTitle": true,
+    "titleSizePt": 15,
+    "titleColour": null,
+    "titleLine": true,
+    "stripFrame": false,
+    "cardBorderMm": 0,
+    "cardBorderColor": "#2e2e2e",
+    "cardRadiusMm": 2,
+    "cardBackground": null,
+    "accentColour": "#2c66c8",
+    "songHeadings": true,
+    "songRepeats": true,
+    "songRefrainOnce": true,
+    "showPageNumbers": true
+  },
+  "sentences": [
+    {
+      "text": "Laterne, Laterne, Sonne, Mond und Sterne!",
+      "slots": [
+        {
+          "token": "Laterne",
+          "concept": "laterne",
+          "arasaac": 9178,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lieder_Mit_den_Haenden/laterne.png"
+        },
+        {
+          "token": "Laterne",
+          "concept": "laterne",
+          "arasaac": 9178,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lieder_Mit_den_Haenden/laterne.png"
+        },
+        {
+          "token": "Sonne",
+          "concept": "Sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png"
+        },
+        {
+          "token": "Mond",
+          "concept": "Mond",
+          "arasaac": 2933,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/mond_gelb.png"
+        },
+        {
+          "token": "und",
+          "concept": "und",
+          "arasaac": 11399,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/und1.png"
+        },
+        {
+          "token": "Sterne",
+          "concept": "sterne",
+          "arasaac": 6978,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sterne.png"
+        }
+      ]
+    },
+    {
+      "text": "Brenne auf mein Licht,",
+      "slots": [
+        {
+          "token": "Brenne",
+          "concept": "brenne",
+          "label": "Brenne auf",
+          "arasaac": 6196,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/brennen.png"
+        },
+        {
+          "token": "mein",
+          "concept": "mein",
+          "arasaac": 12264,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/mein2.png"
+        },
+        {
+          "token": "Licht",
+          "concept": "licht",
+          "arasaac": 8619,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/licht.png"
+        }
+      ]
+    },
+    {
+      "text": "aber nur meine liebe Laterne nicht.",
+      "slots": [
+        {
+          "token": "aber",
+          "concept": "aber",
+          "label": "Aber nur",
+          "arasaac": 11377,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/aber.png"
+        },
+        {
+          "token": "meine",
+          "concept": "meine",
+          "arasaac": 12264,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/mein2.png"
+        },
+        {
+          "token": "liebe",
+          "concept": "liebe",
+          "arasaac": 11178,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Liebe_Sexualitaet/liebe2.png"
+        },
+        {
+          "token": "Laterne",
+          "concept": "laterne",
+          "arasaac": 9178,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lieder_Mit_den_Haenden/laterne.png"
+        },
+        {
+          "token": "nicht",
+          "concept": "nicht",
+          "arasaac": 5526,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/nichtkein.png"
+        }
+      ]
+    },
+    {
+      "text": "Sperrt ihn ein den Wind,",
+      "slots": [
+        {
+          "token": "Sperrt",
+          "concept": "sperren",
+          "arasaac": 37200,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/einsperren.png"
+        },
+        {
+          "token": "ihn",
+          "concept": "ihn",
+          "label": "ihn ein",
+          "arasaac": 6481,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/ihn.png"
+        },
+        {
+          "token": "Wind",
+          "concept": "Wind",
+          "label": "den Wind",
+          "arasaac": 7259,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/wind.png"
+        }
+      ]
+    },
+    {
+      "text": "Er soll warten, bis wir zuhause sind.",
+      "slots": [
+        {
+          "token": "Er",
+          "concept": "er",
+          "arasaac": 6480,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/er.png"
+        },
+        {
+          "token": "soll",
+          "concept": "soll",
+          "arasaac": 15523,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/sollen.png"
+        },
+        {
+          "token": "warten",
+          "concept": "warten",
+          "arasaac": 8109,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/warten.png"
+        },
+        {
+          "token": "bis",
+          "concept": "bis",
+          "arasaac": 7771,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/bis.png"
+        },
+        {
+          "token": "wir",
+          "concept": "wir",
+          "arasaac": 7183,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/wir.png"
+        },
+        {
+          "token": "zuhause",
+          "concept": "zuhause",
+          "label": "zuhause sind",
+          "arasaac": 6964,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/zuhause2.png"
+        }
+      ]
+    },
+    {
+      "text": "Bleibe hell mein Licht,",
+      "slots": [
+        {
+          "token": "Bleibe",
+          "concept": "bleibe",
+          "arasaac": 27206,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/bleiben.png"
+        },
+        {
+          "token": "hell",
+          "concept": "hell",
+          "arasaac": 26753,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/hell.png"
+        },
+        {
+          "token": "mein",
+          "concept": "mein",
+          "arasaac": 12264,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/mein2.png"
+        },
+        {
+          "token": "Licht",
+          "concept": "licht",
+          "arasaac": 8619,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/licht.png"
+        }
+      ]
+    },
+    {
+      "text": "denn sonst strahlt meine liebe Laterne nicht.",
+      "slots": [
+        {
+          "token": "sonst",
+          "concept": "sonst",
+          "arasaac": 11317,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/sonst.png"
+        },
+        {
+          "token": "strahlt",
+          "concept": "strahl",
+          "arasaac": 30243,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/licht.png"
+        },
+        {
+          "token": "meine",
+          "concept": "meine",
+          "arasaac": 12264,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/mein2.png"
+        },
+        {
+          "token": "liebe",
+          "concept": "liebe",
+          "arasaac": 11178,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Liebe_Sexualitaet/liebe2.png"
+        },
+        {
+          "token": "Laterne",
+          "concept": "laterne",
+          "arasaac": 9178,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lieder_Mit_den_Haenden/laterne.png"
+        },
+        {
+          "token": "nicht",
+          "concept": "nicht",
+          "arasaac": 5526,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/nichtkein.png"
+        }
+      ]
+    }
+  ],
+  "song": {
+    "parts": [
+      {
+        "kind": "refrain",
+        "lines": [
+          0
+        ]
+      },
+      {
+        "kind": "strophe",
+        "lines": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "kind": "strophe",
+        "lines": [
+          3,
+          3,
+          4
+        ]
+      },
+      {
+        "kind": "strophe",
+        "lines": [
+          5,
+          5,
+          6
+        ]
+      }
+    ],
+    "order": [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+    ]
+  }
+}
