@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "id": "fische-angeln-klein",
+  "product": "bildhaft",
+  "name": "Fische angeln, die kleine Tafel",
+  "description": "Die kleine Tafel zu „Fische angeln“ von HABA, für den Anfang.",
+  "tags": [
+    "Spiel",
+    "HABA",
+    "Meine ersten Spiele"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [
+    "fische-angeln"
+  ],
+  "payload": "tafel.json"
+}

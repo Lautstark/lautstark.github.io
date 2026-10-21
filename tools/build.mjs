@@ -58,30 +58,38 @@ function* under(dir, prefix = "") {
     // Local copies of the shared styles, for opening a page straight off disk.
     // The build writes its pinned copy below and must not treat this as a page.
     if (prefix === "" && name === "design") continue;
+    // A template, filled once per page it makes rather than copied: see below.
+    if (name.startsWith("_")) continue;
     const path = join(dir, name);
     if (statSync(path).isDirectory()) yield* under(path, `${prefix}${name}/`);
     else yield { path, out: `${prefix}${name}`, dir };
   }
 }
 
+const fill = (template, dir, holes) => readFileSync(template, "utf8")
+  .replace(/\{\{\s*([A-Za-z]+)\s*\}\}/g, (_, key) =>
+    key in holes ? holes[key] : key in shelf ? shelf[key] : links[key])
+  // Resolved against the page's own folder, not against site/: a page in a
+  // subdirectory names its pictures relative to itself. A picture that says
+  // its size already is one the shelf drew, fetched later by downloads.mjs.
+  .replace(/<img[^>]*?src="([^"]+\.png)"/g, (whole, src) => {
+    if (/\swidth=/.test(whole)) return whole;
+    const { width, height } = pngSize(join(dir, src));
+    return `${whole} width="${width}" height="${height}"`;
+  });
+
 for (const file of under(site)) {
   const to = join(dist, file.out);
   mkdirSync(dirname(to), { recursive: true });
 
-  if (file.out.endsWith(".html")) {
-    const html = readFileSync(file.path, "utf8")
-      .replace(/\{\{\s*([A-Za-z]+)\s*\}\}/g, (_, key) =>
-        key in shelf ? shelf[key] : links[key])
-      // Resolved against the page's own folder, not against site/: a page in a
-      // subdirectory names its pictures relative to itself.
-      .replace(/<img[^>]*?src="([^"]+\.png)"/g, (whole, src) => {
-        const { width, height } = pngSize(join(file.dir, src));
-        return `${whole} width="${width}" height="${height}"`;
-      });
-    writeFileSync(to, html);
-  } else {
-    cpSync(file.path, to);
-  }
+  if (file.out.endsWith(".html")) writeFileSync(to, fill(file.path, file.dir, {}));
+  else cpSync(file.path, to);
+}
+
+/* A Tafel on the shelf has a page of its own, all of them from one template. */
+for (const page of shelf.tafeln ?? []) {
+  writeFileSync(join(dist, page.out),
+    fill(join(site, "sammlungen", "_tafel.html"), join(site, "sammlungen"), page.holes));
 }
 
 // Self-hosted, both of them: no stylesheet on this site is fetched from

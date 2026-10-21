@@ -1,0 +1,453 @@
+{
+  "kind": "tafel",
+  "board": {
+    "cols": 7,
+    "rows": 4,
+    "cells": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "zones": [
+      "T",
+      "T",
+      "T",
+      "T",
+      "T",
+      "S",
+      "S",
+      "F",
+      "F",
+      "F",
+      "W",
+      "W",
+      "S",
+      "S",
+      "F",
+      "F",
+      "F",
+      "W",
+      "W",
+      "S",
+      "S",
+      "O",
+      "O",
+      "O",
+      "W",
+      "W",
+      "S",
+      "S"
+    ],
+    "styles": {
+      "T": {
+        "frame": "#c2560c",
+        "name": "Machen"
+      },
+      "S": {
+        "frame": "#c2560c",
+        "name": "Sagen"
+      },
+      "F": {
+        "frame": "#c2560c",
+        "name": "Farben"
+      },
+      "W": {
+        "frame": "#c2560c",
+        "name": "Werkzeug"
+      },
+      "O": {
+        "frame": "#c2560c",
+        "name": "Formen"
+      }
+    },
+    "airMm": 5
+  },
+  "print": {
+    "symbolSizeMm": 50,
+    "cutMarginMm": 4,
+    "showLabel": true,
+    "labelPosition": "below",
+    "labelSizePt": 10,
+    "layout": "sheet",
+    "paper": "a4",
+    "orientation": "landscape",
+    "sheetFit": "grid",
+    "cardWidthMm": 54,
+    "cardHeightMm": 84,
+    "gridCols": 7,
+    "gridRows": 4,
+    "showCutLines": false,
+    "onePerPage": false,
+    "showSentenceText": true,
+    "sentencePosition": "above",
+    "sentenceSizePt": 10,
+    "showCollectionTitle": true,
+    "titleSizePt": 24,
+    "titleColour": null,
+    "titleLine": false,
+    "stripFrame": false,
+    "cardBorderMm": 0,
+    "cardBorderColor": "#2e2e2e",
+    "cardRadiusMm": 4,
+    "cardBackground": "#ffffff",
+    "pageColour": "#ffd8a8",
+    "accentColour": "#e3262b",
+    "songHeadings": true,
+    "songRepeats": false,
+    "songRefrainOnce": false,
+    "showPageNumbers": false,
+    "markFreeFields": false,
+    "showGuide": true,
+    "cartColour": null
+  },
+  "title": {
+    "token": "Knete",
+    "concept": "knete",
+    "arasaac": 2529,
+    "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Buero_Basteln/knete.png"
+  },
+  "sentences": [
+    {
+      "text": "kneten",
+      "slots": [
+        {
+          "token": "kneten",
+          "concept": "kneten",
+          "arasaac": 21355,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/kneten3.png"
+        }
+      ]
+    },
+    {
+      "text": "rollen",
+      "slots": [
+        {
+          "token": "rollen",
+          "concept": "rollen",
+          "arasaac": 8015,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/rollen1.png"
+        }
+      ]
+    },
+    {
+      "text": "drücken",
+      "slots": [
+        {
+          "token": "drücken",
+          "concept": "drücken",
+          "arasaac": 7222,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/druecken.png"
+        }
+      ]
+    },
+    {
+      "text": "schneiden",
+      "slots": [
+        {
+          "token": "schneiden",
+          "concept": "schneiden",
+          "arasaac": 5975,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/schneidenMesser.png"
+        }
+      ]
+    },
+    {
+      "text": "mischen",
+      "slots": [
+        {
+          "token": "mischen",
+          "concept": "mischen",
+          "arasaac": 5515,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/mischen.png"
+        }
+      ]
+    },
+    {
+      "text": "ich will",
+      "slots": [
+        {
+          "token": "ich will",
+          "concept": "ich will",
+          "label": "ich will",
+          "arasaac": 5441,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/wollen.png"
+        }
+      ]
+    },
+    {
+      "text": "mehr",
+      "slots": [
+        {
+          "token": "mehr",
+          "concept": "mehr",
+          "arasaac": 5508,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/mehr.png"
+        }
+      ]
+    },
+    {
+      "text": "rot",
+      "slots": [
+        {
+          "token": "rot",
+          "concept": "rot",
+          "arasaac": 2808,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/rot.png"
+        }
+      ]
+    },
+    {
+      "text": "blau",
+      "slots": [
+        {
+          "token": "blau",
+          "concept": "blau",
+          "arasaac": 4869,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/blau.png"
+        }
+      ]
+    },
+    {
+      "text": "gelb",
+      "slots": [
+        {
+          "token": "gelb",
+          "concept": "gelb",
+          "arasaac": 2648,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/gelb.png"
+        }
+      ]
+    },
+    {
+      "text": "Knete",
+      "slots": [
+        {
+          "token": "Knete",
+          "concept": "knete",
+          "arasaac": 2529,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Buero_Basteln/knete.png"
+        }
+      ]
+    },
+    {
+      "text": "Rolle",
+      "slots": [
+        {
+          "token": "Rolle",
+          "concept": "rolle",
+          "label": "Rolle",
+          "arasaac": 8211,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/teigrolle.png"
+        }
+      ]
+    },
+    {
+      "text": "aufmachen",
+      "slots": [
+        {
+          "token": "aufmachen",
+          "concept": "aufmachen",
+          "label": "selbst",
+          "arasaac": 2617,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Politik/selbstbestimmung.png"
+        }
+      ]
+    },
+    {
+      "text": "helfen",
+      "slots": [
+        {
+          "token": "helfen",
+          "concept": "helfen",
+          "arasaac": 7171,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Konversation_Interaktion/brauchehilfe.png"
+        }
+      ]
+    },
+    {
+      "text": "grün",
+      "slots": [
+        {
+          "token": "grün",
+          "concept": "grün",
+          "arasaac": 4887,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/gruen2.png"
+        }
+      ]
+    },
+    {
+      "text": "lila",
+      "slots": [
+        {
+          "token": "lila",
+          "concept": "lila",
+          "arasaac": 34483,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/lila.png"
+        }
+      ]
+    },
+    {
+      "text": "weiß",
+      "slots": [
+        {
+          "token": "weiß",
+          "concept": "weiß",
+          "label": "bunt",
+          "arasaac": 5968,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/bunt.png"
+        }
+      ]
+    },
+    {
+      "text": "Förmchen",
+      "slots": [
+        {
+          "token": "Förmchen",
+          "concept": "förmchen",
+          "label": "Förmchen",
+          "arasaac": 26929,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ausstechform.png"
+        }
+      ]
+    },
+    {
+      "text": "Messer",
+      "slots": [
+        {
+          "token": "Messer",
+          "concept": "messer",
+          "arasaac": 4931,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messer1.png"
+        }
+      ]
+    },
+    {
+      "text": "nicht",
+      "slots": [
+        {
+          "token": "nicht",
+          "concept": "nicht",
+          "label": "nicht",
+          "arasaac": 5526,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/nichtkein.png"
+        }
+      ]
+    },
+    {
+      "text": "nochmal",
+      "slots": [
+        {
+          "token": "nochmal",
+          "concept": "nochmal",
+          "arasaac": 37162,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/nochmal.png"
+        }
+      ]
+    },
+    {
+      "text": "Kugel",
+      "slots": [
+        {
+          "token": "Kugel",
+          "concept": "kugel",
+          "arasaac": 9113,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/ballrot.png"
+        }
+      ]
+    },
+    {
+      "text": "Schlange",
+      "slots": [
+        {
+          "token": "Schlange",
+          "concept": "schlange",
+          "arasaac": 2568,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/schlange.png"
+        }
+      ]
+    },
+    {
+      "text": "Kuchen",
+      "slots": [
+        {
+          "token": "Kuchen",
+          "concept": "kuchen",
+          "label": "Schnecke",
+          "arasaac": 8061,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/schnecke.png"
+        }
+      ]
+    },
+    {
+      "text": "Brett",
+      "slots": [
+        {
+          "token": "Brett",
+          "concept": "brett",
+          "label": "Schaber",
+          "arasaac": 38701,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/teigschaberrot.png"
+        }
+      ]
+    },
+    {
+      "text": "Dose",
+      "slots": [
+        {
+          "token": "Dose",
+          "concept": "dose",
+          "label": "Kiste",
+          "arasaac": 7054,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Behaelter_Taschen/kiste2.png"
+        }
+      ]
+    },
+    {
+      "text": "fertig",
+      "slots": [
+        {
+          "token": "fertig",
+          "concept": "fertig",
+          "arasaac": 28429,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/fertig2.png"
+        }
+      ]
+    },
+    {
+      "text": "aufräumen",
+      "slots": [
+        {
+          "token": "aufräumen",
+          "concept": "aufräumen",
+          "arasaac": 8680,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lieder_Haende_auf_Reisen/Aufraeumen2.png"
+        }
+      ]
+    }
+  ]
+}

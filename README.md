@@ -58,6 +58,7 @@ sammlungen/entries/<id>/<payload>      what it holds, read only by that product
 | `id` | lower-case words joined by hyphens, and the folder's own name |
 | `product` | `vorlaut-app`, `vorlaut-talker`, `bildhaft` or `mitreden` |
 | `name`, `description` | the editorial half — prose, changed without re-exporting |
+| `art` | optional, what kind of thing it is where the payload does not say — „Wortliste" for words to build from rather than a finished material; shown on the card |
 | `tags` | free text, shown on the card |
 | `language`, `symbols` | `de`, `arasaac` |
 | `attribution` | travels into the downloaded file |
@@ -71,6 +72,15 @@ each button carrying `row`, `col`, `text`, `wordclass`, and — where one is kno
 — a `concept`, the `terms` to find it under, and an `arasaac` number. The terms
 are what let a reader with their own METACOM folder resolve the same button; the
 number is what everyone else gets.
+
+A `bildhaft` payload holds `sentences`, each with `slots` carrying `token`,
+`concept`, an `arasaac` number and — for a Sammlung offered with both — a
+`metacom` symbol, named as its path inside a METACOM folder
+(`METACOM_Symbole/…/name.png`). bildhaft draws whichever source the reader has;
+the path names a picture and is not one, so nothing of METACOM's is published.
+A Tafel adds `kind: "tafel"`, its `board` (`cols`, `rows`, `cells` as row
+numbers or `null`, `zones`, `styles`), its `print` settings and a `title`
+picture, and gets a page of its own on the shelf.
 
 **Nothing is interoperable and nothing needs to be.** An entry names one product
 and carries a payload only that product reads. `seeAlso` is how two entries say
@@ -98,8 +108,9 @@ Pictures are at `arasaac.org/pictograms/de/<nummer>`.
 
 ### What the check enforces
 
-`npm run check` fails on a METACOM name anywhere under `sammlungen/`, on a
-picture committed there, on an ARASAAC number that is not a number, on a
+`npm run check` fails on METACOM named anywhere under `sammlungen/` but in a
+field's `metacom` path, on a bildhaft field that has one source where the rest
+have both, on a picture committed there, on an ARASAAC number that is not a number, on a
 `seeAlso` that does not point back, and on an id that does not match its folder.
 `npm run check -- --online` additionally asks ARASAAC whether every number still
 resolves; CI runs that, and again every Monday.

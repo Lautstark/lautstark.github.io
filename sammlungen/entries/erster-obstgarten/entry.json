@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "id": "erster-obstgarten",
+  "product": "bildhaft",
+  "name": "Erster Obstgarten",
+  "description": "Damit ein Kind bei „Erster Obstgarten“ von HABA mitspielen und mitreden kann.",
+  "tags": [
+    "Spiel",
+    "HABA",
+    "Meine ersten Spiele"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [],
+  "payload": "tafel.json"
+}

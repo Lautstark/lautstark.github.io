@@ -1,0 +1,430 @@
+{
+  "kind": "tafel",
+  "board": {
+    "cols": 7,
+    "rows": 4,
+    "cells": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "zones": [
+      null,
+      null,
+      null,
+      "essen",
+      "essen",
+      "essen",
+      null,
+      null,
+      null,
+      null,
+      "essen",
+      "essen",
+      "essen",
+      null,
+      null,
+      null,
+      null,
+      "essen",
+      "essen",
+      "essen",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "styles": {
+      "essen": {
+        "fill": "#f491ad"
+      }
+    },
+    "airMm": 5
+  },
+  "print": {
+    "symbolSizeMm": 50,
+    "cutMarginMm": 4,
+    "showLabel": true,
+    "labelPosition": "below",
+    "labelSizePt": 10,
+    "layout": "sheet",
+    "paper": "a4",
+    "orientation": "landscape",
+    "sheetFit": "grid",
+    "cardWidthMm": 54,
+    "cardHeightMm": 84,
+    "gridCols": 7,
+    "gridRows": 4,
+    "showCutLines": false,
+    "onePerPage": false,
+    "showSentenceText": true,
+    "sentencePosition": "above",
+    "sentenceSizePt": 10,
+    "showCollectionTitle": true,
+    "titleSizePt": 24,
+    "titleColour": null,
+    "titleLine": false,
+    "stripFrame": false,
+    "cardBorderMm": 0,
+    "cardBorderColor": "#2e2e2e",
+    "cardRadiusMm": 3,
+    "cardBackground": "#ffffff",
+    "pageColour": "#f8cad7",
+    "accentColour": "#e3262b",
+    "songHeadings": true,
+    "songRepeats": false,
+    "songRefrainOnce": false,
+    "showPageNumbers": false,
+    "markFreeFields": false,
+    "showGuide": true,
+    "cartColour": null
+  },
+  "title": {
+    "token": "Frühstück",
+    "concept": "frühstück",
+    "arasaac": 4626,
+    "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/fruehstueck2.png"
+  },
+  "sentences": [
+    {
+      "text": "ich",
+      "slots": [
+        {
+          "token": "ich",
+          "concept": "ich",
+          "arasaac": 31807,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/ich.png"
+        }
+      ]
+    },
+    {
+      "text": "möchte",
+      "slots": [
+        {
+          "token": "möchte",
+          "concept": "möchte",
+          "arasaac": 5441,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/wollen.png"
+        }
+      ]
+    },
+    {
+      "text": "nicht",
+      "slots": [
+        {
+          "token": "nicht",
+          "concept": "nicht",
+          "arasaac": 5526,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/nichtkein.png"
+        }
+      ]
+    },
+    {
+      "text": "Brot",
+      "slots": [
+        {
+          "token": "Brot",
+          "concept": "brot",
+          "arasaac": 2494,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/brot.png"
+        }
+      ]
+    },
+    {
+      "text": "Ei",
+      "slots": [
+        {
+          "token": "Ei",
+          "concept": "ei",
+          "label": "Croissant",
+          "arasaac": 2358,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/croissant.png"
+        }
+      ]
+    },
+    {
+      "text": "Müsli",
+      "slots": [
+        {
+          "token": "Müsli",
+          "concept": "müsli",
+          "arasaac": 2328,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/muesli.png"
+        }
+      ]
+    },
+    {
+      "text": "Gabel",
+      "slots": [
+        {
+          "token": "Gabel",
+          "concept": "gabel",
+          "arasaac": 2588,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/gabel1.png"
+        }
+      ]
+    },
+    {
+      "text": "du",
+      "slots": [
+        {
+          "token": "du",
+          "concept": "du",
+          "arasaac": 2608,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pronomen/du.png"
+        }
+      ]
+    },
+    {
+      "text": "essen",
+      "slots": [
+        {
+          "token": "essen",
+          "concept": "essen",
+          "arasaac": 2349,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/essen4.png"
+        }
+      ]
+    },
+    {
+      "text": "trinken",
+      "slots": [
+        {
+          "token": "trinken",
+          "concept": "trinken",
+          "arasaac": 6061,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/trinken3.png"
+        }
+      ]
+    },
+    {
+      "text": "Marmelade",
+      "slots": [
+        {
+          "token": "Marmelade",
+          "concept": "marmelade",
+          "arasaac": 2470,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/marmelade1.png"
+        }
+      ]
+    },
+    {
+      "text": "Käse",
+      "slots": [
+        {
+          "token": "Käse",
+          "concept": "käse",
+          "arasaac": 2541,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kaese.png"
+        }
+      ]
+    },
+    {
+      "text": "Butter",
+      "slots": [
+        {
+          "token": "Butter",
+          "concept": "butter",
+          "arasaac": 2461,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/butter.png"
+        }
+      ]
+    },
+    {
+      "text": "Messer",
+      "slots": [
+        {
+          "token": "Messer",
+          "concept": "messer",
+          "arasaac": 4931,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messer1.png"
+        }
+      ]
+    },
+    {
+      "text": "Hilfe",
+      "slots": [
+        {
+          "token": "Hilfe",
+          "concept": "hilfe",
+          "arasaac": 7171,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Konversation_Interaktion/brauchehilfe.png"
+        }
+      ]
+    },
+    {
+      "text": "probieren",
+      "slots": [
+        {
+          "token": "probieren",
+          "concept": "probieren",
+          "arasaac": 39016,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/probierenkosten.png"
+        }
+      ]
+    },
+    {
+      "text": "schmecken",
+      "slots": [
+        {
+          "token": "schmecken",
+          "concept": "schmecken",
+          "arasaac": 7124,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/schmecken.png"
+        }
+      ]
+    },
+    {
+      "text": "Saft",
+      "slots": [
+        {
+          "token": "Saft",
+          "concept": "saft",
+          "label": "Frischkäse",
+          "arasaac": 15505,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kaesecreme.png"
+        }
+      ]
+    },
+    {
+      "text": "Kakao",
+      "slots": [
+        {
+          "token": "Kakao",
+          "concept": "kakao",
+          "label": "Wasser",
+          "arasaac": 2248,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/wasser_still.png"
+        }
+      ]
+    },
+    {
+      "text": "Milch",
+      "slots": [
+        {
+          "token": "Milch",
+          "concept": "milch",
+          "arasaac": 2445,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/milch.png"
+        }
+      ]
+    },
+    {
+      "text": "Löffel",
+      "slots": [
+        {
+          "token": "Löffel",
+          "concept": "löffel",
+          "arasaac": 2362,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/loeffel1.png"
+        }
+      ]
+    },
+    {
+      "text": "Guten Appetit",
+      "slots": [
+        {
+          "token": "Guten Appetit",
+          "concept": "guten appetit",
+          "arasaac": 11627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Schule_Foerdereinrichtung/tischspruch.png"
+        }
+      ]
+    },
+    {
+      "text": "süß",
+      "slots": [
+        {
+          "token": "süß",
+          "concept": "süß",
+          "arasaac": 32440,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/suess.png"
+        }
+      ]
+    },
+    {
+      "text": "salzig",
+      "slots": [
+        {
+          "token": "salzig",
+          "concept": "salzig",
+          "arasaac": 32524,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/salzig.png"
+        }
+      ]
+    },
+    {
+      "text": "lecker",
+      "slots": [
+        {
+          "token": "lecker",
+          "concept": "lecker",
+          "arasaac": 32340,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/leckerFB.png"
+        }
+      ]
+    },
+    {
+      "text": "eklig",
+      "slots": [
+        {
+          "token": "eklig",
+          "concept": "eklig",
+          "arasaac": 30964,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/ekligFB.png"
+        }
+      ]
+    },
+    {
+      "text": "mehr",
+      "slots": [
+        {
+          "token": "mehr",
+          "concept": "mehr",
+          "arasaac": 5508,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/mehr.png"
+        }
+      ]
+    },
+    {
+      "text": "fertig",
+      "slots": [
+        {
+          "token": "fertig",
+          "concept": "fertig",
+          "arasaac": 28429,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/fertig2.png"
+        }
+      ]
+    }
+  ]
+}

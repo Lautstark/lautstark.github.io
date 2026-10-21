@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "id": "fische-angeln",
+  "product": "bildhaft",
+  "name": "Fische angeln",
+  "description": "Damit ein Kind bei „Fische angeln“ von HABA mitspielen und mitreden kann.",
+  "tags": [
+    "Spiel",
+    "HABA",
+    "Meine ersten Spiele"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [
+    "fische-angeln-klein"
+  ],
+  "payload": "tafel.json"
+}

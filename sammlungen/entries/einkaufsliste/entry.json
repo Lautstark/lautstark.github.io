@@ -2,11 +2,12 @@
   "schema": 1,
   "id": "einkaufsliste",
   "product": "bildhaft",
-  "name": "Einkaufsliste",
-  "description": "Hundertachtundzwanzig Sachen zum Einkaufen, nach Gängen sortiert: Obst, Gemüse, Brot, Kühlregal, Süßes, Putzmittel. Zum Ausdrucken und Abhaken, oder zum Draufzeigen im Laden.",
+  "name": "Wörter zum Einkaufen",
+  "art": "Wortliste",
+  "description": "Die Wörter für eine eigene Einkaufsliste, nach Gängen sortiert. Nimm, was ihr braucht.",
   "tags": [
-    "Situation",
-    "zum Drucken"
+    "Einkaufen",
+    "Alltag"
   ],
   "language": "de",
   "symbols": "arasaac",

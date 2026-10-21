@@ -19,10 +19,12 @@ const PLACEHOLDER = /\{\{\s*([A-Za-z]+)\s*\}\}/g;
 // to resolve.
 const BARE_URL = /https?:\/\/[^\s"'<>]+/g;
 
-/* Five holes the build fills from the Sammlungen shelf rather than from
- * links.mjs. They are generated content, not addresses, and the rule below
- * would otherwise report each of them as a missing entry. */
-const GENERATED = new Set(["filter", "filterRules", "karten", "anzahl", "stand"]);
+/* The holes the build fills from the Sammlungen shelf rather than from
+ * links.mjs — the shelf page's, and a Tafel page's from _tafel.html. They are
+ * generated content, not addresses, and the rule below would otherwise report
+ * each of them as a missing entry. */
+const GENERATED = new Set(["filter", "filterRules", "karten", "anzahl", "stand", "beides",
+  "titel", "titelbild", "beschreibung", "zahlen", "oeffnen", "tafel", "quelle"]);
 
 /* site/ has folders in it, so the walk recurses — a page in a subdirectory owes
  * the same rule as one at the top. */
@@ -71,12 +73,17 @@ for (const key of Object.keys(links)) {
  * Two licensing rules and the rest integrity. The licensing ones are first
  * because they are why the entries live in a repository with a check at all:
  *
- * METACOM is licensed per person. A person handing another person their own
- * exported file may carry METACOM references — bildhaft does that deliberately,
- * and it is what makes a shared collection look identical to a recipient
- * holding the same licence. Publishing a curated index of those names is a
- * different act. The line is the actor, not the bytes, and this is what makes
- * the second half true rather than intended.
+ * METACOM is licensed per person, and its pictures may not be published. Its
+ * names may: a bildhaft field names its METACOM symbol as the path under
+ * somebody's own METACOM folder, which resolves only where there is one. So
+ * an entry may name METACOM symbols — in `metacom`, as such a path, and
+ * nowhere else — and may never hold a picture. (Until October 2026 this check
+ * refused the names too. They are what lets a Sammlung open with METACOM for
+ * whoever has it, and a name is not the picture.)
+ *
+ * And where an entry offers both, it offers both everywhere: a field with an
+ * ARASAAC number and no METACOM symbol, or the other way round, is a gap the
+ * shelf's switch would paper over.
  */
 
 const ENTRIES = new URL("../sammlungen/entries/", import.meta.url).pathname;
@@ -90,6 +97,28 @@ const PICTURE = /\.(png|jpe?g|gif|webp|avif|svg|bmp)$/i;
 /* Not word-bounded: `metacom:haus` and `METACOM_wasser_01` both have to be
    caught, and a false positive costs somebody one rename. */
 const METACOM = /metacom/i;
+/* What a `metacom` value is: a picture's path inside a METACOM folder, the
+   way bildhaft stores it. Never an address, never a way out of the folder. */
+const METACOM_PATH = /^METACOM_Symbole\/(?:[^/\\:]+\/)*[^/\\:]+\.png$/;
+
+/** A file's JSON with every `metacom` path checked and taken out, so what is
+ *  left can be searched for METACOM named anywhere it may not be. */
+function withoutMetacomPaths(value, here, problems) {
+  if (Array.isArray(value)) return value.map((one) => withoutMetacomPaths(one, here, problems));
+  if (!value || typeof value !== "object") return value;
+  const rest = {};
+  for (const [key, inner] of Object.entries(value)) {
+    if (key === "metacom") {
+      if (typeof inner !== "string" || !METACOM_PATH.test(inner) || inner.includes("..")) {
+        problems.push(`${here}: has the METACOM symbol ${JSON.stringify(inner)}, which is not `
+          + "a path inside a METACOM folder (METACOM_Symbole/…/name.png).");
+      }
+      continue;
+    }
+    rest[key] = withoutMetacomPaths(inner, here, problems);
+  }
+  return rest;
+}
 
 const entries = new Map();
 
@@ -102,9 +131,12 @@ if (existsSync(ENTRIES)) {
         problems.push(`${here}/${name}: is a picture. Entries hold symbol numbers; `
           + "the pictures are fetched at build time.");
       }
-      if (METACOM.test(readFileSync(join(ENTRIES, dir, name), "utf8"))) {
-        problems.push(`${here}/${name}: names METACOM. A published entry may not: `
-          + "the licence is per person. Use an ARASAAC number, or leave the key without one.");
+      let parsed;
+      try { parsed = JSON.parse(readFileSync(join(ENTRIES, dir, name), "utf8")); } catch { continue; }
+      const rest = withoutMetacomPaths(parsed, `${here}/${name}`, problems);
+      if (METACOM.test(JSON.stringify(rest))) {
+        problems.push(`${here}/${name}: names METACOM outside a field's \`metacom\` path. `
+          + "A symbol is named there and nowhere else.");
       }
     }
 
@@ -165,6 +197,27 @@ if (existsSync(ENTRIES)) {
       payload = JSON.parse(readFileSync(join(ENTRIES, dir, entry.payload), "utf8"));
     } catch (error) {
       problems.push(`${here}/${entry.payload}: is not readable JSON — ${error.message}`);
+    }
+    if (payload && entry.product === "bildhaft") {
+      const slots = [...(payload.title ? [payload.title] : []),
+        ...(payload.sentences ?? []).flatMap((sentence) => sentence.slots ?? [])];
+      const both = slots.some((slot) => slot.metacom);
+      for (const slot of slots) {
+        if (both && !(slot.arasaac && slot.metacom)) {
+          problems.push(`${here}/${entry.payload}: „${slot.label || slot.token}“ has `
+            + `${slot.arasaac ? "no METACOM symbol" : "no ARASAAC number"}, and the rest have both.`);
+        }
+      }
+      if (payload.kind === "tafel") {
+        const { cols, rows, cells } = payload.board ?? {};
+        const n = (payload.sentences ?? []).length;
+        if (!Number.isInteger(cols) || !Number.isInteger(rows) || !Array.isArray(cells)
+          || cells.length !== cols * rows) {
+          problems.push(`${here}/${entry.payload}: a Tafel needs cols, rows and exactly cols × rows cells.`);
+        } else if (cells.some((at) => at !== null && !(Number.isInteger(at) && at >= 0 && at < n))) {
+          problems.push(`${here}/${entry.payload}: a cell names a row that is not there.`);
+        }
+      }
     }
     entries.set(entry.id, { entry, payload, here });
   }
@@ -239,5 +292,5 @@ console.log(
   `${entries.size} ${entries.size === 1 ? "Sammlung" : "Sammlungen"}, `
   + `${numbers.size} ARASAAC numbers`
   + `${online ? ", all of which resolve" : " (not asked — pass --online)"}, `
-  + "no METACOM name and no picture.",
+  + "METACOM named only by path, and no picture.",
 );

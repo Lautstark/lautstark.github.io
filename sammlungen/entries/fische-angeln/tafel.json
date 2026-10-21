@@ -1,0 +1,392 @@
+{
+  "kind": "tafel",
+  "board": {
+    "cols": 7,
+    "rows": 4,
+    "cells": [
+      0,
+      1,
+      2,
+      null,
+      null,
+      null,
+      null,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      null,
+      21,
+      22
+    ],
+    "zones": [
+      "T",
+      "T",
+      "T",
+      null,
+      null,
+      null,
+      null,
+      "F",
+      "F",
+      "F",
+      "D",
+      "D",
+      "S",
+      "S",
+      "F",
+      "F",
+      "F",
+      "D",
+      "D",
+      "S",
+      "S",
+      "A",
+      "A",
+      "A",
+      "D",
+      "D",
+      "S",
+      "S"
+    ],
+    "styles": {
+      "T": {
+        "name": "Spielen",
+        "frame": "#1864ab"
+      },
+      "F": {
+        "name": "Farben",
+        "frame": "#1864ab"
+      },
+      "D": {
+        "name": "Sachen",
+        "frame": "#1864ab"
+      },
+      "S": {
+        "name": "Sagen",
+        "frame": "#1864ab"
+      },
+      "A": {
+        "name": "Tiere",
+        "frame": "#1864ab"
+      }
+    },
+    "airMm": 4
+  },
+  "print": {
+    "symbolSizeMm": 50,
+    "cutMarginMm": 3,
+    "showLabel": true,
+    "labelPosition": "below",
+    "labelSizePt": 6,
+    "layout": "sheet",
+    "paper": "a5",
+    "orientation": "landscape",
+    "sheetFit": "grid",
+    "cardWidthMm": 54,
+    "cardHeightMm": 84,
+    "gridCols": 7,
+    "gridRows": 4,
+    "showCutLines": false,
+    "onePerPage": false,
+    "showSentenceText": true,
+    "sentencePosition": "above",
+    "sentenceSizePt": 10,
+    "showCollectionTitle": true,
+    "titleSizePt": 15,
+    "titleColour": null,
+    "titleLine": false,
+    "stripFrame": false,
+    "cardBorderMm": 0,
+    "cardBorderColor": "#2e2e2e",
+    "cardRadiusMm": 4,
+    "cardBackground": "#ffffff",
+    "pageColour": "#cfe8fc",
+    "accentColour": "#e3262b",
+    "songHeadings": true,
+    "songRepeats": false,
+    "songRefrainOnce": false,
+    "showPageNumbers": false,
+    "markFreeFields": false,
+    "showGuide": true,
+    "cartColour": null
+  },
+  "title": {
+    "token": "",
+    "concept": "",
+    "arasaac": 2520,
+    "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/fisch3.png"
+  },
+  "sentences": [
+    {
+      "text": "würfeln",
+      "slots": [
+        {
+          "token": "würfeln",
+          "concept": "würfeln",
+          "arasaac": 2731,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/wuerfelSW.png"
+        }
+      ]
+    },
+    {
+      "text": "angeln",
+      "slots": [
+        {
+          "token": "angeln",
+          "concept": "angeln",
+          "arasaac": 6592,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/angeln.png"
+        }
+      ]
+    },
+    {
+      "text": "einsortieren",
+      "slots": [
+        {
+          "token": "einsortieren",
+          "concept": "einsortieren",
+          "arasaac": 8077,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/Bilder_hinzufuegen.png"
+        }
+      ]
+    },
+    {
+      "text": "lila",
+      "slots": [
+        {
+          "token": "lila",
+          "concept": "lila",
+          "arasaac": 34483,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/lila.png"
+        }
+      ]
+    },
+    {
+      "text": "blau",
+      "slots": [
+        {
+          "token": "blau",
+          "concept": "blau",
+          "arasaac": 4869,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/blau.png"
+        }
+      ]
+    },
+    {
+      "text": "grün",
+      "slots": [
+        {
+          "token": "grün",
+          "concept": "grün",
+          "arasaac": 4887,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/gruen2.png"
+        }
+      ]
+    },
+    {
+      "text": "ball",
+      "slots": [
+        {
+          "token": "ball",
+          "concept": "ball",
+          "arasaac": 3241,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/ballrot.png"
+        }
+      ]
+    },
+    {
+      "text": "schaufel",
+      "slots": [
+        {
+          "token": "schaufel",
+          "concept": "schaufel",
+          "arasaac": 34543,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/schaufel.png"
+        }
+      ]
+    },
+    {
+      "text": "ich bin dran",
+      "slots": [
+        {
+          "token": "ich bin dran",
+          "concept": "ich bin dran",
+          "arasaac": 7158,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Konversation_Interaktion/ichbindran2.png"
+        }
+      ]
+    },
+    {
+      "text": "du bist dran",
+      "slots": [
+        {
+          "token": "du bist dran",
+          "concept": "du bist dran",
+          "arasaac": 31801,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Konversation_Interaktion/dubistdran2.png"
+        }
+      ]
+    },
+    {
+      "text": "rot",
+      "slots": [
+        {
+          "token": "rot",
+          "concept": "rot",
+          "arasaac": 2808,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/rot.png"
+        }
+      ]
+    },
+    {
+      "text": "gelb",
+      "slots": [
+        {
+          "token": "gelb",
+          "concept": "gelb",
+          "arasaac": 2648,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/gelb.png"
+        }
+      ]
+    },
+    {
+      "text": "weißer Glitzerfisch",
+      "slots": [
+        {
+          "token": "weißer Glitzerfisch",
+          "concept": "weißer glitzerfisch",
+          "label": "glitzer",
+          "arasaac": 36437,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Buero_Basteln/glitzer.png"
+        }
+      ]
+    },
+    {
+      "text": "giesskanne",
+      "slots": [
+        {
+          "token": "giesskanne",
+          "concept": "giesskanne",
+          "arasaac": 2817,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/giesskanne.png"
+        }
+      ]
+    },
+    {
+      "text": "eimer",
+      "slots": [
+        {
+          "token": "eimer",
+          "concept": "eimer",
+          "arasaac": 2725,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/eimer.png"
+        }
+      ]
+    },
+    {
+      "text": "gewonnen",
+      "slots": [
+        {
+          "token": "gewonnen",
+          "concept": "gewonnen",
+          "label": "Juhu!",
+          "arasaac": 38564,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/jubeln.png"
+        }
+      ]
+    },
+    {
+      "text": "verloren",
+      "slots": [
+        {
+          "token": "verloren",
+          "concept": "verloren",
+          "label": "Mist!",
+          "arasaac": 35539,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Landschaft/mist.png"
+        }
+      ]
+    },
+    {
+      "text": "Fisch",
+      "slots": [
+        {
+          "token": "Fisch",
+          "concept": "fisch",
+          "arasaac": 2520,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/fisch3.png"
+        }
+      ]
+    },
+    {
+      "text": "Seestern",
+      "slots": [
+        {
+          "token": "Seestern",
+          "concept": "seestern",
+          "arasaac": 3310,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/seestern.png"
+        }
+      ]
+    },
+    {
+      "text": "Seepferdchen",
+      "slots": [
+        {
+          "token": "Seepferdchen",
+          "concept": "seepferdchen",
+          "arasaac": 2672,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/seepferdchen.png"
+        }
+      ]
+    },
+    {
+      "text": "ente",
+      "slots": [
+        {
+          "token": "ente",
+          "concept": "ente",
+          "arasaac": 2563,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/entesteht.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "nochmal",
+          "concept": "nochmal",
+          "arasaac": 37162,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/nochmal.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "fertig",
+          "concept": "fertig",
+          "arasaac": 28429,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/fertig1.png"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "id": "abendessen",
+  "product": "bildhaft",
+  "name": "Abendessen",
+  "description": "Zum Mitreden beim Abendbrot: sagen, was man möchte, was nicht, und wie es schmeckt.",
+  "tags": [
+    "Essen",
+    "Alltag"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [
+    "fruehstueck",
+    "mittagessen"
+  ],
+  "payload": "tafel.json"
+}

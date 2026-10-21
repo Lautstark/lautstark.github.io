@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="de" data-theme="light">
+<!-- The page of one Tafel on the shelf. tools/build.mjs fills it once per
+     Tafel from the holes tafelPage() in tools/sammlungen.mjs hands back. -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{titel}} · Fertige Sammlungen · Lautstark</title>
+<meta name="description" content="{{beschreibung}}">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/components.css">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+
+<!-- Steht vor der Kopfzeile und auf jeder Seite; index.html sagt, warum. -->
+<p class="beta">
+  <strong>Alles hier ist Beta.</strong> Wir benutzen die Programme täglich, aber
+  sie sind jung, sie ändern sich noch, und irgendwas wird nicht so laufen, wie
+  es soll. <a href="{{meldungen}}">Erzähl mir davon</a>, dann wird es besser.
+</p>
+
+<header class="top col">
+  <a class="wordmark" href="../index.html">
+    <span class="familie" aria-hidden="true">
+      <img src="../mark-vorlaut.svg" alt="" width="26" height="26">
+      <img src="../mark-mitreden.svg" alt="" width="26" height="26">
+      <img src="../mark-bildhaft.svg" alt="" width="26" height="26">
+      <img src="../mark-wochenwerk.svg" alt="" width="26" height="26">
+    </span>
+    <span>Lautstark</span>
+  </a>
+  <nav>
+    <input class="wahl" type="checkbox" id="menu">
+    <label class="btn quiet icon menuknopf" for="menu">&#9776;<span class="visually-hidden">Menü</span></label>
+    <div class="menulinks">
+      <a href="../vorlaut.html">vorlaut</a>
+      <a href="../index.html#mitreden">mitreden</a>
+      <a href="../index.html#bildhaft">bildhaft</a>
+      <a href="../index.html#wochenwerk">wochenwerk</a>
+      <a href="index.html" aria-current="page">Sammlungen</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<section class="band band--tafel produkt bildhaft">
+  <div class="col">
+    <p class="zurueck"><a href="index.html">‹ Alle Sammlungen</a></p>
+    <div class="tafelkopf">
+      {{titelbild}}
+      <div>
+        <p class="karte__wer"><span class="punkt"></span>bildhaft · Tafel</p>
+        <h1>{{titel}}</h1>
+      </div>
+    </div>
+    <p class="lead">{{beschreibung}}</p>
+    <p class="tafelzeile">
+      <span class="karte__zahlen">{{zahlen}}</span>
+      <a class="btn primary" href="{{oeffnen}}" target="_blank" rel="noopener">In bildhaft öffnen</a>
+    </p>
+
+    {{tafel}}
+
+    <p class="quelle">{{quelle}}</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="col">
+    <p class="footzeile">
+      <span>Kostenlos, unter der MIT-Lizenz.</span>
+      <a href="../rechtliches.html#impressum">Impressum</a>
+      <a href="../rechtliches.html#datenschutz">Datenschutz</a>
+      <a href="{{quelltext}}">Quelltext</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

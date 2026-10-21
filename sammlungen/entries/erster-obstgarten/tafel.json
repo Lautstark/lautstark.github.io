@@ -1,0 +1,293 @@
+{
+  "kind": "tafel",
+  "board": {
+    "cols": 6,
+    "rows": 3,
+    "cells": [
+      0,
+      1,
+      2,
+      null,
+      3,
+      4,
+      5,
+      6,
+      7,
+      null,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "zones": [
+      "T",
+      "T",
+      "T",
+      null,
+      "S",
+      "S",
+      "O",
+      "O",
+      "O",
+      null,
+      "S",
+      "S",
+      "F",
+      "F",
+      "F",
+      "F",
+      "S",
+      "S"
+    ],
+    "styles": {
+      "T": {
+        "name": "Spielen",
+        "frame": "#b02525"
+      },
+      "S": {
+        "name": "Sagen",
+        "frame": "#b02525"
+      },
+      "O": {
+        "name": "Obst",
+        "frame": "#b02525"
+      },
+      "F": {
+        "name": "Farben",
+        "frame": "#b02525"
+      }
+    },
+    "airMm": 4
+  },
+  "print": {
+    "symbolSizeMm": 50,
+    "cutMarginMm": 4,
+    "showLabel": true,
+    "labelPosition": "below",
+    "labelSizePt": 7,
+    "layout": "sheet",
+    "paper": "a5",
+    "orientation": "landscape",
+    "sheetFit": "grid",
+    "cardWidthMm": 54,
+    "cardHeightMm": 84,
+    "gridCols": 6,
+    "gridRows": 3,
+    "showCutLines": false,
+    "onePerPage": false,
+    "showSentenceText": true,
+    "sentencePosition": "above",
+    "sentenceSizePt": 10,
+    "showCollectionTitle": true,
+    "titleSizePt": 15,
+    "titleColour": null,
+    "titleLine": false,
+    "stripFrame": false,
+    "cardBorderMm": 0,
+    "cardBorderColor": "#2e2e2e",
+    "cardRadiusMm": 4,
+    "cardBackground": "#ffffff",
+    "pageColour": "#ffe3e3",
+    "accentColour": "#e3262b",
+    "songHeadings": true,
+    "songRepeats": false,
+    "songRefrainOnce": false,
+    "showPageNumbers": false,
+    "markFreeFields": false,
+    "showGuide": true,
+    "cartColour": null
+  },
+  "title": {
+    "token": "",
+    "concept": "",
+    "arasaac": 2462,
+    "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel.png"
+  },
+  "sentences": [
+    {
+      "text": "würfeln",
+      "slots": [
+        {
+          "token": "würfeln",
+          "concept": "würfeln",
+          "label": "würfeln",
+          "arasaac": 31071,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/farbwuerfel.png"
+        }
+      ]
+    },
+    {
+      "text": "Rabe",
+      "slots": [
+        {
+          "token": "Rabe",
+          "concept": "rabe",
+          "arasaac": 4619,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/rabe.png"
+        }
+      ]
+    },
+    {
+      "text": "Korb",
+      "slots": [
+        {
+          "token": "Korb",
+          "concept": "korb",
+          "arasaac": 3012,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Behaelter_Taschen/korb.png"
+        }
+      ]
+    },
+    {
+      "text": "ich bin dran",
+      "slots": [
+        {
+          "token": "ich bin dran",
+          "concept": "ich bin dran",
+          "arasaac": 7158,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Konversation_Interaktion/ichbindran2.png"
+        }
+      ]
+    },
+    {
+      "text": "du bist dran",
+      "slots": [
+        {
+          "token": "du bist dran",
+          "concept": "du bist dran",
+          "arasaac": 31801,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Konversation_Interaktion/dubistdran2.png"
+        }
+      ]
+    },
+    {
+      "text": "Apfel",
+      "slots": [
+        {
+          "token": "Apfel",
+          "concept": "apfel",
+          "arasaac": 2462,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel.png"
+        }
+      ]
+    },
+    {
+      "text": "Birne",
+      "slots": [
+        {
+          "token": "Birne",
+          "concept": "birne",
+          "arasaac": 2561,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/birne.png"
+        }
+      ]
+    },
+    {
+      "text": "Pflaume",
+      "slots": [
+        {
+          "token": "Pflaume",
+          "concept": "pflaume",
+          "label": "Pflaume",
+          "arasaac": 39807,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/pflaumeblau.png"
+        }
+      ]
+    },
+    {
+      "text": "gewonnen",
+      "slots": [
+        {
+          "token": "gewonnen",
+          "concept": "gewonnen",
+          "label": "Juhu!",
+          "arasaac": 38564,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/jubeln.png"
+        }
+      ]
+    },
+    {
+      "text": "verloren",
+      "slots": [
+        {
+          "token": "verloren",
+          "concept": "verloren",
+          "label": "Mist!",
+          "arasaac": 35539,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Landschaft/mist.png"
+        }
+      ]
+    },
+    {
+      "text": "rot",
+      "slots": [
+        {
+          "token": "rot",
+          "concept": "rot",
+          "arasaac": 2808,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/rot.png"
+        }
+      ]
+    },
+    {
+      "text": "grün",
+      "slots": [
+        {
+          "token": "grün",
+          "concept": "grün",
+          "arasaac": 4887,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/gruen2.png"
+        }
+      ]
+    },
+    {
+      "text": "blau",
+      "slots": [
+        {
+          "token": "blau",
+          "concept": "blau",
+          "arasaac": 4869,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/blau.png"
+        }
+      ]
+    },
+    {
+      "text": "gelb",
+      "slots": [
+        {
+          "token": "gelb",
+          "concept": "gelb",
+          "arasaac": 2648,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/gelb.png"
+        }
+      ]
+    },
+    {
+      "text": "mehr",
+      "slots": [
+        {
+          "token": "mehr",
+          "concept": "mehr",
+          "label": "nochmal",
+          "arasaac": 37162,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/nochmal.png"
+        }
+      ]
+    },
+    {
+      "text": "fertig",
+      "slots": [
+        {
+          "token": "fertig",
+          "concept": "fertig",
+          "arasaac": 28429,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/fertig2.png"
+        }
+      ]
+    }
+  ]
+}
