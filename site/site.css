@@ -746,3 +746,8 @@ footer {
 .karte--blatt .wand { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; }
 .karte--blatt .wand span { min-width: 0; }
 .karte--blatt .wand .wand__mehr { font-size: .72rem; }
+
+/* The links at the foot of every card, in line across a row. `.karte p` sets
+   every margin to 0 and outranks .karte__tun's own auto, so it is said here
+   with the card's weight. */
+.karte .karte__tun { margin-top: auto; }
