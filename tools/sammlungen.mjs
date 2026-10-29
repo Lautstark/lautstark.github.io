@@ -618,9 +618,13 @@ function materialPage(entry, links) {
     metacom: bothSources(payload) ? METACOM_BOX : "",
     // Beside the button, not over the pages: one place for what to do with it.
     pdf: druck.pdf && druck.pages.length
-      ? `<a class="btn" href="druck/${esc(meta.id)}/${esc(druck.pdf)}" download="${esc(meta.name)}.pdf" title="PDF · ${esc(pdfLine(entry))}">⤓ PDF</a>`
-        + (druck.abs ? `<a class="btn" href="druck/${esc(meta.id)}/${esc(druck.abs)}" download="${esc(meta.name)}.abs" `
-          + `title="Für Anybook Studio: der Bogen mit den Codes und eine Aufnahme pro Code, Stimme Thorsten">⤓ Anybook</a>` : "") : "",
+      ? `<span class="teilknopf"><a class="btn" href="druck/${esc(meta.id)}/${esc(druck.pdf)}" download="${esc(meta.name)}.pdf" `
+        + `title="PDF · ${esc(pdfLine(entry))}">⤓ PDF</a>`
+        + (druck.abs ? `<details><summary class="btn" aria-label="Weitere Dateien">▾</summary><span class="teilknopf__menu">`
+          + `<a href="druck/${esc(meta.id)}/${esc(druck.pdf)}" download="${esc(meta.name)}.pdf">⤓ PDF<small>${esc(pdfLine(entry))}</small></a>`
+          + `<a href="druck/${esc(meta.id)}/${esc(druck.abs)}" download="${esc(meta.name)}.abs">⤓ Anybook Studio (.abs)`
+          + `<small>Der Bogen mit den Codes und eine Aufnahme pro Code, Stimme Thorsten</small></a></span></details>` : "")
+        + "</span>" : "",
     seiten: !druck.pages.length
       ? `<a class="material__app material__app--gross" href="druck/${esc(meta.id)}/app.png" data-gross><img width="${druck.app.w}" `
         + `height="${druck.app.h}" src="druck/${esc(meta.id)}/app.png" alt="So sieht ${esc(meta.name)} in bildhaft aus"></a>`

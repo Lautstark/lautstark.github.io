@@ -1,4 +1,5 @@
-/* A material's pictures, large: a page of its PDF or the app, over the page.
+/* A material's pictures, large: a page of its PDF or the app, over the page —
+ * and its file menu closing like a menu.
  *
  * An addition, like search.js: every picture is a link to its own file, so
  * without this a click opens the picture on its own, as large as it is. With
@@ -6,6 +7,14 @@
  * Arrows go from picture to picture, Esc, ✕ or a click closes it — the dialog
  * gives Esc and the focus back for free.
  */
+
+// The file menu beside ⤓ PDF is a <details>: it opens without a script, and
+// with one it closes again on a click anywhere else, as a menu does.
+document.addEventListener("click", (event) => {
+  for (const open of document.querySelectorAll(".teilknopf details[open]")) {
+    if (!open.contains(event.target)) open.open = false;
+  }
+});
 
 (() => {
   const links = [...document.querySelectorAll("a[data-gross]")];
