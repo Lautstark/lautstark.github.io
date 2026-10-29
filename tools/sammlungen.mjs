@@ -586,10 +586,20 @@ const hasPage = (entry) => entry.meta.product === "bildhaft" && Boolean(entry.dr
 function materialPage(entry, links) {
   const { meta, payload, druck } = entry;
   const open = `${esc(links.bildhaft)}?sammlung=${esc(meta.id)}`;
-  /* Each picture a link to its own file: gross.js shows it large over the
-     page, and without it the click opens the file. */
-  const pages = druck.pages.map((page, i) => `<figure><a href="druck/${esc(meta.id)}/${page.file}" data-gross>${sheet(entry, page)}</a>`
+  /* One page large, the others small beside it to pick from: all of them
+     under each other made a long material a long scroll. A radio before each
+     page, as the filter does it — no script; the labels in the strip check
+     them. Each page a link to its own file: gross.js shows it larger still,
+     and without it the click opens the file. */
+  const many = druck.pages.length > 1;
+  const name = `seite-${esc(meta.id)}`;
+  const pages = druck.pages.map((page, i) => (many
+    ? `<input type="radio" class="wahl" name="${name}" id="${name}-${i + 1}"${i ? "" : " checked"}>` : "")
+    + `<figure class="material__seite"><a href="druck/${esc(meta.id)}/${page.file}" data-gross>${sheet(entry, page)}</a>`
     + `<figcaption>Seite ${i + 1} von ${druck.pages.length}</figcaption></figure>`).join("");
+  const strip = many ? `<div class="material__daumen" aria-label="Seiten">${druck.pages.map((page, i) =>
+    `<label for="${name}-${i + 1}"><img width="${page.w}" height="${page.h}" src="druck/${esc(meta.id)}/${page.file}" alt="Seite ${i + 1}">`
+    + `<span>${i + 1}</span></label>`).join("")}</div>` : "";
   return {
     titel: esc(meta.name),
     art: esc(kindLabel(meta)),
@@ -609,7 +619,7 @@ function materialPage(entry, links) {
         + `height="${druck.app.h}" src="druck/${esc(meta.id)}/app.png" alt="So sieht ${esc(meta.name)} in bildhaft aus"></a>`
       : `${druck.pdf ? `<div class="material__pdf"><span class="karte__zahlen">PDF · ${esc(pdfLine(entry))}</span>`
       + `<a class="btn" href="druck/${esc(meta.id)}/${esc(druck.pdf)}" download="${esc(meta.name)}.pdf">⤓ PDF herunterladen</a></div>` : ""}`
-      + `<div class="material__seiten">${pages}</div>`,
+      + `<div class="material__seiten${many ? "" : " material__seiten--eine"}"><div class="material__buehne">${pages}</div>${strip}</div>`,
     quelle: esc(meta.attribution),
   };
 }
