@@ -535,17 +535,15 @@ function filter(entries) {
 
 /** What a material is, as a filter's id: its template's name, folded. */
 /**
- * A Spiel's level, out of its name: „Was kommt als Nächstes? (II)“ is level II.
- * bildhaft names a game so, for the children at the table; on the shelf the
- * name is the question and the level stands in the label line over it, where
- * two games of the same question still tell themselves apart.
+ * A Spiel's name on the shelf: its question, without the level bildhaft adds
+ * for the children at the table — „Was kommt als Nächstes? (II)“ is „Was kommt
+ * als Nächstes?“ here. She wanted the level gone from the shelf altogether
+ * (2026-10-29), in the label line too, and the two games that share a
+ * question are told apart by their pages.
  */
-const LEVEL = /\s*\((I{1,3})\)\s*$/;
-const levelOf = (meta) => meta.name.match(LEVEL)?.[1] ?? null;
-const shelfName = (meta) => meta.name.replace(LEVEL, "");
-/** „bildhaft · Spiel · Stufe II“: the product, its template, a game's level. */
-const labelOf = (meta) => [PRODUCTS[meta.product].label, kindLabel(meta), levelOf(meta) && `Stufe ${levelOf(meta)}`]
-  .filter(Boolean).join(" · ");
+const shelfName = (meta) => meta.name.replace(/\s*\((I{1,3})\)\s*$/, "");
+/** „bildhaft · Spiel“: the product and its template. */
+const labelOf = (meta) => [PRODUCTS[meta.product].label, kindLabel(meta)].filter(Boolean).join(" · ");
 
 const artOf = (meta) => (meta.product === "bildhaft" ? fold(kindLabel(meta)) : "");
 
@@ -623,10 +621,10 @@ function materialPage(entry, links) {
     titelbild: payload.title?.arasaac ? picture(payload.title.arasaac, 56) : "",
     zahlen: esc(factLine(meta)),
     // The card's tags, on the page as on the card.
-    // The card's tags, on the page as on the card — less what the label line says already.
+    // The card's tags, on the page as on the card — less what the label line says already, and no level.
     marken: (() => {
       const said = new Set(labelOf(meta).split(" · "));
-      const tags = (meta.tags ?? []).filter((t) => !said.has(t));
+      const tags = (meta.tags ?? []).filter((t) => !said.has(t) && !/^Stufe /.test(t));
       return tags.length ? `<p class="marken">${tags.map((t) => `<span class="marke">${esc(t)}</span>`).join("")}</p>` : "";
     })(),
     oeffnen: open,
