@@ -24,7 +24,7 @@ const BARE_URL = /https?:\/\/[^\s"'<>]+/g;
  * generated content, not addresses, and the rule below would otherwise report
  * each of them as a missing entry. */
 const GENERATED = new Set(["filter", "filterRules", "karten", "anzahl", "stand", "beides",
-  "titel", "titelbild", "art", "beschreibung", "zahlen", "marken", "oeffnen", "tafel", "quelle"]);
+  "titel", "titelbild", "art", "beschreibung", "zahlen", "marken", "oeffnen", "pdf", "tafel", "quelle"]);
 
 /* site/ has folders in it, so the walk recurses — a page in a subdirectory owes
  * the same rule as one at the top. */
@@ -81,6 +81,12 @@ for (const key of Object.keys(links)) {
  * refused the names too. They are what lets a Sammlung open with METACOM for
  * whoever has it, and a name is not the picture.)
  *
+ * One exception, her decision of 2026-10-29: `druck/` beside an entry holds
+ * what bildhaft printed — the ARASAAC PDF and its pages as pictures — and the
+ * same pages in METACOM as a thumbnail, so the shelf can show that METACOM
+ * looks different. Those are at most METACOM_THUMB pixels wide: too small to
+ * print a single symbol from. Nothing else of METACOM is a picture here.
+ *
  * And where an entry offers both, it offers both everywhere: a field with an
  * ARASAAC number and no METACOM symbol, or the other way round, is a gap the
  * shelf's switch would paper over.
@@ -94,6 +100,7 @@ const PRODUCTS = ["vorlaut-app", "vorlaut-talker", "bildhaft", "mitreden"];
 const SOURCES = ["arasaac", "none"];
 const ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const PICTURE = /\.(png|jpe?g|gif|webp|avif|svg|bmp)$/i;
+const METACOM_THUMB = 80;
 /* Not word-bounded: `metacom:haus` and `METACOM_wasser_01` both have to be
    caught, and a false positive costs somebody one rename. */
 const METACOM = /metacom/i;
@@ -137,6 +144,26 @@ if (existsSync(ENTRIES)) {
       if (METACOM.test(JSON.stringify(rest))) {
         problems.push(`${here}/${name}: names METACOM outside a field's \`metacom\` path. `
           + "A symbol is named there and nowhere else.");
+      }
+    }
+
+    const druck = join(ENTRIES, dir, "druck");
+    if (existsSync(druck)) {
+      const files = readdirSync(druck);
+      for (const name of files) {
+        if (name === `${dir}.pdf` || /^a-\d+\.png$/.test(name)) continue;
+        if (!/^m-\d+\.png$/.test(name)) {
+          problems.push(`${here}/druck/${name}: is not ${dir}.pdf, a-<n>.png or m-<n>.png.`);
+          continue;
+        }
+        const width = readFileSync(join(druck, name)).readUInt32BE(16);
+        if (width > METACOM_THUMB) {
+          problems.push(`${here}/druck/${name}: is METACOM ${width} px wide; `
+            + `at most ${METACOM_THUMB}, so nothing can be printed from it.`);
+        }
+        if (!files.includes(name.replace(/^m-/, "a-"))) {
+          problems.push(`${here}/druck/${name}: has no ARASAAC page beside it.`);
+        }
       }
     }
 
@@ -314,5 +341,5 @@ console.log(
   `${entries.size} ${entries.size === 1 ? "Sammlung" : "Sammlungen"}, `
   + `${numbers.size} ARASAAC numbers`
   + `${online ? ", all of which resolve" : " (not asked — pass --online)"}, `
-  + "METACOM named only by path, and no picture.",
+  + `METACOM named only by path, and as a picture only ${METACOM_THUMB} px small.`,
 );

@@ -140,11 +140,36 @@ export function readEntries(root) {
       },
       payload,
       from: join(dir, name, entry.payload),
+      druck: printed(join(dir, name), entry.id),
     });
   }
 
   found.sort((a, b) => a.meta.id.localeCompare(b.meta.id));
   return found;
+}
+
+/**
+ * What bildhaft itself printed, where an entry carries it: `druck/` beside the
+ * payload, written by hand from bildhaft's own „⤓ PDF“ — the PDF (ARASAAC),
+ * each of its pages as a picture (`a-1.png` …), and each page again in
+ * METACOM (`m-1.png` …), 80 px wide and blurred: enough to see that METACOM
+ * looks different, too little to print from. Where it is there, the shelf
+ * shows these instead of drawing the sheet itself, so there is one layout —
+ * bildhaft's — and not a second one here to keep in step with it.
+ */
+function printed(at, id) {
+  const dir = join(at, "druck");
+  if (!existsSync(dir)) return null;
+  const files = readdirSync(dir);
+  const number = (f) => Number(f.match(/-(\d+)\.png$/)[1]);
+  const pages = files.filter((f) => /^a-\d+\.png$/.test(f)).sort((a, b) => number(a) - number(b))
+    .map((f) => {
+      const size = (name) => { const png = readFileSync(join(dir, name)); return [png.readUInt32BE(16), png.readUInt32BE(20)]; };
+      const m = `m-${number(f)}.png`;
+      const [w, h] = size(f);
+      return { a: f, m: files.includes(m) ? { file: m, size: size(m) } : null, w, h };
+    });
+  return { dir, id, pdf: files.includes(`${id}.pdf`) ? `${id}.pdf` : null, pages };
 }
 
 /* ---------------------------------------------------------------- drawing --- */
@@ -414,7 +439,8 @@ function bildhaftTop(entry) {
  *  preview simply has none; the fact line still says how much there is. */
 const PREVIEW = { "vorlaut-app": boardPreview, "vorlaut-talker": setsPreview };
 
-function card({ meta, payload }, links) {
+function card(entry, links) {
+  const { meta, payload } = entry;
   const product = PRODUCTS[meta.product];
   const tags = (meta.tags ?? []).map((t) => `<span class="marke">${esc(t)}</span>`).join("");
   const seeAlso = (meta.seeAlso ?? []).length
@@ -444,7 +470,7 @@ function card({ meta, payload }, links) {
   const art = artOf(meta);
   return `      <article class="karte produkt ${esc(product.hue)}${bildhaft ? " karte--blatt" : ""}${hasPage(meta) ? " karte--ansehen" : ""}" data-produkt="${esc(meta.product)}"${art ? ` data-art="${esc(art)}"` : ""}
         data-text="${esc(haystack)}">
-        ${bildhaft ? `${bildhaftTop({ meta, payload })}\n        <div class="karte__text">${text}</div>` : text}
+        ${bildhaft ? `${bildhaftTop(entry)}\n        <div class="karte__text">${text}</div>` : text}
       </article>`;
 }
 
@@ -1046,8 +1072,15 @@ export function einkaufPages(payload, name, attribution) {
 }
 
 /** Every printed page of an entry, where it is a thing to print: not a Wortliste, which is words to build from. */
-export function pagesOf({ meta, payload }) {
+export function pagesOf({ meta, payload, druck }) {
   if (meta.product !== "bildhaft" || meta.art === "Wortliste") return null;
+  if (druck?.pages.length) return druck.pages.map((page, n) => ({
+    label: `${paperLabel(payload.print ?? {})}${druck.pages.length > 1 ? ` · Blatt ${n + 1} von ${druck.pages.length}` : ""}`,
+    html: `<div class="blatt blatt--bild" style="aspect-ratio: ${page.w} / ${page.h}" role="img" aria-label="So sieht es gedruckt aus">`
+      + `<img class="blatt__a" width="${page.w}" height="${page.h}" src="druck/${esc(druck.id)}/${page.a}" alt="">`
+      + (page.m ? `<img class="blatt__m" width="${page.m.size[0]}" height="${page.m.size[1]}" src="druck/${esc(druck.id)}/${page.m.file}" alt="">` : "")
+      + "</div>",
+  }));
   switch (payload.kind) {
     case "tafel": return [printPreview(payload, meta.name, meta.attribution)];
     case "lied": return liedPages(payload, meta.name, meta.attribution);
@@ -1122,6 +1155,8 @@ function materialPage(entry, links) {
     marken: (meta.tags ?? []).length
       ? `<span class="marken">${meta.tags.map((t) => `<span class="marke">${esc(t)}</span>`).join("")}</span>` : "",
     oeffnen: open,
+    pdf: entry.druck?.pdf
+      ? `<a class="btn" href="druck/${esc(meta.id)}/${esc(entry.druck.pdf)}" download="${esc(meta.name)}.pdf">⤓ PDF</a>` : "",
     tafel: `${both ? symbolSwitch(meta.id) : ""}
       ${body}`,
     quelle: esc(meta.attribution),
@@ -1148,6 +1183,7 @@ export function sammlungen(root, dist, links) {
     const at = join(dist, "sammlungen", one.meta.payload);
     mkdirSync(dirname(at), { recursive: true });
     cpSync(one.from, at);
+    if (one.druck) cpSync(one.druck.dir, join(dist, "sammlungen", "druck", one.meta.id), { recursive: true });
   }
 
   const count = `${entries.length} ${entries.length === 1 ? "Material" : "Materialien"}`;

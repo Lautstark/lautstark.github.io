@@ -626,6 +626,7 @@ footer {
 .tafelzeile__was { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; }
 .tafelzeile { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .8rem; max-width: none; }
 .col > .tafelzeile { max-width: none; }
+.tafelzeile__tun { display: flex; gap: .6rem; flex-wrap: wrap; }
 .band--tafel .symbolwahl { margin: 1.2rem 0 .8rem; }
 
 .tafelbild { position: relative; background: var(--surface); border-radius: var(--radius); padding: 1rem; overflow-x: auto; }
@@ -729,6 +730,15 @@ footer {
 .tafelbild--blaetter { background: transparent; padding: 0; overflow: visible; }
 .sym-m:checked ~ .tafelbild .seiten .blatt { filter: grayscale(1) blur(1.5px); opacity: .35; }
 .tafelbild--blaetter .tafel__metacom { align-items: flex-start; padding-top: 4rem; }
+
+/* A sheet bildhaft printed itself (druck/ beside an entry): its page as a
+   picture, and under METACOM the same page so small and soft it only shows
+   that METACOM looks different. */
+.blatt--bild img { display: block; width: 100%; height: 100%; }
+.blatt--bild .blatt__m { display: none; filter: blur(1px); }
+.sym-m:checked ~ .tafelbild .blatt--bild .blatt__a { display: none; }
+.sym-m:checked ~ .tafelbild .blatt--bild .blatt__m { display: block; }
+.sym-m:checked ~ .tafelbild .seiten .blatt--bild { filter: none; opacity: .7; }
 
 /* The shelf, tighter: more tiles to a row, and every bildhaft cover in one
    frame of the same shape, so a row reads as a row. */
