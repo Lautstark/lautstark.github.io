@@ -13,6 +13,7 @@
  * path on disk. There is no base to configure and so no base to get wrong.
  */
 
+import { createHash } from "node:crypto";
 import { cpSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { links } from "../links.mjs";
@@ -66,9 +67,26 @@ function* under(dir, prefix = "") {
   }
 }
 
+/*
+ * A stylesheet or script named with its own content's hash, `site.css?v=…`.
+ * Pages ask for them by one name and GitHub Pages lets a browser keep a file
+ * ten minutes: on 2026-10-29 the shelf's new cards met the old site.css for
+ * those ten minutes, and the METACOM badge stood on them unstyled, as large as
+ * a heading, the sheet pushed out of its frame. A new file is a new address.
+ */
+const SHARED = { "styles/tokens.css": join(design, "tokens", "vorlaut.css"),
+  "styles/components.css": join(design, "docs", "components.css") };
+const versioned = (dir, ref) => {
+  const shared = Object.keys(SHARED).find((name) => ref.endsWith(name));
+  const source = shared ? SHARED[shared] : join(dir, ref);
+  return `${ref}?v=${createHash("sha256").update(readFileSync(source)).digest("hex").slice(0, 10)}`;
+};
+
 const fill = (template, dir, holes) => readFileSync(template, "utf8")
   .replace(/\{\{\s*([A-Za-z]+)\s*\}\}/g, (_, key) =>
     key in holes ? holes[key] : key in shelf ? shelf[key] : links[key])
+  .replace(/(<link rel="stylesheet" href=|<script src=)"([^":?]+\.(?:css|js))"/g,
+    (_, before, ref) => `${before}"${versioned(dir, ref)}"`)
   // Resolved against the page's own folder, not against site/: a page in a
   // subdirectory names its pictures relative to itself. A picture that says
   // its size already is one the shelf drew, fetched later by downloads.mjs.

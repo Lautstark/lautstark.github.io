@@ -513,9 +513,18 @@ function filterRules(entries) {
     rules.push(`#p-${product}:checked ~ section .karte:not([data-produkt="${product}"]) `
       + "{ display: none; }");
   }
+  /* A Vorlage is bildhaft's: the row stands, and a chosen one narrows, only
+     where bildhaft cards are on the shelf — under „Alle" and „bildhaft".
+     Under another product it would leave nothing, and say why nowhere. */
+  const products = new Set(entries.map((e) => e.meta.product));
+  for (const product of products) {
+    if (product !== "bildhaft") rules.push(`#p-${product}:checked ~ .filter--vorlage { display: none; }`);
+  }
   for (const art of new Set(entries.map((e) => artOf(e.meta)).filter(Boolean))) {
     rules.push(chosen(`v-${art}`));
-    rules.push(`#v-${art}:checked ~ section .karte:not([data-art="${art}"]) { display: none; }`);
+    for (const where of ["p-alle", "p-bildhaft"]) {
+      rules.push(`#${where}:checked ~ #v-${art}:checked ~ section .karte:not([data-art="${art}"]) { display: none; }`);
+    }
   }
   return rules.join("\n");
 }
