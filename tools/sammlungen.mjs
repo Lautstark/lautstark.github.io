@@ -596,7 +596,7 @@ function materialPage(entry, links) {
   const pages = druck.pages.map((page, i) => (many
     ? `<input type="radio" class="wahl" name="${name}" id="${name}-${i + 1}"${i ? "" : " checked"}>` : "")
     + `<figure class="material__seite"><a href="druck/${esc(meta.id)}/${page.file}" data-gross>${sheet(entry, page)}</a>`
-    + `<figcaption>Seite ${i + 1} von ${druck.pages.length}</figcaption></figure>`).join("");
+    + "</figure>").join("");
   const strip = many ? `<div class="material__daumen" aria-label="Seiten">${druck.pages.map((page, i) =>
     `<label for="${name}-${i + 1}"><img width="${page.w}" height="${page.h}" src="druck/${esc(meta.id)}/${page.file}" alt="Seite ${i + 1}">`
     + `<span>${i + 1}</span></label>`).join("")}</div>` : "";
@@ -614,21 +614,24 @@ function materialPage(entry, links) {
       ? `<a class="material__app" href="druck/${esc(meta.id)}/app.png" data-gross><img width="${druck.app.w}" height="${druck.app.h}" `
         + `src="druck/${esc(meta.id)}/app.png" alt="So sieht ${esc(meta.name)} in bildhaft aus"></a>` : "",
     metacom: bothSources(payload) ? METACOM_BOX : "",
+    // Beside the button, not over the pages: one place for what to do with it.
+    pdf: druck.pdf && druck.pages.length
+      ? `<a class="btn" href="druck/${esc(meta.id)}/${esc(druck.pdf)}" download="${esc(meta.name)}.pdf" title="PDF · ${esc(pdfLine(entry))}">⤓ PDF</a>` : "",
     seiten: !druck.pages.length
       ? `<a class="material__app material__app--gross" href="druck/${esc(meta.id)}/app.png" data-gross><img width="${druck.app.w}" `
         + `height="${druck.app.h}" src="druck/${esc(meta.id)}/app.png" alt="So sieht ${esc(meta.name)} in bildhaft aus"></a>`
-      : `${druck.pdf ? `<div class="material__pdf"><span class="karte__zahlen">PDF · ${esc(pdfLine(entry))}</span>`
-      + `<a class="btn" href="druck/${esc(meta.id)}/${esc(druck.pdf)}" download="${esc(meta.name)}.pdf">⤓ PDF herunterladen</a></div>` : ""}`
-      + `<div class="material__seiten${many ? "" : " material__seiten--eine"}"><div class="material__buehne">${pages}</div>${strip}</div>`,
+      : `<div class="material__seiten${many ? "" : " material__seiten--eine"}"><div class="material__buehne">${pages}</div>${strip}</div>`,
     quelle: esc(meta.attribution),
   };
 }
 
-/** That METACOM works too, on a material that has both: what to do, and what it takes. */
+/**
+ * That METACOM works too, on a material that has both. Quiet, in grey: it was
+ * a box in the accent, and two loud things on one page — it and the button —
+ * pulled against each other.
+ */
 const METACOM_BOX = `<div class="material__metacom">
-          <p class="material__metacom-titel">Mit METACOM-Lizenz: alles in METACOM</p>
-          <ol><li><span>1</span>In bildhaft öffnen</li><li><span>2</span>Einmal deinen METACOM-Ordner wählen</li></ol>
-          <p class="hm-klein">Hier siehst du ARASAAC. Mit deiner eigenen METACOM-Lizenz zeigt bildhaft jedes Symbol in METACOM.</p>
+          <p><b>Auch mit METACOM.</b> Hast du eine Lizenz? In bildhaft öffnen und einmal deinen METACOM-Ordner wählen.</p>
         </div>`;
 
 /* -------------------------------------------------------------- assembly --- */

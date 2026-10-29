@@ -294,10 +294,12 @@ footer {
    this page ships, the honest home for those eight lines is a neutral
    lautstark.css generated in Lautstark/design the way the others are. */
 
-.produkt.vorlaut    { --accent: #9B7BFF; --accent-strong: #7652d3; }
-.produkt.mitreden   { --accent: #ff8bc7; --accent-strong: #ac407c; }
-.produkt.bildhaft   { --accent: #ff6b35; --accent-strong: #be3e00; }
-.produkt.wochenwerk { --accent: #3B6FF5; --accent-strong: #2d5ee3; }
+/* With its own soft tone too: without it a bildhaft label sat on vorlaut's
+   lilac. The same tones as the .kachel tints below. */
+.produkt.vorlaut    { --accent: #9B7BFF; --accent-strong: #7652d3; --accent-soft: #f3f1ff; }
+.produkt.mitreden   { --accent: #ff8bc7; --accent-strong: #ac407c; --accent-soft: #ffedf5; }
+.produkt.bildhaft   { --accent: #ff6b35; --accent-strong: #be3e00; --accent-soft: #ffefea; }
+.produkt.wochenwerk { --accent: #3B6FF5; --accent-strong: #2d5ee3; --accent-soft: #edf3ff; }
 
 /* The product's own name over its section, with its mark beside it. This is
    the only place the accent is loud; everything below it is ordinary text. */
@@ -624,7 +626,7 @@ footer {
 .tafelkopf { display: flex; align-items: center; gap: 1rem; }
 .tafelkopf h1 { margin: .3rem 0 0; }
 .tafelkopf > img { border-radius: 10px; background: #fff; border: 1px solid var(--surface-3); padding: 4px; }
-.material { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 2.4rem; align-items: start; }
+.material { display: grid; grid-template-columns: minmax(0, 19rem) minmax(0, 1fr); gap: 2.4rem; align-items: start; }
 .material__links { display: flex; flex-direction: column; gap: .5rem; }
 .material__links .lead { margin: .4rem 0 0; }
 /* The name in a column of 18rem: the label on a line of its own, and under
@@ -641,7 +643,9 @@ footer {
 .material .tafelkopf:not(:has(> img)) h1 { grid-column: 1 / -1; }
 .material .tafelkopf h1 { font-size: clamp(1.5rem, 1.1rem + 1vw, 1.9rem); line-height: 1.15; hyphens: auto; overflow-wrap: break-word; }
 .material__links .marken { margin: .2rem 0 0; }
-.material__oeffnen { margin-top: 1rem; justify-content: center; text-align: center; padding: .7rem 1rem; font-size: 1rem; }
+.material__tun { display: flex; gap: .5rem; margin: 1rem 0 0; }
+.material__tun .btn { white-space: nowrap; }
+.material__oeffnen { flex: 1; justify-content: center; text-align: center; padding: .7rem 1rem; font-size: 1rem; }
 .hm-klein { font-size: .78rem; color: var(--text-faint); margin: 0; }
 .material__app { display: block; margin-top: .6rem; }
 .material__app img {
@@ -649,20 +653,12 @@ footer {
   border: 1px solid var(--surface-3); box-shadow: 0 1px 4px rgb(0 0 0 / .12);
 }
 .material__metacom {
-  margin-top: 1rem; border: 2px solid var(--accent); background: #ffefea;
-  border-radius: var(--radius); padding: 1rem 1.1rem;
+  margin-top: .6rem; background: var(--surface-2); border-radius: var(--radius);
+  padding: .8rem 1rem; font-size: .88rem; color: var(--text-dim); line-height: 1.5;
 }
-.material__metacom-titel { margin: 0 0 .4rem; font-weight: 700; }
-.material__metacom ol {
-  list-style: none; margin: .4rem 0 .5rem; padding: 0; display: grid; gap: .35rem; font-size: .9rem;
-}
-.material__metacom li { display: flex; align-items: center; gap: .55rem; }
-.material__metacom li span {
-  width: 1.4rem; height: 1.4rem; border-radius: 999px; flex: none; display: grid; place-items: center;
-  background: var(--accent); color: #fff; font-weight: 700; font-size: .78rem;
-}
+.material__metacom p { margin: 0; }
+.material__metacom b { color: var(--text); }
 .material__rechts { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
-.material__pdf { display: flex; justify-content: space-between; align-items: center; gap: .8rem; flex-wrap: wrap; }
 .material__seiten { display: grid; grid-template-columns: minmax(0, 1fr) 6rem; gap: 1rem; align-items: start; }
 .material__seiten--eine { grid-template-columns: minmax(0, 1fr); }
 .material__seiten figure { margin: 0; }

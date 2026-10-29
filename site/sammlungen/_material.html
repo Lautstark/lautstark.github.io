@@ -48,9 +48,9 @@
 
 <section class="band band--tafel produkt bildhaft">
   <div class="col">
+    <p class="zurueck"><a href="index.html">‹ Alle Materialien</a></p>
     <div class="material">
       <div class="material__links">
-        <p class="zurueck"><a href="index.html">‹ Alle Materialien</a></p>
         <div class="tafelkopf">
           {{titelbild}}
           <div>
@@ -61,8 +61,9 @@
         <p class="lead">{{beschreibung}}</p>
         <p class="karte__zahlen">{{zahlen}}</p>
         {{marken}}
-        <a class="btn primary material__oeffnen" href="{{oeffnen}}" target="_blank" rel="noopener">In bildhaft öffnen</a>
-        <p class="hm-klein">zum Ändern: Wörter, Symbole, Papier</p>
+        <p class="material__tun">
+          <a class="btn primary material__oeffnen" href="{{oeffnen}}" target="_blank" rel="noopener">In bildhaft öffnen</a>{{pdf}}
+        </p>
         {{bildschirm}}
         {{metacom}}
       </div>
