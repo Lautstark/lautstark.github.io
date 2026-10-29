@@ -1,0 +1,520 @@
+{
+  "kind": "spiel",
+  "heading": "Was kommt als Nächstes?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Schau dir die Reihe genau an. Was kommt als Nächstes? Leg das Bild in das leere Feld.",
+      "s0-0": "Apfel.",
+      "s1-0": "Apfel.",
+      "s2-0": "Birne.",
+      "s3-0": "Apfel.",
+      "s4-0": "Apfel.",
+      "s5-0": "Birne.",
+      "s6-0": "Sonne.",
+      "s7-0": "Sonne.",
+      "s8-0": "Mond.",
+      "s9-0": "Sonne.",
+      "s10-0": "Sonne.",
+      "s11-0": "Mond.",
+      "s12-0": "Auto.",
+      "s13-0": "Auto.",
+      "s14-0": "Bus.",
+      "s15-0": "Auto.",
+      "s16-0": "Auto.",
+      "s17-0": "Bus.",
+      "s18-0": "Fisch.",
+      "s19-0": "Fisch.",
+      "s20-0": "Schmetterling.",
+      "s21-0": "Fisch.",
+      "s22-0": "Fisch.",
+      "s23-0": "Schmetterling.",
+      "s24-0": "Herz.",
+      "s25-0": "Herz.",
+      "s26-0": "Stern.",
+      "s27-0": "Herz.",
+      "s28-0": "Herz.",
+      "s29-0": "Stern."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Apfel",
+      "slots": [
+        {
+          "token": "Apfel",
+          "concept": "apfel",
+          "arasaac": 2462,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel.png"
+        }
+      ]
+    },
+    {
+      "text": "Apfel",
+      "slots": [
+        {
+          "token": "Apfel",
+          "concept": "apfel",
+          "arasaac": 2462,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel.png"
+        }
+      ]
+    },
+    {
+      "text": "Birne",
+      "slots": [
+        {
+          "token": "Birne",
+          "concept": "birne",
+          "arasaac": 2561,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/birne.png"
+        }
+      ]
+    },
+    {
+      "text": "Apfel",
+      "slots": [
+        {
+          "token": "Apfel",
+          "concept": "apfel",
+          "arasaac": 2462,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel.png"
+        }
+      ]
+    },
+    {
+      "text": "Apfel",
+      "slots": [
+        {
+          "token": "Apfel",
+          "concept": "apfel",
+          "arasaac": 2462,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel.png"
+        }
+      ]
+    },
+    {
+      "text": "Birne",
+      "slots": [
+        {
+          "token": "Birne",
+          "concept": "birne",
+          "arasaac": 2561,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/birne.png"
+        }
+      ]
+    },
+    {
+      "text": "Sonne",
+      "slots": [
+        {
+          "token": "Sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png"
+        }
+      ]
+    },
+    {
+      "text": "Sonne",
+      "slots": [
+        {
+          "token": "Sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png"
+        }
+      ]
+    },
+    {
+      "text": "Mond",
+      "slots": [
+        {
+          "token": "Mond",
+          "concept": "mond",
+          "arasaac": 2933,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/mond_gelb.png"
+        }
+      ]
+    },
+    {
+      "text": "Sonne",
+      "slots": [
+        {
+          "token": "Sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png"
+        }
+      ]
+    },
+    {
+      "text": "Sonne",
+      "slots": [
+        {
+          "token": "Sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png"
+        }
+      ]
+    },
+    {
+      "text": "Mond",
+      "slots": [
+        {
+          "token": "Mond",
+          "concept": "mond",
+          "arasaac": 2933,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/mond_gelb.png"
+        }
+      ]
+    },
+    {
+      "text": "Auto",
+      "slots": [
+        {
+          "token": "Auto",
+          "concept": "auto",
+          "arasaac": 2339,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/auto.png"
+        }
+      ]
+    },
+    {
+      "text": "Auto",
+      "slots": [
+        {
+          "token": "Auto",
+          "concept": "auto",
+          "arasaac": 2339,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/auto.png"
+        }
+      ]
+    },
+    {
+      "text": "Bus",
+      "slots": [
+        {
+          "token": "Bus",
+          "concept": "bus",
+          "arasaac": 2263,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/bus1.png"
+        }
+      ]
+    },
+    {
+      "text": "Auto",
+      "slots": [
+        {
+          "token": "Auto",
+          "concept": "auto",
+          "arasaac": 2339,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/auto.png"
+        }
+      ]
+    },
+    {
+      "text": "Auto",
+      "slots": [
+        {
+          "token": "Auto",
+          "concept": "auto",
+          "arasaac": 2339,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/auto.png"
+        }
+      ]
+    },
+    {
+      "text": "Bus",
+      "slots": [
+        {
+          "token": "Bus",
+          "concept": "bus",
+          "arasaac": 2263,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/bus1.png"
+        }
+      ]
+    },
+    {
+      "text": "Fisch",
+      "slots": [
+        {
+          "token": "Fisch",
+          "concept": "fisch",
+          "arasaac": 2520,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/fisch.png"
+        }
+      ]
+    },
+    {
+      "text": "Fisch",
+      "slots": [
+        {
+          "token": "Fisch",
+          "concept": "fisch",
+          "arasaac": 2520,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/fisch.png"
+        }
+      ]
+    },
+    {
+      "text": "Schmetterling",
+      "slots": [
+        {
+          "token": "Schmetterling",
+          "concept": "schmetterling",
+          "arasaac": 26200,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/schmetterling.png"
+        }
+      ]
+    },
+    {
+      "text": "Fisch",
+      "slots": [
+        {
+          "token": "Fisch",
+          "concept": "fisch",
+          "arasaac": 2520,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/fisch.png"
+        }
+      ]
+    },
+    {
+      "text": "Fisch",
+      "slots": [
+        {
+          "token": "Fisch",
+          "concept": "fisch",
+          "arasaac": 2520,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/fisch.png"
+        }
+      ]
+    },
+    {
+      "text": "Schmetterling",
+      "slots": [
+        {
+          "token": "Schmetterling",
+          "concept": "schmetterling",
+          "arasaac": 26200,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/schmetterling.png"
+        }
+      ]
+    },
+    {
+      "text": "Herz",
+      "slots": [
+        {
+          "token": "Herz",
+          "concept": "herz",
+          "arasaac": 4613,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/herzRot.png"
+        }
+      ]
+    },
+    {
+      "text": "Herz",
+      "slots": [
+        {
+          "token": "Herz",
+          "concept": "herz",
+          "arasaac": 4613,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/herzRot.png"
+        }
+      ]
+    },
+    {
+      "text": "Stern",
+      "slots": [
+        {
+          "token": "Stern",
+          "concept": "stern",
+          "arasaac": 4644,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/stern1.png"
+        }
+      ]
+    },
+    {
+      "text": "Herz",
+      "slots": [
+        {
+          "token": "Herz",
+          "concept": "herz",
+          "arasaac": 4613,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/herzRot.png"
+        }
+      ]
+    },
+    {
+      "text": "Herz",
+      "slots": [
+        {
+          "token": "Herz",
+          "concept": "herz",
+          "arasaac": 4613,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/herzRot.png"
+        }
+      ]
+    },
+    {
+      "text": "Stern",
+      "slots": [
+        {
+          "token": "Stern",
+          "concept": "stern",
+          "arasaac": 4644,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/stern1.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": false
+          },
+          {
+            "karte": 2,
+            "platz": false
+          },
+          {
+            "karte": 3,
+            "platz": false
+          },
+          {
+            "karte": 4,
+            "platz": false
+          },
+          {
+            "karte": 5,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 6,
+            "platz": false
+          },
+          {
+            "karte": 7,
+            "platz": false
+          },
+          {
+            "karte": 8,
+            "platz": false
+          },
+          {
+            "karte": 9,
+            "platz": false
+          },
+          {
+            "karte": 10,
+            "platz": false
+          },
+          {
+            "karte": 11,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 12,
+            "platz": false
+          },
+          {
+            "karte": 13,
+            "platz": false
+          },
+          {
+            "karte": 14,
+            "platz": false
+          },
+          {
+            "karte": 15,
+            "platz": false
+          },
+          {
+            "karte": 16,
+            "platz": false
+          },
+          {
+            "karte": 17,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 18,
+            "platz": false
+          },
+          {
+            "karte": 19,
+            "platz": false
+          },
+          {
+            "karte": 20,
+            "platz": false
+          },
+          {
+            "karte": 21,
+            "platz": false
+          },
+          {
+            "karte": 22,
+            "platz": false
+          },
+          {
+            "karte": 23,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 24,
+            "platz": false
+          },
+          {
+            "karte": 25,
+            "platz": false
+          },
+          {
+            "karte": 26,
+            "platz": false
+          },
+          {
+            "karte": 27,
+            "platz": false
+          },
+          {
+            "karte": 28,
+            "platz": false
+          },
+          {
+            "karte": 29,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

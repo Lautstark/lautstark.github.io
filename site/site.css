@@ -419,6 +419,7 @@ footer {
   text-transform: uppercase; color: var(--text-faint);
 }
 .filter .chip { cursor: pointer; }
+.filter--vorlage { border-top: 0; padding-block-start: .5rem; }
 /* Which chip reads as chosen is generated beside the hiding rules — there is no
    class to keep in step with the checked input, which is the point. */
 
@@ -568,13 +569,30 @@ footer {
 .sym-m:focus-visible ~ .symbolwahl label[for$="-m"] { outline: 2px solid var(--accent-strong); outline-offset: 1px; }
 
 /* A bildhaft card: on top what it looks like — its first printed page, or a
-   Wortliste's wall of pictures — on grey, the switch laid over its corner;
-   under it the card's words as on every other card. */
+   Wortliste's wall of pictures — on grey, over its corner that it comes with
+   METACOM too; under it the card's words as on every other card. */
 .karte--blatt { padding: 0; overflow: hidden; gap: 0; position: relative; }
-.karte--blatt .oben { position: relative; padding: 3.2rem 1rem 1rem; background: var(--surface-2); }
+.karte--blatt .oben { position: relative; padding: 2.6rem 1rem 1rem; background: var(--surface-2); }
+/* Said, not offered: nothing to press, so nothing that looks like a button. */
+.auch-m {
+  position: absolute; top: .7rem; left: .9rem; margin: 0;
+  font-size: .7rem; color: var(--text-dim); background: var(--surface);
+  border: 1px solid var(--surface-3); border-radius: var(--radius-pill); padding: .1rem .6rem;
+}
+.auch-m b { color: var(--text); font-weight: 650; }
+
+/* A card with a page of its own is the way there, all of it: the name is the
+   link and its ::after covers the card. Links of their own on the card — the
+   program, a source — stand above it and keep their own click. */
+.karte--ansehen { position: relative; transition: border-color .15s, box-shadow .15s; }
+.karte--ansehen:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgb(0 0 0 / .08); }
+.karte--ansehen:focus-within:has(.karte__ansehen:focus-visible) { outline: 2px solid var(--accent-strong); outline-offset: 2px; }
+.karte__ansehen { color: inherit; text-decoration: none; }
+.karte__ansehen:focus-visible { outline: none; }
+.karte__ansehen::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.karte--ansehen a:not(.karte__ansehen) { position: relative; z-index: 2; }
 .karte--blatt .druck__papier { max-width: none; }
 .karte--blatt .blatt { box-shadow: 0 1px 2px rgb(0 0 0 / .18), 0 4px 12px rgb(0 0 0 / .08); }
-.karte--blatt > .symbolwahl { position: absolute; z-index: 3; top: .7rem; left: .9rem; background: var(--surface); }
 .karte--blatt .karte__text { padding: 1rem 1.3rem 1.3rem; display: flex; flex-direction: column; gap: .7rem; flex: 1; }
 .oben--woerter { aspect-ratio: 297 / 210; display: flex; align-items: center; }
 .karte--blatt .oben--woerter { padding: 1rem; }
@@ -586,25 +604,13 @@ footer {
 .wand img { width: 72%; height: auto; }
 .wand .wand__mehr { font-weight: 700; color: var(--text-dim); font-size: .9rem; }
 
-/* Where METACOM is, in the place of the pictures: two steps, the licence small. */
-.hinweis-m {
-  display: none; position: absolute; inset: 3.2rem 1rem 1rem;
-  align-items: center; justify-content: center; padding: 1rem;
-}
-.sym-m:checked ~ .oben .hinweis-m { display: flex; }
-.sym-m:checked ~ .oben .blatt { filter: grayscale(1) blur(1.5px); opacity: .35; }
-.hinweis-m > div {
-  background: var(--surface); border-radius: 12px; max-width: 19rem;
-  box-shadow: 0 6px 24px rgb(0 0 0 / .16); padding: 1rem 1.15rem;
-}
-.hinweis-m p { margin: 0; }
-.hm-titel { font-weight: 650; font-size: .95rem; margin-bottom: .3rem; }
-.hinweis-m ol, .tafel__metacom ol {
+/* Where METACOM is, on a material's page: two steps, the licence small. */
+.tafel__metacom ol {
   list-style: none; margin: .4rem 0 .5rem; padding: 0; display: grid; gap: .35rem;
   font-size: .88rem; color: var(--text);
 }
-.hinweis-m li, .tafel__metacom li { display: flex; align-items: center; gap: .55rem; }
-.hinweis-m li span, .tafel__metacom li span {
+.tafel__metacom li { display: flex; align-items: center; gap: .55rem; }
+.tafel__metacom li span {
   width: 1.4rem; height: 1.4rem; border-radius: 999px; flex: none; display: grid; place-items: center;
   background: #ffefea; color: #be3e00; font-weight: 700; font-size: .78rem;
 }
@@ -734,17 +740,11 @@ footer {
 .deckel { width: min(100cqw, calc(100cqh * var(--seite))); }
 .karte--blatt .stapel { padding: 0 0 5% 5%; }
 .karte--blatt .stapel__hinten { inset: 0 5% 5% 0; }
-.karte--blatt > .symbolwahl { top: .6rem; left: .7rem; }
-.karte--blatt .symbolwahl label { padding: .15rem .6rem; font-size: .72rem; }
+.karte--blatt .auch-m { top: .6rem; left: .7rem; }
 .karte--blatt .karte__text { padding: .9rem 1rem 1rem; gap: .55rem; }
 .karte--blatt .karte__was {
   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
 }
-.karte--blatt .hinweis-m { inset: 2.7rem .6rem .6rem; padding: .4rem; }
-.karte--blatt .hinweis-m > div { padding: .75rem .85rem; }
-.karte--blatt .hm-titel { font-size: .86rem; }
-.karte--blatt .hinweis-m ol { font-size: .8rem; gap: .25rem; margin: .3rem 0 .35rem; }
-.karte--blatt .hm-klein { font-size: .72rem; }
 .karte--blatt .wand { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; }
 .karte--blatt .wand span { min-width: 0; }
 .karte--blatt .wand .wand__mehr { font-size: .72rem; }

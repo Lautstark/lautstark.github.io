@@ -1,0 +1,176 @@
+{
+  "kind": "spiel",
+  "heading": "Welche Form hat das?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Welche Form hat das? Leg jedes Bild zu seiner Form.",
+      "s0-0": "Der Kreis. Was ist rund wie ein Kreis?",
+      "s1-0": "Der Teller.",
+      "s2-0": "Der Ball.",
+      "s3-0": "Das Dreieck. Was sieht aus wie ein Dreieck?",
+      "s4-0": "Das Zelt.",
+      "s5-0": "Die Triangel.",
+      "s6-0": "Das Quadrat. Was sieht aus wie ein Quadrat?",
+      "s7-0": "Das Fenster.",
+      "s8-0": "Das Geschenk."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Kreis",
+      "slots": [
+        {
+          "token": "Kreis",
+          "concept": "kreis",
+          "arasaac": 4603,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/kreis1.png"
+        }
+      ]
+    },
+    {
+      "text": "Teller",
+      "slots": [
+        {
+          "token": "Teller",
+          "concept": "teller",
+          "arasaac": 2532,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/teller.png"
+        }
+      ]
+    },
+    {
+      "text": "Ball",
+      "slots": [
+        {
+          "token": "Ball",
+          "concept": "ball",
+          "arasaac": 9113,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/ballrot.png"
+        }
+      ]
+    },
+    {
+      "text": "Dreieck",
+      "slots": [
+        {
+          "token": "Dreieck",
+          "concept": "dreieck",
+          "arasaac": 4763,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/dreieck1.png"
+        }
+      ]
+    },
+    {
+      "text": "Zelt",
+      "slots": [
+        {
+          "token": "Zelt",
+          "concept": "zelt",
+          "arasaac": 4756,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Urlaub_Spass/zelt.png"
+        }
+      ]
+    },
+    {
+      "text": "Triangel",
+      "slots": [
+        {
+          "token": "Triangel",
+          "concept": "triangel",
+          "arasaac": 2604,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Musik/triangel.png"
+        }
+      ]
+    },
+    {
+      "text": "Quadrat",
+      "slots": [
+        {
+          "token": "Quadrat",
+          "concept": "quadrat",
+          "arasaac": 4616,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/quadrat1.png"
+        }
+      ]
+    },
+    {
+      "text": "Fenster",
+      "slots": [
+        {
+          "token": "Fenster",
+          "concept": "fenster",
+          "arasaac": 2611,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/fenster.png"
+        }
+      ]
+    },
+    {
+      "text": "Geschenk",
+      "slots": [
+        {
+          "token": "Geschenk",
+          "concept": "geschenk",
+          "arasaac": 25381,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Feste/geschenk.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": true
+          },
+          {
+            "karte": 2,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 3,
+            "platz": false
+          },
+          {
+            "karte": 4,
+            "platz": true
+          },
+          {
+            "karte": 5,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 6,
+            "platz": false
+          },
+          {
+            "karte": 7,
+            "platz": true
+          },
+          {
+            "karte": 8,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

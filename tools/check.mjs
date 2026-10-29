@@ -223,6 +223,13 @@ if (existsSync(ENTRIES)) {
         !["zutat", "hilfsmittel", "schritt"].includes(row.part))) {
         problems.push(`${here}/${entry.payload}: every row of a Rezept is a zutat, a hilfsmittel or a schritt.`);
       }
+      if (payload.kind === "spiel") {
+        const game = payload.game?.rows ?? [];
+        if (!game.length || game.some((row) => !(row.zellen ?? []).length || row.zellen.some((zelle) =>
+          !(Number.isInteger(zelle.karte) && zelle.karte >= 0 && zelle.karte < rows) || typeof zelle.platz !== "boolean"))) {
+          problems.push(`${here}/${entry.payload}: a Spiel needs rows, each of cells naming a row that is there and whether its place stays free.`);
+        }
+      }
       if (payload.kind === "tafel") {
         const { cols, rows, cells } = payload.board ?? {};
         const n = (payload.sentences ?? []).length;

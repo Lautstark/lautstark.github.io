@@ -1,0 +1,228 @@
+{
+  "kind": "spiel",
+  "heading": "Was brauchst du bei diesem Wetter?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Was brauchst du bei diesem Wetter? Leg die Sachen zum passenden Wetter.",
+      "s0-0": "Es regnet. Was brauchst du?",
+      "s1-0": "Die Gummistiefel.",
+      "s2-0": "Der Regenschirm.",
+      "s3-0": "Die Regenjacke.",
+      "s4-0": "Die Sonne scheint. Was brauchst du?",
+      "s5-0": "Die Kappe.",
+      "s6-0": "Die Sonnenbrille.",
+      "s7-0": "Das T-Shirt.",
+      "s8-0": "Es schneit. Was brauchst du?",
+      "s9-0": "Die Mütze.",
+      "s10-0": "Der Handschuh.",
+      "s11-0": "Der Schal."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Regen",
+      "slots": [
+        {
+          "token": "Regen",
+          "concept": "regen",
+          "arasaac": 3123,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/regen.png"
+        }
+      ]
+    },
+    {
+      "text": "Gummistiefel",
+      "slots": [
+        {
+          "token": "Gummistiefel",
+          "concept": "gummistiefel",
+          "arasaac": 2287,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/gummistiefel.png"
+        }
+      ]
+    },
+    {
+      "text": "Regenschirm",
+      "slots": [
+        {
+          "token": "Regenschirm",
+          "concept": "regenschirm",
+          "arasaac": 2500,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/regenschirm.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "regenjacke",
+          "concept": "regenjacke",
+          "arasaac": 4927,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/regenjacke.png",
+          "label": "Regenjacke"
+        }
+      ]
+    },
+    {
+      "text": "Sonne",
+      "slots": [
+        {
+          "token": "Sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png"
+        }
+      ]
+    },
+    {
+      "text": "Hut",
+      "slots": [
+        {
+          "token": "Hut",
+          "concept": "hut",
+          "arasaac": 2411,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/kappe.png",
+          "label": "Kappe"
+        }
+      ]
+    },
+    {
+      "text": "Sonnenbrille",
+      "slots": [
+        {
+          "token": "Sonnenbrille",
+          "concept": "sonnenbrille",
+          "arasaac": 3330,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hilfsmittel/sonnenbrille.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "tshirt rot",
+          "concept": "tshirt rot",
+          "arasaac": 2309,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/tshirt_rot.png",
+          "label": "T-Shirt"
+        }
+      ]
+    },
+    {
+      "text": "Schnee",
+      "slots": [
+        {
+          "token": "Schnee",
+          "concept": "schnee",
+          "arasaac": 38027,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/schneeflocke.png"
+        }
+      ]
+    },
+    {
+      "text": "Mütze",
+      "slots": [
+        {
+          "token": "Mütze",
+          "concept": "mütze",
+          "arasaac": 2412,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/muetze1.png"
+        }
+      ]
+    },
+    {
+      "text": "Handschuh",
+      "slots": [
+        {
+          "token": "Handschuh",
+          "concept": "handschuh",
+          "arasaac": 7122,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/handschuh.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "schal",
+          "concept": "schal",
+          "arasaac": 2290,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/schal.png",
+          "label": "Schal"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": true
+          },
+          {
+            "karte": 2,
+            "platz": true
+          },
+          {
+            "karte": 3,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 4,
+            "platz": false
+          },
+          {
+            "karte": 5,
+            "platz": true
+          },
+          {
+            "karte": 6,
+            "platz": true
+          },
+          {
+            "karte": 7,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 8,
+            "platz": false
+          },
+          {
+            "karte": 9,
+            "platz": true
+          },
+          {
+            "karte": 10,
+            "platz": true
+          },
+          {
+            "karte": 11,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

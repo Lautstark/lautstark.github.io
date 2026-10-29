@@ -1,0 +1,364 @@
+{
+  "kind": "spiel",
+  "heading": "Was fehlt hier?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Was fehlt hier? Leg das gleiche Bild in das leere Feld.",
+      "s0-0": "Apfel.",
+      "s1-0": "Apfel.",
+      "s2-0": "Apfel.",
+      "s3-0": "Apfel.",
+      "s4-0": "Auto.",
+      "s5-0": "Auto.",
+      "s6-0": "Auto.",
+      "s7-0": "Auto.",
+      "s8-0": "Ball.",
+      "s9-0": "Ball.",
+      "s10-0": "Ball.",
+      "s11-0": "Ball.",
+      "s12-0": "Hund.",
+      "s13-0": "Hund.",
+      "s14-0": "Hund.",
+      "s15-0": "Hund.",
+      "s16-0": "Sonne.",
+      "s17-0": "Sonne.",
+      "s18-0": "Sonne.",
+      "s19-0": "Sonne."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Apfel",
+      "slots": [
+        {
+          "token": "Apfel",
+          "concept": "apfel",
+          "arasaac": 2462,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel.png"
+        }
+      ]
+    },
+    {
+      "text": "Apfel",
+      "slots": [
+        {
+          "token": "Apfel",
+          "concept": "apfel",
+          "arasaac": 2462,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel.png"
+        }
+      ]
+    },
+    {
+      "text": "Apfel",
+      "slots": [
+        {
+          "token": "Apfel",
+          "concept": "apfel",
+          "arasaac": 2462,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel.png"
+        }
+      ]
+    },
+    {
+      "text": "Apfel",
+      "slots": [
+        {
+          "token": "Apfel",
+          "concept": "apfel",
+          "arasaac": 2462,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel.png"
+        }
+      ]
+    },
+    {
+      "text": "Auto",
+      "slots": [
+        {
+          "token": "Auto",
+          "concept": "auto",
+          "arasaac": 2339,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/auto.png"
+        }
+      ]
+    },
+    {
+      "text": "Auto",
+      "slots": [
+        {
+          "token": "Auto",
+          "concept": "auto",
+          "arasaac": 2339,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/auto.png"
+        }
+      ]
+    },
+    {
+      "text": "Auto",
+      "slots": [
+        {
+          "token": "Auto",
+          "concept": "auto",
+          "arasaac": 2339,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/auto.png"
+        }
+      ]
+    },
+    {
+      "text": "Auto",
+      "slots": [
+        {
+          "token": "Auto",
+          "concept": "auto",
+          "arasaac": 2339,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/auto.png"
+        }
+      ]
+    },
+    {
+      "text": "Ball",
+      "slots": [
+        {
+          "token": "Ball",
+          "concept": "ball",
+          "arasaac": 9113,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/ballrot.png"
+        }
+      ]
+    },
+    {
+      "text": "Ball",
+      "slots": [
+        {
+          "token": "Ball",
+          "concept": "ball",
+          "arasaac": 9113,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/ballrot.png"
+        }
+      ]
+    },
+    {
+      "text": "Ball",
+      "slots": [
+        {
+          "token": "Ball",
+          "concept": "ball",
+          "arasaac": 9113,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/ballrot.png"
+        }
+      ]
+    },
+    {
+      "text": "Ball",
+      "slots": [
+        {
+          "token": "Ball",
+          "concept": "ball",
+          "arasaac": 9113,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/ballrot.png"
+        }
+      ]
+    },
+    {
+      "text": "Hund",
+      "slots": [
+        {
+          "token": "Hund",
+          "concept": "hund",
+          "arasaac": 2517,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/hund2.png"
+        }
+      ]
+    },
+    {
+      "text": "Hund",
+      "slots": [
+        {
+          "token": "Hund",
+          "concept": "hund",
+          "arasaac": 2517,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/hund2.png"
+        }
+      ]
+    },
+    {
+      "text": "Hund",
+      "slots": [
+        {
+          "token": "Hund",
+          "concept": "hund",
+          "arasaac": 2517,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/hund2.png"
+        }
+      ]
+    },
+    {
+      "text": "Hund",
+      "slots": [
+        {
+          "token": "Hund",
+          "concept": "hund",
+          "arasaac": 2517,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/hund2.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png",
+          "label": "Sonne"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png",
+          "label": "Sonne"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png",
+          "label": "Sonne"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png",
+          "label": "Sonne"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": false
+          },
+          {
+            "karte": 2,
+            "platz": false
+          },
+          {
+            "karte": 3,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 4,
+            "platz": false
+          },
+          {
+            "karte": 5,
+            "platz": false
+          },
+          {
+            "karte": 6,
+            "platz": false
+          },
+          {
+            "karte": 7,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 8,
+            "platz": false
+          },
+          {
+            "karte": 9,
+            "platz": false
+          },
+          {
+            "karte": 10,
+            "platz": false
+          },
+          {
+            "karte": 11,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 12,
+            "platz": false
+          },
+          {
+            "karte": 13,
+            "platz": false
+          },
+          {
+            "karte": 14,
+            "platz": false
+          },
+          {
+            "karte": 15,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 16,
+            "platz": false
+          },
+          {
+            "karte": 17,
+            "platz": false
+          },
+          {
+            "karte": 18,
+            "platz": false
+          },
+          {
+            "karte": 19,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

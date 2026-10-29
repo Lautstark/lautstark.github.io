@@ -1,0 +1,309 @@
+{
+  "kind": "spiel",
+  "heading": "Was ist das Gegenteil?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Was ist das Gegenteil? Leg das passende Bild daneben.",
+      "s0-0": "Der Tag. Was ist das Gegenteil von Tag?",
+      "s1-0": "Die Nacht.",
+      "s2-0": "Warm. Was ist das Gegenteil von warm?",
+      "s3-0": "Kalt.",
+      "s4-0": "Groß. Was ist das Gegenteil von groß?",
+      "s5-0": "Klein.",
+      "s6-0": "Laut. Was ist das Gegenteil von laut?",
+      "s7-0": "Leise.",
+      "s8-0": "Schnell. Was ist das Gegenteil von schnell?",
+      "s9-0": "Langsam.",
+      "s10-0": "Auf. Was ist das Gegenteil von auf?",
+      "s11-0": "Zu.",
+      "s12-0": "Drüber. Was ist das Gegenteil von drüber?",
+      "s13-0": "Drunter.",
+      "s14-0": "Viel. Was ist das Gegenteil von viel?",
+      "s15-0": "Wenig."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Tag",
+      "slots": [
+        {
+          "token": "Tag",
+          "concept": "tag",
+          "arasaac": 7022,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zeit/tag.png"
+        }
+      ]
+    },
+    {
+      "text": "Nacht",
+      "slots": [
+        {
+          "token": "Nacht",
+          "concept": "nacht",
+          "arasaac": 7181,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/nacht1.png"
+        }
+      ]
+    },
+    {
+      "text": "warm",
+      "slots": [
+        {
+          "token": "warm",
+          "concept": "warm",
+          "arasaac": 26716,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/warm.png"
+        }
+      ]
+    },
+    {
+      "text": "kalt",
+      "slots": [
+        {
+          "token": "kalt",
+          "concept": "kalt",
+          "arasaac": 26865,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/kalt.png"
+        }
+      ]
+    },
+    {
+      "text": "groß",
+      "slots": [
+        {
+          "token": "groß",
+          "concept": "groß",
+          "arasaac": 4658,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/gross.png"
+        }
+      ]
+    },
+    {
+      "text": "klein",
+      "slots": [
+        {
+          "token": "klein",
+          "concept": "klein",
+          "arasaac": 4716,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/klein.png"
+        }
+      ]
+    },
+    {
+      "text": "laut",
+      "slots": [
+        {
+          "token": "laut",
+          "concept": "laut",
+          "arasaac": 7157,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/laut.png"
+        }
+      ]
+    },
+    {
+      "text": "leise",
+      "slots": [
+        {
+          "token": "leise",
+          "concept": "leise",
+          "arasaac": 25453,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/leise.png"
+        }
+      ]
+    },
+    {
+      "text": "schnell",
+      "slots": [
+        {
+          "token": "schnell",
+          "concept": "schnell",
+          "arasaac": 5306,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/schnell.png"
+        }
+      ]
+    },
+    {
+      "text": "langsam",
+      "slots": [
+        {
+          "token": "langsam",
+          "concept": "langsam",
+          "arasaac": 4676,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/langsam.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "auf",
+          "concept": "auf",
+          "arasaac": 4549,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/auf.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "zu",
+          "concept": "zu",
+          "arasaac": 4596,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/zu.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "drueber",
+          "concept": "drueber",
+          "arasaac": 5388,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/drueber.png",
+          "label": "drüber"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "drunter",
+          "concept": "drunter",
+          "arasaac": 5355,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/drunter.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "viel",
+          "concept": "viel",
+          "arasaac": 5521,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/viel2.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "wenig",
+          "concept": "wenig",
+          "arasaac": 5546,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/wenig2.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 2,
+            "platz": false
+          },
+          {
+            "karte": 3,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 4,
+            "platz": false
+          },
+          {
+            "karte": 5,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 6,
+            "platz": false
+          },
+          {
+            "karte": 7,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 8,
+            "platz": false
+          },
+          {
+            "karte": 9,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 10,
+            "platz": false
+          },
+          {
+            "karte": 11,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 12,
+            "platz": false
+          },
+          {
+            "karte": 13,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 14,
+            "platz": false
+          },
+          {
+            "karte": 15,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

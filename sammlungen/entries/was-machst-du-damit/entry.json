@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "id": "was-machst-du-damit",
+  "product": "bildhaft",
+  "name": "Was machst du damit? (II)",
+  "description": "Was macht man mit Auge, Ohr, Nase, Mund, Hand und Fuß?",
+  "tags": [
+    "Spiel",
+    "Stufe II"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [],
+  "payload": "spiel.json"
+}

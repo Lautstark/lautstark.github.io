@@ -1,0 +1,779 @@
+{
+  "kind": "rezept",
+  "title": {
+    "token": "Marmorkuchen",
+    "concept": "marmorkuchen",
+    "arasaac": 2502,
+    "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kuchentorte.png",
+    "label": "Marmorkuchen"
+  },
+  "print": {
+    "symbolSizeMm": 16,
+    "cutMarginMm": 1,
+    "labelSizePt": 7,
+    "sheetFit": "grid",
+    "cardWidthMm": 54,
+    "cardHeightMm": 84,
+    "gridCols": 6,
+    "anybookCircle": true,
+    "anybookPlace": "below",
+    "titleLine": false,
+    "cardBorderColor": "#2e2e2e",
+    "anybookSay": {
+      "s24": "Eine ganze Butter in die Rührschüssel geben",
+      "s17": "Ein Päckchen Vanillezucker in die Rührschüssel geben",
+      "s21": "Einen gelben Messlöffel Backpulver in die Rührschüssel geben",
+      "s26": "Backofen auf hundertachtzig Grad Umluft vorheizen",
+      "s28": "Einen orangen Becher Kakao zum restlichen Teig geben",
+      "s14-0": "Springform achtundzwanzig Zentimeter",
+      "s16": "Sechs Eier aufschlagen und in die Rührschüssel geben",
+      "s18": "Zwei rote Becher Zucker in die Rührschüssel geben",
+      "s19": "Eier und Zucker fünf Minuten schaumig schlagen",
+      "s20": "Vier rote Becher Mehl in die Rührschüssel geben",
+      "s22": "Zwei orange Becher Milch in die Rührschüssel gießen",
+      "s23": "Zwei orange Becher Öl in die Rührschüssel geben",
+      "s30": "Kuchen bei hundertachtzig Grad fünfundvierzig Minuten backen"
+    }
+  },
+  "sentences": [
+    {
+      "text": "Mehl",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Mehl",
+          "concept": "mehl",
+          "arasaac": 8600,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mehl.png",
+          "label": "Mehl"
+        }
+      ]
+    },
+    {
+      "text": "Zucker",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Zucker",
+          "concept": "zucker",
+          "arasaac": 25560,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucker.png",
+          "label": "Zucker"
+        }
+      ]
+    },
+    {
+      "text": "Eier",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Eier",
+          "concept": "eier",
+          "arasaac": 2427,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/ei.png",
+          "label": "Eier"
+        }
+      ]
+    },
+    {
+      "text": "Butter",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Butter",
+          "concept": "butter",
+          "arasaac": 2461,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/butter.png",
+          "label": "Butter"
+        }
+      ]
+    },
+    {
+      "text": "Öl",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Öl",
+          "concept": "öl",
+          "arasaac": 2246,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/oel.png",
+          "label": "Öl"
+        }
+      ]
+    },
+    {
+      "text": "Milch",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Milch",
+          "concept": "milch",
+          "arasaac": 2445,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/milch.png",
+          "label": "Milch"
+        }
+      ]
+    },
+    {
+      "text": "Backpulver",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Backpulver",
+          "concept": "backpulver",
+          "arasaac": 37250,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/backpulver.png",
+          "label": "Backpulver"
+        }
+      ]
+    },
+    {
+      "text": "Vanillezucker",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Vanillezucker",
+          "concept": "vanillezucker",
+          "arasaac": 28679,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/vanillezucker.png",
+          "label": "Vanillezucker"
+        }
+      ]
+    },
+    {
+      "text": "Kakao",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Kakao",
+          "concept": "kakao",
+          "arasaac": 4940,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/kakaopulver.png",
+          "label": "Kakao"
+        }
+      ]
+    },
+    {
+      "text": "Roter Becher",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Roter Becher",
+          "concept": "roter becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
+          "label": "Roter Becher"
+        }
+      ]
+    },
+    {
+      "text": "Oranger Becher",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Oranger Becher",
+          "concept": "oranger becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_orange1_30ml.png",
+          "label": "Oranger Becher"
+        }
+      ]
+    },
+    {
+      "text": "Gelber Messlöffel",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Gelber Messlöffel",
+          "concept": "gelber messloffel",
+          "arasaac": 39645,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gelb1_5ml.png",
+          "label": "Gelber Messlöffel"
+        }
+      ]
+    },
+    {
+      "text": "Rührschüssel",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Rührschüssel",
+          "concept": "ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "Handmixer",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Handmixer",
+          "concept": "handmixer",
+          "arasaac": 38038,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/kuechenmaschinegrau.png",
+          "label": "Küchenmaschine"
+        }
+      ]
+    },
+    {
+      "text": "Springform Ø 28 cm",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Springform Ø 28 cm",
+          "concept": "springform ø 28 cm",
+          "arasaac": 32470,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/springform.png",
+          "label": "Springform Ø 28 cm"
+        }
+      ]
+    },
+    {
+      "text": "Gabel",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Gabel",
+          "concept": "gabel",
+          "arasaac": 2588,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/gabel1.png",
+          "label": "Gabel"
+        }
+      ]
+    },
+    {
+      "text": "6 Eier aufschlagen und in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "6",
+          "concept": "6",
+          "arasaac": 2632,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/6.png",
+          "label": "Sechs"
+        },
+        {
+          "token": "Eier aufschlagen",
+          "concept": "eier aufschlagen",
+          "arasaac": 8984,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/ei_aufschlagen2.png",
+          "label": "Eier aufschlagen"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "1 Päckchen Vanillezucker in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "1",
+          "concept": "1",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Eins"
+        },
+        {
+          "token": "Päckchen Vanillinzucker",
+          "concept": "packchen vanillinzucker",
+          "arasaac": 28679,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/vanillezucker.png",
+          "label": "Päckchen Vanillezucker"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "2 rote Becher Zucker in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "2",
+          "concept": "2",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "Zwei"
+        },
+        {
+          "token": "rote Becher",
+          "concept": "rote becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
+          "label": "rote Becher"
+        },
+        {
+          "token": "Zucker",
+          "concept": "zucker",
+          "arasaac": 25560,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucker.png",
+          "label": "Zucker"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "Eier und Zucker 5 Minuten schaumig schlagen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        },
+        {
+          "token": "mit dem Handmixer",
+          "concept": "mit dem handmixer",
+          "arasaac": 38038,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/kuechenmaschinegrau.png",
+          "label": "mit der Küchenmaschine"
+        },
+        {
+          "token": "5 Minuten",
+          "concept": "5 minuten",
+          "arasaac": 37659,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zeit/5minuten_timer.png",
+          "label": "5 Minuten"
+        },
+        {
+          "token": "schaumig rühren",
+          "concept": "schaumig ruhren",
+          "arasaac": 25738,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/ruehren.png",
+          "label": "schaumig rühren"
+        }
+      ]
+    },
+    {
+      "text": "4 rote Becher Mehl in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "4",
+          "concept": "4",
+          "arasaac": 2630,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/4.png",
+          "label": "Vier"
+        },
+        {
+          "token": "rote Becher",
+          "concept": "rote becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
+          "label": "rote Becher"
+        },
+        {
+          "token": "Mehl",
+          "concept": "mehl",
+          "arasaac": 8600,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mehl.png",
+          "label": "Mehl"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "1 gelben Messlöffel Backpulver in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "1",
+          "concept": "1",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Eins"
+        },
+        {
+          "token": "gelber Messlöffel",
+          "concept": "gelber messloffel",
+          "arasaac": 39645,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gelb1_5ml.png",
+          "label": "gelber Messlöffel"
+        },
+        {
+          "token": "Backpulver",
+          "concept": "backpulver",
+          "arasaac": 37250,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/backpulver.png",
+          "label": "Backpulver"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "2 orange Becher Milch in die Rührschüssel gießen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "2",
+          "concept": "2",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "Zwei"
+        },
+        {
+          "token": "orange Becher",
+          "concept": "orange becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_orange1_30ml.png",
+          "label": "orange Becher"
+        },
+        {
+          "token": "Milch",
+          "concept": "milch",
+          "arasaac": 2445,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/milch.png",
+          "label": "Milch"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "2 orange Becher Öl in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "2",
+          "concept": "2",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "Zwei"
+        },
+        {
+          "token": "orange Becher",
+          "concept": "orange becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_orange1_30ml.png",
+          "label": "orange Becher"
+        },
+        {
+          "token": "Öl",
+          "concept": "ol",
+          "arasaac": 2246,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/oel.png",
+          "label": "Öl"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "1 ganze Butter in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "1",
+          "concept": "1",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Eins"
+        },
+        {
+          "token": "ganze Butter",
+          "concept": "ganze butter",
+          "arasaac": 2461,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/butter.png",
+          "label": "ganze Butter"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "Alle Zutaten zu einem glatten Teig verrühren",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        },
+        {
+          "token": "mit dem Handmixer",
+          "concept": "mit dem handmixer",
+          "arasaac": 38038,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/kuechenmaschinegrau.png",
+          "label": "mit der Küchenmaschine"
+        },
+        {
+          "token": "gut verrühren",
+          "concept": "gut verruhren",
+          "arasaac": 25738,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/ruehren.png",
+          "label": "gut verrühren"
+        }
+      ]
+    },
+    {
+      "text": "Backofen auf 180 °C Umluft vorheizen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "180 °C Umluft",
+          "concept": "180 °c umluft",
+          "arasaac": 2426,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/ofen.png",
+          "label": "180 °C Umluft"
+        },
+        {
+          "token": "vorheizen",
+          "concept": "vorheizen",
+          "arasaac": 5487,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/backenofen.png",
+          "label": "vorheizen"
+        }
+      ]
+    },
+    {
+      "text": "Die Hälfte des hellen Teigs in die Form geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "die Hälfte",
+          "concept": "die halfte",
+          "arasaac": 5516,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Sonstiges/halb_haelfte.png",
+          "label": "die Hälfte"
+        },
+        {
+          "token": "heller Teig",
+          "concept": "heller teig",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "heller Teig"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Form mit Backpapier",
+          "concept": "die form mit backpapier",
+          "arasaac": 32470,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/springform.png",
+          "label": "die Form mit Backpapier"
+        }
+      ]
+    },
+    {
+      "text": "1 orangen Becher Kakao zum restlichen Teig geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "1",
+          "concept": "1",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Eins"
+        },
+        {
+          "token": "oranger Becher",
+          "concept": "oranger becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_orange1_30ml.png",
+          "label": "oranger Becher"
+        },
+        {
+          "token": "Kakao",
+          "concept": "kakao",
+          "arasaac": 4940,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/kakaopulver.png",
+          "label": "Kakao"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "den restlichen Teig",
+          "concept": "den restlichen teig",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "den restlichen Teig"
+        }
+      ]
+    },
+    {
+      "text": "Dunklen Teig in die Form geben und mit der Gabel marmorieren",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "dunkler Teig",
+          "concept": "dunkler teig",
+          "arasaac": 38442,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/teig.png",
+          "label": "dunkler Teig"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Form",
+          "concept": "die form",
+          "arasaac": 32470,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/springform.png",
+          "label": "die Form"
+        },
+        {
+          "token": "mit der Gabel marmorieren",
+          "concept": "mit der gabel marmorieren",
+          "arasaac": 2588,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/gabel1.png",
+          "label": "mit der Gabel marmorieren"
+        }
+      ]
+    },
+    {
+      "text": "Kuchen bei 180 °C 45 Minuten backen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Kuchen",
+          "concept": "kuchen",
+          "arasaac": 32470,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/springform.png",
+          "label": "Kuchen"
+        },
+        {
+          "token": "180 °C",
+          "concept": "180 c",
+          "arasaac": 2426,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/ofen.png",
+          "label": "180 °C"
+        },
+        {
+          "token": "45 Minuten",
+          "concept": "45 minuten",
+          "arasaac": 37659,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zeit/45minuten_timer.png",
+          "label": "45 Minuten"
+        },
+        {
+          "token": "backen",
+          "concept": "backen",
+          "arasaac": 5487,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/backenofen.png",
+          "label": "backen"
+        }
+      ]
+    }
+  ]
+}

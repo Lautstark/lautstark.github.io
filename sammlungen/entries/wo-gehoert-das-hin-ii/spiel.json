@@ -1,0 +1,293 @@
+{
+  "kind": "spiel",
+  "heading": "Wo gehört das hin?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Wo gehört das hin? Leg jedes Bild in die richtige Reihe.",
+      "s0-0": "Die Kleidung. Hier kommt alles zum Anziehen hin.",
+      "s1-0": "Die Hose.",
+      "s2-0": "Die Jacke.",
+      "s3-0": "Die Mütze.",
+      "s4-0": "Die Möbel. Hier kommen die Möbel hin.",
+      "s5-0": "Das Bett.",
+      "s6-0": "Der Tisch.",
+      "s7-0": "Das Sofa.",
+      "s8-0": "Die Musikinstrumente. Hier kommt alles hin, womit man Musik macht.",
+      "s9-0": "Die Trommel.",
+      "s10-0": "Die Gitarre.",
+      "s11-0": "Die Rassel.",
+      "s12-0": "Das Spielzeug. Hier kommt alles zum Spielen hin.",
+      "s13-0": "Die Puppe.",
+      "s14-0": "Der Teddy.",
+      "s15-0": "Der Ball."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Kleidung",
+      "slots": [
+        {
+          "token": "Kleidung",
+          "concept": "kleidung",
+          "arasaac": 7233,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/kleidung.png"
+        }
+      ]
+    },
+    {
+      "text": "Hose",
+      "slots": [
+        {
+          "token": "Hose",
+          "concept": "hose",
+          "arasaac": 2565,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/hose2.png"
+        }
+      ]
+    },
+    {
+      "text": "Jacke",
+      "slots": [
+        {
+          "token": "Jacke",
+          "concept": "jacke",
+          "arasaac": 2319,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/jacke3.png"
+        }
+      ]
+    },
+    {
+      "text": "Mütze",
+      "slots": [
+        {
+          "token": "Mütze",
+          "concept": "mütze",
+          "arasaac": 2412,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/muetze1.png"
+        }
+      ]
+    },
+    {
+      "text": "Möbel",
+      "slots": [
+        {
+          "token": "Möbel",
+          "concept": "möbel",
+          "arasaac": 32594,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/moebel.png"
+        }
+      ]
+    },
+    {
+      "text": "Bett",
+      "slots": [
+        {
+          "token": "Bett",
+          "concept": "bett",
+          "arasaac": 25900,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/bett2.png"
+        }
+      ]
+    },
+    {
+      "text": "Tisch",
+      "slots": [
+        {
+          "token": "Tisch",
+          "concept": "tisch",
+          "arasaac": 3129,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/tischbraun.png"
+        }
+      ]
+    },
+    {
+      "text": "Sofa",
+      "slots": [
+        {
+          "token": "Sofa",
+          "concept": "sofa",
+          "arasaac": 25479,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/Sofa.png"
+        }
+      ]
+    },
+    {
+      "text": "Musik",
+      "slots": [
+        {
+          "token": "Musik",
+          "concept": "musik",
+          "arasaac": 8608,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Musik/musikinstrumente.png",
+          "label": "Musikinstrumente"
+        }
+      ]
+    },
+    {
+      "text": "Trommel",
+      "slots": [
+        {
+          "token": "Trommel",
+          "concept": "trommel",
+          "arasaac": 2578,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Musik/trommel.png"
+        }
+      ]
+    },
+    {
+      "text": "Gitarre",
+      "slots": [
+        {
+          "token": "Gitarre",
+          "concept": "gitarre",
+          "arasaac": 2417,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Musik/gitarre.png"
+        }
+      ]
+    },
+    {
+      "text": "Rassel",
+      "slots": [
+        {
+          "token": "Rassel",
+          "concept": "rassel",
+          "arasaac": 7254,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Musik/rassel.png"
+        }
+      ]
+    },
+    {
+      "text": "Spielzeug",
+      "slots": [
+        {
+          "token": "Spielzeug",
+          "concept": "spielzeug",
+          "arasaac": 9813,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/spielzeug1.png"
+        }
+      ]
+    },
+    {
+      "text": "Puppe",
+      "slots": [
+        {
+          "token": "Puppe",
+          "concept": "puppe",
+          "arasaac": 26238,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/puppe.png"
+        }
+      ]
+    },
+    {
+      "text": "Teddy",
+      "slots": [
+        {
+          "token": "Teddy",
+          "concept": "teddy",
+          "arasaac": 4945,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/teddy.png"
+        }
+      ]
+    },
+    {
+      "text": "Ball",
+      "slots": [
+        {
+          "token": "Ball",
+          "concept": "ball",
+          "arasaac": 9113,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/ballrot.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": true
+          },
+          {
+            "karte": 2,
+            "platz": true
+          },
+          {
+            "karte": 3,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 4,
+            "platz": false
+          },
+          {
+            "karte": 5,
+            "platz": true
+          },
+          {
+            "karte": 6,
+            "platz": true
+          },
+          {
+            "karte": 7,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 8,
+            "platz": false
+          },
+          {
+            "karte": 9,
+            "platz": true
+          },
+          {
+            "karte": 10,
+            "platz": true
+          },
+          {
+            "karte": 11,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 12,
+            "platz": false
+          },
+          {
+            "karte": 13,
+            "platz": true
+          },
+          {
+            "karte": 14,
+            "platz": true
+          },
+          {
+            "karte": 15,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

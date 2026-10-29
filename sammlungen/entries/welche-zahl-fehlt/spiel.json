@@ -1,0 +1,465 @@
+{
+  "kind": "spiel",
+  "heading": "Welche Zahl fehlt?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Welche Zahl fehlt? Zähl mit und leg die Zahl in das leere Feld.",
+      "s0-0": "Eins.",
+      "s1-0": "Zwei.",
+      "s2-0": "Drei.",
+      "s3-0": "Vier.",
+      "s4-0": "Fünf.",
+      "s5-0": "Zwei.",
+      "s6-0": "Drei.",
+      "s7-0": "Vier.",
+      "s8-0": "Fünf.",
+      "s9-0": "Sechs.",
+      "s10-0": "Eins.",
+      "s11-0": "Zwei.",
+      "s12-0": "Drei.",
+      "s13-0": "Vier.",
+      "s14-0": "Fünf.",
+      "s15-0": "Zwei.",
+      "s16-0": "Drei.",
+      "s17-0": "Vier.",
+      "s18-0": "Fünf.",
+      "s19-0": "Sechs.",
+      "s20-0": "Eins.",
+      "s21-0": "Zwei.",
+      "s22-0": "Drei.",
+      "s23-0": "Vier.",
+      "s24-0": "Fünf."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Zahl 1",
+      "slots": [
+        {
+          "token": "Zahl 1",
+          "concept": "zahl 1",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "eins"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 2",
+      "slots": [
+        {
+          "token": "Zahl 2",
+          "concept": "zahl 2",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "zwei"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 3",
+      "slots": [
+        {
+          "token": "Zahl 3",
+          "concept": "zahl 3",
+          "arasaac": 2629,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/3.png",
+          "label": "drei"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 4",
+      "slots": [
+        {
+          "token": "Zahl 4",
+          "concept": "zahl 4",
+          "arasaac": 2630,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/4.png",
+          "label": "vier"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 5",
+      "slots": [
+        {
+          "token": "Zahl 5",
+          "concept": "zahl 5",
+          "arasaac": 2631,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/5.png",
+          "label": "fünf"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 2",
+      "slots": [
+        {
+          "token": "Zahl 2",
+          "concept": "zahl 2",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "zwei"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 3",
+      "slots": [
+        {
+          "token": "Zahl 3",
+          "concept": "zahl 3",
+          "arasaac": 2629,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/3.png",
+          "label": "drei"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 4",
+      "slots": [
+        {
+          "token": "Zahl 4",
+          "concept": "zahl 4",
+          "arasaac": 2630,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/4.png",
+          "label": "vier"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 5",
+      "slots": [
+        {
+          "token": "Zahl 5",
+          "concept": "zahl 5",
+          "arasaac": 2631,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/5.png",
+          "label": "fünf"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 6",
+      "slots": [
+        {
+          "token": "Zahl 6",
+          "concept": "zahl 6",
+          "arasaac": 2632,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/6.png",
+          "label": "sechs"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 1",
+      "slots": [
+        {
+          "token": "Zahl 1",
+          "concept": "zahl 1",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "eins"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 2",
+      "slots": [
+        {
+          "token": "Zahl 2",
+          "concept": "zahl 2",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "zwei"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 3",
+      "slots": [
+        {
+          "token": "Zahl 3",
+          "concept": "zahl 3",
+          "arasaac": 2629,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/3.png",
+          "label": "drei"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 4",
+      "slots": [
+        {
+          "token": "Zahl 4",
+          "concept": "zahl 4",
+          "arasaac": 2630,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/4.png",
+          "label": "vier"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 5",
+      "slots": [
+        {
+          "token": "Zahl 5",
+          "concept": "zahl 5",
+          "arasaac": 2631,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/5.png",
+          "label": "fünf"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 2",
+      "slots": [
+        {
+          "token": "Zahl 2",
+          "concept": "zahl 2",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "zwei"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 3",
+      "slots": [
+        {
+          "token": "Zahl 3",
+          "concept": "zahl 3",
+          "arasaac": 2629,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/3.png",
+          "label": "drei"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 4",
+      "slots": [
+        {
+          "token": "Zahl 4",
+          "concept": "zahl 4",
+          "arasaac": 2630,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/4.png",
+          "label": "vier"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 5",
+      "slots": [
+        {
+          "token": "Zahl 5",
+          "concept": "zahl 5",
+          "arasaac": 2631,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/5.png",
+          "label": "fünf"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 6",
+      "slots": [
+        {
+          "token": "Zahl 6",
+          "concept": "zahl 6",
+          "arasaac": 2632,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/6.png",
+          "label": "sechs"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 1",
+      "slots": [
+        {
+          "token": "Zahl 1",
+          "concept": "zahl 1",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "eins"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 2",
+      "slots": [
+        {
+          "token": "Zahl 2",
+          "concept": "zahl 2",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "zwei"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 3",
+      "slots": [
+        {
+          "token": "Zahl 3",
+          "concept": "zahl 3",
+          "arasaac": 2629,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/3.png",
+          "label": "drei"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 4",
+      "slots": [
+        {
+          "token": "Zahl 4",
+          "concept": "zahl 4",
+          "arasaac": 2630,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/4.png",
+          "label": "vier"
+        }
+      ]
+    },
+    {
+      "text": "Zahl 5",
+      "slots": [
+        {
+          "token": "Zahl 5",
+          "concept": "zahl 5",
+          "arasaac": 2631,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/5.png",
+          "label": "fünf"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": false
+          },
+          {
+            "karte": 2,
+            "platz": true
+          },
+          {
+            "karte": 3,
+            "platz": false
+          },
+          {
+            "karte": 4,
+            "platz": false
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 5,
+            "platz": false
+          },
+          {
+            "karte": 6,
+            "platz": false
+          },
+          {
+            "karte": 7,
+            "platz": false
+          },
+          {
+            "karte": 8,
+            "platz": true
+          },
+          {
+            "karte": 9,
+            "platz": false
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 10,
+            "platz": true
+          },
+          {
+            "karte": 11,
+            "platz": false
+          },
+          {
+            "karte": 12,
+            "platz": false
+          },
+          {
+            "karte": 13,
+            "platz": false
+          },
+          {
+            "karte": 14,
+            "platz": false
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 15,
+            "platz": false
+          },
+          {
+            "karte": 16,
+            "platz": false
+          },
+          {
+            "karte": 17,
+            "platz": false
+          },
+          {
+            "karte": 18,
+            "platz": false
+          },
+          {
+            "karte": 19,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 20,
+            "platz": false
+          },
+          {
+            "karte": 21,
+            "platz": true
+          },
+          {
+            "karte": 22,
+            "platz": false
+          },
+          {
+            "karte": 23,
+            "platz": false
+          },
+          {
+            "karte": 24,
+            "platz": false
+          }
+        ]
+      }
+    ]
+  }
+}

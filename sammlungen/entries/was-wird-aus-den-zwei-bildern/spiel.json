@@ -1,0 +1,280 @@
+{
+  "kind": "spiel",
+  "heading": "Was wird aus den zwei Bildern?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Aus zwei Wörtern wird ein neues Wort. Was wird aus den zwei Bildern? Leg es daneben.",
+      "s0-0": "Schnee.",
+      "s1-0": "Mann.",
+      "s2-0": "Der Schneemann.",
+      "s3-0": "Sonne.",
+      "s4-0": "Blume.",
+      "s5-0": "Die Sonnenblume.",
+      "s6-0": "Fuß.",
+      "s7-0": "Ball.",
+      "s8-0": "Der Fußball.",
+      "s9-0": "Hand.",
+      "s10-0": "Schuh.",
+      "s11-0": "Der Handschuh.",
+      "s12-0": "Zahn.",
+      "s13-0": "Bürste.",
+      "s14-0": "Die Zahnbürste."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Schnee",
+      "slots": [
+        {
+          "token": "Schnee",
+          "concept": "schnee",
+          "arasaac": 38027,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/schneeflocke.png"
+        }
+      ]
+    },
+    {
+      "text": "Mann",
+      "slots": [
+        {
+          "token": "Mann",
+          "concept": "mann",
+          "arasaac": 4665,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Personen/mann1.png"
+        }
+      ]
+    },
+    {
+      "text": "Schneemann",
+      "slots": [
+        {
+          "token": "Schneemann",
+          "concept": "schneemann",
+          "arasaac": 3131,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Feste/schneemann.png"
+        }
+      ]
+    },
+    {
+      "text": "Sonne",
+      "slots": [
+        {
+          "token": "Sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png"
+        }
+      ]
+    },
+    {
+      "text": "Blume",
+      "slots": [
+        {
+          "token": "Blume",
+          "concept": "blume",
+          "arasaac": 7104,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pflanzen/blume.png"
+        }
+      ]
+    },
+    {
+      "text": "Sonnenblume",
+      "slots": [
+        {
+          "token": "Sonnenblume",
+          "concept": "sonnenblume",
+          "arasaac": 11274,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pflanzen/sonnenblume.png"
+        }
+      ]
+    },
+    {
+      "text": "Fuß",
+      "slots": [
+        {
+          "token": "Fuß",
+          "concept": "fuß",
+          "arasaac": 2841,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperteile/fuss.png"
+        }
+      ]
+    },
+    {
+      "text": "Ball",
+      "slots": [
+        {
+          "token": "Ball",
+          "concept": "ball",
+          "arasaac": 9113,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/ballrot.png"
+        }
+      ]
+    },
+    {
+      "text": "Fußball",
+      "slots": [
+        {
+          "token": "Fußball",
+          "concept": "fußball",
+          "arasaac": 2269,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Sport/fussball.png"
+        }
+      ]
+    },
+    {
+      "text": "Hand",
+      "slots": [
+        {
+          "token": "Hand",
+          "concept": "hand",
+          "arasaac": 2928,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperteile/hand.png"
+        }
+      ]
+    },
+    {
+      "text": "Schuh",
+      "slots": [
+        {
+          "token": "Schuh",
+          "concept": "schuh",
+          "arasaac": 32923,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/schuh.png"
+        }
+      ]
+    },
+    {
+      "text": "Handschuh",
+      "slots": [
+        {
+          "token": "Handschuh",
+          "concept": "handschuh",
+          "arasaac": 7122,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/handschuh.png"
+        }
+      ]
+    },
+    {
+      "text": "Zahn",
+      "slots": [
+        {
+          "token": "Zahn",
+          "concept": "zahn",
+          "arasaac": 10267,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperteile/zahn.png"
+        }
+      ]
+    },
+    {
+      "text": "Bürste",
+      "slots": [
+        {
+          "token": "Bürste",
+          "concept": "bürste",
+          "arasaac": 2695,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/buerste.png"
+        }
+      ]
+    },
+    {
+      "text": "Zahnbürste",
+      "slots": [
+        {
+          "token": "Zahnbürste",
+          "concept": "zahnbürste",
+          "arasaac": 2694,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/zahnbuerste_b.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": false
+          },
+          {
+            "karte": 2,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 3,
+            "platz": false
+          },
+          {
+            "karte": 4,
+            "platz": false
+          },
+          {
+            "karte": 5,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 6,
+            "platz": false
+          },
+          {
+            "karte": 7,
+            "platz": false
+          },
+          {
+            "karte": 8,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 9,
+            "platz": false
+          },
+          {
+            "karte": 10,
+            "platz": false
+          },
+          {
+            "karte": 11,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 12,
+            "platz": false
+          },
+          {
+            "karte": 13,
+            "platz": false
+          },
+          {
+            "karte": 14,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

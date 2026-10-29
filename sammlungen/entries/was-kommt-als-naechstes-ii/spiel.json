@@ -1,0 +1,520 @@
+{
+  "kind": "spiel",
+  "heading": "Was kommt als Nächstes?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Schau dir die Reihe genau an. Was kommt als Nächstes? Leg das Bild in das leere Feld.",
+      "s0-0": "Sonne.",
+      "s1-0": "Mond.",
+      "s2-0": "Sonne.",
+      "s3-0": "Mond.",
+      "s4-0": "Sonne.",
+      "s5-0": "Mond.",
+      "s6-0": "Banane.",
+      "s7-0": "Erdbeere.",
+      "s8-0": "Banane.",
+      "s9-0": "Erdbeere.",
+      "s10-0": "Banane.",
+      "s11-0": "Erdbeere.",
+      "s12-0": "Fahrrad.",
+      "s13-0": "Bus.",
+      "s14-0": "Fahrrad.",
+      "s15-0": "Bus.",
+      "s16-0": "Fahrrad.",
+      "s17-0": "Bus.",
+      "s18-0": "Katze.",
+      "s19-0": "Fisch.",
+      "s20-0": "Katze.",
+      "s21-0": "Fisch.",
+      "s22-0": "Katze.",
+      "s23-0": "Fisch.",
+      "s24-0": "Herz.",
+      "s25-0": "Stern.",
+      "s26-0": "Herz.",
+      "s27-0": "Stern.",
+      "s28-0": "Herz.",
+      "s29-0": "Stern."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Sonne",
+      "slots": [
+        {
+          "token": "Sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png"
+        }
+      ]
+    },
+    {
+      "text": "Mond",
+      "slots": [
+        {
+          "token": "Mond",
+          "concept": "mond",
+          "arasaac": 2933,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/mond_gelb.png"
+        }
+      ]
+    },
+    {
+      "text": "Sonne",
+      "slots": [
+        {
+          "token": "Sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png"
+        }
+      ]
+    },
+    {
+      "text": "Mond",
+      "slots": [
+        {
+          "token": "Mond",
+          "concept": "mond",
+          "arasaac": 2933,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/mond_gelb.png"
+        }
+      ]
+    },
+    {
+      "text": "Sonne",
+      "slots": [
+        {
+          "token": "Sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png"
+        }
+      ]
+    },
+    {
+      "text": "Mond",
+      "slots": [
+        {
+          "token": "Mond",
+          "concept": "mond",
+          "arasaac": 2933,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/mond_gelb.png"
+        }
+      ]
+    },
+    {
+      "text": "Banane",
+      "slots": [
+        {
+          "token": "Banane",
+          "concept": "banane",
+          "arasaac": 2530,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/banane.png"
+        }
+      ]
+    },
+    {
+      "text": "Erdbeere",
+      "slots": [
+        {
+          "token": "Erdbeere",
+          "concept": "erdbeere",
+          "arasaac": 2400,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/erdbeere.png"
+        }
+      ]
+    },
+    {
+      "text": "Banane",
+      "slots": [
+        {
+          "token": "Banane",
+          "concept": "banane",
+          "arasaac": 2530,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/banane.png"
+        }
+      ]
+    },
+    {
+      "text": "Erdbeere",
+      "slots": [
+        {
+          "token": "Erdbeere",
+          "concept": "erdbeere",
+          "arasaac": 2400,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/erdbeere.png"
+        }
+      ]
+    },
+    {
+      "text": "Banane",
+      "slots": [
+        {
+          "token": "Banane",
+          "concept": "banane",
+          "arasaac": 2530,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/banane.png"
+        }
+      ]
+    },
+    {
+      "text": "Erdbeere",
+      "slots": [
+        {
+          "token": "Erdbeere",
+          "concept": "erdbeere",
+          "arasaac": 2400,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/erdbeere.png"
+        }
+      ]
+    },
+    {
+      "text": "Fahrrad",
+      "slots": [
+        {
+          "token": "Fahrrad",
+          "concept": "fahrrad",
+          "arasaac": 2277,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/fahrrad.png"
+        }
+      ]
+    },
+    {
+      "text": "Bus",
+      "slots": [
+        {
+          "token": "Bus",
+          "concept": "bus",
+          "arasaac": 2263,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/bus1.png"
+        }
+      ]
+    },
+    {
+      "text": "Fahrrad",
+      "slots": [
+        {
+          "token": "Fahrrad",
+          "concept": "fahrrad",
+          "arasaac": 2277,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/fahrrad.png"
+        }
+      ]
+    },
+    {
+      "text": "Bus",
+      "slots": [
+        {
+          "token": "Bus",
+          "concept": "bus",
+          "arasaac": 2263,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/bus1.png"
+        }
+      ]
+    },
+    {
+      "text": "Fahrrad",
+      "slots": [
+        {
+          "token": "Fahrrad",
+          "concept": "fahrrad",
+          "arasaac": 2277,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/fahrrad.png"
+        }
+      ]
+    },
+    {
+      "text": "Bus",
+      "slots": [
+        {
+          "token": "Bus",
+          "concept": "bus",
+          "arasaac": 2263,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/bus1.png"
+        }
+      ]
+    },
+    {
+      "text": "Katze",
+      "slots": [
+        {
+          "token": "Katze",
+          "concept": "katze",
+          "arasaac": 7114,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/katze1.png"
+        }
+      ]
+    },
+    {
+      "text": "Fisch",
+      "slots": [
+        {
+          "token": "Fisch",
+          "concept": "fisch",
+          "arasaac": 2520,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/fisch.png"
+        }
+      ]
+    },
+    {
+      "text": "Katze",
+      "slots": [
+        {
+          "token": "Katze",
+          "concept": "katze",
+          "arasaac": 7114,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/katze1.png"
+        }
+      ]
+    },
+    {
+      "text": "Fisch",
+      "slots": [
+        {
+          "token": "Fisch",
+          "concept": "fisch",
+          "arasaac": 2520,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/fisch.png"
+        }
+      ]
+    },
+    {
+      "text": "Katze",
+      "slots": [
+        {
+          "token": "Katze",
+          "concept": "katze",
+          "arasaac": 7114,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/katze1.png"
+        }
+      ]
+    },
+    {
+      "text": "Fisch",
+      "slots": [
+        {
+          "token": "Fisch",
+          "concept": "fisch",
+          "arasaac": 2520,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/fisch.png"
+        }
+      ]
+    },
+    {
+      "text": "Herz",
+      "slots": [
+        {
+          "token": "Herz",
+          "concept": "herz",
+          "arasaac": 4613,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/herzRot.png"
+        }
+      ]
+    },
+    {
+      "text": "Stern",
+      "slots": [
+        {
+          "token": "Stern",
+          "concept": "stern",
+          "arasaac": 4644,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/stern1.png"
+        }
+      ]
+    },
+    {
+      "text": "Herz",
+      "slots": [
+        {
+          "token": "Herz",
+          "concept": "herz",
+          "arasaac": 4613,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/herzRot.png"
+        }
+      ]
+    },
+    {
+      "text": "Stern",
+      "slots": [
+        {
+          "token": "Stern",
+          "concept": "stern",
+          "arasaac": 4644,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/stern1.png"
+        }
+      ]
+    },
+    {
+      "text": "Herz",
+      "slots": [
+        {
+          "token": "Herz",
+          "concept": "herz",
+          "arasaac": 4613,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/herzRot.png"
+        }
+      ]
+    },
+    {
+      "text": "Stern",
+      "slots": [
+        {
+          "token": "Stern",
+          "concept": "stern",
+          "arasaac": 4644,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/stern1.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": false
+          },
+          {
+            "karte": 2,
+            "platz": false
+          },
+          {
+            "karte": 3,
+            "platz": false
+          },
+          {
+            "karte": 4,
+            "platz": false
+          },
+          {
+            "karte": 5,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 6,
+            "platz": false
+          },
+          {
+            "karte": 7,
+            "platz": false
+          },
+          {
+            "karte": 8,
+            "platz": false
+          },
+          {
+            "karte": 9,
+            "platz": false
+          },
+          {
+            "karte": 10,
+            "platz": false
+          },
+          {
+            "karte": 11,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 12,
+            "platz": false
+          },
+          {
+            "karte": 13,
+            "platz": false
+          },
+          {
+            "karte": 14,
+            "platz": false
+          },
+          {
+            "karte": 15,
+            "platz": false
+          },
+          {
+            "karte": 16,
+            "platz": false
+          },
+          {
+            "karte": 17,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 18,
+            "platz": false
+          },
+          {
+            "karte": 19,
+            "platz": false
+          },
+          {
+            "karte": 20,
+            "platz": false
+          },
+          {
+            "karte": 21,
+            "platz": false
+          },
+          {
+            "karte": 22,
+            "platz": false
+          },
+          {
+            "karte": 23,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 24,
+            "platz": false
+          },
+          {
+            "karte": 25,
+            "platz": false
+          },
+          {
+            "karte": 26,
+            "platz": false
+          },
+          {
+            "karte": 27,
+            "platz": false
+          },
+          {
+            "karte": 28,
+            "platz": false
+          },
+          {
+            "karte": 29,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

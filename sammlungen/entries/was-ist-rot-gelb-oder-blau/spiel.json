@@ -1,0 +1,176 @@
+{
+  "kind": "spiel",
+  "heading": "Was ist rot, gelb oder blau?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Was ist rot, gelb oder blau? Leg jedes Bild zu seiner Farbe.",
+      "s0-0": "Rot. Finde alles, was rot ist.",
+      "s1-0": "Die Erdbeere.",
+      "s2-0": "Der Ball.",
+      "s3-0": "Gelb. Finde alles, was gelb ist.",
+      "s4-0": "Die Banane.",
+      "s5-0": "Die Sonne.",
+      "s6-0": "Blau. Finde alles, was blau ist.",
+      "s7-0": "Die Heidelbeere.",
+      "s8-0": "Die Jeans."
+    }
+  },
+  "sentences": [
+    {
+      "text": "rot",
+      "slots": [
+        {
+          "token": "rot",
+          "concept": "rot",
+          "arasaac": 2808,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/klecks_rot.png"
+        }
+      ]
+    },
+    {
+      "text": "Erdbeere",
+      "slots": [
+        {
+          "token": "Erdbeere",
+          "concept": "erdbeere",
+          "arasaac": 2400,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/erdbeere.png"
+        }
+      ]
+    },
+    {
+      "text": "Ball",
+      "slots": [
+        {
+          "token": "Ball",
+          "concept": "ball",
+          "arasaac": 9113,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/ballrot.png"
+        }
+      ]
+    },
+    {
+      "text": "gelb",
+      "slots": [
+        {
+          "token": "gelb",
+          "concept": "gelb",
+          "arasaac": 2648,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/klecks_gelb.png"
+        }
+      ]
+    },
+    {
+      "text": "Banane",
+      "slots": [
+        {
+          "token": "Banane",
+          "concept": "banane",
+          "arasaac": 2530,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/banane.png"
+        }
+      ]
+    },
+    {
+      "text": "Sonne",
+      "slots": [
+        {
+          "token": "Sonne",
+          "concept": "sonne",
+          "arasaac": 2798,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/sonne.png"
+        }
+      ]
+    },
+    {
+      "text": "blau",
+      "slots": [
+        {
+          "token": "blau",
+          "concept": "blau",
+          "arasaac": 4869,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Farben_Formen/klecks_blau.png"
+        }
+      ]
+    },
+    {
+      "text": "Heidelbeere",
+      "slots": [
+        {
+          "token": "Heidelbeere",
+          "concept": "heidelbeere",
+          "arasaac": 13034,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/heidelbeere.png"
+        }
+      ]
+    },
+    {
+      "text": "Jeans",
+      "slots": [
+        {
+          "token": "Jeans",
+          "concept": "jeans",
+          "arasaac": 24222,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/hose_blau.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": true
+          },
+          {
+            "karte": 2,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 3,
+            "platz": false
+          },
+          {
+            "karte": 4,
+            "platz": true
+          },
+          {
+            "karte": 5,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 6,
+            "platz": false
+          },
+          {
+            "karte": 7,
+            "platz": true
+          },
+          {
+            "karte": 8,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

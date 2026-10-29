@@ -1,0 +1,292 @@
+{
+  "kind": "spiel",
+  "heading": "Womit fängt das Wort an?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Womit fängt das Wort an? Hör genau hin und leg jedes Bild zu seinem Buchstaben.",
+      "s0-0": "M. Was fängt mit M an?",
+      "s1-0": "Die Maus.",
+      "s2-0": "Der Mond.",
+      "s3-0": "Die Mütze.",
+      "s4-0": "B. Was fängt mit B an?",
+      "s5-0": "Der Ball.",
+      "s6-0": "Die Banane.",
+      "s7-0": "Der Bus.",
+      "s8-0": "L. Was fängt mit L an?",
+      "s9-0": "Der Löwe.",
+      "s10-0": "Der Löffel.",
+      "s11-0": "Der Luftballon.",
+      "s12-0": "T. Was fängt mit T an?",
+      "s13-0": "Die Tomate.",
+      "s14-0": "Der Teddy.",
+      "s15-0": "Der Tisch."
+    }
+  },
+  "sentences": [
+    {
+      "text": "M",
+      "slots": [
+        {
+          "token": "M",
+          "concept": "m",
+          "arasaac": 3125,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Buchstaben_Schreiben/m_gr.png"
+        }
+      ]
+    },
+    {
+      "text": "Maus",
+      "slots": [
+        {
+          "token": "Maus",
+          "concept": "maus",
+          "arasaac": 2546,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/maus.png"
+        }
+      ]
+    },
+    {
+      "text": "Mond",
+      "slots": [
+        {
+          "token": "Mond",
+          "concept": "mond",
+          "arasaac": 2933,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/mond_gelb.png"
+        }
+      ]
+    },
+    {
+      "text": "Mütze",
+      "slots": [
+        {
+          "token": "Mütze",
+          "concept": "mütze",
+          "arasaac": 2412,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/muetze1.png"
+        }
+      ]
+    },
+    {
+      "text": "B",
+      "slots": [
+        {
+          "token": "B",
+          "concept": "b",
+          "arasaac": 3061,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Buchstaben_Schreiben/b_gr.png"
+        }
+      ]
+    },
+    {
+      "text": "Ball",
+      "slots": [
+        {
+          "token": "Ball",
+          "concept": "ball",
+          "arasaac": 9113,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/ballrot.png"
+        }
+      ]
+    },
+    {
+      "text": "Banane",
+      "slots": [
+        {
+          "token": "Banane",
+          "concept": "banane",
+          "arasaac": 2530,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/banane.png"
+        }
+      ]
+    },
+    {
+      "text": "Bus",
+      "slots": [
+        {
+          "token": "Bus",
+          "concept": "bus",
+          "arasaac": 2263,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/bus1.png"
+        }
+      ]
+    },
+    {
+      "text": "L",
+      "slots": [
+        {
+          "token": "L",
+          "concept": "l",
+          "arasaac": 3121,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Buchstaben_Schreiben/l_gr.png"
+        }
+      ]
+    },
+    {
+      "text": "Löwe",
+      "slots": [
+        {
+          "token": "Löwe",
+          "concept": "löwe",
+          "arasaac": 25187,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/loewe.png"
+        }
+      ]
+    },
+    {
+      "text": "Löffel",
+      "slots": [
+        {
+          "token": "Löffel",
+          "concept": "löffel",
+          "arasaac": 2362,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/loeffel3.png"
+        }
+      ]
+    },
+    {
+      "text": "Luftballon",
+      "slots": [
+        {
+          "token": "Luftballon",
+          "concept": "luftballon",
+          "arasaac": 8313,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/luftballon.png"
+        }
+      ]
+    },
+    {
+      "text": "T",
+      "slots": [
+        {
+          "token": "T",
+          "concept": "t",
+          "arasaac": 3158,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Buchstaben_Schreiben/t_gr.png"
+        }
+      ]
+    },
+    {
+      "text": "Tomate",
+      "slots": [
+        {
+          "token": "Tomate",
+          "concept": "tomate",
+          "arasaac": 2594,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/tomate.png"
+        }
+      ]
+    },
+    {
+      "text": "Teddy",
+      "slots": [
+        {
+          "token": "Teddy",
+          "concept": "teddy",
+          "arasaac": 4945,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/teddy.png"
+        }
+      ]
+    },
+    {
+      "text": "Tisch",
+      "slots": [
+        {
+          "token": "Tisch",
+          "concept": "tisch",
+          "arasaac": 3129,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/tischbraun.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": true
+          },
+          {
+            "karte": 2,
+            "platz": true
+          },
+          {
+            "karte": 3,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 4,
+            "platz": false
+          },
+          {
+            "karte": 5,
+            "platz": true
+          },
+          {
+            "karte": 6,
+            "platz": true
+          },
+          {
+            "karte": 7,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 8,
+            "platz": false
+          },
+          {
+            "karte": 9,
+            "platz": true
+          },
+          {
+            "karte": 10,
+            "platz": true
+          },
+          {
+            "karte": 11,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 12,
+            "platz": false
+          },
+          {
+            "karte": 13,
+            "platz": true
+          },
+          {
+            "karte": 14,
+            "platz": true
+          },
+          {
+            "karte": 15,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

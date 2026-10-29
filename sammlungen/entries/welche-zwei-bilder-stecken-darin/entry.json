@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "id": "welche-zwei-bilder-stecken-darin",
+  "product": "bildhaft",
+  "name": "Welche zwei Bilder stecken darin? (III)",
+  "description": "Ein Wort in seine zwei Teile zerlegen: Eisbär ist Eis und Bär.",
+  "tags": [
+    "Spiel",
+    "Stufe III"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [],
+  "payload": "spiel.json"
+}

@@ -1,0 +1,176 @@
+{
+  "kind": "spiel",
+  "heading": "Was wird daraus?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Was wird daraus? Leg das passende Bild an das Ende der Reihe.",
+      "s0-0": "Die Raupe.",
+      "s1-0": "Der Kokon. Was wird daraus?",
+      "s2-0": "Der Schmetterling.",
+      "s3-0": "Der Teig.",
+      "s4-0": "Der Ofen. Was wird daraus?",
+      "s5-0": "Der Kuchen.",
+      "s6-0": "Der Schnee.",
+      "s7-0": "Der Schneeball. Was wird daraus?",
+      "s8-0": "Der Schneemann."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Raupe",
+      "slots": [
+        {
+          "token": "Raupe",
+          "concept": "raupe",
+          "arasaac": 16727,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/raupe.png"
+        }
+      ]
+    },
+    {
+      "text": "Kokon",
+      "slots": [
+        {
+          "token": "Kokon",
+          "concept": "kokon",
+          "arasaac": 26012,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/kokon.png"
+        }
+      ]
+    },
+    {
+      "text": "Schmetterling",
+      "slots": [
+        {
+          "token": "Schmetterling",
+          "concept": "schmetterling",
+          "arasaac": 26200,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/schmetterling.png"
+        }
+      ]
+    },
+    {
+      "text": "Teig",
+      "slots": [
+        {
+          "token": "Teig",
+          "concept": "teig",
+          "arasaac": 38442,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/teig.png"
+        }
+      ]
+    },
+    {
+      "text": "Ofen",
+      "slots": [
+        {
+          "token": "Ofen",
+          "concept": "ofen",
+          "arasaac": 2426,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/ofen.png"
+        }
+      ]
+    },
+    {
+      "text": "Kuchen",
+      "slots": [
+        {
+          "token": "Kuchen",
+          "concept": "kuchen",
+          "arasaac": 2502,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kuchentorte.png"
+        }
+      ]
+    },
+    {
+      "text": "Schnee",
+      "slots": [
+        {
+          "token": "Schnee",
+          "concept": "schnee",
+          "arasaac": 38027,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/schneeflocke.png"
+        }
+      ]
+    },
+    {
+      "text": "Schneeball",
+      "slots": [
+        {
+          "token": "Schneeball",
+          "concept": "schneeball",
+          "arasaac": 24891,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/schneeball.png"
+        }
+      ]
+    },
+    {
+      "text": "Schneemann",
+      "slots": [
+        {
+          "token": "Schneemann",
+          "concept": "schneemann",
+          "arasaac": 3131,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Feste/schneemann.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": false
+          },
+          {
+            "karte": 2,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 3,
+            "platz": false
+          },
+          {
+            "karte": 4,
+            "platz": false
+          },
+          {
+            "karte": 5,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 6,
+            "platz": false
+          },
+          {
+            "karte": 7,
+            "platz": false
+          },
+          {
+            "karte": 8,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "id": "wo-gehoert-das-hin-iii",
+  "product": "bildhaft",
+  "name": "Wo gehört das hin? (III)",
+  "description": "Sortieren: wohin Tiere, Obst, Gemüse und Kleidung gehören.",
+  "tags": [
+    "Spiel",
+    "Stufe III"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [],
+  "payload": "spiel.json"
+}

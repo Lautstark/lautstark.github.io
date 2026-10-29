@@ -1,0 +1,528 @@
+{
+  "kind": "rezept",
+  "title": {
+    "token": "Waffeln",
+    "concept": "waffeln",
+    "arasaac": 34227,
+    "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/waffel.png",
+    "label": "Waffeln"
+  },
+  "print": {
+    "symbolSizeMm": 19,
+    "sheetFit": "grid",
+    "cardWidthMm": 54,
+    "cardHeightMm": 84,
+    "gridCols": 6,
+    "anybookCircle": true,
+    "anybookPlace": "below",
+    "titleLine": false,
+    "cardBorderColor": "#2e2e2e",
+    "anybookSay": {
+      "titel": "Rezept für zehn Waffeln",
+      "s8": "Einen roten Becher Zucker in die Rührschüssel geben",
+      "s11": "Einen gelben Messlöffel Backpulver in die Rührschüssel geben",
+      "s12": "Einen roten Becher Milch in die Rührschüssel gießen",
+      "s7": "Zwei Becher Crème fraîche in die Rührschüssel geben",
+      "s9": "Drei Eier aufschlagen und in die Rührschüssel geben",
+      "s10": "Zwei blaue Becher Mehl in die Rührschüssel geben",
+      "s15": "Waffel nach etwa drei Minuten herausnehmen"
+    }
+  },
+  "sentences": [
+    {
+      "text": "Mehl",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Mehl",
+          "concept": "mehl",
+          "arasaac": 8600,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mehl.png",
+          "label": "Mehl"
+        }
+      ]
+    },
+    {
+      "text": "Zucker",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Zucker",
+          "concept": "zucker",
+          "arasaac": 25560,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucker.png",
+          "label": "Zucker"
+        }
+      ]
+    },
+    {
+      "text": "Eier",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Eier",
+          "concept": "eier",
+          "arasaac": 2427,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/ei.png",
+          "label": "Eier"
+        }
+      ]
+    },
+    {
+      "text": "Crème fraîche",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Crème fraîche",
+          "concept": "crème fraîche",
+          "arasaac": 15367,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/quark.png",
+          "label": "Crème fraîche"
+        }
+      ]
+    },
+    {
+      "text": "Milch",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Milch",
+          "concept": "milch",
+          "arasaac": 2445,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/milch.png",
+          "label": "Milch"
+        }
+      ]
+    },
+    {
+      "text": "Backpulver",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Backpulver",
+          "concept": "backpulver",
+          "arasaac": 37250,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/backpulver.png",
+          "label": "Backpulver"
+        }
+      ]
+    },
+    {
+      "text": "Puderzucker",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Puderzucker",
+          "concept": "puderzucker",
+          "arasaac": 25560,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/puderzucker.png",
+          "label": "Puderzucker"
+        }
+      ]
+    },
+    {
+      "text": "2 Becher Crème fraîche in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "2",
+          "concept": "2",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "Zwei"
+        },
+        {
+          "token": "Crème fraîche",
+          "concept": "crème fraîche",
+          "arasaac": 15367,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/quark.png",
+          "label": "Crème fraîche"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "1 roten Becher Zucker in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "1",
+          "concept": "1",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Eins"
+        },
+        {
+          "token": "roter Becher",
+          "concept": "roter becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
+          "label": "roter Becher"
+        },
+        {
+          "token": "Zucker",
+          "concept": "zucker",
+          "arasaac": 25560,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucker.png",
+          "label": "Zucker"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "3 Eier aufschlagen und in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "3",
+          "concept": "3",
+          "arasaac": 2629,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/3.png",
+          "label": "Drei"
+        },
+        {
+          "token": "Eier aufschlagen",
+          "concept": "eier aufschlagen",
+          "arasaac": 8984,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/ei_aufschlagen2.png",
+          "label": "Eier aufschlagen"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "2 blaue Becher Mehl in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "2",
+          "concept": "2",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "Zwei"
+        },
+        {
+          "token": "blaue Becher",
+          "concept": "blaue becher",
+          "arasaac": 39645,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1_250ml.png",
+          "label": "blaue Becher"
+        },
+        {
+          "token": "Mehl",
+          "concept": "mehl",
+          "arasaac": 8600,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mehl.png",
+          "label": "Mehl"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "1 gelben Messlöffel Backpulver in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "1",
+          "concept": "1",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Eins"
+        },
+        {
+          "token": "gelber Messlöffel",
+          "concept": "gelber messloffel",
+          "arasaac": 39645,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gelb1_5ml.png",
+          "label": "gelber Messlöffel"
+        },
+        {
+          "token": "Backpulver",
+          "concept": "backpulver",
+          "arasaac": 37250,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/backpulver.png",
+          "label": "Backpulver"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "1 roten Becher Milch in die Rührschüssel gießen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "1",
+          "concept": "1",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Eins"
+        },
+        {
+          "token": "roter Becher",
+          "concept": "roter becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
+          "label": "roter Becher"
+        },
+        {
+          "token": "Milch",
+          "concept": "milch",
+          "arasaac": 2445,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/milch.png",
+          "label": "Milch"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "Alle Zutaten zu einem glatten Teig verrühren",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        },
+        {
+          "token": "mit dem Handmixer",
+          "concept": "mit dem handmixer",
+          "arasaac": 38038,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/kuechenmaschinegrau.png",
+          "label": "mit der Küchenmaschine"
+        },
+        {
+          "token": "gut verrühren",
+          "concept": "gut verruhren",
+          "arasaac": 25738,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/ruehren.png",
+          "label": "gut verrühren"
+        }
+      ]
+    },
+    {
+      "text": "Teig in das Waffeleisen geben und schließen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Teig einfüllen",
+          "concept": "teig einfullen",
+          "arasaac": 38442,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/teig.png",
+          "label": "Teig einfüllen"
+        },
+        {
+          "token": "Waffeleisen",
+          "concept": "waffeleisen",
+          "arasaac": 13364,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/waffeleisen.png",
+          "label": "Waffeleisen"
+        }
+      ]
+    },
+    {
+      "text": "Waffel nach ca. 3 Minuten herausnehmen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Waffel",
+          "concept": "waffel",
+          "arasaac": 34227,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/waffel.png",
+          "label": "Waffel"
+        },
+        {
+          "token": "ca. 3 Minuten",
+          "concept": "ca. 3 minuten",
+          "arasaac": 37659,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zeit/timer.png",
+          "label": "ca. 3 Minuten"
+        },
+        {
+          "token": "herausnehmen",
+          "concept": "herausnehmen",
+          "arasaac": 13364,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/waffeleisen.png",
+          "label": "herausnehmen"
+        }
+      ]
+    },
+    {
+      "text": "Waffel mit Puderzucker bestäuben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Waffel",
+          "concept": "waffel",
+          "arasaac": 34227,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/waffel.png",
+          "label": "Waffel"
+        },
+        {
+          "token": "Puderzucker",
+          "concept": "puderzucker",
+          "arasaac": 25560,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/puderzucker.png",
+          "label": "Puderzucker"
+        }
+      ]
+    },
+    {
+      "text": "Roter Becher",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Roter Becher",
+          "concept": "roter becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
+          "label": "Roter Becher"
+        }
+      ]
+    },
+    {
+      "text": "Blauer Becher",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Blauer Becher",
+          "concept": "blauer becher",
+          "arasaac": 39645,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1_250ml.png",
+          "label": "Blauer Becher"
+        }
+      ]
+    },
+    {
+      "text": "Gelber Messlöffel",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Gelber Messlöffel",
+          "concept": "gelber messloffel",
+          "arasaac": 39645,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gelb1_5ml.png",
+          "label": "Gelber Messlöffel"
+        }
+      ]
+    },
+    {
+      "text": "Rührschüssel",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Rührschüssel",
+          "concept": "ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "Handmixer",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Handmixer",
+          "concept": "handmixer",
+          "arasaac": 38038,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/kuechenmaschinegrau.png",
+          "label": "Küchenmaschine"
+        }
+      ]
+    },
+    {
+      "text": "Waffeleisen",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Waffeleisen",
+          "concept": "waffeleisen",
+          "arasaac": 13364,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/waffeleisen.png",
+          "label": "Waffeleisen"
+        }
+      ]
+    }
+  ]
+}

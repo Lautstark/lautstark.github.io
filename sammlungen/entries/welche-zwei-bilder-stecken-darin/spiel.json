@@ -1,0 +1,280 @@
+{
+  "kind": "spiel",
+  "heading": "Welche zwei Bilder stecken darin?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Welche zwei Bilder stecken in dem Wort? Leg sie daneben.",
+      "s0-0": "Der Eisbär. Welche zwei Bilder stecken darin?",
+      "s1-0": "Das Eis.",
+      "s2-0": "Der Bär.",
+      "s3-0": "Der Blumentopf. Welche zwei Bilder stecken darin?",
+      "s4-0": "Die Blume.",
+      "s5-0": "Der Topf.",
+      "s6-0": "Das Schaukelpferd. Welche zwei Bilder stecken darin?",
+      "s7-0": "Die Schaukel.",
+      "s8-0": "Das Pferd.",
+      "s9-0": "Das Spiegelei. Welche zwei Bilder stecken darin?",
+      "s10-0": "Der Spiegel.",
+      "s11-0": "Das Ei.",
+      "s12-0": "Der Schneeball. Welche zwei Bilder stecken darin?",
+      "s13-0": "Der Schnee.",
+      "s14-0": "Der Ball."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Eisbär",
+      "slots": [
+        {
+          "token": "Eisbär",
+          "concept": "eisbär",
+          "arasaac": 2868,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/eisbaer.png"
+        }
+      ]
+    },
+    {
+      "text": "Eis",
+      "slots": [
+        {
+          "token": "Eis",
+          "concept": "eis",
+          "arasaac": 35209,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/eistuete.png"
+        }
+      ]
+    },
+    {
+      "text": "Bär",
+      "slots": [
+        {
+          "token": "Bär",
+          "concept": "bär",
+          "arasaac": 2488,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/braunbaer.png"
+        }
+      ]
+    },
+    {
+      "text": "Blumentopf",
+      "slots": [
+        {
+          "token": "Blumentopf",
+          "concept": "blumentopf",
+          "arasaac": 3126,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pflanzen/blumentopf.png"
+        }
+      ]
+    },
+    {
+      "text": "Blume",
+      "slots": [
+        {
+          "token": "Blume",
+          "concept": "blume",
+          "arasaac": 7104,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pflanzen/blume.png"
+        }
+      ]
+    },
+    {
+      "text": "Topf",
+      "slots": [
+        {
+          "token": "Topf",
+          "concept": "topf",
+          "arasaac": 9086,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/topf.png"
+        }
+      ]
+    },
+    {
+      "text": "Schaukelpferd",
+      "slots": [
+        {
+          "token": "Schaukelpferd",
+          "concept": "schaukelpferd",
+          "arasaac": 4923,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/schaukelpferd.png"
+        }
+      ]
+    },
+    {
+      "text": "Schaukel",
+      "slots": [
+        {
+          "token": "Schaukel",
+          "concept": "schaukel",
+          "arasaac": 4608,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/schaukel.png"
+        }
+      ]
+    },
+    {
+      "text": "Pferd",
+      "slots": [
+        {
+          "token": "Pferd",
+          "concept": "pferd",
+          "arasaac": 2294,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/pferd.png"
+        }
+      ]
+    },
+    {
+      "text": "Spiegelei",
+      "slots": [
+        {
+          "token": "Spiegelei",
+          "concept": "spiegelei",
+          "arasaac": 2428,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/spiegelei.png"
+        }
+      ]
+    },
+    {
+      "text": "Spiegel",
+      "slots": [
+        {
+          "token": "Spiegel",
+          "concept": "spiegel",
+          "arasaac": 8573,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/spiegel.png"
+        }
+      ]
+    },
+    {
+      "text": "Ei",
+      "slots": [
+        {
+          "token": "Ei",
+          "concept": "ei",
+          "arasaac": 2427,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/ei.png"
+        }
+      ]
+    },
+    {
+      "text": "Schneeball",
+      "slots": [
+        {
+          "token": "Schneeball",
+          "concept": "schneeball",
+          "arasaac": 24891,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/schneeball.png"
+        }
+      ]
+    },
+    {
+      "text": "Schnee",
+      "slots": [
+        {
+          "token": "Schnee",
+          "concept": "schnee",
+          "arasaac": 38027,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/schneeflocke.png"
+        }
+      ]
+    },
+    {
+      "text": "Ball",
+      "slots": [
+        {
+          "token": "Ball",
+          "concept": "ball",
+          "arasaac": 9113,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Spielen/ballrot.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": true
+          },
+          {
+            "karte": 2,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 3,
+            "platz": false
+          },
+          {
+            "karte": 4,
+            "platz": true
+          },
+          {
+            "karte": 5,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 6,
+            "platz": false
+          },
+          {
+            "karte": 7,
+            "platz": true
+          },
+          {
+            "karte": 8,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 9,
+            "platz": false
+          },
+          {
+            "karte": 10,
+            "platz": true
+          },
+          {
+            "karte": 11,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 12,
+            "platz": false
+          },
+          {
+            "karte": 13,
+            "platz": true
+          },
+          {
+            "karte": 14,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

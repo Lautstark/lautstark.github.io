@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "id": "welche-zahl-fehlt",
+  "product": "bildhaft",
+  "name": "Welche Zahl fehlt? (III)",
+  "description": "In einer Zahlenreihe die fehlende Zahl finden.",
+  "tags": [
+    "Spiel",
+    "Stufe III"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [],
+  "payload": "spiel.json"
+}

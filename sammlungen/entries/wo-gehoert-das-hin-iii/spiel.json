@@ -1,0 +1,453 @@
+{
+  "kind": "spiel",
+  "heading": "Wo gehört das hin?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Wo gehört das hin? Leg jedes Bild in die richtige Reihe.",
+      "s0-0": "Das Obst. Hier kommt das Obst hin.",
+      "s1-0": "Der Apfel.",
+      "s2-0": "Die Birne.",
+      "s3-0": "Die Kirsche.",
+      "s4-0": "Das Gemüse. Hier kommt das Gemüse hin.",
+      "s5-0": "Die Gurke.",
+      "s6-0": "Die Karotte.",
+      "s7-0": "Die Zwiebel.",
+      "s8-0": "Der Wald. Wer wohnt im Wald?",
+      "s9-0": "Der Fuchs.",
+      "s10-0": "Das Reh.",
+      "s11-0": "Das Eichhörnchen.",
+      "s12-0": "Das Meer. Wer wohnt im Meer?",
+      "s13-0": "Der Fisch.",
+      "s14-0": "Der Delfin.",
+      "s15-0": "Die Qualle.",
+      "s16-0": "Die Kleidung. Hier kommt alles zum Anziehen hin.",
+      "s17-0": "Die Hose.",
+      "s18-0": "Die Jacke.",
+      "s19-0": "Das Kleid."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Obst",
+      "slots": [
+        {
+          "token": "Obst",
+          "concept": "obst",
+          "arasaac": 28339,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/obst.png"
+        }
+      ]
+    },
+    {
+      "text": "Apfel",
+      "slots": [
+        {
+          "token": "Apfel",
+          "concept": "apfel",
+          "arasaac": 2462,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel.png"
+        }
+      ]
+    },
+    {
+      "text": "Birne",
+      "slots": [
+        {
+          "token": "Birne",
+          "concept": "birne",
+          "arasaac": 2561,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/birne.png"
+        }
+      ]
+    },
+    {
+      "text": "Kirsche",
+      "slots": [
+        {
+          "token": "Kirsche",
+          "concept": "kirsche",
+          "arasaac": 2329,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kirsche.png"
+        }
+      ]
+    },
+    {
+      "text": "Gemüse",
+      "slots": [
+        {
+          "token": "Gemüse",
+          "concept": "gemüse",
+          "arasaac": 28343,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/gemuese.png"
+        }
+      ]
+    },
+    {
+      "text": "Gurke",
+      "slots": [
+        {
+          "token": "Gurke",
+          "concept": "gurke",
+          "arasaac": 2847,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/gurke.png"
+        }
+      ]
+    },
+    {
+      "text": "Karotte",
+      "slots": [
+        {
+          "token": "Karotte",
+          "concept": "karotte",
+          "arasaac": 2619,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mohrruebekarotte.png"
+        }
+      ]
+    },
+    {
+      "text": "Zwiebel",
+      "slots": [
+        {
+          "token": "Zwiebel",
+          "concept": "zwiebel",
+          "arasaac": 2323,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zwiebel.png"
+        }
+      ]
+    },
+    {
+      "text": "Wald",
+      "slots": [
+        {
+          "token": "Wald",
+          "concept": "wald",
+          "arasaac": 2666,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Landschaft/wald.png"
+        }
+      ]
+    },
+    {
+      "text": "Fuchs",
+      "slots": [
+        {
+          "token": "Fuchs",
+          "concept": "fuchs",
+          "arasaac": 2623,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/fuchs.png"
+        }
+      ]
+    },
+    {
+      "text": "Reh",
+      "slots": [
+        {
+          "token": "Reh",
+          "concept": "reh",
+          "arasaac": 3263,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/reh.png"
+        }
+      ]
+    },
+    {
+      "text": "Eichhörnchen",
+      "slots": [
+        {
+          "token": "Eichhörnchen",
+          "concept": "eichhörnchen",
+          "arasaac": 25815,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/eichhoernchen.png"
+        }
+      ]
+    },
+    {
+      "text": "Meer",
+      "slots": [
+        {
+          "token": "Meer",
+          "concept": "meer",
+          "arasaac": 2925,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Landschaft/meer.png"
+        }
+      ]
+    },
+    {
+      "text": "Fisch",
+      "slots": [
+        {
+          "token": "Fisch",
+          "concept": "fisch",
+          "arasaac": 2520,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/fisch.png"
+        }
+      ]
+    },
+    {
+      "text": "Delfin",
+      "slots": [
+        {
+          "token": "Delfin",
+          "concept": "delfin",
+          "arasaac": 2732,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/delfin.png"
+        }
+      ]
+    },
+    {
+      "text": "Qualle",
+      "slots": [
+        {
+          "token": "Qualle",
+          "concept": "qualle",
+          "arasaac": 2920,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/qualle.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "kleidung",
+          "concept": "kleidung",
+          "arasaac": 7233,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/kleidung.png",
+          "label": "Kleidung"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "hose",
+          "concept": "hose",
+          "arasaac": 2565,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/hose2.png",
+          "label": "Hose"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "jacke",
+          "concept": "jacke",
+          "arasaac": 2319,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/jacke2.png",
+          "label": "Jacke"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "kleid lang",
+          "concept": "kleid lang",
+          "arasaac": 2613,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/kleid_lang.png",
+          "label": "Kleid"
+        }
+      ]
+    },
+    {
+      "text": "Bauernhof",
+      "slots": [
+        {
+          "token": "Bauernhof",
+          "concept": "bauernhof",
+          "arasaac": 32482,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Landschaft/bauernhof.png"
+        }
+      ]
+    },
+    {
+      "text": "Kuh",
+      "slots": [
+        {
+          "token": "Kuh",
+          "concept": "kuh",
+          "arasaac": 2609,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/kuh.png"
+        }
+      ]
+    },
+    {
+      "text": "Löwe",
+      "slots": [
+        {
+          "token": "Löwe",
+          "concept": "löwe",
+          "arasaac": 25187,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/loewe.png"
+        }
+      ]
+    },
+    {
+      "text": "Elefant",
+      "slots": [
+        {
+          "token": "Elefant",
+          "concept": "elefant",
+          "arasaac": 2372,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/elefant.png"
+        }
+      ]
+    },
+    {
+      "text": "Schaf",
+      "slots": [
+        {
+          "token": "Schaf",
+          "concept": "schaf",
+          "arasaac": 2489,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/schafweiss.png"
+        }
+      ]
+    },
+    {
+      "text": "Zoo",
+      "slots": [
+        {
+          "token": "Zoo",
+          "concept": "zoo",
+          "arasaac": 32418,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/zoo.png",
+          "label": "Zoo"
+        }
+      ]
+    },
+    {
+      "text": "Schwein",
+      "slots": [
+        {
+          "token": "Schwein",
+          "concept": "schwein",
+          "arasaac": 24972,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/schwein.png"
+        }
+      ]
+    },
+    {
+      "text": "Giraffe",
+      "slots": [
+        {
+          "token": "Giraffe",
+          "concept": "giraffe",
+          "arasaac": 2437,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/giraffe.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": true
+          },
+          {
+            "karte": 2,
+            "platz": true
+          },
+          {
+            "karte": 3,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 4,
+            "platz": false
+          },
+          {
+            "karte": 5,
+            "platz": true
+          },
+          {
+            "karte": 6,
+            "platz": true
+          },
+          {
+            "karte": 7,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 8,
+            "platz": false
+          },
+          {
+            "karte": 9,
+            "platz": true
+          },
+          {
+            "karte": 10,
+            "platz": true
+          },
+          {
+            "karte": 11,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 12,
+            "platz": false
+          },
+          {
+            "karte": 13,
+            "platz": true
+          },
+          {
+            "karte": 14,
+            "platz": true
+          },
+          {
+            "karte": 15,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 16,
+            "platz": false
+          },
+          {
+            "karte": 17,
+            "platz": true
+          },
+          {
+            "karte": 18,
+            "platz": true
+          },
+          {
+            "karte": 19,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

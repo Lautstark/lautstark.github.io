@@ -1,0 +1,679 @@
+{
+  "kind": "rezept",
+  "title": {
+    "token": "Pizza Margherita",
+    "concept": "pizza margherita",
+    "arasaac": 2527,
+    "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/pizza.png",
+    "label": "Pizza Margherita"
+  },
+  "print": {
+    "symbolSizeMm": 19,
+    "labelSizePt": 8.5,
+    "sheetFit": "grid",
+    "cardWidthMm": 54,
+    "cardHeightMm": 84,
+    "gridCols": 6,
+    "anybookCircle": true,
+    "anybookPlace": "below",
+    "titleLine": false,
+    "cardBorderColor": "#2e2e2e",
+    "anybookSay": {
+      "s25-0": "Küchenmaschine",
+      "titel": "Rezept für Pizza Margherita",
+      "s9": "Einen gelben Messlöffel Zucker in die Rührschüssel geben",
+      "s8": "Einen Würfel Hefe in die Rührschüssel bröseln",
+      "s10": "Zwei rote Becher Wasser in die Rührschüssel gießen",
+      "s11": "Sechs rote Becher Mehl in die Rührschüssel geben",
+      "s12": "Zwei gelbe Messlöffel Salz in die Rührschüssel geben",
+      "s13": "Zwei orange Becher Öl in die Rührschüssel geben",
+      "s16": "Backofen auf zweihundert Grad vorheizen",
+      "s20": "Pizza bei zweihundert Grad fünfzehn bis zwanzig Minuten backen"
+    }
+  },
+  "sentences": [
+    {
+      "text": "Hefe",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Hefe",
+          "concept": "hefe",
+          "arasaac": 9052,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/hefe.png",
+          "label": "Hefe"
+        }
+      ]
+    },
+    {
+      "text": "Zucker",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Zucker",
+          "concept": "zucker",
+          "arasaac": 25560,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucker.png",
+          "label": "Zucker"
+        }
+      ]
+    },
+    {
+      "text": "Wasser",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Wasser",
+          "concept": "wasser",
+          "arasaac": 2248,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/wasser_still.png",
+          "label": "Wasser"
+        }
+      ]
+    },
+    {
+      "text": "Mehl",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Mehl",
+          "concept": "mehl",
+          "arasaac": 8600,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mehl.png",
+          "label": "Mehl"
+        }
+      ]
+    },
+    {
+      "text": "Salz",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Salz",
+          "concept": "salz",
+          "arasaac": 25576,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/salz2.png",
+          "label": "Salz"
+        }
+      ]
+    },
+    {
+      "text": "Öl",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Öl",
+          "concept": "öl",
+          "arasaac": 2246,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/oel.png",
+          "label": "Öl"
+        }
+      ]
+    },
+    {
+      "text": "Tomatensoße",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Tomatensoße",
+          "concept": "tomatensoße",
+          "arasaac": 17008,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/passierte_tomaten.png",
+          "label": "Tomatensoße"
+        }
+      ]
+    },
+    {
+      "text": "Geriebener Käse",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Geriebener Käse",
+          "concept": "geriebener käse",
+          "arasaac": 2541,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kaese.png",
+          "label": "Geriebener Käse"
+        }
+      ]
+    },
+    {
+      "text": "1 Würfel Hefe in die Rührschüssel bröseln",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "1",
+          "concept": "1",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Eins"
+        },
+        {
+          "token": "Würfel Hefe",
+          "concept": "wurfel hefe",
+          "arasaac": 9052,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/hefe.png",
+          "label": "Würfel Hefe"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "1 gelben Messlöffel Zucker in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "1",
+          "concept": "1",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Eins"
+        },
+        {
+          "token": "gelber Messlöffel",
+          "concept": "gelber messloffel",
+          "arasaac": 39645,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gelb1_5ml.png",
+          "label": "gelber Messlöffel"
+        },
+        {
+          "token": "Zucker",
+          "concept": "zucker",
+          "arasaac": 25560,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucker.png",
+          "label": "Zucker"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "2 rote Becher Wasser in die Rührschüssel gießen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "2",
+          "concept": "2",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "Zwei"
+        },
+        {
+          "token": "rote Becher",
+          "concept": "rote becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
+          "label": "rote Becher"
+        },
+        {
+          "token": "Wasser",
+          "concept": "wasser",
+          "arasaac": 2248,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/wasser_still.png",
+          "label": "Wasser"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "6 rote Becher Mehl in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "6",
+          "concept": "6",
+          "arasaac": 2632,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/6.png",
+          "label": "Sechs"
+        },
+        {
+          "token": "rote Becher",
+          "concept": "rote becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
+          "label": "rote Becher"
+        },
+        {
+          "token": "Mehl",
+          "concept": "mehl",
+          "arasaac": 8600,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mehl.png",
+          "label": "Mehl"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "2 gelbe Messlöffel Salz in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "2",
+          "concept": "2",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "Zwei"
+        },
+        {
+          "token": "gelbe Messlöffel",
+          "concept": "gelbe messloffel",
+          "arasaac": 39645,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gelb1_5ml.png",
+          "label": "gelbe Messlöffel"
+        },
+        {
+          "token": "Salz",
+          "concept": "salz",
+          "arasaac": 25576,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/salz2.png",
+          "label": "Salz"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "2 orange Becher Öl in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "2",
+          "concept": "2",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "Zwei"
+        },
+        {
+          "token": "orange Becher",
+          "concept": "orange becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_orange1_30ml.png",
+          "label": "orange Becher"
+        },
+        {
+          "token": "Öl",
+          "concept": "ol",
+          "arasaac": 2246,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/oel.png",
+          "label": "Öl"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "Alles zu einem Teig verrühren",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        },
+        {
+          "token": "mit dem Handmixer",
+          "concept": "mit dem handmixer",
+          "arasaac": 38038,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/kuechenmaschinegrau.png",
+          "label": "mit der Küchenmaschine"
+        },
+        {
+          "token": "gut verrühren",
+          "concept": "gut verruhren",
+          "arasaac": 25738,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/ruehren.png",
+          "label": "gut verrühren"
+        }
+      ]
+    },
+    {
+      "text": "Teig abdecken und gehen lassen, bis er größer ist",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Teig",
+          "concept": "teig",
+          "arasaac": 38442,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/teig.png",
+          "label": "Teig"
+        },
+        {
+          "token": "abdecken",
+          "concept": "abdecken",
+          "arasaac": 2496,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/geschirrhandtuch.png",
+          "label": "abdecken"
+        },
+        {
+          "token": "gehen lassen",
+          "concept": "gehen lassen",
+          "arasaac": 8109,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/warten.png",
+          "label": "gehen lassen"
+        }
+      ]
+    },
+    {
+      "text": "Backofen auf 200 °C vorheizen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "200 °C",
+          "concept": "200 c",
+          "arasaac": 2426,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/ofen.png",
+          "label": "200 °C"
+        },
+        {
+          "token": "vorheizen",
+          "concept": "vorheizen",
+          "arasaac": 5487,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/backenofen.png",
+          "label": "vorheizen"
+        }
+      ]
+    },
+    {
+      "text": "Teig ausrollen und auf das Backblech legen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Teig",
+          "concept": "teig",
+          "arasaac": 38442,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/teig.png",
+          "label": "Teig"
+        },
+        {
+          "token": "ausrollen",
+          "concept": "ausrollen",
+          "arasaac": 8211,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/teigrolle.png",
+          "label": "ausrollen"
+        },
+        {
+          "token": "auf",
+          "concept": "auf",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "auf"
+        },
+        {
+          "token": "das Backblech",
+          "concept": "das backblech",
+          "arasaac": 32510,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/backblech2.png",
+          "label": "das Backblech"
+        }
+      ]
+    },
+    {
+      "text": "Tomatensoße auf dem Teig verteilen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Tomatensoße",
+          "concept": "tomatensosse",
+          "arasaac": 17008,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/passierte_tomaten.png",
+          "label": "Tomatensoße"
+        },
+        {
+          "token": "verteilen",
+          "concept": "verteilen",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "verteilen"
+        },
+        {
+          "token": "auf dem Teig",
+          "concept": "auf dem teig",
+          "arasaac": 38442,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/teig.png",
+          "label": "auf dem Teig"
+        }
+      ]
+    },
+    {
+      "text": "Käse auf der Pizza verteilen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Käse",
+          "concept": "kase",
+          "arasaac": 2541,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kaese.png",
+          "label": "Käse"
+        },
+        {
+          "token": "verteilen",
+          "concept": "verteilen",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "verteilen"
+        },
+        {
+          "token": "auf der Pizza",
+          "concept": "auf der pizza",
+          "arasaac": 2527,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/pizza.png",
+          "label": "auf der Pizza"
+        }
+      ]
+    },
+    {
+      "text": "Pizza bei 200 °C 15 bis 20 Minuten backen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Pizza",
+          "concept": "pizza",
+          "arasaac": 2527,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/pizza.png",
+          "label": "Pizza"
+        },
+        {
+          "token": "200 °C",
+          "concept": "200 c",
+          "arasaac": 2426,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Haus/ofen.png",
+          "label": "200 °C"
+        },
+        {
+          "token": "15–20 Minuten",
+          "concept": "15 20 minuten",
+          "arasaac": 37659,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zeit/timer.png",
+          "label": "15–20 Minuten"
+        },
+        {
+          "token": "backen",
+          "concept": "backen",
+          "arasaac": 5487,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/backenofen.png",
+          "label": "backen"
+        }
+      ]
+    },
+    {
+      "text": "Roter Becher",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Roter Becher",
+          "concept": "roter becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
+          "label": "Roter Becher"
+        }
+      ]
+    },
+    {
+      "text": "Oranger Becher",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Oranger Becher",
+          "concept": "oranger becher",
+          "arasaac": 32466,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_orange1_30ml.png",
+          "label": "Oranger Becher"
+        }
+      ]
+    },
+    {
+      "text": "Gelber Messlöffel",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Gelber Messlöffel",
+          "concept": "gelber messloffel",
+          "arasaac": 39645,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gelb1_5ml.png",
+          "label": "Gelber Messlöffel"
+        }
+      ]
+    },
+    {
+      "text": "Rührschüssel",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Rührschüssel",
+          "concept": "ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "Handmixer",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Handmixer",
+          "concept": "handmixer",
+          "arasaac": 38038,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/kuechenmaschinegrau.png",
+          "label": "Küchenmaschine"
+        }
+      ]
+    },
+    {
+      "text": "Geschirrtuch",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Geschirrtuch",
+          "concept": "geschirrtuch",
+          "arasaac": 2496,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/geschirrhandtuch.png",
+          "label": "Geschirrtuch"
+        }
+      ]
+    },
+    {
+      "text": "Nudelholz",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Nudelholz",
+          "concept": "nudelholz",
+          "arasaac": 8211,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/teigrolle.png",
+          "label": "Nudelholz"
+        }
+      ]
+    },
+    {
+      "text": "Backblech",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Backblech",
+          "concept": "backblech",
+          "arasaac": 32510,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/backblech2.png",
+          "label": "Backblech"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "kind": "spiel",
+  "heading": "Was machst du damit?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Was machst du damit? Leg das passende Bild daneben.",
+      "s0-0": "Das Auge. Was kannst du anschauen?",
+      "s1-0": "Das Bilderbuch.",
+      "s2-0": "Das Ohr. Was kannst du hören?",
+      "s3-0": "Die Trommel.",
+      "s4-0": "Die Nase. Woran kannst du riechen?",
+      "s5-0": "Die Blume.",
+      "s6-0": "Der Mund. Was kannst du essen?",
+      "s7-0": "Die Banane.",
+      "s8-0": "Die Hand. Womit kannst du malen?",
+      "s9-0": "Der Pinsel.",
+      "s10-0": "Der Fuß. Was kannst du mit dem Fuß kicken?",
+      "s11-0": "Der Fußball."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Auge",
+      "slots": [
+        {
+          "token": "Auge",
+          "concept": "auge",
+          "arasaac": 6573,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperteile/auge.png"
+        }
+      ]
+    },
+    {
+      "text": "Bilderbuch",
+      "slots": [
+        {
+          "token": "Bilderbuch",
+          "concept": "bilderbuch",
+          "arasaac": 25191,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Buch_Zeitung/bilderbuch.png"
+        }
+      ]
+    },
+    {
+      "text": "Ohr",
+      "slots": [
+        {
+          "token": "Ohr",
+          "concept": "ohr",
+          "arasaac": 2871,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperteile/ohr.png"
+        }
+      ]
+    },
+    {
+      "text": "Trommel",
+      "slots": [
+        {
+          "token": "Trommel",
+          "concept": "trommel",
+          "arasaac": 2578,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Musik/trommel.png"
+        }
+      ]
+    },
+    {
+      "text": "Nase",
+      "slots": [
+        {
+          "token": "Nase",
+          "concept": "nase",
+          "arasaac": 2887,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperteile/nase1.png"
+        }
+      ]
+    },
+    {
+      "text": "Blume",
+      "slots": [
+        {
+          "token": "Blume",
+          "concept": "blume",
+          "arasaac": 7104,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pflanzen/blume.png"
+        }
+      ]
+    },
+    {
+      "text": "Mund",
+      "slots": [
+        {
+          "token": "Mund",
+          "concept": "mund",
+          "arasaac": 2663,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperteile/mund.png"
+        }
+      ]
+    },
+    {
+      "text": "Banane",
+      "slots": [
+        {
+          "token": "Banane",
+          "concept": "banane",
+          "arasaac": 2530,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/banane.png"
+        }
+      ]
+    },
+    {
+      "text": "Hand",
+      "slots": [
+        {
+          "token": "Hand",
+          "concept": "hand",
+          "arasaac": 2928,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperteile/hand.png"
+        }
+      ]
+    },
+    {
+      "text": "Pinsel",
+      "slots": [
+        {
+          "token": "Pinsel",
+          "concept": "pinsel",
+          "arasaac": 2523,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Buero_Basteln/pinsel.png"
+        }
+      ]
+    },
+    {
+      "text": "Fuß",
+      "slots": [
+        {
+          "token": "Fuß",
+          "concept": "fuß",
+          "arasaac": 2841,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperteile/fuss.png"
+        }
+      ]
+    },
+    {
+      "text": "Fußball",
+      "slots": [
+        {
+          "token": "Fußball",
+          "concept": "fußball",
+          "arasaac": 2269,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Sport/fussball.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 2,
+            "platz": false
+          },
+          {
+            "karte": 3,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 4,
+            "platz": false
+          },
+          {
+            "karte": 5,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 6,
+            "platz": false
+          },
+          {
+            "karte": 7,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 8,
+            "platz": false
+          },
+          {
+            "karte": 9,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 10,
+            "platz": false
+          },
+          {
+            "karte": 11,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

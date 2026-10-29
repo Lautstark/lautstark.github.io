@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "id": "was-kommt-als-naechstes-iii",
+  "product": "bildhaft",
+  "name": "Was kommt als Nächstes? (III)",
+  "description": "Längere Muster aus drei Bildern weiterlegen.",
+  "tags": [
+    "Spiel",
+    "Stufe III"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [],
+  "payload": "spiel.json"
+}

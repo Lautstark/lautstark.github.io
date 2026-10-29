@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "id": "tier-fahrzeug-oder-obst",
+  "product": "bildhaft",
+  "name": "Tier, Fahrzeug oder Obst? (I)",
+  "description": "Sortieren: Tiere, Fahrzeuge und Obst.",
+  "tags": [
+    "Spiel",
+    "Stufe I"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [],
+  "payload": "spiel.json"
+}

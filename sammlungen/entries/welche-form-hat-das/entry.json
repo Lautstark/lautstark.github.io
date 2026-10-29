@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "id": "welche-form-hat-das",
+  "product": "bildhaft",
+  "name": "Welche Form hat das? (II)",
+  "description": "Dinge zu Kreis, Dreieck und Quadrat legen.",
+  "tags": [
+    "Spiel",
+    "Stufe II"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [],
+  "payload": "spiel.json"
+}

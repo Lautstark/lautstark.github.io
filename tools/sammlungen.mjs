@@ -34,8 +34,9 @@
  * A bildhaft field can name its METACOM symbol beside its ARASAAC number: the
  * path under somebody's own METACOM folder, which bildhaft resolves on a
  * machine that has one. The page never shows a METACOM picture — there is
- * none in this repository to show — and offers the switch to say where they
- * are: in bildhaft, with a licence of one's own.
+ * none in this repository to show. A card says it has METACOM too; the
+ * material's own page has the switch, which says where they are: in bildhaft,
+ * with a licence of one's own.
  */
 
 import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync }
@@ -102,10 +103,14 @@ const bildhaftFacts = (payload) => ({
     zutaten: payload.sentences.filter((row) => row.part === "zutat").length,
     schritte: payload.sentences.filter((row) => row.part === "schritt").length,
   } : {}),
+  ...(payload.kind === "spiel" ? {
+    reihen: payload.game.rows.length,
+    karten: payload.game.rows.flatMap((row) => row.zellen).filter((zelle) => zelle.platz).length,
+  } : {}),
 });
 
 /** The templates the shelf knows by name; a payload without a kind is Satzstreifen. */
-const KINDS = { tafel: "Tafel", lied: "Lied", rezept: "Rezept", einkaufsliste: "Einkaufsliste" };
+const KINDS = { tafel: "Tafel", lied: "Lied", rezept: "Rezept", einkaufsliste: "Einkaufsliste", spiel: "Spiel" };
 
 const factsFor = {
   "vorlaut-app": boardFacts,
@@ -236,6 +241,7 @@ function factLine(meta) {
   }
   if (f.kind === "rezept") return `Rezept · ${f.zutaten} Zutaten · ${f.schritte} Schritte`;
   if (f.kind === "einkaufsliste") return `Einkaufsliste · ${f.sentences} Karten`;
+  if (f.kind === "spiel") return `Spiel · ${f.reihen} Reihen · ${f.karten} Karten zum Legen`;
   if (meta.art === "Wortliste") return `${f.words} Wörter in ${f.sentences} Gruppen`;
   return `${f.sentences} Sätze`;
 }
@@ -305,15 +311,17 @@ const downloadable = (meta) => FILES.has(meta.product);
  *
  * A new tab, because this page is a shelf: somebody comparing three Sammlungen
  * should not lose the shelf to try one.
+ *
+ * „Ansehen" stood beside it until 2026-10-29: now the whole card is that link
+ * where there is a page to see (card()), and a link saying so as well was a
+ * second way to the same place.
  */
 function actions(meta, links) {
   const key = OPENS[meta.product];
   if (!key) return '<span class="dazu">Kommt noch</span>';
   const open = `<a href="${esc(links[key])}?sammlung=${esc(meta.id)}" target="_blank" rel="noopener">`
     + `In ${esc(PROGRAMS[key])} öffnen</a>`;
-  return hasPage(meta)
-    ? `<a href="${esc(meta.id)}.html">Ansehen</a> <span class="dazu">·</span> ${open}`
-    : open;
+  return open;
 }
 
 /**
@@ -370,15 +378,13 @@ function symbolSwitch(id) {
 }
 
 /**
- * What METACOM is, said where somebody asked for it: in the place of the
- * pictures, as the two steps that get them. The licence is the small print,
- * because whoever has one knows, and whoever has none learns it once.
+ * That a card has METACOM too, said and not offered. The card had the switch
+ * until 2026-10-29, and its hint did not fit a card: it was cut off at the top
+ * of every small cover. A switch on a card is also a control inside a link.
+ * So the card says it, the way it says how big a Tafel is, and the switch with
+ * its two steps lives on the material's own page, which has the room.
  */
-const METACOM_HINT = `<div class="hinweis-m"><div>
-          <p class="hm-titel">So bekommst du METACOM</p>
-          <ol><li><span>1</span>In bildhaft öffnen</li><li><span>2</span>Einmal deinen METACOM-Ordner wählen</li></ol>
-          <p class="hm-klein">Dafür brauchst du eine eigene METACOM-Lizenz.</p>
-        </div></div>`;
+const METACOM_MARK = '<p class="auch-m"><b>ARASAAC</b> · auch mit METACOM</p>';
 
 /** How many pictures a Wortliste's wall holds before it says how many more. */
 const WALL = 17;
@@ -386,8 +392,8 @@ const WALL = 17;
 /**
  * The top of a bildhaft card: what comes out of the printer, the first page of
  * it — or for a Wortliste, which is words to build from and prints as nothing
- * yet, a wall of its pictures. Over it the switch, and under the switch where
- * METACOM is.
+ * yet, a wall of its pictures. Over its corner, where it has both, that it
+ * comes with METACOM as well.
  */
 function bildhaftTop(entry) {
   const { meta, payload } = entry;
@@ -401,9 +407,7 @@ function bildhaftTop(entry) {
     top = `<div class="wand">${numbers.slice(0, WALL).map((n) => `<span>${picture(n, 40)}</span>`).join("")}`
       + (more > 0 ? `<span class="wand__mehr">+${more}</span>` : "") + "</div>";
   }
-  const both = bothSources(payload);
-  return `${both ? symbolSwitch(meta.id) : ""}
-        <div class="oben${sheet ? "" : " oben--woerter"}">${top}${both ? METACOM_HINT : ""}</div>`;
+  return `<div class="oben${sheet ? "" : " oben--woerter"}">${bothSources(payload) ? METACOM_MARK : ""}${top}</div>`;
 }
 
 /** Which products show what is inside before you take it. A product with no
@@ -420,8 +424,13 @@ function card({ meta, payload }, links) {
     [meta.name, meta.description, ...(meta.tags ?? []), product.label, meta.facts.grid ?? ""]
       .join(" "));
 
+  /* Where there is a page to see, the card is the way there: the name is the
+     link, and its ::after spreads it over the whole card (site.css,
+     .karte__ansehen). The other links on the card stand above it. */
+  const name = hasPage(meta)
+    ? `<a class="karte__ansehen" href="${esc(meta.id)}.html">${esc(meta.name)}</a>` : esc(meta.name);
   const text = `<p class="karte__wer"><span class="punkt"></span>${esc([product.label, kindLabel(meta)].filter(Boolean).join(" · "))}</p>
-        <h3>${esc(meta.name)}</h3>
+        <h3>${name}</h3>
         ${PREVIEW[meta.product]?.(payload, meta.id) ?? ""}
         <p class="karte__was">${esc(meta.description)}</p>
         <p class="karte__zahlen">${esc(factLine(meta))}</p>
@@ -432,7 +441,8 @@ function card({ meta, payload }, links) {
   /* A bildhaft card opens on what it looks like, the way a book is shown by
      its cover; the rest of the shelf on its words. */
   const bildhaft = meta.product === "bildhaft";
-  return `      <article class="karte produkt ${esc(product.hue)}${bildhaft ? " karte--blatt" : ""}" data-produkt="${esc(meta.product)}"
+  const art = artOf(meta);
+  return `      <article class="karte produkt ${esc(product.hue)}${bildhaft ? " karte--blatt" : ""}${hasPage(meta) ? " karte--ansehen" : ""}" data-produkt="${esc(meta.product)}"${art ? ` data-art="${esc(art)}"` : ""}
         data-text="${esc(haystack)}">
         ${bildhaft ? `${bildhaftTop({ meta, payload })}\n        <div class="karte__text">${text}</div>` : text}
       </article>`;
@@ -461,12 +471,35 @@ function filter(entries) {
       + `<span class="n">${n}</span></label>`);
   }
 
+  /* The second row: what a material is, for the day the shelf held more Spiele
+     than everything else together (2026-10-29). Its own group of radios, so it
+     narrows whatever „Für" chose rather than replacing it. */
+  const arts = new Map();
+  for (const { meta } of entries) {
+    const art = artOf(meta);
+    if (art) arts.set(art, { label: kindLabel(meta), n: (arts.get(art)?.n ?? 0) + 1 });
+  }
+  const artInputs = ['<input type="radio" name="vorlage" id="v-alle" class="wahl" checked>'];
+  const artChips = ['<label class="chip" for="v-alle">Alle</label>'];
+  for (const [art, { label, n }] of [...arts].sort((a, b) => b[1].n - a[1].n)) {
+    artInputs.push(`<input type="radio" name="vorlage" id="v-${esc(art)}" class="wahl">`);
+    artChips.push(`<label class="chip" for="v-${esc(art)}">${esc(label)}<span class="n">${n}</span></label>`);
+  }
+
   return `${inputs.join("\n    ")}
+    ${arts.size > 1 ? artInputs.join("\n    ") : ""}
     <fieldset class="filter">
       <legend>Für</legend>
       ${chips.join("\n      ")}
-    </fieldset>`;
+    </fieldset>${arts.size > 1 ? `
+    <fieldset class="filter filter--vorlage">
+      <legend>Vorlage</legend>
+      ${artChips.join("\n      ")}
+    </fieldset>` : ""}`;
 }
+
+/** What a material is, as a filter's id: its template's name, folded. */
+const artOf = (meta) => (meta.product === "bildhaft" ? fold(kindLabel(meta)) : "");
 
 /** The rules that hide what a chosen radio excludes, written for the products
  *  actually present so the stylesheet never names one that is not here. */
@@ -474,11 +507,15 @@ function filterRules(entries) {
   const chosen = (id) => `#${id}:checked ~ .filter .chip[for="${id}"] `
     + "{ background: var(--accent-soft); color: var(--accent-strong); font-weight: 600; }";
 
-  const rules = [chosen("p-alle")];
+  const rules = [chosen("p-alle"), chosen("v-alle")];
   for (const product of new Set(entries.map((e) => e.meta.product))) {
     rules.push(chosen(`p-${product}`));
     rules.push(`#p-${product}:checked ~ section .karte:not([data-produkt="${product}"]) `
       + "{ display: none; }");
+  }
+  for (const art of new Set(entries.map((e) => artOf(e.meta)).filter(Boolean))) {
+    rules.push(chosen(`v-${art}`));
+    rules.push(`#v-${art}:checked ~ section .karte:not([data-art="${art}"]) { display: none; }`);
   }
   return rules.join("\n");
 }
@@ -806,6 +843,124 @@ export function rezeptPages(payload, name, attribution) {
   return paginate(W, H, attribution, paperLabel(p), blocks);
 }
 
+/*
+ * A Spiel's two kinds of sheet, bildhaft's (src/ui/printSheet.ts, gameRaster()
+ * and gameGeometry(); src/styles/print.css, .ps-spiel): the Spielblatt — the
+ * Ablage left, a quiet dashed block with a dot per card to lay, the fence of
+ * accent dots, and the rows, each on its rose ground, the fixed cards framed
+ * in the accent and a dashed field for each card to lay — and the Kartenbogen,
+ * the cards to cut out. A4 across, punched at the top, one field of 30 mm, five
+ * rows under each other; the rest is the same arithmetic in fewer lines.
+ */
+const GAME_FIELD = 30;
+const GAME_ASPECT = 42 / 50;
+
+export function spielPages(payload, name, attribution) {
+  const p = { paper: "a4", orientation: "landscape", punch: "top", cutMarginMm: 3, showLabel: false,
+    labelSizePt: 11, accentColour: "#e0558c", gameGroundColour: "#fdeef3", titleSizePt: 15, titleLine: true,
+    ...(payload.print ?? {}) };
+  const [W, H] = sheetSize(p);
+  const k = p.paper === "a5" ? 0.62 : 1;
+  const accent = esc(p.titleColour ?? p.accentColour);
+  const top = p.punch === "top" ? 20 : 10; const left = p.punch === "left" ? 20 : 10;
+  const width = W - left - 10;
+  const line = p.titleSizePt * PT * 1.3;
+  const titled = p.showCollectionTitle !== false;
+  const titleH = titled ? line + (p.titleLine ? 2.1 : 0) : 0;
+  const titleRoom = titled ? titleH + 4 + 4 : 0;
+  const height = H - top - 6 - titleRoom - creditMm(attribution, width);
+  const label = p.showLabel ? p.labelSizePt * k * PT * 1.4 + k : 0;
+  const pad = 2 * k; const rowGap = 3 * k; const gap = 6 * k;
+
+  const card = (index) => payload.sentences[index].slots[0];
+  const rows = payload.game.rows.map((row) => row.zellen.map((zelle) => ({ slot: card(zelle.karte), platz: zelle.platz })));
+  const laid = rows.flatMap((row) => row.filter((cell) => cell.platz).map((cell) => cell.slot));
+  const zellen = Math.max(1, ...rows.map((row) => row.length));
+  const measure = (reihen) => {
+    const spielCols = Math.ceil(rows.length / reihen);
+    const lagerCols = Math.ceil(Math.max(1, laid.length) / reihen);
+    const fixed = (p.punch === "left" ? 21 : 28) * k + (spielCols - 1) * 13 * k;
+    const gaps = (lagerCols - 1) * gap + spielCols * (zellen - 1) * gap;
+    const wLimit = (width - fixed - gaps) / (lagerCols + spielCols * zellen);
+    const hLimit = ((height - k - (reihen - 1) * rowGap) / reihen - 2 * pad - label) / GAME_ASPECT;
+    return { reihen, lagerCols, fieldW: Math.min(GAME_FIELD * k, wLimit, hLimit) };
+  };
+  let best = measure(Math.max(1, Math.floor((height - k + rowGap) / (GAME_FIELD * k * GAME_ASPECT + label + 2 * pad + rowGap) + 1e-9)));
+  for (let reihen = best.reihen + 1; best.fieldW < GAME_FIELD * k - 1e-6 && reihen <= rows.length; reihen += 1) {
+    const taller = measure(reihen);
+    if (taller.fieldW > best.fieldW) best = taller;
+  }
+  const { reihen, lagerCols, fieldW } = best;
+  const fieldH = fieldW * GAME_ASPECT + label;
+  const rowH = fieldH + 2 * pad;
+  const sym = Math.max(8, Math.min(fieldW - 4 - 2 * k, fieldH - 4 - label - 3 * k));
+
+  const img = (slot) => `<img width="64" height="64" src="bilder/${esc(slot.arasaac)}.png" alt="" `
+    + `style="width: ${mm(sym)}; height: ${mm(sym)}">`;
+  const word = (slot) => (p.showLabel ? `<span style="font-size: ${mm(p.labelSizePt * k * PT)}">${esc(slot.label || slot.token)}</span>` : "");
+  const dot = (x, y, ring) => `<span class="blatt__punkt" style="${box(x - 4.5 * k, y - 4.5 * k, 9 * k, 9 * k)}; `
+    + `border-width: ${mm(0.35 * k)}; border-color: ${ring}"></span>`;
+  const y0 = top + titleRoom;
+  const title = titled ? `<span class="blatt__titel" style="${box(left, top, width, titleH)}; font-size: ${mm(p.titleSizePt * PT)}; `
+    + `color: ${accent}; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis`
+    + `${p.titleLine ? `; border-bottom: ${mm(0.6)} solid ${accent}` : ""}">${esc(payload.heading ?? name)}</span>` : "";
+
+  // The Ablage: a dot per card to lay, column by column from the top.
+  const lagerX = left + 2.5 * k;
+  const lagerW = lagerCols * fieldW + (lagerCols - 1) * gap;
+  const parts = [title, `<span style="${box(lagerX - 1 * k, y0 - 1 * k, lagerW + 2 * k, reihen * rowH + (reihen - 1) * rowGap + 2 * k)}; `
+    + `border: ${mm(0.25)} dashed #c4bcb6; border-radius: ${mm(3 * k)}"></span>`];
+  laid.forEach((_, i) => {
+    const c = Math.floor(i / reihen); const r = i % reihen;
+    parts.push(dot(lagerX + c * (fieldW + gap) + fieldW / 2, y0 + r * (rowH + rowGap) + rowH / 2, "#cfc8c1"));
+  });
+
+  // The fence, then the rows on their ground.
+  const fenceX = lagerX + lagerW + 2.5 * k;
+  const fenceW = (p.punch === "left" ? 7 : 14) * k;
+  parts.push(`<span style="${box(fenceX, y0, fenceW, reihen * rowH + (reihen - 1) * rowGap)}; `
+    + `background-image: radial-gradient(circle, ${esc(p.accentColour)} ${mm(0.8 * k)}, transparent ${mm(0.8 * k + 0.15)}); `
+    + `background-size: ${mm(2 * k)} ${mm(5 * k)}; background-repeat: repeat-y; background-position: center top"></span>`);
+  const thin = (n) => `color-mix(in srgb, ${esc(p.accentColour)} ${n}%, #fff)`;
+  let colX = fenceX + fenceW;
+  for (let c = 0; c * reihen < rows.length; c += 1) {
+    const these = rows.slice(c * reihen, (c + 1) * reihen);
+    let widest = 0;
+    these.forEach((row, r) => {
+      const y = y0 + r * (rowH + rowGap);
+      const w = 2 * pad + row.length * fieldW + (row.length - 1) * gap;
+      widest = Math.max(widest, w);
+      parts.push(`<span style="${box(colX, y, w, rowH)}; background: ${esc(p.gameGroundColour)}; border-radius: ${mm(3 * k)}"></span>`);
+      row.forEach((cell, i) => {
+        const x = colX + pad + i * (fieldW + gap);
+        parts.push(cell.platz
+          ? `<span style="${box(x, y + pad, fieldW, fieldH)}; background: #fff; border: ${mm(0.3 * k)} dashed ${thin(65)}; border-radius: ${mm(2)}"></span>`
+            + dot(x + fieldW / 2, y + pad + fieldH / 2, thin(35))
+          : `<span class="blatt__karte" style="${box(x, y + pad, fieldW, fieldH)}; border: ${mm(0.4 * k)} solid ${esc(p.accentColour)}; `
+            + `border-radius: ${mm(2)}; background: #fff; padding: ${mm(1 * k)}">${img(cell.slot)}${word(cell.slot)}</span>`);
+      });
+    });
+    colX += widest + 8 * k;
+  }
+  const paper = `${paperLabel(p)}`;
+  const sheets = [paperSheet(W, H, parts.join(""), attribution, `${paper} · Spielblatt`)];
+
+  // The Kartenbogen: the cards to lay, the laminate's seam smaller, air round each.
+  const cutW = Math.max(10, fieldW - 4); const cutH = Math.max(10, fieldH - 4);
+  const air = p.cutMarginMm * k;
+  const cutArea = [W - left - 10, H - top - 6 - creditMm(attribution, width)];
+  const cols = Math.max(1, Math.floor(cutArea[0] / (cutW + 2 * air) + 1e-6));
+  const perPage = cols * Math.max(1, Math.floor(cutArea[1] / (cutH + 2 * air)));
+  for (let at = 0; at < laid.length; at += perPage) {
+    sheets.push(paperSheet(W, H, laid.slice(at, at + perPage).map((slot, i) =>
+      `<span class="blatt__zone blatt__schnitt" style="${box(left + (i % cols) * (cutW + 2 * air), top + Math.floor(i / cols) * (cutH + 2 * air), cutW + 2 * air, cutH + 2 * air)}; `
+      + `padding: ${mm(air)}"><span class="blatt__karte" style="width: 100%; height: 100%; border: ${mm(0.4 * k)} solid ${esc(p.accentColour)}; `
+      + `border-radius: ${mm(2)}; background: #fff">${img(slot)}${word(slot)}</span></span>`).join(""),
+    attribution, `${paper} · Karten zum Ausschneiden`));
+  }
+  return sheets;
+}
+
 /** bildhaft's SHOPPING: the list's zones, the cart's zones, and the paper's factor on all of it. */
 const SHOPPING = { list: [3, 5], cart: [5, 3] };
 const SHOPPING_SCALE = { a5: 0.7, a4: 1, a3: 1.4 };
@@ -885,6 +1040,7 @@ export function pagesOf({ meta, payload }) {
     case "lied": return liedPages(payload, meta.name, meta.attribution);
     case "rezept": return rezeptPages(payload, meta.name, meta.attribution);
     case "einkaufsliste": return einkaufPages(payload, meta.name, meta.attribution);
+    case "spiel": return spielPages(payload, meta.name, meta.attribution);
     default: return [stripPreview(payload, meta.attribution)];
   }
 }
@@ -1119,8 +1275,15 @@ export async function downloads(root, dist) {
       writeFileSync(join(pictures, `${number}.png`), await pictogram(cache, number));
     }
 
+    /* Each row a millisecond after the one before it, in the entry's order.
+       bildhaft orders a Rezept's rows, and its cards to cut, by when they were
+       made; rows that arrived without a time all took the moment of the
+       import, and a Pfannkuchen came out with its steps in whatever order the
+       database kept them. */
+    const made = Date.parse("2026-01-01T00:00:00Z");
     const sentences = (payload.sentences ?? []).map((sentence, n) => ({
       id: `s${n}`,
+      createdAt: made + n,
       rawInput: sentence.text ?? "",
       normalizedInput: (sentence.text ?? "").toLowerCase(),
       slots: (sentence.slots ?? []).map((slot, m) => slotOf(slot, `s${n}-${m}`)),
@@ -1154,6 +1317,15 @@ export async function downloads(root, dist) {
           board: { ...payload.board,
             cells: payload.board.cells.map((at) => (at === null ? null : `s${at}`)) },
         } : {}),
+        // A Spiel's cells name their cards by row number too.
+        ...(payload.game ? {
+          game: {
+            rows: payload.game.rows.map((row, i) => ({
+              id: `r${i}`, zellen: row.zellen.map((zelle) => ({ karte: `s${zelle.karte}`, platz: zelle.platz })) })),
+          },
+        } : {}),
+        // The title on the paper, where it is not the name: a Spiel's question without its level.
+        ...(payload.heading ? { title: payload.heading } : {}),
         // A Lied's parts name their rows by number in the entry, and by id here.
         ...(payload.song ? {
           song: {

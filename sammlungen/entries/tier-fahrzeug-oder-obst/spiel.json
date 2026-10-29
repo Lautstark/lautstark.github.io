@@ -1,0 +1,270 @@
+{
+  "kind": "spiel",
+  "heading": "Tier, Fahrzeug oder Obst?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Ist das ein Tier, ein Fahrzeug oder Obst? Leg jedes Bild in die richtige Reihe.",
+      "s0-0": "Die Tiere. Hier kommen alle Tiere hin.",
+      "s1-0": "Der Hund.",
+      "s2-0": "Die Kuh.",
+      "s3-0": "Die Katze.",
+      "s4-0": "Die Fahrzeuge. Hier kommt alles hin, womit man fährt.",
+      "s5-0": "Das Auto.",
+      "s6-0": "Der Traktor.",
+      "s7-0": "Das Motorrad.",
+      "s8-0": "Das Obst. Hier kommt das Obst hin.",
+      "s9-0": "Der Apfel.",
+      "s10-0": "Die Banane.",
+      "s11-0": "Die Birne."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Tiere",
+      "slots": [
+        {
+          "token": "Tiere",
+          "concept": "tiere",
+          "arasaac": 6901,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/tiere.png"
+        }
+      ]
+    },
+    {
+      "text": "Hund",
+      "slots": [
+        {
+          "token": "Hund",
+          "concept": "hund",
+          "arasaac": 2517,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/hund2.png"
+        }
+      ]
+    },
+    {
+      "text": "Kuh",
+      "slots": [
+        {
+          "token": "Kuh",
+          "concept": "kuh",
+          "arasaac": 2609,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/kuh.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "katze",
+          "concept": "katze",
+          "arasaac": 7114,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Tiere/katze2.png",
+          "label": "Katze"
+        }
+      ]
+    },
+    {
+      "text": "Fahrzeuge",
+      "slots": [
+        {
+          "token": "Fahrzeuge",
+          "concept": "fahrzeuge",
+          "arasaac": 34461,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/fahrzeuge.png"
+        }
+      ]
+    },
+    {
+      "text": "Auto",
+      "slots": [
+        {
+          "token": "Auto",
+          "concept": "auto",
+          "arasaac": 2339,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/auto.png"
+        }
+      ]
+    },
+    {
+      "text": "Traktor",
+      "slots": [
+        {
+          "token": "Traktor",
+          "concept": "traktor",
+          "arasaac": 2600,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/traktor.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "motorradFB",
+          "concept": "motorradfb",
+          "arasaac": 7166,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Fahrzeuge/motorradFB.png",
+          "label": "Motorrad"
+        }
+      ]
+    },
+    {
+      "text": "Obst",
+      "slots": [
+        {
+          "token": "Obst",
+          "concept": "obst",
+          "arasaac": 28339,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/obst.png"
+        }
+      ]
+    },
+    {
+      "text": "Apfel",
+      "slots": [
+        {
+          "token": "Apfel",
+          "concept": "apfel",
+          "arasaac": 2462,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel.png"
+        }
+      ]
+    },
+    {
+      "text": "Banane",
+      "slots": [
+        {
+          "token": "Banane",
+          "concept": "banane",
+          "arasaac": 2530,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/banane.png"
+        }
+      ]
+    },
+    {
+      "text": "Birne",
+      "slots": [
+        {
+          "token": "Birne",
+          "concept": "birne",
+          "arasaac": 2561,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/birne.png"
+        }
+      ]
+    },
+    {
+      "text": "Brot",
+      "slots": [
+        {
+          "token": "Brot",
+          "concept": "brot",
+          "arasaac": 2494,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/brot.png"
+        }
+      ]
+    },
+    {
+      "text": "",
+      "slots": [
+        {
+          "token": "kartoffel",
+          "concept": "kartoffel",
+          "arasaac": 2503,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/kartoffel.png"
+        }
+      ]
+    },
+    {
+      "text": "Apfel",
+      "slots": [
+        {
+          "token": "Apfel",
+          "concept": "apfel",
+          "arasaac": 2462,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/apfel.png"
+        }
+      ]
+    },
+    {
+      "text": "Essen",
+      "slots": [
+        {
+          "token": "Essen",
+          "concept": "essen",
+          "arasaac": 4610,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/lebensmittel.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": true
+          },
+          {
+            "karte": 2,
+            "platz": true
+          },
+          {
+            "karte": 3,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 4,
+            "platz": false
+          },
+          {
+            "karte": 5,
+            "platz": true
+          },
+          {
+            "karte": 6,
+            "platz": true
+          },
+          {
+            "karte": 7,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 8,
+            "platz": false
+          },
+          {
+            "karte": 9,
+            "platz": true
+          },
+          {
+            "karte": 10,
+            "platz": true
+          },
+          {
+            "karte": 11,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}

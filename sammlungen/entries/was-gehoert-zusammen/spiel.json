@@ -1,0 +1,308 @@
+{
+  "kind": "spiel",
+  "heading": "Was gehört zusammen?",
+  "print": {
+    "showLabel": false,
+    "punch": "top",
+    "punchMarks": false,
+    "anybookCircle": true,
+    "anybookPlace": "over",
+    "anybookSay": {
+      "titel": "Was gehört zusammen? Leg das passende Bild daneben.",
+      "s0-0": "Der Fuß. Was ziehst du an den Fuß?",
+      "s1-0": "Der Schuh.",
+      "s2-0": "Der Kopf. Was setzt du auf den Kopf?",
+      "s3-0": "Die Mütze.",
+      "s4-0": "Die Hand. Was ziehst du über die Hand?",
+      "s5-0": "Der Handschuh.",
+      "s6-0": "Der Topf. Was kommt oben auf den Topf?",
+      "s7-0": "Der Deckel.",
+      "s8-0": "Es regnet. Was hältst du über dich?",
+      "s9-0": "Der Regenschirm.",
+      "s10-0": "Die Zahnbürste. Was kommt auf die Zahnbürste?",
+      "s11-0": "Die Zahnpasta.",
+      "s12-0": "Die Blume. Womit gießt du die Blume?",
+      "s13-0": "Die Gießkanne.",
+      "s14-0": "Die Haare. Womit kämmst du die Haare?",
+      "s15-0": "Der Kamm."
+    }
+  },
+  "sentences": [
+    {
+      "text": "Fuß",
+      "slots": [
+        {
+          "token": "Fuß",
+          "concept": "fuß",
+          "arasaac": 2841,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperteile/fuss.png"
+        }
+      ]
+    },
+    {
+      "text": "Schuh",
+      "slots": [
+        {
+          "token": "Schuh",
+          "concept": "schuh",
+          "arasaac": 32923,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/schuh.png"
+        }
+      ]
+    },
+    {
+      "text": "Kopf",
+      "slots": [
+        {
+          "token": "Kopf",
+          "concept": "kopf",
+          "arasaac": 2673,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperteile/kopf.png"
+        }
+      ]
+    },
+    {
+      "text": "Mütze",
+      "slots": [
+        {
+          "token": "Mütze",
+          "concept": "mütze",
+          "arasaac": 2412,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/muetze1.png"
+        }
+      ]
+    },
+    {
+      "text": "Hand",
+      "slots": [
+        {
+          "token": "Hand",
+          "concept": "hand",
+          "arasaac": 2928,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperteile/hand.png"
+        }
+      ]
+    },
+    {
+      "text": "Handschuh",
+      "slots": [
+        {
+          "token": "Handschuh",
+          "concept": "handschuh",
+          "arasaac": 7122,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/handschuh.png"
+        }
+      ]
+    },
+    {
+      "text": "Topf",
+      "slots": [
+        {
+          "token": "Topf",
+          "concept": "topf",
+          "arasaac": 9086,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/topf.png"
+        }
+      ]
+    },
+    {
+      "text": "Deckel",
+      "slots": [
+        {
+          "token": "Deckel",
+          "concept": "deckel",
+          "arasaac": 37940,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/deckel.png"
+        }
+      ]
+    },
+    {
+      "text": "Regen",
+      "slots": [
+        {
+          "token": "Regen",
+          "concept": "regen",
+          "arasaac": 3123,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Wetter_Himmel/regen.png"
+        }
+      ]
+    },
+    {
+      "text": "Regenschirm",
+      "slots": [
+        {
+          "token": "Regenschirm",
+          "concept": "regenschirm",
+          "arasaac": 2500,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleidung_Accessoires/regenschirm.png"
+        }
+      ]
+    },
+    {
+      "text": "Zahnbürste",
+      "slots": [
+        {
+          "token": "Zahnbürste",
+          "concept": "zahnbürste",
+          "arasaac": 2694,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/zahnbuerste.png"
+        }
+      ]
+    },
+    {
+      "text": "Zahnpasta",
+      "slots": [
+        {
+          "token": "Zahnpasta",
+          "concept": "zahnpasta",
+          "arasaac": 2858,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/zahnpasta.png"
+        }
+      ]
+    },
+    {
+      "text": "Blume",
+      "slots": [
+        {
+          "token": "Blume",
+          "concept": "blume",
+          "arasaac": 7104,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pflanzen/blume.png"
+        }
+      ]
+    },
+    {
+      "text": "Gießkanne",
+      "slots": [
+        {
+          "token": "Gießkanne",
+          "concept": "gießkanne",
+          "arasaac": 2817,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/giesskanne.png"
+        }
+      ]
+    },
+    {
+      "text": "Haare",
+      "slots": [
+        {
+          "token": "Haare",
+          "concept": "haare",
+          "arasaac": 2851,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/haare_kurz.png"
+        }
+      ]
+    },
+    {
+      "text": "Kamm",
+      "slots": [
+        {
+          "token": "Kamm",
+          "concept": "kamm",
+          "arasaac": 2852,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Koerperpflege/kamm.png"
+        }
+      ]
+    }
+  ],
+  "game": {
+    "rows": [
+      {
+        "zellen": [
+          {
+            "karte": 0,
+            "platz": false
+          },
+          {
+            "karte": 1,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 2,
+            "platz": false
+          },
+          {
+            "karte": 3,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 4,
+            "platz": false
+          },
+          {
+            "karte": 5,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 6,
+            "platz": false
+          },
+          {
+            "karte": 7,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 8,
+            "platz": false
+          },
+          {
+            "karte": 9,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 10,
+            "platz": false
+          },
+          {
+            "karte": 11,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 12,
+            "platz": false
+          },
+          {
+            "karte": 13,
+            "platz": true
+          }
+        ]
+      },
+      {
+        "zellen": [
+          {
+            "karte": 14,
+            "platz": false
+          },
+          {
+            "karte": 15,
+            "platz": true
+          }
+        ]
+      }
+    ]
+  }
+}
