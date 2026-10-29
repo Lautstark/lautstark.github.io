@@ -627,18 +627,18 @@ footer {
 .material { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 2.4rem; align-items: start; }
 .material__links { display: flex; flex-direction: column; gap: .5rem; }
 .material__links .lead { margin: .4rem 0 0; }
-/* The name in a column of 18rem: the site's h1 beside the picture broke
-   „Fische angeln“ over two lines, and beside it indented looked worse. So the
-   picture and the label share the first line and the name has the column's
-   whole width under them, smaller than the site's h1, a long word split. */
+/* The name in a column of 18rem: the label on a line of its own, and under
+   it the name with its picture beside it — the picture is the name's, not the
+   label's. Smaller than the site's h1, which broke „Fische angeln“ in two; a
+   long word split where German splits it. */
 .material .tafelkopf {
-  display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: .6rem .7rem;
+  display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: .5rem .7rem;
 }
 .material .tafelkopf > div { display: contents; }
-.material .tafelkopf > img { width: 40px; height: 40px; padding: 3px; border-radius: 8px; }
-.material .tafelkopf .karte__wer { justify-self: start; }
-.material .tafelkopf h1 { grid-column: 1 / -1; margin: .2rem 0 0; }
-.material .tafelkopf:not(:has(> img)) .karte__wer { grid-column: 1 / -1; }
+.material .tafelkopf .karte__wer { grid-column: 1 / -1; grid-row: 1; justify-self: start; }
+.material .tafelkopf > img { grid-row: 2; width: 44px; height: 44px; padding: 3px; border-radius: 8px; }
+.material .tafelkopf h1 { grid-row: 2; grid-column: 2; margin: 0; }
+.material .tafelkopf:not(:has(> img)) h1 { grid-column: 1 / -1; }
 .material .tafelkopf h1 { font-size: clamp(1.5rem, 1.1rem + 1vw, 1.9rem); line-height: 1.15; hyphens: auto; overflow-wrap: break-word; }
 .material__links .marken { margin: .2rem 0 0; }
 .material__oeffnen { margin-top: 1rem; justify-content: center; text-align: center; padding: .7rem 1rem; font-size: 1rem; }
