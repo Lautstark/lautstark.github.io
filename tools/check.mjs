@@ -24,7 +24,7 @@ const BARE_URL = /https?:\/\/[^\s"'<>]+/g;
  * generated content, not addresses, and the rule below would otherwise report
  * each of them as a missing entry. */
 const GENERATED = new Set(["filter", "filterRules", "karten", "anzahl", "stand", "beides",
-  "titel", "titelbild", "art", "beschreibung", "zahlen", "oeffnen", "tafel", "quelle"]);
+  "titel", "titelbild", "art", "beschreibung", "zahlen", "marken", "oeffnen", "tafel", "quelle"]);
 
 /* site/ has folders in it, so the walk recurses — a page in a subdirectory owes
  * the same rule as one at the top. */

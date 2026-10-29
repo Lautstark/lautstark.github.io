@@ -463,10 +463,14 @@ function filter(entries) {
   const counts = new Map();
   for (const { meta } of entries) counts.set(meta.product, (counts.get(meta.product) ?? 0) + 1);
 
-  const inputs = ['<input type="radio" name="produkt" id="p-alle" class="wahl" checked>'];
+  /* The shelf opens on bildhaft (her call, 2026-10-29): for now it is what
+     the shelf mostly holds and what is worth opening. The others are a chip
+     away, and a link with ?produkt= still opens on its own. */
+  const opens = counts.has("bildhaft") ? "bildhaft" : "alle";
+  const inputs = [`<input type="radio" name="produkt" id="p-alle" class="wahl"${opens === "alle" ? " checked" : ""}>`];
   const chips = ['<label class="chip" for="p-alle">Alle</label>'];
   for (const [product, n] of counts) {
-    inputs.push(`<input type="radio" name="produkt" id="p-${esc(product)}" class="wahl">`);
+    inputs.push(`<input type="radio" name="produkt" id="p-${esc(product)}" class="wahl"${product === opens ? " checked" : ""}>`);
     chips.push(`<label class="chip" for="p-${esc(product)}">${esc(PRODUCTS[product].label)}`
       + `<span class="n">${n}</span></label>`);
   }
@@ -537,7 +541,7 @@ const BOTH = `<div class="beides">
       <p class="beides__bild" aria-hidden="true"><span>ARASAAC</span><span>METACOM</span></p>
       <div>
         <h2>Mit ARASAAC oder mit METACOM</h2>
-        <p>Die Sammlungen für bildhaft zeigen hier ARASAAC-Symbole. Die sind frei, und mit ihnen funktioniert jede Sammlung. Viele sind zusätzlich schon mit METACOM ausgesucht, Feld für Feld. Hast du eine METACOM-Lizenz, öffne die Sammlung in bildhaft und wähle dort einmal deinen METACOM-Ordner.</p>
+        <p>Die Materialien für bildhaft zeigen hier ARASAAC-Symbole. Die sind frei, und mit ihnen funktioniert jedes Material. Viele sind zusätzlich schon mit METACOM ausgesucht, Feld für Feld. Hast du eine METACOM-Lizenz, öffne das Material in bildhaft und wähle dort einmal deinen METACOM-Ordner.</p>
       </div>
     </div>`;
 
@@ -1114,6 +1118,9 @@ function materialPage(entry, links) {
     beschreibung: esc(meta.description),
     titelbild: payload.title?.arasaac ? picture(payload.title.arasaac, 56) : "",
     zahlen: esc(factLine(meta) + (groups.length ? ` · Gruppen: ${groups.join(", ")}` : "")),
+    // The card's tags, on the page as on the card.
+    marken: (meta.tags ?? []).length
+      ? `<span class="marken">${meta.tags.map((t) => `<span class="marke">${esc(t)}</span>`).join("")}</span>` : "",
     oeffnen: open,
     tafel: `${both ? symbolSwitch(meta.id) : ""}
       ${body}`,
@@ -1143,7 +1150,7 @@ export function sammlungen(root, dist, links) {
     cpSync(one.from, at);
   }
 
-  const count = `${entries.length} ${entries.length === 1 ? "Sammlung" : "Sammlungen"}`;
+  const count = `${entries.length} ${entries.length === 1 ? "Material" : "Materialien"}`;
   return {
     filter: filter(entries),
     filterRules: filterRules(entries),

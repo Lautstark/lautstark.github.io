@@ -623,6 +623,7 @@ footer {
 .tafelkopf { display: flex; align-items: center; gap: 1rem; }
 .tafelkopf h1 { margin: .3rem 0 0; }
 .tafelkopf > img { border-radius: 10px; background: #fff; border: 1px solid var(--surface-3); padding: 4px; }
+.tafelzeile__was { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; }
 .tafelzeile { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .8rem; max-width: none; }
 .col > .tafelzeile { max-width: none; }
 .band--tafel .symbolwahl { margin: 1.2rem 0 .8rem; }
