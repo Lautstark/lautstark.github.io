@@ -614,6 +614,12 @@ footer {
 .material { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 2.4rem; align-items: start; }
 .material__links { display: flex; flex-direction: column; gap: .5rem; }
 .material__links .lead { margin: .4rem 0 0; }
+/* The name in a column of 18rem: the site's h1 broke „Fische angeln“ over
+   two lines of three words' height. Smaller, the picture beside it smaller
+   and at its top, a long word split where German splits it. */
+.material .tafelkopf { align-items: flex-start; gap: .8rem; }
+.material .tafelkopf > img { width: 48px; height: 48px; flex: none; }
+.material .tafelkopf h1 { font-size: clamp(1.5rem, 1.1rem + 1vw, 1.9rem); line-height: 1.15; hyphens: auto; overflow-wrap: break-word; }
 .material__links .marken { margin: .2rem 0 0; }
 .material__oeffnen { margin-top: 1rem; justify-content: center; text-align: center; padding: .7rem 1rem; font-size: 1rem; }
 .hm-klein { font-size: .78rem; color: var(--text-faint); margin: 0; }
