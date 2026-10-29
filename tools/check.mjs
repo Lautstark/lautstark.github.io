@@ -215,10 +215,13 @@ if (existsSync(ENTRIES)) {
     }
     /* The shelf draws no sheet itself any more: a bildhaft material that
        prints is shown by what bildhaft made of it, or not at all. */
-    if (payload && entry.product === "bildhaft" && entry.art !== "Wortliste") {
+    if (payload && entry.product === "bildhaft") {
       const has = (name) => existsSync(join(druck, name));
-      if (!has(`${dir}.pdf`) || !has("a-1.png") || !has("app.png")) {
-        problems.push(`${here}: has no druck/ with ${dir}.pdf, a-1.png and app.png — export it from bildhaft.`);
+      /* A Wortliste is words to build from, shown as the app; everything else
+         as its PDF and the app. */
+      const wanted = entry.art === "Wortliste" ? ["app.png"] : [`${dir}.pdf`, "a-1.png", "app.png"];
+      if (!wanted.every(has)) {
+        problems.push(`${here}: has no druck/ with ${wanted.join(", ")} — export it from bildhaft.`);
       }
     }
     if (payload && entry.product === "bildhaft") {

@@ -565,15 +565,23 @@ footer {
 .karte__ansehen::after { content: ""; position: absolute; inset: 0; z-index: 1; }
 .karte--ansehen a:not(.karte__ansehen) { position: relative; z-index: 2; }
 
-.regal { grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr)); gap: 1rem; }
+.regal { grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); gap: 1rem; }
 .karte--blatt .oben {
   aspect-ratio: 4 / 3; box-sizing: border-box; container-type: size;
   display: grid; place-items: center; padding: .9rem; background: var(--surface-2);
 }
 .karte--blatt .karte__text { padding: .9rem 1rem 1rem; display: flex; flex-direction: column; gap: .55rem; flex: 1; }
-.karte--blatt .karte__tun { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
-.karte--blatt .karte__tun .btn { padding: .35rem .8rem; font-size: .85rem; }
-.karte__pdf { font-size: .85rem; }
+/* On a card the two ways in are quiet: a shelf of orange buttons was louder
+   than the papers. The program is the stronger of the two, the PDF beside it. */
+.karte--blatt .karte__tun { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; font-size: .88rem; }
+.karte--blatt .karte__tun a { text-decoration: none; }
+.karte--blatt .karte__tun a:hover { text-decoration: underline; }
+.karte--blatt .karte__tun .btn.primary {
+  background: none; border: 0; box-shadow: none; padding: 0; min-height: 0;
+  font-size: inherit; color: var(--accent-strong); font-weight: 650;
+}
+.karte--blatt .karte__tun .btn.primary:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 2px; }
+.karte__pdf { color: var(--text-dim); }
 
 /* A page of paper as bildhaft printed it: the picture, and a shadow so it
    reads as a sheet. */
@@ -595,6 +603,11 @@ footer {
 }
 
 .oben--woerter { aspect-ratio: 297 / 210; display: flex; align-items: center; }
+/* A Wortliste's cover: the app with its words open, its top, as a window. */
+.oben__app {
+  width: 100%; height: 100%; object-fit: cover; object-position: top;
+  border-radius: 6px; box-shadow: 0 1px 3px rgb(0 0 0 / .2), 0 6px 18px rgb(0 0 0 / .07);
+}
 .wand { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; width: 100%; }
 .wand span {
   background: #fff; border-radius: 8px; aspect-ratio: 1; display: grid; place-items: center;
@@ -614,11 +627,18 @@ footer {
 .material { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 2.4rem; align-items: start; }
 .material__links { display: flex; flex-direction: column; gap: .5rem; }
 .material__links .lead { margin: .4rem 0 0; }
-/* The name in a column of 18rem: the site's h1 broke „Fische angeln“ over
-   two lines of three words' height. Smaller, the picture beside it smaller
-   and at its top, a long word split where German splits it. */
-.material .tafelkopf { align-items: flex-start; gap: .8rem; }
-.material .tafelkopf > img { width: 48px; height: 48px; flex: none; }
+/* The name in a column of 18rem: the site's h1 beside the picture broke
+   „Fische angeln“ over two lines, and beside it indented looked worse. So the
+   picture and the label share the first line and the name has the column's
+   whole width under them, smaller than the site's h1, a long word split. */
+.material .tafelkopf {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: .6rem .7rem;
+}
+.material .tafelkopf > div { display: contents; }
+.material .tafelkopf > img { width: 40px; height: 40px; padding: 3px; border-radius: 8px; }
+.material .tafelkopf .karte__wer { justify-self: start; }
+.material .tafelkopf h1 { grid-column: 1 / -1; margin: .2rem 0 0; }
+.material .tafelkopf:not(:has(> img)) .karte__wer { grid-column: 1 / -1; }
 .material .tafelkopf h1 { font-size: clamp(1.5rem, 1.1rem + 1vw, 1.9rem); line-height: 1.15; hyphens: auto; overflow-wrap: break-word; }
 .material__links .marken { margin: .2rem 0 0; }
 .material__oeffnen { margin-top: 1rem; justify-content: center; text-align: center; padding: .7rem 1rem; font-size: 1rem; }
@@ -647,6 +667,29 @@ footer {
 .material__seiten figure { margin: 0; }
 .material__seiten figcaption { font-size: .8rem; color: var(--text-faint); margin-top: .4rem; }
 .band--tafel .quelle { margin-top: 1.6rem; }
+.material__seiten a, .material__app { display: block; cursor: zoom-in; }
+
+/* A picture large, over the page (gross.js). */
+.gross {
+  width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 2.5rem 3.5rem;
+  border: 0; background: transparent; box-sizing: border-box;
+}
+.gross[open] { display: grid; place-items: center; }
+.gross::backdrop { background: rgb(20 20 20 / .88); }
+.gross img {
+  max-width: 100%; max-height: calc(100dvh - 5rem); width: auto; height: auto;
+  background: #fff; box-shadow: 0 10px 40px rgb(0 0 0 / .5); cursor: zoom-out;
+}
+.gross button {
+  position: absolute; border: 0; border-radius: 999px; cursor: pointer;
+  width: 2.6rem; height: 2.6rem; font-size: 1.4rem; line-height: 1;
+  background: rgb(255 255 255 / .9); color: #222;
+}
+.gross__zu { top: .8rem; right: .8rem; }
+.gross__vor { left: .6rem; top: 50%; translate: 0 -50%; }
+.gross__nach { right: .6rem; top: 50%; translate: 0 -50%; }
+.gross--eins .gross__vor, .gross--eins .gross__nach { display: none; }
+
 @media (max-width: 52rem) {
   .material { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; }
 }

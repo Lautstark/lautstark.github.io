@@ -402,12 +402,16 @@ const FAN = 3;
 
 /**
  * The top of a bildhaft card: its PDF, the pages fanned a little, the first in
- * front — so a card shows what you get and how much of it. A Wortliste, which
- * is words to build from and prints as nothing yet, shows a wall of its
- * pictures instead.
+ * front — so a card shows what you get and how much of it. A Wortliste is words
+ * to build from rather than a sheet to print, so it shows the app with them
+ * open; a wall of its pictures where there is not even that.
  */
 function bildhaftTop(entry) {
   const { meta, payload, druck } = entry;
+  if (druck?.app && !druck.pages.length) {
+    return `<div class="oben"><img class="oben__app" width="${druck.app.w}" height="${druck.app.h}" `
+      + `src="druck/${esc(meta.id)}/app.png" alt=""></div>`;
+  }
   if (hasPage(entry)) {
     const pages = druck.pages.slice(0, FAN);
     return `<div class="oben"><div class="faecher">${pages.map((page, i) =>
@@ -447,19 +451,21 @@ function card(entry, links) {
      .karte__ansehen). The other links on the card stand above it. */
   const name = hasPage(entry)
     ? `<a class="karte__ansehen" href="${esc(meta.id)}.html">${esc(meta.name)}</a>` : esc(meta.name);
-  const text = hasPage(entry) ? `<p class="karte__wer"><span class="punkt"></span>${esc(kindLabel(meta))}</p>
+  /* „bildhaft · Rezept“, as on every other card and on the material's page. */
+  const who = esc([product.label, kindLabel(meta)].filter(Boolean).join(" · "));
+  const text = hasPage(entry) ? `<p class="karte__wer"><span class="punkt"></span>${who}</p>
         <h3>${name}</h3>
-        <p class="karte__zahlen">${esc(pdfLine(entry))}</p>
-        <p class="karte__tun">${actions(meta, links, true)}${entry.druck.pdf
+        <p class="karte__zahlen">${esc(entry.druck.pages.length ? pdfLine(entry) : factLine(meta))}</p>
+        <p class="karte__tun">${actions(meta, links, true)}${entry.druck.pdf && entry.druck.pages.length
           ? ` <a class="karte__pdf" href="druck/${esc(meta.id)}/${esc(entry.druck.pdf)}" download="${esc(meta.name)}.pdf">⤓ PDF</a>` : ""}</p>`
-    : `<p class="karte__wer"><span class="punkt"></span>${esc([product.label, kindLabel(meta)].filter(Boolean).join(" · "))}</p>
+    : `<p class="karte__wer"><span class="punkt"></span>${who}</p>
         <h3>${name}</h3>
         ${PREVIEW[meta.product]?.(payload, meta.id) ?? ""}
         <p class="karte__was">${esc(meta.description)}</p>
         <p class="karte__zahlen">${esc(factLine(meta))}</p>
         <p class="marken">${tags}${seeAlso}</p>
         ${credit(meta)}
-        <p class="karte__tun">${actions(meta, links)}</p>`;
+        <p class="karte__tun">${actions(meta, links, meta.product === "bildhaft")}</p>`;
 
   /* A bildhaft card opens on what it looks like, the way a book is shown by
      its cover; the rest of the shelf on its words. */
@@ -569,7 +575,7 @@ const BOTH = `<div class="beides">
     </div>`;
 
 /** Which entries have a page of their own: a bildhaft material bildhaft has printed. */
-const hasPage = (entry) => entry.meta.product === "bildhaft" && Boolean(entry.druck?.pages.length);
+const hasPage = (entry) => entry.meta.product === "bildhaft" && Boolean(entry.druck?.pages.length || entry.druck?.app);
 
 /**
  * A material's own page, the same for every template: on the left what to do
@@ -580,7 +586,9 @@ const hasPage = (entry) => entry.meta.product === "bildhaft" && Boolean(entry.dr
 function materialPage(entry, links) {
   const { meta, payload, druck } = entry;
   const open = `${esc(links.bildhaft)}?sammlung=${esc(meta.id)}`;
-  const pages = druck.pages.map((page, i) => `<figure>${sheet(entry, page)}`
+  /* Each picture a link to its own file: gross.js shows it large over the
+     page, and without it the click opens the file. */
+  const pages = druck.pages.map((page, i) => `<figure><a href="druck/${esc(meta.id)}/${page.file}" data-gross>${sheet(entry, page)}</a>`
     + `<figcaption>Seite ${i + 1} von ${druck.pages.length}</figcaption></figure>`).join("");
   return {
     titel: esc(meta.name),
@@ -592,11 +600,14 @@ function materialPage(entry, links) {
     marken: (meta.tags ?? []).length
       ? `<p class="marken">${meta.tags.map((t) => `<span class="marke">${esc(t)}</span>`).join("")}</p>` : "",
     oeffnen: open,
-    bildschirm: druck.app
-      ? `<a class="material__app" href="${open}" target="_blank" rel="noopener"><img width="${druck.app.w}" height="${druck.app.h}" `
+    bildschirm: druck.app && druck.pages.length
+      ? `<a class="material__app" href="druck/${esc(meta.id)}/app.png" data-gross><img width="${druck.app.w}" height="${druck.app.h}" `
         + `src="druck/${esc(meta.id)}/app.png" alt="So sieht ${esc(meta.name)} in bildhaft aus"></a>` : "",
     metacom: bothSources(payload) ? METACOM_BOX : "",
-    seiten: `${druck.pdf ? `<div class="material__pdf"><span class="karte__zahlen">PDF · ${esc(pdfLine(entry))}</span>`
+    seiten: !druck.pages.length
+      ? `<a class="material__app material__app--gross" href="druck/${esc(meta.id)}/app.png" data-gross><img width="${druck.app.w}" `
+        + `height="${druck.app.h}" src="druck/${esc(meta.id)}/app.png" alt="So sieht ${esc(meta.name)} in bildhaft aus"></a>`
+      : `${druck.pdf ? `<div class="material__pdf"><span class="karte__zahlen">PDF · ${esc(pdfLine(entry))}</span>`
       + `<a class="btn" href="druck/${esc(meta.id)}/${esc(druck.pdf)}" download="${esc(meta.name)}.pdf">⤓ PDF herunterladen</a></div>` : ""}`
       + `<div class="material__seiten">${pages}</div>`,
     quelle: esc(meta.attribution),
