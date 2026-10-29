@@ -452,9 +452,9 @@ function card(entry, links) {
      link, and its ::after spreads it over the whole card (site.css,
      .karte__ansehen). The other links on the card stand above it. */
   const name = hasPage(entry)
-    ? `<a class="karte__ansehen" href="${esc(meta.id)}.html">${esc(meta.name)}</a>` : esc(meta.name);
+    ? `<a class="karte__ansehen" href="${esc(meta.id)}.html">${esc(shelfName(meta))}</a>` : esc(shelfName(meta));
   /* „bildhaft · Rezept“, as on every other card and on the material's page. */
-  const who = esc([product.label, kindLabel(meta)].filter(Boolean).join(" · "));
+  const who = esc(labelOf(meta));
   const text = hasPage(entry) ? `<p class="karte__wer"><span class="punkt"></span>${who}</p>
         <h3>${name}</h3>
         <p class="karte__zahlen">${esc(entry.druck.pages.length ? pdfLine(entry) : factLine(meta))}</p>
@@ -534,6 +534,19 @@ function filter(entries) {
 }
 
 /** What a material is, as a filter's id: its template's name, folded. */
+/**
+ * A Spiel's level, out of its name: „Was kommt als Nächstes? (II)“ is level II.
+ * bildhaft names a game so, for the children at the table; on the shelf the
+ * name is the question and the level stands in the label line over it, where
+ * two games of the same question still tell themselves apart.
+ */
+const LEVEL = /\s*\((I{1,3})\)\s*$/;
+const levelOf = (meta) => meta.name.match(LEVEL)?.[1] ?? null;
+const shelfName = (meta) => meta.name.replace(LEVEL, "");
+/** „bildhaft · Spiel · Stufe II“: the product, its template, a game's level. */
+const labelOf = (meta) => [PRODUCTS[meta.product].label, kindLabel(meta), levelOf(meta) && `Stufe ${levelOf(meta)}`]
+  .filter(Boolean).join(" · ");
+
 const artOf = (meta) => (meta.product === "bildhaft" ? fold(kindLabel(meta)) : "");
 
 /** The rules that hide what a chosen radio excludes, written for the products
@@ -603,14 +616,19 @@ function materialPage(entry, links) {
     `<label for="${name}-${i + 1}"><img width="${page.w}" height="${page.h}" src="druck/${esc(meta.id)}/${page.file}" alt="Seite ${i + 1}">`
     + `<span>${i + 1}</span></label>`).join("")}</div>` : "";
   return {
-    titel: esc(meta.name),
-    art: esc(kindLabel(meta)),
+    titel: esc(shelfName(meta)),
+    // The label line without its „bildhaft“, which the template writes itself.
+    art: esc(labelOf(meta).replace(/^bildhaft · /, "")),
     beschreibung: esc(meta.description),
     titelbild: payload.title?.arasaac ? picture(payload.title.arasaac, 56) : "",
     zahlen: esc(factLine(meta)),
     // The card's tags, on the page as on the card.
-    marken: (meta.tags ?? []).length
-      ? `<p class="marken">${meta.tags.map((t) => `<span class="marke">${esc(t)}</span>`).join("")}</p>` : "",
+    // The card's tags, on the page as on the card — less what the label line says already.
+    marken: (() => {
+      const said = new Set(labelOf(meta).split(" · "));
+      const tags = (meta.tags ?? []).filter((t) => !said.has(t));
+      return tags.length ? `<p class="marken">${tags.map((t) => `<span class="marke">${esc(t)}</span>`).join("")}</p>` : "";
+    })(),
     oeffnen: open,
     bildschirm: druck.app && druck.pages.length
       ? `<a class="material__app" href="druck/${esc(meta.id)}/app.png" data-gross><img width="${druck.app.w}" height="${druck.app.h}" `
