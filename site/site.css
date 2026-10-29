@@ -532,7 +532,7 @@ footer {
 
 /* ---------------------------------------------- ARASAAC oder METACOM ---- */
 
-/* Said once above the shelf; the switch on each card is its short form. */
+/* Said once above the shelf: the shelf is ARASAAC, and METACOM works too. */
 .beides {
   margin-top: 1.6rem; max-width: 50rem;
   display: flex; gap: 1.1rem; align-items: flex-start;
@@ -550,40 +550,13 @@ footer {
 .beides p.beides__bild span + span { background: #ffefea; color: #be3e00; }
 @media (max-width: 34rem) { .beides { flex-direction: column; } .beides__bild { flex-direction: row; } }
 
-/* ARASAAC | METACOM: two radios, hidden by .wahl, and their labels. Which
-   half shows is decided here, by the checked radio before it — no script. */
-.symbolwahl {
-  align-self: flex-start; display: inline-flex; padding: 3px;
-  border-radius: var(--radius-pill); background: var(--surface-2);
-}
-.symbolwahl label {
-  cursor: pointer; user-select: none; border-radius: var(--radius-pill);
-  padding: .2rem .75rem; font-size: .76rem; color: var(--text-dim);
-}
-.sym-a:checked ~ .symbolwahl label[for$="-a"],
-.sym-m:checked ~ .symbolwahl label[for$="-m"] {
-  background: var(--surface); color: var(--text); font-weight: 600;
-  box-shadow: 0 1px 2px rgb(0 0 0 / .12);
-}
-.sym-a:focus-visible ~ .symbolwahl label[for$="-a"],
-.sym-m:focus-visible ~ .symbolwahl label[for$="-m"] { outline: 2px solid var(--accent-strong); outline-offset: 1px; }
-
-/* A bildhaft card: on top what it looks like — its first printed page, or a
-   Wortliste's wall of pictures — on grey, over its corner that it comes with
-   METACOM too; under it the card's words as on every other card. */
+/* A bildhaft card: on top its PDF, the pages fanned a little on grey — or a
+   Wortliste's wall of pictures — and under it the card's words. */
 .karte--blatt { padding: 0; overflow: hidden; gap: 0; position: relative; }
-.karte--blatt .oben { position: relative; padding: 2.6rem 1rem 1rem; background: var(--surface-2); }
-/* Said, not offered: nothing to press, so nothing that looks like a button. */
-.auch-m {
-  position: absolute; top: .7rem; left: .9rem; margin: 0;
-  font-size: .7rem; color: var(--text-dim); background: var(--surface);
-  border: 1px solid var(--surface-3); border-radius: var(--radius-pill); padding: .1rem .6rem;
-}
-.auch-m b { color: var(--text); font-weight: 650; }
 
 /* A card with a page of its own is the way there, all of it: the name is the
    link and its ::after covers the card. Links of their own on the card — the
-   program, a source — stand above it and keep their own click. */
+   program, the PDF, a source — stand above it and keep their own click. */
 .karte--ansehen { position: relative; transition: border-color .15s, box-shadow .15s; }
 .karte--ansehen:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgb(0 0 0 / .08); }
 .karte--ansehen:focus-within:has(.karte__ansehen:focus-visible) { outline: 2px solid var(--accent-strong); outline-offset: 2px; }
@@ -591,174 +564,86 @@ footer {
 .karte__ansehen:focus-visible { outline: none; }
 .karte__ansehen::after { content: ""; position: absolute; inset: 0; z-index: 1; }
 .karte--ansehen a:not(.karte__ansehen) { position: relative; z-index: 2; }
-.karte--blatt .druck__papier { max-width: none; }
-.karte--blatt .blatt { box-shadow: 0 1px 2px rgb(0 0 0 / .18), 0 4px 12px rgb(0 0 0 / .08); }
-.karte--blatt .karte__text { padding: 1rem 1.3rem 1.3rem; display: flex; flex-direction: column; gap: .7rem; flex: 1; }
+
+.regal { grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr)); gap: 1rem; }
+.karte--blatt .oben {
+  aspect-ratio: 4 / 3; box-sizing: border-box; container-type: size;
+  display: grid; place-items: center; padding: .9rem; background: var(--surface-2);
+}
+.karte--blatt .karte__text { padding: .9rem 1rem 1rem; display: flex; flex-direction: column; gap: .55rem; flex: 1; }
+.karte--blatt .karte__tun { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+.karte--blatt .karte__tun .btn { padding: .35rem .8rem; font-size: .85rem; }
+.karte__pdf { font-size: .85rem; }
+
+/* A page of paper as bildhaft printed it: the picture, and a shadow so it
+   reads as a sheet. */
+.papier {
+  display: block; width: 100%; height: auto; background: #fff;
+  border: 0; border-radius: 0;
+  box-shadow: 0 1px 3px rgb(0 0 0 / .2), 0 6px 18px rgb(0 0 0 / .07);
+}
+
+/* The pages fanned: each turned a little about its foot, the first in front.
+   As large as the frame lets the first one be. */
+.faecher { position: relative; width: 100%; height: 100%; }
+.faecher__blatt {
+  position: absolute; bottom: 0; left: 50%;
+  width: min(72cqw, calc(92cqh * var(--seite)));
+  transform: translateX(calc(-50% + (var(--i) - (var(--n) - 1) / 2) * 30%))
+    rotate(calc((var(--i) - (var(--n) - 1) / 2) * 6deg));
+  transform-origin: bottom center;
+}
+
 .oben--woerter { aspect-ratio: 297 / 210; display: flex; align-items: center; }
-.karte--blatt .oben--woerter { padding: 1rem; }
-.wand { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; width: 100%; }
+.wand { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; width: 100%; }
 .wand span {
   background: #fff; border-radius: 8px; aspect-ratio: 1; display: grid; place-items: center;
-  box-shadow: 0 1px 2px rgb(0 0 0 / .1);
+  box-shadow: 0 1px 2px rgb(0 0 0 / .1); min-width: 0;
 }
 .wand img { width: 72%; height: auto; }
-.wand .wand__mehr { font-weight: 700; color: var(--text-dim); font-size: .9rem; }
+.wand .wand__mehr { font-weight: 700; color: var(--text-dim); font-size: .72rem; }
 
-/* Where METACOM is, on a material's page: two steps, the licence small. */
-.tafel__metacom ol {
-  list-style: none; margin: .4rem 0 .5rem; padding: 0; display: grid; gap: .35rem;
-  font-size: .88rem; color: var(--text);
-}
-.tafel__metacom li { display: flex; align-items: center; gap: .55rem; }
-.tafel__metacom li span {
-  width: 1.4rem; height: 1.4rem; border-radius: 999px; flex: none; display: grid; place-items: center;
-  background: #ffefea; color: #be3e00; font-weight: 700; font-size: .78rem;
-}
-.hm-klein { font-size: .78rem; color: var(--text-faint); }
-.tafel__metacom p.hm-klein { font-size: .82rem; color: var(--text-faint); }
-
-/* One Tafel's page. */
+/* A material's page: what to do with it on the left — not standing while
+   the pages scroll, it is taller than a window and its METACOM box went
+   unseen — and on the right the PDF, its download over its pages. */
 .band--tafel { border-top: 0; padding-top: 1.5rem; }
 .zurueck { margin: 0 0 1.2rem; font-size: .9rem; }
 .tafelkopf { display: flex; align-items: center; gap: 1rem; }
 .tafelkopf h1 { margin: .3rem 0 0; }
 .tafelkopf > img { border-radius: 10px; background: #fff; border: 1px solid var(--surface-3); padding: 4px; }
-.tafelzeile__was { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; }
-.tafelzeile { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .8rem; max-width: none; }
-.col > .tafelzeile { max-width: none; }
-.tafelzeile__tun { display: flex; gap: .6rem; flex-wrap: wrap; }
-.band--tafel .symbolwahl { margin: 1.2rem 0 .8rem; }
-
-.tafelbild { position: relative; background: var(--surface); border-radius: var(--radius); padding: 1rem; overflow-x: auto; }
-.tafel {
-  display: grid; gap: 6px; min-width: calc(var(--spalten) * 5.2rem);
-  grid-template-columns: repeat(var(--spalten), minmax(0, 1fr));
+.material { display: grid; grid-template-columns: minmax(0, 18rem) minmax(0, 1fr); gap: 2.4rem; align-items: start; }
+.material__links { display: flex; flex-direction: column; gap: .5rem; }
+.material__links .lead { margin: .4rem 0 0; }
+.material__links .marken { margin: .2rem 0 0; }
+.material__oeffnen { margin-top: 1rem; justify-content: center; text-align: center; padding: .7rem 1rem; font-size: 1rem; }
+.hm-klein { font-size: .78rem; color: var(--text-faint); margin: 0; }
+.material__app { display: block; margin-top: .6rem; }
+.material__app img {
+  display: block; width: 100%; height: auto; border-radius: 8px;
+  border: 1px solid var(--surface-3); box-shadow: 0 1px 4px rgb(0 0 0 / .12);
 }
-.feld {
-  aspect-ratio: 1 / 1.08; box-sizing: border-box; padding: 6px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
-  border-radius: 9px; border: 2px solid var(--frame, var(--surface-3)); background: var(--fill, #fff);
-  font-size: .82rem; font-weight: 600; line-height: 1.15; text-align: center;
+.material__metacom {
+  margin-top: 1rem; border: 2px solid var(--accent); background: #ffefea;
+  border-radius: var(--radius); padding: 1rem 1.1rem;
 }
-.feld img { width: 64%; height: auto; }
-.feld--frei { border: 1px dashed var(--surface-3); background: transparent; }
-
-.tafel__metacom {
-  display: none; position: absolute; inset: 0; padding: 1.5rem;
-  align-items: center; justify-content: center;
+.material__metacom-titel { margin: 0 0 .4rem; font-weight: 700; }
+.material__metacom ol {
+  list-style: none; margin: .4rem 0 .5rem; padding: 0; display: grid; gap: .35rem; font-size: .9rem;
 }
-.tafel__metacom > div {
-  max-width: 28rem; background: var(--surface); border-radius: var(--radius);
-  box-shadow: 0 8px 30px rgb(0 0 0 / .18); padding: 1.4rem 1.5rem;
+.material__metacom li { display: flex; align-items: center; gap: .55rem; }
+.material__metacom li span {
+  width: 1.4rem; height: 1.4rem; border-radius: 999px; flex: none; display: grid; place-items: center;
+  background: var(--accent); color: #fff; font-weight: 700; font-size: .78rem;
 }
-.tafel__metacom h2 { margin: 0 0 .5rem; font-size: 1.1rem; }
-.tafel__metacom p { margin: 0; font-size: .92rem; line-height: 1.55; color: var(--text-dim); }
-.tafel__metacom .tafel__tun { margin-top: 1rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-.tafel__tun label { cursor: pointer; color: var(--accent-strong); font-size: .9rem; }
-.sym-m:checked ~ .tafelbild .tafel { opacity: .15; filter: grayscale(1); }
-.sym-m:checked ~ .tafelbild .tafel__metacom { display: flex; }
-.band--tafel .quelle { margin-top: .8rem; }
-
-/* The printed sheet, drawn to scale: every length on it is millimetres times
-   --mm, and --mm is the sheet's width over the paper's — so it is the page
-   bildhaft prints, at whatever size the window gives it. */
-.druck { margin-top: 2rem; }
-.druck h2 { font-size: 1.05rem; font-weight: 650; margin: 0 0 .8rem; }
-.druck h2 span { font-weight: 400; color: var(--text-faint); font-size: .85rem; margin-left: .4rem; }
-.druck__papier { container-type: inline-size; max-width: 52rem; }
-.blatt {
-  --mm: calc(100cqw / var(--breite));
-  position: relative; width: 100%; overflow: hidden;
-  box-shadow: 0 1px 3px rgb(0 0 0 / .15), 0 8px 24px rgb(0 0 0 / .08);
-  color: #000; line-height: 1.15;
+.material__rechts { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
+.material__pdf { display: flex; justify-content: space-between; align-items: center; gap: .8rem; flex-wrap: wrap; }
+.material__seiten { display: flex; flex-direction: column; gap: 1.6rem; }
+.material__seiten figure { margin: 0; }
+.material__seiten figcaption { font-size: .8rem; color: var(--text-faint); margin-top: .4rem; }
+.band--tafel .quelle { margin-top: 1.6rem; }
+@media (max-width: 52rem) {
+  .material { grid-template-columns: minmax(0, 1fr); gap: 1.6rem; }
 }
-.blatt > span { position: absolute; box-sizing: border-box; }
-/* `figure img` frames screenshots; a symbol on paper has no box of its own. */
-.blatt img { border: 0; border-radius: 0; background: none; }
-.blatt__karte {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; overflow: hidden;
-}
-.blatt__karte--oben { flex-direction: column-reverse; }
-.blatt__karte img { flex: 1 1 auto; min-height: 0; width: 100%; height: auto; object-fit: contain; }
-.blatt__karte span { flex: none; padding-top: calc(.8 * var(--mm)); }
-.blatt__schild {
-  z-index: 2; padding: calc(.2 * var(--mm)) calc(2 * var(--mm)); border-radius: calc(3 * var(--mm));
-  color: #fff; font-weight: 700; line-height: 1.4; white-space: nowrap;
-}
-.blatt__titel { display: flex; align-items: center; gap: calc(5 * var(--mm)); font-weight: 600; line-height: 1.3; }
-.blatt__titelbild {
-  flex: none; display: grid; place-items: center; box-sizing: border-box;
-  padding: calc(1.5 * var(--mm)); background: #fff;
-  border: calc(.3 * var(--mm)) solid #d9d3d1; border-radius: calc(2.5 * var(--mm));
-}
-.blatt__titelbild img { max-width: 100%; max-height: 100%; width: auto; height: auto; }
-.blatt__fuss { color: #666; line-height: 1.4; }
-.sym-m:checked ~ .druck .blatt { opacity: .15; filter: grayscale(1); }
-.blatt__satz { color: #444; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.blatt__karte--schnitt { border: calc(.2 * var(--mm)) dashed #bdbdbd; }
-
-/* The other templates' sheets: cards in rows, an Einkaufsliste's zones and cart. */
-.blatt__karte--klein img { flex: 1 1 auto; min-height: 0; }
-.blatt__platz { display: flex; align-items: center; justify-content: center; }
-.blatt__platz--wort { flex-direction: column; justify-content: flex-start; }
-.blatt__platz img, .blatt__schnitt img { flex: 1 1 auto; min-height: 0; max-width: 100%; object-fit: contain; }
-.blatt__platz--wort span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
-.blatt__schnitt { display: flex; border: calc(.2 * var(--mm)) dashed #bdbdbd; }
-.blatt__punkt { border-style: dashed; border-color: #d2d2d2; border-radius: 50%; }
-.blatt__wagen {
-  position: absolute; overflow: visible; fill: none; stroke: #b4b9be;
-  stroke-width: .6; stroke-linecap: round; stroke-linejoin: round;
-}
-.blatt__anleitung { color: #333; line-height: 1.4; }
-.blatt__anleitung strong { display: block; color: #000; }
-.blatt__anleitung ol { margin: 0; padding-left: 1.4em; }
-
-/* An Einkaufsliste's cover: the board in front, its places askew behind it. */
-.stapel { position: relative; padding: 0 0 7% 7%; }
-.stapel__hinten { position: absolute; inset: 0 7% 7% 0; transform: rotate(-3deg); }
-.stapel__vorn { position: relative; }
-
-/* A material's sheets, all of them, side by side. */
-.seiten {
-  display: grid; gap: 1.4rem; margin-top: .4rem;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
-}
-.seiten figure { margin: 0; }
-.seiten .druck__papier { max-width: none; }
-.seiten figcaption { font-size: .8rem; color: var(--text-faint); margin-top: .4rem; }
-.tafelbild--blaetter { background: transparent; padding: 0; overflow: visible; }
-.sym-m:checked ~ .tafelbild .seiten .blatt { filter: grayscale(1) blur(1.5px); opacity: .35; }
-.tafelbild--blaetter .tafel__metacom { align-items: flex-start; padding-top: 4rem; }
-
-/* A sheet bildhaft printed itself (druck/ beside an entry): its page as a
-   picture, and under METACOM the same page so small and soft it only shows
-   that METACOM looks different. */
-.blatt--bild img { display: block; width: 100%; height: 100%; }
-.blatt--bild .blatt__m { display: none; filter: blur(1px); }
-.sym-m:checked ~ .tafelbild .blatt--bild .blatt__a { display: none; }
-.sym-m:checked ~ .tafelbild .blatt--bild .blatt__m { display: block; }
-.sym-m:checked ~ .tafelbild .seiten .blatt--bild { filter: none; opacity: .7; }
-
-/* The shelf, tighter: more tiles to a row, and every bildhaft cover in one
-   frame of the same shape, so a row reads as a row. */
-.regal { grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr)); gap: 1rem; }
-.karte--blatt .oben {
-  aspect-ratio: 4 / 3; box-sizing: border-box; container-type: size;
-  display: grid; place-items: center; padding: 2.7rem .9rem .9rem;
-}
-.karte--blatt .oben--woerter { padding: .9rem; }
-.deckel { width: min(100cqw, calc(100cqh * var(--seite))); }
-.karte--blatt .stapel { padding: 0 0 5% 5%; }
-.karte--blatt .stapel__hinten { inset: 0 5% 5% 0; }
-.karte--blatt .auch-m { top: .6rem; left: .7rem; }
-.karte--blatt .karte__text { padding: .9rem 1rem 1rem; gap: .55rem; }
-.karte--blatt .karte__was {
-  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
-}
-.karte--blatt .wand { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; }
-.karte--blatt .wand span { min-width: 0; }
-.karte--blatt .wand .wand__mehr { font-size: .72rem; }
 
 /* The links at the foot of every card, in line across a row. `.karte p` sets
    every margin to 0 and outranks .karte__tun's own auto, so it is said here

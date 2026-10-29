@@ -48,22 +48,28 @@
 
 <section class="band band--tafel produkt bildhaft">
   <div class="col">
-    <p class="zurueck"><a href="index.html">‹ Alle Materialien</a></p>
-    <div class="tafelkopf">
-      {{titelbild}}
-      <div>
-        <p class="karte__wer"><span class="punkt"></span>bildhaft · {{art}}</p>
-        <h1>{{titel}}</h1>
+    <div class="material">
+      <div class="material__links">
+        <p class="zurueck"><a href="index.html">‹ Alle Materialien</a></p>
+        <div class="tafelkopf">
+          {{titelbild}}
+          <div>
+            <p class="karte__wer"><span class="punkt"></span>bildhaft · {{art}}</p>
+            <h1>{{titel}}</h1>
+          </div>
+        </div>
+        <p class="lead">{{beschreibung}}</p>
+        <p class="karte__zahlen">{{zahlen}}</p>
+        {{marken}}
+        <a class="btn primary material__oeffnen" href="{{oeffnen}}" target="_blank" rel="noopener">In bildhaft öffnen</a>
+        <p class="hm-klein">zum Ändern: Wörter, Symbole, Papier</p>
+        {{bildschirm}}
+        {{metacom}}
+      </div>
+      <div class="material__rechts">
+        {{seiten}}
       </div>
     </div>
-    <p class="lead">{{beschreibung}}</p>
-    <p class="tafelzeile">
-      <span class="tafelzeile__was"><span class="karte__zahlen">{{zahlen}}</span>{{marken}}</span>
-      <span class="tafelzeile__tun">{{pdf}}
-      <a class="btn primary" href="{{oeffnen}}" target="_blank" rel="noopener">In bildhaft öffnen</a></span>
-    </p>
-
-    {{tafel}}
 
     <p class="quelle">{{quelle}}</p>
   </div>
