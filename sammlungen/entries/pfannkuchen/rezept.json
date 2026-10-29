@@ -206,7 +206,7 @@
           "token": "messbecher blau",
           "concept": "messbecher blau",
           "label": "Becher",
-          "arasaac": 39645,
+          "eigen": "becher-blau",
           "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1.png"
         },
         {
@@ -245,7 +245,7 @@
           "token": "Becher",
           "concept": "becher",
           "label": "Becher",
-          "arasaac": 39645,
+          "eigen": "becher-blau",
           "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1.png"
         },
         {
@@ -285,7 +285,7 @@
           "token": "Becher",
           "concept": "becher",
           "label": "Esslöffel",
-          "arasaac": 8546,
+          "eigen": "loeffel-gruen",
           "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gruen1.png"
         },
         {
@@ -556,7 +556,7 @@
           "token": "messbecher",
           "concept": "messbecher",
           "label": "blauer Becher",
-          "arasaac": 39645,
+          "eigen": "becher-blau",
           "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1_250ml.png"
         }
       ],
@@ -569,7 +569,7 @@
           "token": "esslöffel",
           "concept": "esslöffel",
           "label": "grüner Messlöffel",
-          "arasaac": 8546,
+          "eigen": "loeffel-gruen",
           "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gruen1_15ml.png"
         }
       ],

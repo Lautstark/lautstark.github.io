@@ -82,7 +82,7 @@ export const slotsOf = (payload) => [
 /** Whether every field has both: the one promise the switch makes. */
 export const bothSources = (payload) => {
   const slots = slotsOf(payload);
-  return slots.length > 0 && slots.every((slot) => slot.arasaac && slot.metacom);
+  return slots.length > 0 && slots.every((slot) => (slot.arasaac || slot.eigen) && slot.metacom);
 };
 
 const bildhaftFacts = (payload) => ({
@@ -1307,8 +1307,12 @@ export async function downloads(root, dist) {
     // A number the shelf published, as the string a provider id is. An
     // empty slot travels as one: the word is there and the picture is not,
     // which is what „leer statt falsch" looks like in a file.
+    /* `eigen` is a picture of our own (sammlungen/eigene-bilder/), drawn
+       where ARASAAC has nothing that fits: the Becherküche's five cups, which
+       ARASAAC draws as two. bildhaft takes it as an own picture of the file's
+       and shows it in ARASAAC's place. */
     choice: {
-      ...(slot.arasaac ? { arasaac: String(slot.arasaac) } : {}),
+      ...(slot.eigen ? { arasaac: `own:${slot.eigen}` } : slot.arasaac ? { arasaac: String(slot.arasaac) } : {}),
       ...(slot.metacom ? { metacom: slot.metacom } : {}),
     },
     candidates: {},
@@ -1350,6 +1354,14 @@ export async function downloads(root, dist) {
       });
     }
 
+    const own = [...new Set(slotsOf(payload).map((slot) => slot.eigen).filter(Boolean))].map((name) => ({
+      id: name,
+      name,
+      type: "image/svg+xml",
+      data: `data:image/svg+xml;base64,${readFileSync(join(root, "sammlungen", "eigene-bilder", `${name}.svg`)).toString("base64")}`,
+      createdAt: made,
+    }));
+
     const at = join(to, `${meta.id}.json`);
     writeFileSync(at, `${JSON.stringify({
       format: "bildhaft.collection",
@@ -1389,6 +1401,7 @@ export async function downloads(root, dist) {
         ...(payload.print ? { print: payload.print } : {}),
       },
       sentences,
+      ...(own.length ? { ownImages: own } : {}),
       notice: [meta.attribution, meta.source && `Nach „${meta.source.title}" von ${meta.source.by}`]
         .filter(Boolean).join(" "),
     }, null, 2)}\n`);

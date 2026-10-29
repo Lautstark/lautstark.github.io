@@ -168,7 +168,7 @@
         {
           "token": "roter Becher",
           "concept": "roter becher",
-          "arasaac": 32466,
+          "eigen": "becher-rot",
           "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
           "label": "roter Becher"
         },
@@ -243,7 +243,7 @@
         {
           "token": "blaue Becher",
           "concept": "blaue becher",
-          "arasaac": 39645,
+          "eigen": "becher-blau",
           "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1_250ml.png",
           "label": "blaue Becher"
         },
@@ -284,7 +284,7 @@
         {
           "token": "gelber Messlöffel",
           "concept": "gelber messloffel",
-          "arasaac": 39645,
+          "eigen": "loeffel-gelb",
           "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gelb1_5ml.png",
           "label": "gelber Messlöffel"
         },
@@ -325,7 +325,7 @@
         {
           "token": "roter Becher",
           "concept": "roter becher",
-          "arasaac": 32466,
+          "eigen": "becher-rot",
           "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
           "label": "roter Becher"
         },
@@ -453,7 +453,7 @@
         {
           "token": "Roter Becher",
           "concept": "roter becher",
-          "arasaac": 32466,
+          "eigen": "becher-rot",
           "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
           "label": "Roter Becher"
         }
@@ -466,7 +466,7 @@
         {
           "token": "Blauer Becher",
           "concept": "blauer becher",
-          "arasaac": 39645,
+          "eigen": "becher-blau",
           "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1_250ml.png",
           "label": "Blauer Becher"
         }
@@ -479,7 +479,7 @@
         {
           "token": "Gelber Messlöffel",
           "concept": "gelber messloffel",
-          "arasaac": 39645,
+          "eigen": "loeffel-gelb",
           "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gelb1_5ml.png",
           "label": "Gelber Messlöffel"
         }

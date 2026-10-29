@@ -93,6 +93,8 @@ for (const key of Object.keys(links)) {
  */
 
 const ENTRIES = new URL("../sammlungen/entries/", import.meta.url).pathname;
+/* Pictures of our own, for what ARASAAC does not draw: the Becherküche's cups. */
+const OWN = new URL("../sammlungen/eigene-bilder/", import.meta.url).pathname;
 const SCHEMA = 1;
 const PRODUCTS = ["vorlaut-app", "vorlaut-talker", "bildhaft", "mitreden"];
 /* "none" is the format's own third value (exchange/SPEC.md §5.1), and a
@@ -230,9 +232,15 @@ if (existsSync(ENTRIES)) {
         ...(payload.sentences ?? []).flatMap((sentence) => sentence.slots ?? [])];
       const both = slots.some((slot) => slot.metacom);
       for (const slot of slots) {
-        if (both && !(slot.arasaac && slot.metacom)) {
+        /* `eigen` stands in for an ARASAAC number: one of our own pictures,
+           which has to be there. */
+        if (slot.eigen && !existsSync(join(OWN, `${slot.eigen}.svg`))) {
+          problems.push(`${here}/${entry.payload}: „${slot.label || slot.token}“ wants the picture `
+            + `${slot.eigen}, and sammlungen/eigene-bilder/ has no ${slot.eigen}.svg.`);
+        }
+        if (both && !((slot.arasaac || slot.eigen) && slot.metacom)) {
           problems.push(`${here}/${entry.payload}: „${slot.label || slot.token}“ has `
-            + `${slot.arasaac ? "no METACOM symbol" : "no ARASAAC number"}, and the rest have both.`);
+            + `${slot.arasaac || slot.eigen ? "no METACOM symbol" : "no ARASAAC number"}, and the rest have both.`);
         }
       }
       const rows = (payload.sentences ?? []).length;
