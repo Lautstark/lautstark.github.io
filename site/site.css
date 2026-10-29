@@ -665,6 +665,8 @@ footer {
   color: #000; line-height: 1.15;
 }
 .blatt > span { position: absolute; box-sizing: border-box; }
+/* `figure img` frames screenshots; a symbol on paper has no box of its own. */
+.blatt img { border: 0; border-radius: 0; background: none; }
 .blatt__karte {
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center; overflow: hidden;
