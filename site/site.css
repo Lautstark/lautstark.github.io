@@ -512,6 +512,13 @@ footer {
 .suchzeile { margin: 0 0 1.1rem; }
 .suchzeile[hidden] { display: none; }
 .suchzeile .field { max-width: 26rem; }
+/* Under the field, a few tags to start from; on a card, its tags. Both search. */
+.vorschlag { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; margin-top: .6rem; font-size: .82rem; color: var(--text-faint); }
+a.marke { text-decoration: none; color: var(--text-dim); position: relative; z-index: 2; }
+a.marke:hover, a.marke.an { border-color: var(--accent); color: var(--accent-strong); background: var(--accent-soft); }
+.karte--blatt .marken { margin: 0; }
+/* Under the search the shelf is every product's, so no product's colour. */
+.vorschlag a.marke:hover, .vorschlag a.marke.an { border-color: var(--text-faint); color: var(--text); background: var(--surface-2); }
 
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; overflow: hidden;

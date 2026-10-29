@@ -23,7 +23,7 @@ const BARE_URL = /https?:\/\/[^\s"'<>]+/g;
  * links.mjs — the shelf page's, and a Tafel page's from _tafel.html. They are
  * generated content, not addresses, and the rule below would otherwise report
  * each of them as a missing entry. */
-const GENERATED = new Set(["filter", "filterRules", "karten", "anzahl", "stand", "beides",
+const GENERATED = new Set(["filter", "filterRules", "karten", "vorschlaege", "anzahl", "stand", "beides",
   "titel", "titelbild", "art", "beschreibung", "zahlen", "marken", "oeffnen", "pdf", "bildschirm", "metacom", "seiten", "quelle"]);
 
 /* site/ has folders in it, so the walk recurses — a page in a subdirectory owes

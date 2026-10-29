@@ -58,11 +58,30 @@
     if (count) count.textContent = shown === cards.length ? all : `${shown} von ${cards.length}`;
   }
 
-  box.addEventListener("input", narrow);
+  /* A tag is a link that searches for it: in place here, the field taking the
+     word, and the same tag again clearing it. Marked where it is the search. */
+  const tagLinks = [...document.querySelectorAll("a[data-suche]")];
+  const mark = () => {
+    for (const link of tagLinks) link.classList.toggle("an", fold(link.dataset.suche) === fold(box.value).trim());
+  };
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[data-suche]");
+    if (!link) return;
+    event.preventDefault();
+    box.value = fold(link.dataset.suche) === fold(box.value).trim() ? "" : link.dataset.suche;
+    narrow();
+    mark();
+  });
+  // Arriving with ?suche= — a tag on a material's page links here so.
+  const wanted = new URLSearchParams(location.search).get("suche");
+  if (wanted) box.value = wanted;
+
+  box.addEventListener("input", () => { narrow(); mark(); });
   // The radios move what is on screen without this file hearing about it, so
   // the count and the empty state have to be recomputed when one changes.
   for (const radio of document.querySelectorAll(".wahl")) {
     radio.addEventListener("change", narrow);
   }
   narrow();
+  mark();
 })();

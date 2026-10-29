@@ -440,7 +440,7 @@ const PREVIEW = { "vorlaut-app": boardPreview, "vorlaut-talker": setsPreview };
 function card(entry, links) {
   const { meta, payload } = entry;
   const product = PRODUCTS[meta.product];
-  const tags = (meta.tags ?? []).map((t) => `<span class="marke">${esc(t)}</span>`).join("");
+  const tags = shownTags(meta).map(tagLink).join("");
   const seeAlso = (meta.seeAlso ?? []).length
     ? `<span class="marke">siehe auch: ${meta.seeAlso.length}</span>` : "";
 
@@ -458,6 +458,7 @@ function card(entry, links) {
   const text = hasPage(entry) ? `<p class="karte__wer"><span class="punkt"></span>${who}</p>
         <h3>${name}</h3>
         <p class="karte__zahlen">${esc(entry.druck.pages.length ? pdfLine(entry) : factLine(meta))}</p>
+        ${tags ? `<p class="marken">${tags}</p>` : ""}
         <p class="karte__tun">${actions(meta, links, true)}${entry.druck.pdf && entry.druck.pages.length
           ? ` <a class="karte__pdf" href="druck/${esc(meta.id)}/${esc(entry.druck.pdf)}" download="${esc(meta.name)}.pdf">⤓ PDF</a>` : ""}</p>`
     : `<p class="karte__wer"><span class="punkt"></span>${who}</p>
@@ -545,6 +546,22 @@ const shelfName = (meta) => meta.name.replace(/\s*\((I{1,3})\)\s*$/, "");
 /** „bildhaft · Spiel“: the product and its template. */
 const labelOf = (meta) => [PRODUCTS[meta.product].label, kindLabel(meta)].filter(Boolean).join(" · ");
 
+/** The tags worth showing: not what the label line says already, no level. */
+const shownTags = (meta) => {
+  const said = new Set(labelOf(meta).split(" · "));
+  return (meta.tags ?? []).filter((t) => !said.has(t) && !/^Stufe /.test(t));
+};
+
+/**
+ * A tag as a way to the others like it: a link that searches the shelf for
+ * it. search.js does it in place; without it the address does, which
+ * search.js reads on arrival — and without either it is a quiet label.
+ */
+const tagLink = (t) => `<a class="marke" href="index.html?suche=${encodeURIComponent(t)}" data-suche="${esc(t)}">${esc(t)}</a>`;
+
+/** What the search suggests under its field, where the shelf has it: what people come looking for. */
+const EXAMPLES = ["Farben", "Zahlen", "Buchstaben", "Sortieren", "Kochen", "Essen"];
+
 const artOf = (meta) => (meta.product === "bildhaft" ? fold(kindLabel(meta)) : "");
 
 /** The rules that hide what a chosen radio excludes, written for the products
@@ -622,11 +639,8 @@ function materialPage(entry, links) {
     zahlen: esc(factLine(meta)),
     // The card's tags, on the page as on the card.
     // The card's tags, on the page as on the card — less what the label line says already, and no level.
-    marken: (() => {
-      const said = new Set(labelOf(meta).split(" · "));
-      const tags = (meta.tags ?? []).filter((t) => !said.has(t) && !/^Stufe /.test(t));
-      return tags.length ? `<p class="marken">${tags.map((t) => `<span class="marke">${esc(t)}</span>`).join("")}</p>` : "";
-    })(),
+    marken: shownTags(meta).length
+      ? `<p class="marken">${shownTags(meta).map((t) => `<a class="marke" href="index.html?suche=${encodeURIComponent(t)}">${esc(t)}</a>`).join("")}</p>` : "",
     oeffnen: open,
     bildschirm: druck.app && druck.pages.length
       ? `<a class="material__app" href="druck/${esc(meta.id)}/app.png" data-gross><img width="${druck.app.w}" height="${druck.app.h}" `
@@ -686,6 +700,11 @@ export function sammlungen(root, dist, links) {
     filter: filter(entries),
     filterRules: filterRules(entries),
     karten: entries.map((one) => card(one, links)).join("\n"),
+    vorschlaege: (() => {
+      const have = new Set(entries.flatMap((one) => one.meta.tags ?? []));
+      const some = EXAMPLES.filter((t) => have.has(t));
+      return some.length ? `<span class="vorschlag">Zum Beispiel: ${some.map(tagLink).join(" ")}</span>` : "";
+    })(),
     beides: entries.some((one) => one.meta.facts.metacom) ? BOTH : "",
     /* One page per Tafel, from site/sammlungen/_tafel.html; build.mjs writes
        them, because it is what knows how a page is filled. */
