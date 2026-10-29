@@ -544,23 +544,14 @@ a.marke:hover, a.marke.an { border-color: var(--accent); color: var(--accent-str
 
 /* ---------------------------------------------- ARASAAC oder METACOM ---- */
 
-/* Said once above the shelf: the shelf is ARASAAC, and METACOM works too. */
-.beides {
-  margin-top: 1.6rem; max-width: 50rem;
-  display: flex; gap: 1.1rem; align-items: flex-start;
-  background: var(--surface); border: 1px solid var(--surface-3);
-  border-radius: var(--radius); padding: 1.1rem 1.3rem;
+/* That METACOM works too: small, and in bildhaft's orange so it is seen — on
+   the shelf under its lead, on a material's page under the buttons. */
+.metacom-hinweis {
+  margin: 1rem 0 0; max-width: 46rem; font-size: .86rem; line-height: 1.45; color: var(--text-dim);
+  border-left: 3px solid #ff6b35; background: #fff6f2; border-radius: 0 8px 8px 0; padding: .5rem .8rem;
 }
-.beides h2 { margin: 0 0 .3rem; font-size: 1.05rem; font-weight: 650; }
-.beides p { margin: 0; font-size: .92rem; line-height: 1.55; color: var(--text-dim); }
-.beides__bild { display: flex; flex-direction: column; gap: .25rem; flex-shrink: 0; }
-.beides p.beides__bild span {
-  font-size: .68rem; font-weight: 700; letter-spacing: .04em; text-align: center;
-  border-radius: var(--radius-pill); padding: .15rem .55rem;
-  background: var(--surface-2); color: var(--text);
-}
-.beides p.beides__bild span + span { background: #ffefea; color: #be3e00; }
-@media (max-width: 34rem) { .beides { flex-direction: column; } .beides__bild { flex-direction: row; } }
+.metacom-hinweis b { color: var(--text); }
+.material__links .metacom-hinweis { margin: .7rem 0 0; }
 
 /* A bildhaft card: on top its PDF, the pages fanned a little on grey — or a
    Wortliste's wall of pictures — and under it the card's words. */
@@ -686,12 +677,6 @@ a.marke:hover, a.marke.an { border-color: var(--accent); color: var(--accent-str
   display: block; width: 100%; height: auto; border-radius: 8px;
   border: 1px solid var(--surface-3); box-shadow: 0 1px 4px rgb(0 0 0 / .12);
 }
-.material__metacom {
-  margin-top: .6rem; background: var(--surface-2); border-radius: var(--radius);
-  padding: .8rem 1rem; font-size: .88rem; color: var(--text-dim); line-height: 1.5;
-}
-.material__metacom p { margin: 0; }
-.material__metacom b { color: var(--text); }
 .material__rechts { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
 .material__seiten { display: grid; grid-template-columns: minmax(0, 1fr) 6rem; gap: 1rem; align-items: start; }
 .material__seiten--eine { grid-template-columns: minmax(0, 1fr); }

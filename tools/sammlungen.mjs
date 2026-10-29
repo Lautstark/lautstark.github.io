@@ -596,13 +596,9 @@ function filterRules(entries) {
  * Said once above the shelf, and only when a Sammlung on it has both: the
  * switch on each card is the short form of this.
  */
-const BOTH = `<div class="beides">
-      <p class="beides__bild" aria-hidden="true"><span>ARASAAC</span><span>METACOM</span></p>
-      <div>
-        <h2>Mit ARASAAC oder mit METACOM</h2>
-        <p>Die Materialien für bildhaft zeigen hier ARASAAC-Symbole. Die sind frei, und mit ihnen funktioniert jedes Material. Viele sind zusätzlich schon mit METACOM ausgesucht, Feld für Feld. Hast du eine METACOM-Lizenz, öffne das Material in bildhaft und wähle dort einmal deinen METACOM-Ordner.</p>
-      </div>
-    </div>`;
+const BOTH = `<p class="metacom-hinweis"><b>Auch mit METACOM.</b> Alles hier zeigt ARASAAC — frei für alle. `
+  + "Fast jedes Material ist auch schon mit METACOM ausgesucht: Mit deiner Lizenz öffnest du es in bildhaft "
+  + "und wählst einmal deinen METACOM-Ordner.</p>";
 
 /** Which entries have a page of their own: a bildhaft material bildhaft has printed. */
 const hasPage = (entry) => entry.meta.product === "bildhaft" && Boolean(entry.druck?.pages.length || entry.druck?.app);
@@ -664,13 +660,12 @@ function materialPage(entry, links) {
 }
 
 /**
- * That METACOM works too, on a material that has both. Quiet, in grey: it was
- * a box in the accent, and two loud things on one page — it and the button —
- * pulled against each other.
+ * That METACOM works too, on a material that has both: small, but in the
+ * accent, right under the buttons where it is seen without scrolling. It was a
+ * loud box, then a grey one under the picture nobody reached (2026-10-29).
  */
-const METACOM_BOX = `<div class="material__metacom">
-          <p><b>Auch mit METACOM.</b> Hast du eine Lizenz? In bildhaft öffnen und einmal deinen METACOM-Ordner wählen.</p>
-        </div>`;
+const METACOM_BOX = `<p class="metacom-hinweis"><b>Auch mit METACOM.</b> Hier siehst du ARASAAC. `
+  + "Mit deiner METACOM-Lizenz: in bildhaft öffnen und einmal deinen METACOM-Ordner wählen.</p>";
 
 /* -------------------------------------------------------------- assembly --- */
 
