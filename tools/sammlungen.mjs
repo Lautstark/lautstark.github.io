@@ -1075,7 +1075,7 @@ export function einkaufPages(payload, name, attribution) {
 export function pagesOf({ meta, payload, druck }) {
   if (meta.product !== "bildhaft" || meta.art === "Wortliste") return null;
   if (druck?.pages.length) return druck.pages.map((page, n) => ({
-    label: `${paperLabel(payload.print ?? {})}${druck.pages.length > 1 ? ` · Blatt ${n + 1} von ${druck.pages.length}` : ""}`,
+    label: `${paperLabel({ paper: payload.print?.paper, orientation: page.w > page.h ? "landscape" : "portrait" })}${druck.pages.length > 1 ? ` · Blatt ${n + 1} von ${druck.pages.length}` : ""}`,
     html: `<div class="blatt blatt--bild" style="aspect-ratio: ${page.w} / ${page.h}" role="img" aria-label="So sieht es gedruckt aus">`
       + `<img class="blatt__a" width="${page.w}" height="${page.h}" src="druck/${esc(druck.id)}/${page.a}" alt="">`
       + (page.m ? `<img class="blatt__m" width="${page.m.size[0]}" height="${page.m.size[1]}" src="druck/${esc(druck.id)}/${page.m.file}" alt="">` : "")
