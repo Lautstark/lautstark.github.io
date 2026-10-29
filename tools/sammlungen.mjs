@@ -169,6 +169,8 @@ function printed(at, id) {
   return {
     dir, id, pages,
     pdf: files.includes(`${id}.pdf`) ? `${id}.pdf` : null,
+    // An Anybook Studio file, where the material has codes: the sheet and a recording per code, in Thorsten (CC0).
+    abs: files.includes(`${id}.abs`) ? `${id}.abs` : null,
     app: files.includes("app.png") ? { file: "app.png", ...size("app.png") } : null,
   };
 }
@@ -616,7 +618,9 @@ function materialPage(entry, links) {
     metacom: bothSources(payload) ? METACOM_BOX : "",
     // Beside the button, not over the pages: one place for what to do with it.
     pdf: druck.pdf && druck.pages.length
-      ? `<a class="btn" href="druck/${esc(meta.id)}/${esc(druck.pdf)}" download="${esc(meta.name)}.pdf" title="PDF · ${esc(pdfLine(entry))}">⤓ PDF</a>` : "",
+      ? `<a class="btn" href="druck/${esc(meta.id)}/${esc(druck.pdf)}" download="${esc(meta.name)}.pdf" title="PDF · ${esc(pdfLine(entry))}">⤓ PDF</a>`
+        + (druck.abs ? `<a class="btn" href="druck/${esc(meta.id)}/${esc(druck.abs)}" download="${esc(meta.name)}.abs" `
+          + `title="Für Anybook Studio: der Bogen mit den Codes und eine Aufnahme pro Code, Stimme Thorsten">⤓ Anybook</a>` : "") : "",
     seiten: !druck.pages.length
       ? `<a class="material__app material__app--gross" href="druck/${esc(meta.id)}/app.png" data-gross><img width="${druck.app.w}" `
         + `height="${druck.app.h}" src="druck/${esc(meta.id)}/app.png" alt="So sieht ${esc(meta.name)} in bildhaft aus"></a>`

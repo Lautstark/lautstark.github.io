@@ -643,9 +643,11 @@ footer {
 .material .tafelkopf:not(:has(> img)) h1 { grid-column: 1 / -1; }
 .material .tafelkopf h1 { font-size: clamp(1.5rem, 1.1rem + 1vw, 1.9rem); line-height: 1.15; hyphens: auto; overflow-wrap: break-word; }
 .material__links .marken { margin: .2rem 0 0; }
-.material__tun { display: flex; gap: .5rem; margin: 1rem 0 0; }
-.material__tun .btn { white-space: nowrap; }
-.material__oeffnen { flex: 1; justify-content: center; text-align: center; padding: .7rem 1rem; font-size: 1rem; }
+/* The program on a row of its own; the files to take under it, side by side
+   and as wide as each other — „⤓ Anybook“ alone on a second row looked lost. */
+.material__tun { display: flex; gap: .5rem; margin: 1rem 0 0; flex-wrap: wrap; }
+.material__tun .btn { white-space: nowrap; flex: 1; justify-content: center; }
+.material__oeffnen { flex: 1 0 100% !important; text-align: center; padding: .7rem 1rem; font-size: 1rem; }
 .hm-klein { font-size: .78rem; color: var(--text-faint); margin: 0; }
 .material__app { display: block; margin-top: .6rem; }
 .material__app img {

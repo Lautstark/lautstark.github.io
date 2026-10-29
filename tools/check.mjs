@@ -150,8 +150,8 @@ if (existsSync(ENTRIES)) {
     const druck = join(ENTRIES, dir, "druck");
     if (existsSync(druck)) {
       for (const name of readdirSync(druck)) {
-        if (name === `${dir}.pdf` || name === "app.png" || /^a-\d+\.png$/.test(name)) continue;
-        problems.push(`${here}/druck/${name}: is not ${dir}.pdf, a-<n>.png or app.png.`);
+        if (name === `${dir}.pdf` || name === `${dir}.abs` || name === "app.png" || /^a-\d+\.png$/.test(name)) continue;
+        problems.push(`${here}/druck/${name}: is not ${dir}.pdf, ${dir}.abs, a-<n>.png or app.png.`);
       }
     }
 
