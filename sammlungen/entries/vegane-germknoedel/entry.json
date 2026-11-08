@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "id": "vegane-germknoedel",
+  "product": "bildhaft",
+  "name": "Vegane Germknödel",
+  "description": "Vier vegane Germknödel aus dem Dampfgarer, Schritt für Schritt in Bildern — zum Selberkochen.",
+  "tags": [
+    "Kochen",
+    "Alltag"
+  ],
+  "language": "de",
+  "symbols": "arasaac",
+  "attribution": "Piktogramme: ARASAAC (arasaac.org), CC BY-NC-SA. Autor: Sergio Palao. Urheber: Regierung von Aragón (Spanien).",
+  "seeAlso": [],
+  "payload": "rezept.json",
+  "symbolNotes": {
+    "Sojadrink": "ARASAAC hat keinen Pflanzendrink; die Milch steht dafür.",
+    "Zwetschgenmus": "ARASAAC hat kein Pflaumenmus; das Marmeladenglas steht dafür.",
+    "Mohn": "ARASAAC hat keine Mohnsamen; der Klatschmohn steht dafür.",
+    "Dampfgarer": "ARASAAC hat keinen Dampfgarer; der Backofen steht dafür."
+  }
+}

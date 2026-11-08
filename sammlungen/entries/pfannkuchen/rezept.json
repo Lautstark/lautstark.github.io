@@ -1,579 +1,563 @@
 {
   "kind": "rezept",
+  "title": {
+    "token": "Pfannkuchen",
+    "concept": "pfannkuchen",
+    "arasaac": 37849,
+    "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/eierpfannkuchen.png",
+    "label": "Pfannkuchen"
+  },
   "print": {
     "symbolSizeMm": 19,
-    "cutMarginMm": 1.5,
-    "showLabel": true,
-    "labelPosition": "below",
-    "labelSizePt": 9,
-    "layout": "rezept",
-    "paper": "a4",
-    "orientation": "portrait",
     "sheetFit": "grid",
     "cardWidthMm": 54,
     "cardHeightMm": 84,
     "gridCols": 6,
-    "gridRows": 3,
-    "showCutLines": true,
-    "onePerPage": false,
-    "showSentenceText": true,
-    "sentencePosition": "above",
-    "sentenceSizePt": 10,
-    "showCollectionTitle": true,
-    "titleSizePt": 15,
-    "titleColour": null,
+    "anybookCircle": true,
+    "anybookPlace": "below",
     "titleLine": false,
-    "stripFrame": false,
-    "cardBorderMm": 0,
     "cardBorderColor": "#2e2e2e",
-    "cardRadiusMm": 2,
-    "cardBackground": null,
-    "accentColour": "#e3262b",
-    "songHeadings": true,
-    "songRepeats": false,
-    "songRefrainOnce": false,
-    "showPageNumbers": false
-  },
-  "title": {
-    "token": "menueeierpfannkuchen",
-    "concept": "menueeierpfannkuchen",
-    "arasaac": 37849,
-    "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/menueeierpfannkuchen.png"
+    "anybookSay": {
+      "titel": "Rezept für zehn Pfannkuchen",
+      "s16": "Eine Kelle Teig in die Pfanne geben",
+      "s9": "Zwei Eier aufschlagen und in die Rührschüssel geben",
+      "s10": "Einen blauen Becher Mehl in die Rührschüssel geben",
+      "s11": "Einen blauen Becher Milch in die Rührschüssel gießen",
+      "s12": "Zwei grüne Messlöffel Zucker in die Rührschüssel geben",
+      "s13": "Eine Prise Salz in die Rührschüssel geben"
+    }
   },
   "sentences": [
     {
       "text": "Eier",
+      "part": "zutat",
       "slots": [
         {
           "token": "Eier",
           "concept": "eier",
-          "label": "2 Eier",
-          "arasaac": 34039,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Behaelter_Taschen/eierkarton.png"
+          "arasaac": 2427,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/ei.png",
+          "label": "2 Eier"
         }
-      ],
-      "part": "zutat"
+      ]
     },
     {
       "text": "Mehl",
+      "part": "zutat",
       "slots": [
         {
           "token": "Mehl",
           "concept": "mehl",
-          "label": "250gr Mehl",
           "arasaac": 8600,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mehl.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mehl.png",
+          "label": "250 g Mehl"
         }
-      ],
-      "part": "zutat"
+      ]
     },
     {
       "text": "Milch",
+      "part": "zutat",
       "slots": [
         {
           "token": "Milch",
           "concept": "milch",
-          "label": "250ml Milch",
           "arasaac": 2445,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/milch.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/milch.png",
+          "label": "250 ml Milch"
         }
-      ],
-      "part": "zutat"
+      ]
     },
     {
       "text": "Salz",
+      "part": "zutat",
       "slots": [
         {
           "token": "Salz",
           "concept": "salz",
-          "label": "Prise Salz",
           "arasaac": 25576,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/salz2.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/salz2.png",
+          "label": "1 Prise Salz"
         }
-      ],
-      "part": "zutat"
+      ]
     },
     {
       "text": "Zucker",
+      "part": "zutat",
       "slots": [
         {
           "token": "Zucker",
           "concept": "zucker",
-          "label": "2 Esslöffel Zucker",
           "arasaac": 25560,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucker.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucker.png",
+          "label": "2 EL Zucker"
         }
-      ],
-      "part": "zutat"
+      ]
     },
     {
-      "text": "Schüssel",
+      "text": "Rührschüssel",
+      "part": "hilfsmittel",
       "slots": [
         {
-          "token": "Schüssel",
-          "concept": "schüssel",
+          "token": "Rührschüssel",
+          "concept": "ruhrschussel",
           "arasaac": 3257,
-          "metacom": "METACOM_Symbole/Symbole_JPG/JPG_ohne_Rahmen/Geschirr/schuessel_metall.jpg"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "Rührschüssel"
         }
-      ],
-      "part": "hilfsmittel"
+      ]
     },
     {
       "text": "Pfanne",
+      "part": "hilfsmittel",
       "slots": [
         {
           "token": "Pfanne",
           "concept": "pfanne",
           "arasaac": 2558,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfanne1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfanne1.png",
+          "label": "Pfanne"
         }
-      ],
-      "part": "hilfsmittel"
+      ]
     },
     {
       "text": "Pfannenwender",
+      "part": "hilfsmittel",
       "slots": [
         {
           "token": "Pfannenwender",
           "concept": "pfannenwender",
           "arasaac": 7094,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfannenwender1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfannenwender1.png",
+          "label": "Pfannenwender"
         }
-      ],
-      "part": "hilfsmittel"
+      ]
     },
     {
-      "text": "Quirl",
+      "text": "Schneebesen",
+      "part": "hilfsmittel",
       "slots": [
         {
-          "token": "Quirl",
-          "concept": "quirl",
-          "label": "Schneebesen",
-          "arasaac": 8504,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/schneebesen2.png"
+          "token": "Schneebesen",
+          "concept": "schneebesen",
+          "arasaac": 38038,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/kuechenmaschinegrau.png",
+          "label": "Küchenmaschine"
         }
-      ],
-      "part": "hilfsmittel"
+      ]
     },
     {
-      "text": "2 Eier aufschlagen",
+      "text": "2 Eier aufschlagen und in die Rührschüssel geben",
+      "part": "schritt",
       "slots": [
         {
           "token": "2",
           "concept": "2",
           "arasaac": 2628,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "Zwei"
         },
         {
           "token": "Eier",
           "concept": "eier",
           "arasaac": 34039,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Behaelter_Taschen/eierkarton.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Behaelter_Taschen/eierkarton.png",
+          "label": "Eier"
         },
         {
           "token": "aufschlagen",
           "concept": "aufschlagen",
           "arasaac": 8984,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/ei_aufschlagen2.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/ei_aufschlagen2.png",
+          "label": "aufschlagen"
         },
         {
-          "token": "pfeil re",
-          "concept": "pfeil re",
-          "label": "in",
+          "token": "in",
+          "concept": "in",
           "arasaac": 38252,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
         },
         {
-          "token": "schuessel metall",
-          "concept": "schuessel metall",
-          "label": "die Schüssel",
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
           "arasaac": 3257,
-          "metacom": "METACOM_Symbole/Symbole_JPG/JPG_ohne_Rahmen/Geschirr/schuessel_metall.jpg"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
         }
-      ],
-      "part": "schritt"
+      ]
     },
     {
-      "text": "Mehl hinzugeben",
+      "text": "1 blauen Becher Mehl in die Rührschüssel geben",
+      "part": "schritt",
       "slots": [
         {
           "token": "1",
           "concept": "1",
           "arasaac": 2627,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Ein"
         },
         {
-          "token": "messbecher blau",
-          "concept": "messbecher blau",
-          "label": "Becher",
+          "token": "blauer Becher",
+          "concept": "blauer becher",
           "eigen": "becher-blau",
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1_250ml.png",
+          "label": "blauer Becher"
         },
         {
           "token": "Mehl",
           "concept": "mehl",
           "arasaac": 8600,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mehl.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mehl.png",
+          "label": "Mehl"
         },
         {
-          "token": "pfeil re",
-          "concept": "pfeil re",
-          "label": "in",
+          "token": "in",
+          "concept": "in",
           "arasaac": 38252,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
         },
         {
-          "token": "hinzugeben",
-          "concept": "hinzugeben",
-          "label": "die Schüssel",
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
           "arasaac": 3257,
-          "metacom": "METACOM_Symbole/Symbole_JPG/JPG_ohne_Rahmen/Geschirr/schuessel_metall.jpg"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
         }
-      ],
-      "part": "schritt"
+      ]
     },
     {
-      "text": "1 Becher Milch Schüssel",
+      "text": "1 blauen Becher Milch in die Rührschüssel gießen",
+      "part": "schritt",
       "slots": [
         {
           "token": "1",
           "concept": "1",
           "arasaac": 2627,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Ein"
         },
         {
-          "token": "Becher",
-          "concept": "becher",
-          "label": "Becher",
+          "token": "blauer Becher",
+          "concept": "blauer becher",
           "eigen": "becher-blau",
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1_250ml.png",
+          "label": "blauer Becher"
         },
         {
           "token": "Milch",
           "concept": "milch",
           "arasaac": 2445,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/milch.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/milch.png",
+          "label": "Milch"
         },
         {
-          "token": "pfeil re",
-          "concept": "pfeil re",
-          "label": "in",
+          "token": "in",
+          "concept": "in",
           "arasaac": 38252,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
         },
         {
-          "token": "Schüssel",
-          "concept": "Schüssel",
-          "label": "die Schüssel",
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
           "arasaac": 3257,
-          "metacom": "METACOM_Symbole/Symbole_JPG/JPG_ohne_Rahmen/Geschirr/schuessel_metall.jpg"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
         }
-      ],
-      "part": "schritt"
+      ]
     },
     {
-      "text": "3 Becher Zucker Schüssel",
+      "text": "2 grüne Messlöffel Zucker in die Rührschüssel geben",
+      "part": "schritt",
       "slots": [
         {
-          "token": "3",
-          "concept": "3",
-          "label": "2",
+          "token": "2",
+          "concept": "2",
           "arasaac": 2628,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "Zwei"
         },
         {
-          "token": "Becher",
-          "concept": "becher",
-          "label": "Esslöffel",
+          "token": "grüne Messlöffel",
+          "concept": "grune messloffel",
           "eigen": "loeffel-gruen",
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gruen1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gruen1_15ml.png",
+          "label": "grüne Messlöffel"
         },
         {
           "token": "Zucker",
           "concept": "zucker",
           "arasaac": 25560,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucker.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucker.png",
+          "label": "Zucker"
         },
         {
-          "token": "pfeil re",
-          "concept": "pfeil re",
-          "label": "in",
+          "token": "in",
+          "concept": "in",
           "arasaac": 38252,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
         },
         {
-          "token": "Schüssel",
-          "concept": "schüssel",
-          "label": "die Schüssel",
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
           "arasaac": 3257,
-          "metacom": "METACOM_Symbole/Symbole_JPG/JPG_ohne_Rahmen/Geschirr/schuessel_metall.jpg"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
         }
-      ],
-      "part": "schritt"
+      ]
     },
     {
-      "text": "1 Prise Salz in die Schüssel",
+      "text": "1 Prise Salz in die Rührschüssel geben",
+      "part": "schritt",
       "slots": [
         {
           "token": "1",
           "concept": "1",
           "arasaac": 2627,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Eine"
         },
         {
           "token": "Prise",
-          "concept": "pris",
+          "concept": "prise",
           "arasaac": 8670,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/bisschen.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/bisschen.png",
+          "label": "Prise"
         },
         {
           "token": "Salz",
           "concept": "salz",
           "arasaac": 25576,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/salz2.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/salz2.png",
+          "label": "Salz"
         },
         {
-          "token": "pfeil re",
-          "concept": "pfeil re",
-          "label": "in",
+          "token": "in",
+          "concept": "in",
           "arasaac": 38252,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
         },
         {
-          "token": "Schüssel",
-          "concept": "schüssel",
-          "label": "die Schüssel",
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
           "arasaac": 3257,
-          "metacom": "METACOM_Symbole/Symbole_JPG/JPG_ohne_Rahmen/Geschirr/schuessel_metall.jpg"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
         }
-      ],
-      "part": "schritt"
+      ]
     },
     {
-      "text": "Alles verühren",
+      "text": "Alle Zutaten mit dem Schneebesen gut verrühren",
+      "part": "schritt",
       "slots": [
         {
-          "token": "Alles",
-          "concept": "alles",
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
           "arasaac": 3257,
-          "metacom": "METACOM_Symbole/Symbole_JPG/JPG_ohne_Rahmen/Geschirr/schuessel_metall.jpg"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "Alle Zutaten"
         },
         {
-          "token": "schneebesen",
-          "concept": "schneebesen",
-          "label": "mit dem Schneebesen",
-          "arasaac": 8504,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/schneebesen2.png"
+          "token": "gut verrühren",
+          "concept": "gut verruhren",
+          "arasaac": 38038,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/kuechenmaschinegrau.png",
+          "label": "in der Küchenmaschine"
         },
         {
-          "token": "verühren",
-          "concept": "verühren",
-          "label": "gut verühren",
+          "token": "ruehren",
+          "concept": "ruehren",
           "arasaac": 25738,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/ruehren.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/ruehren.png",
+          "label": "gut verrühren"
         }
-      ],
-      "part": "schritt"
+      ]
     },
     {
-      "text": "Pfanne auf den Herd",
+      "text": "Pfanne auf den Herd stellen und den Herd einschalten",
+      "part": "schritt",
       "slots": [
         {
           "token": "Pfanne",
-          "concept": "Pfanne",
+          "concept": "pfanne",
           "arasaac": 2558,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfanne1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfanne1.png",
+          "label": "Pfanne"
         },
         {
           "token": "auf",
           "concept": "auf",
           "arasaac": 38755,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_ob.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_ob.png",
+          "label": "auf"
         },
         {
-          "token": "Herd",
-          "concept": "herd",
-          "label": "den Herd",
+          "token": "den Herd",
+          "concept": "den herd",
           "arasaac": 2341,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/herd_backofenSW.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/herd_backofenSW.png",
+          "label": "den Herd"
         },
         {
-          "token": "und",
-          "concept": "und",
-          "arasaac": 11399,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/und1.png"
-        },
-        {
-          "token": "herd backofenSW",
-          "concept": "herd backofensw",
-          "label": "den Herd",
-          "arasaac": 2341,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/herd_backofenSW.png"
-        },
-        {
-          "token": "herd hoechststufe",
-          "concept": "herd hoechststufe",
-          "label": "einschalten",
+          "token": "einschalten",
+          "concept": "einschalten",
           "arasaac": 3373,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/herd_hoechststufe.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/herd_hoechststufe.png",
+          "label": "einschalten"
         }
-      ],
-      "part": "schritt"
+      ]
     },
     {
-      "text": "kelle",
-      "slots": [
-        {
-          "token": "kelle",
-          "concept": "kelle",
-          "arasaac": 2363,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/kelle1.png"
-        }
-      ],
-      "part": "hilfsmittel"
-    },
-    {
-      "text": "1 Kelle Teig in die Pfanne",
+      "text": "1 Kelle Teig in die Pfanne geben",
+      "part": "schritt",
       "slots": [
         {
           "token": "1",
           "concept": "1",
           "arasaac": 2627,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Eine"
         },
         {
-          "token": "Kelle",
-          "concept": "kelle",
+          "token": "Kelle Teig",
+          "concept": "kelle teig",
           "arasaac": 2363,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/kelle1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/kelle1.png",
+          "label": "Kelle Teig"
         },
         {
-          "token": "Teig",
-          "concept": "Teig",
-          "arasaac": 15347,
-          "metacom": "METACOM_Symbole/Symbole_JPG/JPG_ohne_Rahmen/Geschirr/schuessel_metall.jpg"
+          "token": "aus der Rührschüssel",
+          "concept": "aus der ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "aus der Rührschüssel"
         },
         {
-          "token": "Pfanne",
-          "concept": "Pfanne",
-          "label": "in die Pfanne",
+          "token": "in die Pfanne",
+          "concept": "in die pfanne",
           "arasaac": 2558,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfanne1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfanne1.png",
+          "label": "in die Pfanne"
         }
-      ],
-      "part": "schritt"
+      ]
     },
     {
-      "text": "warten bis pfannkuchen braun ist",
+      "text": "Pfannkuchen von beiden Seiten backen",
+      "part": "schritt",
       "slots": [
         {
           "token": "warten",
           "concept": "warten",
-          "label": "warten",
           "arasaac": 8109,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/warten.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/warten.png",
+          "label": "warten"
         },
         {
-          "token": "eierpfannkuchen",
-          "concept": "eierpfannkuchen",
-          "label": "Pfannkuchen",
+          "token": "Pfannkuchen",
+          "concept": "pfannkuchen",
           "arasaac": 37849,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/eierpfannkuchen.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/eierpfannkuchen.png",
+          "label": "Pfannkuchen"
         },
         {
-          "token": "pfanne",
-          "concept": "pfanne",
-          "label": "in der Pfanne",
+          "token": "in der Pfanne",
+          "concept": "in der pfanne",
           "arasaac": 2558,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfanne1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfanne1.png",
+          "label": "in der Pfanne"
         },
         {
-          "token": "pfannkuchen",
-          "concept": "Pfannkuchen",
-          "label": "wenden",
+          "token": "wenden",
+          "concept": "wenden",
           "arasaac": 25532,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfannenwender1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfannenwender1.png",
+          "label": "wenden"
         },
         {
-          "token": "braun",
-          "concept": "braun",
-          "label": "warten",
+          "token": "warten",
+          "concept": "warten",
           "arasaac": 8109,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/warten.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Verben/warten.png",
+          "label": "warten"
         }
-      ],
-      "part": "schritt"
+      ]
     },
     {
-      "text": "Pfannkuchen aus der Pfanne nehmen und auf einen Teller legen",
+      "text": "Pfannkuchen aus der Pfanne auf den Teller legen",
+      "part": "schritt",
       "slots": [
         {
           "token": "Pfannkuchen",
-          "concept": "Pfannkuchen",
+          "concept": "pfannkuchen",
           "arasaac": 37849,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/eierpfannkuchen.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/eierpfannkuchen.png",
+          "label": "Pfannkuchen"
         },
         {
-          "token": "Pfanne",
-          "concept": "pfanne",
-          "label": "aus der Pfanne",
+          "token": "aus der Pfanne",
+          "concept": "aus der pfanne",
           "arasaac": 2558,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfanne1.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/pfanne1.png",
+          "label": "aus der Pfanne"
         },
         {
           "token": "auf",
           "concept": "auf",
-          "label": "auf",
           "arasaac": 38252,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "auf"
         },
         {
-          "token": "Teller",
-          "concept": "Teller",
-          "label": "den Teller legen",
+          "token": "den Teller",
+          "concept": "den teller",
           "arasaac": 2532,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/teller.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/teller.png",
+          "label": "den Teller"
         }
-      ],
-      "part": "schritt"
+      ]
     },
     {
-      "text": "Teller",
+      "text": "Kelle",
+      "part": "hilfsmittel",
       "slots": [
         {
-          "token": "Teller",
-          "concept": "teller",
-          "arasaac": 2532,
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/teller.png"
+          "token": "Kelle",
+          "concept": "kelle",
+          "arasaac": 2363,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/kelle1.png",
+          "label": "Kelle"
         }
-      ],
-      "part": "hilfsmittel"
+      ]
     },
     {
-      "text": "messbecher",
+      "text": "Blauer Becher",
+      "part": "hilfsmittel",
       "slots": [
         {
-          "token": "messbecher",
-          "concept": "messbecher",
-          "label": "blauer Becher",
+          "token": "Blauer Becher",
+          "concept": "blauer becher",
           "eigen": "becher-blau",
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1_250ml.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1_250ml.png",
+          "label": "Blauer Becher"
         }
-      ],
-      "part": "hilfsmittel"
+      ]
     },
     {
-      "text": "esslöffel",
+      "text": "Grüner Messlöffel",
+      "part": "hilfsmittel",
       "slots": [
         {
-          "token": "esslöffel",
-          "concept": "esslöffel",
-          "label": "grüner Messlöffel",
+          "token": "Grüner Messlöffel",
+          "concept": "gruner messloffel",
           "eigen": "loeffel-gruen",
-          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gruen1_15ml.png"
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gruen1_15ml.png",
+          "label": "Grüner Messlöffel"
         }
-      ],
-      "part": "hilfsmittel"
+      ]
     }
   ]
 }

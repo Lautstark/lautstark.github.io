@@ -1,0 +1,787 @@
+{
+  "kind": "rezept",
+  "title": {
+    "token": "Germknödel",
+    "concept": "germknodel",
+    "arasaac": 38747,
+    "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/dampfnudel.png",
+    "label": "Germknödel"
+  },
+  "print": {
+    "symbolSizeMm": 14,
+    "labelSizePt": 6,
+    "sheetFit": "grid",
+    "cardWidthMm": 54,
+    "cardHeightMm": 84,
+    "gridCols": 6,
+    "anybookCircle": true,
+    "anybookPlace": "below",
+    "titleLine": false,
+    "cardBorderColor": "#2e2e2e"
+  },
+  "sentences": [
+    {
+      "text": "125 ml Sojadrink",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "125 ml Sojadrink",
+          "concept": "125 ml sojadrink",
+          "arasaac": 2445,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/sojamilch.png",
+          "label": "125 ml Sojadrink"
+        }
+      ]
+    },
+    {
+      "text": "50 g vegane Butter",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "50 g vegane Butter",
+          "concept": "50 g vegane butter",
+          "arasaac": 26196,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/margarineeckig.png",
+          "label": "50 g vegane Butter"
+        }
+      ]
+    },
+    {
+      "text": "250 g Mehl",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "250 g Mehl",
+          "concept": "250 g mehl",
+          "arasaac": 8600,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mehl.png",
+          "label": "250 g Mehl"
+        }
+      ]
+    },
+    {
+      "text": "4 g Trockenhefe",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "4 g Trockenhefe",
+          "concept": "4 g trockenhefe",
+          "arasaac": 9052,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/hefe.png",
+          "label": "4 g Trockenhefe"
+        }
+      ]
+    },
+    {
+      "text": "1 Prise Salz",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "1 Prise Salz",
+          "concept": "1 prise salz",
+          "arasaac": 25576,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/salz2.png",
+          "label": "1 Prise Salz"
+        }
+      ]
+    },
+    {
+      "text": "25 g Zucker",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "25 g Zucker",
+          "concept": "25 g zucker",
+          "arasaac": 25560,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucker.png",
+          "label": "25 g Zucker"
+        }
+      ]
+    },
+    {
+      "text": "4 TL Zwetschgenmus",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "4 TL Zwetschgenmus",
+          "concept": "4 tl zwetschgenmus",
+          "arasaac": 2470,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/pflaumenmus.png",
+          "label": "4 TL Zwetschgenmus"
+        }
+      ]
+    },
+    {
+      "text": "2 EL Mohn",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "2 EL Mohn",
+          "concept": "2 el mohn",
+          "arasaac": 6897,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pflanzen/mohnblume.png",
+          "label": "2 EL Mohn"
+        }
+      ]
+    },
+    {
+      "text": "1 EL Puderzucker",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "1 EL Puderzucker",
+          "concept": "1 el puderzucker",
+          "arasaac": 25560,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/puderzucker.png",
+          "label": "1 EL Puderzucker"
+        }
+      ]
+    },
+    {
+      "text": "Vanillesoße",
+      "part": "zutat",
+      "slots": [
+        {
+          "token": "Vanillesoße",
+          "concept": "vanillesoße",
+          "arasaac": 35735,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/sossehell.png",
+          "label": "Vanillesoße"
+        }
+      ]
+    },
+    {
+      "text": "Blauer Becher",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Blauer Becher",
+          "concept": "blauer becher",
+          "eigen": "becher-blau",
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1_250ml.png",
+          "label": "Blauer Becher"
+        }
+      ]
+    },
+    {
+      "text": "Roter Becher",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Roter Becher",
+          "concept": "roter becher",
+          "eigen": "becher-rot",
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
+          "label": "Roter Becher"
+        }
+      ]
+    },
+    {
+      "text": "Oranger Becher",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Oranger Becher",
+          "concept": "oranger becher",
+          "eigen": "becher-orange",
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_orange1_30ml.png",
+          "label": "Oranger Becher"
+        }
+      ]
+    },
+    {
+      "text": "Gelber Messlöffel",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Gelber Messlöffel",
+          "concept": "gelber messloffel",
+          "eigen": "loeffel-gelb",
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gelb1_5ml.png",
+          "label": "Gelber Löffel"
+        }
+      ]
+    },
+    {
+      "text": "Topf",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Topf",
+          "concept": "topf",
+          "arasaac": 9086,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/topf.png",
+          "label": "Topf"
+        }
+      ]
+    },
+    {
+      "text": "Rührschüssel",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Rührschüssel",
+          "concept": "ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "Küchenmaschine",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Küchenmaschine",
+          "concept": "kuchenmaschine",
+          "arasaac": 38038,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/kuechenmaschinegrau.png",
+          "label": "Küchenmaschine"
+        }
+      ]
+    },
+    {
+      "text": "Geschirrtuch",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Geschirrtuch",
+          "concept": "geschirrtuch",
+          "arasaac": 2496,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/geschirrhandtuch.png",
+          "label": "Geschirrtuch"
+        }
+      ]
+    },
+    {
+      "text": "Backpapier",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Backpapier",
+          "concept": "backpapier",
+          "arasaac": 38203,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/backpapier.png",
+          "label": "Backpapier"
+        }
+      ]
+    },
+    {
+      "text": "Dampfgarer",
+      "part": "hilfsmittel",
+      "slots": [
+        {
+          "token": "Dampfgarer",
+          "concept": "dampfgarer",
+          "arasaac": 2341,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/herd_backofenSW.png",
+          "label": "Dampfgarer"
+        }
+      ]
+    },
+    {
+      "text": "1 roten Becher Sojadrink in den Topf gießen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Eins",
+          "concept": "eins",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Ein"
+        },
+        {
+          "token": "roter Becher",
+          "concept": "roter becher",
+          "eigen": "becher-rot",
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_rot1_125ml.png",
+          "label": "roter Becher"
+        },
+        {
+          "token": "Sojadrink",
+          "concept": "sojadrink",
+          "arasaac": 2445,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Trinken/sojamilch.png",
+          "label": "Sojadrink"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "den Topf",
+          "concept": "den topf",
+          "arasaac": 9086,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/topf.png",
+          "label": "den Topf"
+        }
+      ]
+    },
+    {
+      "text": "2 orange Becher Butter in den Topf geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Zwei",
+          "concept": "zwei",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "Zwei"
+        },
+        {
+          "token": "orange Becher",
+          "concept": "orange becher",
+          "eigen": "becher-orange",
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_orange1_30ml.png",
+          "label": "orange Becher"
+        },
+        {
+          "token": "Butter",
+          "concept": "butter",
+          "arasaac": 26196,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/margarineeckig.png",
+          "label": "Butter"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "den Topf",
+          "concept": "den topf",
+          "arasaac": 9086,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/topf.png",
+          "label": "den Topf"
+        }
+      ]
+    },
+    {
+      "text": "Topf auf dem Herd warm machen, bis die Butter geschmolzen ist",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Topf auf dem Herd",
+          "concept": "topf auf dem herd",
+          "arasaac": 8520,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/kochenerwaermen.png",
+          "label": "Topf auf dem Herd"
+        },
+        {
+          "token": "warm",
+          "concept": "warm",
+          "arasaac": 26716,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Eigenschaften_Emotionen/warm.png",
+          "label": "und alles erwärmen"
+        }
+      ]
+    },
+    {
+      "text": "2 blaue Becher Mehl in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Zwei",
+          "concept": "zwei",
+          "arasaac": 2628,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/2.png",
+          "label": "Zwei"
+        },
+        {
+          "token": "blaue Becher",
+          "concept": "blaue becher",
+          "eigen": "becher-blau",
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_blau1_250ml.png",
+          "label": "blaue Becher"
+        },
+        {
+          "token": "Mehl",
+          "concept": "mehl",
+          "arasaac": 8600,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/mehl.png",
+          "label": "Mehl"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "1 gehäuften gelben Messlöffel Hefe in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Eins",
+          "concept": "eins",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Ein"
+        },
+        {
+          "token": "gelber Messlöffel",
+          "concept": "gelber messloffel",
+          "eigen": "loeffel-gelb",
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gelb1_5ml.png",
+          "label": "gelber Löffel"
+        },
+        {
+          "token": "Hefe",
+          "concept": "hefe",
+          "arasaac": 9052,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/hefe.png",
+          "label": "Hefe"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "1 Prise Salz in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Eins",
+          "concept": "eins",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Eine"
+        },
+        {
+          "token": "Prise",
+          "concept": "prise",
+          "arasaac": 8670,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Kleine_Worte/bisschen.png",
+          "label": "Prise"
+        },
+        {
+          "token": "Salz",
+          "concept": "salz",
+          "arasaac": 25576,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/salz2.png",
+          "label": "Salz"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "1 orangen Becher Zucker in die Rührschüssel geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Eins",
+          "concept": "eins",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Ein"
+        },
+        {
+          "token": "oranger Becher",
+          "concept": "oranger becher",
+          "eigen": "becher-orange",
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messbecher_orange1_30ml.png",
+          "label": "oranger Becher"
+        },
+        {
+          "token": "Zucker",
+          "concept": "zucker",
+          "arasaac": 25560,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/zucker.png",
+          "label": "Zucker"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "Sojadrink mit Butter aus dem Topf in die Rührschüssel gießen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "aus dem Topf",
+          "concept": "aus dem topf",
+          "arasaac": 9086,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/topf.png",
+          "label": "aus dem Topf"
+        },
+        {
+          "token": "in",
+          "concept": "in",
+          "arasaac": 38252,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pfeile_Funktionen/pfeil_re.png",
+          "label": "in"
+        },
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        }
+      ]
+    },
+    {
+      "text": "Alles mit der Küchenmaschine 5 Minuten kneten",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "die Rührschüssel",
+          "concept": "die ruhrschussel",
+          "arasaac": 3257,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/ruehrschuessel.png",
+          "label": "die Rührschüssel"
+        },
+        {
+          "token": "mit der Küchenmaschine",
+          "concept": "mit der kuchenmaschine",
+          "arasaac": 38038,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/kuechenmaschinegrau.png",
+          "label": "mit der Küchenmaschine"
+        },
+        {
+          "token": "5 Minuten",
+          "concept": "5 minuten",
+          "arasaac": 37659,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zeit/5minuten_timer.png",
+          "label": "5 Minuten kneten"
+        }
+      ]
+    },
+    {
+      "text": "Teig abdecken und 45 Minuten gehen lassen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Teig",
+          "concept": "teig",
+          "arasaac": 38442,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/teig.png",
+          "label": "Teig"
+        },
+        {
+          "token": "abdecken",
+          "concept": "abdecken",
+          "arasaac": 2496,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/geschirrhandtuch.png",
+          "label": "abdecken"
+        },
+        {
+          "token": "45 Minuten",
+          "concept": "45 minuten",
+          "arasaac": 37659,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zeit/45minuten_timer.png",
+          "label": "45 Minuten"
+        }
+      ]
+    },
+    {
+      "text": "Teig in 4 Stücke teilen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Teig",
+          "concept": "teig",
+          "arasaac": 38442,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/teig.png",
+          "label": "Teig"
+        },
+        {
+          "token": "Vier",
+          "concept": "vier",
+          "arasaac": 2630,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/4.png",
+          "label": "Vier teilen"
+        }
+      ]
+    },
+    {
+      "text": "Jedes Stück flach drücken, 1 gelben Messlöffel Zwetschgenmus darauf geben und zu einem Knödel zusammendrücken",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Teig",
+          "concept": "teig",
+          "arasaac": 38442,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/teig.png",
+          "label": "Teig flach drücken"
+        },
+        {
+          "token": "Eins",
+          "concept": "eins",
+          "arasaac": 2627,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zahlen_Rechnen/1.png",
+          "label": "Ein"
+        },
+        {
+          "token": "gelber Messlöffel",
+          "concept": "gelber messloffel",
+          "eigen": "loeffel-gelb",
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/messloeffel_gelb1_5ml.png",
+          "label": "gelber Löffel"
+        },
+        {
+          "token": "Zwetschgenmus",
+          "concept": "zwetschgenmus",
+          "arasaac": 2470,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/pflaumenmus.png",
+          "label": "Zwetschgenmus"
+        },
+        {
+          "token": "Knödel",
+          "concept": "knodel",
+          "arasaac": 38747,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/dampfnudel.png",
+          "label": "Knödel formen"
+        }
+      ]
+    },
+    {
+      "text": "Knödel auf Backpapier in den Dampfgarer stellen und 15 Minuten gehen lassen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Knödel",
+          "concept": "knodel",
+          "arasaac": 38747,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/dampfnudel.png",
+          "label": "Knödel"
+        },
+        {
+          "token": "Backpapier",
+          "concept": "backpapier",
+          "arasaac": 38203,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/backpapier.png",
+          "label": "Backpapier"
+        },
+        {
+          "token": "15 Minuten",
+          "concept": "15 minuten",
+          "arasaac": 37659,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zeit/15minuten_timer.png",
+          "label": "15 Minuten gehen lassen"
+        }
+      ]
+    },
+    {
+      "text": "Knödel bei 100 °C 20 Minuten dämpfen",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "100 °C",
+          "concept": "100 c",
+          "arasaac": 2341,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Hausarbeit/herd_backofenSW.png",
+          "label": "100 °C"
+        },
+        {
+          "token": "20 Minuten",
+          "concept": "20 minuten",
+          "arasaac": 37659,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Zeit/20minuten_timer.png",
+          "label": "20 Minuten"
+        },
+        {
+          "token": "dämpfen",
+          "concept": "dampfen",
+          "arasaac": 39839,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/dampfnudel.png",
+          "label": "dämpfen"
+        }
+      ]
+    },
+    {
+      "text": "Knödel auf den Teller legen, Vanillesoße, Mohn und Puderzucker darüber geben",
+      "part": "schritt",
+      "slots": [
+        {
+          "token": "Knödel",
+          "concept": "knodel",
+          "arasaac": 38747,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/dampfnudel.png",
+          "label": "Knödel"
+        },
+        {
+          "token": "Teller",
+          "concept": "teller",
+          "arasaac": 2532,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Geschirr/teller.png",
+          "label": "Teller"
+        },
+        {
+          "token": "Vanillesoße",
+          "concept": "vanillesoße",
+          "arasaac": 35735,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/sossehell.png",
+          "label": "Vanillesoße"
+        },
+        {
+          "token": "Mohn",
+          "concept": "mohn",
+          "arasaac": 6897,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Pflanzen/mohnblume.png",
+          "label": "Mohn"
+        },
+        {
+          "token": "Puderzucker",
+          "concept": "puderzucker",
+          "arasaac": 25560,
+          "metacom": "METACOM_Symbole/Symbole_PNG/PNG_ohne_Rahmen/Lebensmittel_Essen/puderzucker.png",
+          "label": "Puderzucker"
+        }
+      ]
+    }
+  ]
+}
